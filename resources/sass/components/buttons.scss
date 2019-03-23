@@ -1,0 +1,24 @@
+.btn-blue {
+	@include button($accent-light-blue);
+}
+
+.btn-blue:hover {
+	@include button($accent-dark-blue);
+	cursor: pointer;
+}
+
+.btn-off {
+	@include button($extra-grey-4);
+	cursor: default;
+}
+
+.btn-green {
+	@include button($accent-light-green);
+	box-shadow: 0 3px 6px 0 $accent-dark-green;
+}
+
+.btn-green:hover {
+	@include button($accent-dark-green);
+	box-shadow: none;
+	cursor: pointer;
+}

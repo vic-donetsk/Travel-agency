@@ -1,0 +1,7 @@
+.link-style {
+	@extend %a-style;
+}
+.link-style:hover {
+	cursor: pointer;
+	color: $accent-light-blue;
+}

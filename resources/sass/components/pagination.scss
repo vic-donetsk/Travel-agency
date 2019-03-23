@@ -1,0 +1,25 @@
+.pagination{
+	display: flex;
+	justify-content: center;
+
+
+	.elem {
+		@extend %pagi-element;
+		background-color: $extra-grey-3;
+		color: $main-dark;
+	}
+	.interval {
+		@extend %pagi-element;
+		background-color: $main-light;
+		color: $main-dark;
+		cursor: default;
+	}
+	.active {
+		@extend %pagi-element;
+		background-color: $accent-light-green;
+		box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+		color: $main-light;
+	}
+
+
+}

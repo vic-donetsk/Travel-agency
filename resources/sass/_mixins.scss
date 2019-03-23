@@ -1,0 +1,31 @@
+@mixin font-header ($size: $header-size-4) {
+	font-family: $header-font;
+	font-size: $size;
+	font-weight: bold;	
+}
+
+@mixin font-text ($size: $text-size-1) {
+	font-family: $header-font;
+	font-size: $size;
+	font-weight: normal;	
+}
+
+@mixin button ($bg: $accent-light-blue) {
+	width: 140px;
+	height: 40px;
+	border-radius: 4px;
+	background-color: $bg;
+	text-align: center;
+	line-height: 40px;
+	color: $main-light;
+	@include font-header($header-size-4);
+}
+
+@mixin input-text ($width: 300px, $height: 50px) {
+	width: $width;
+	height: $height;
+	border-radius: 2px;
+	border: 1px solid $extra-grey-4;
+	padding-left: 20px;
+	@include font-text();
+}

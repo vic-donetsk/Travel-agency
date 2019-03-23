@@ -1,0 +1,6 @@
+.input-text {
+	@include input-text(300px, 50px);
+}
+.input-error {
+	border: solid 1px #bf4924;
+}
