@@ -1,21 +1,5 @@
 @charset "UTF-8";
 
-@font-face {
-  font-family: "Proxima Nova Rg";
-  src: url(/fonts/ProximaNova-Regular.eot?b7c512788e3c77b0196f0bace8a88418);
-  src: local("Proxima Nova Regular"), local("ProximaNova-Regular"), url(/fonts/ProximaNova-Regular.eot?b7c512788e3c77b0196f0bace8a88418) format("embedded-opentype"), url(/fonts/ProximaNova-Regular.woff?2d2ae2556b24a45ff8d5ed86b07b5783) format("woff"), url(/fonts/ProximaNova-Regular.ttf?7ce6760d17685c466ba04d1b2c63c38b) format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Proxima Nova Rg";
-  src: url(/fonts/ProximaNova-Bold.eot?10141a9d737da9c84e6e14ec5a562c6c);
-  src: local("Proxima Nova Bold"), local("ProximaNova-Bold"), url(/fonts/ProximaNova-Bold.eot?10141a9d737da9c84e6e14ec5a562c6c) format("embedded-opentype"), url(/fonts/ProximaNova-Bold.woff?e2cf3dc2f079bf3d5185a02552f153c4) format("woff"), url(/fonts/ProximaNova-Bold.ttf?926a08fb27e3303c7452b0bdd2d5e5ab) format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
-
 input[type=radio]:checked + label:after,
 input[type=radio]:not(:checked) + label:after {
   transition: all 0.2s ease;
@@ -10745,7 +10729,6 @@ a.text-dark:focus {
   font-family: "Proxima Nova Rg";
   font-size: 16px;
   font-weight: bold;
-  font-family: "Proxima Nova Rg";
 }
 
 .btn-blue:hover {
@@ -10759,7 +10742,6 @@ a.text-dark:focus {
   font-family: "Proxima Nova Rg";
   font-size: 16px;
   font-weight: bold;
-  font-family: "Proxima Nova Rg";
   cursor: pointer;
 }
 
@@ -10774,7 +10756,6 @@ a.text-dark:focus {
   font-family: "Proxima Nova Rg";
   font-size: 16px;
   font-weight: bold;
-  font-family: "Proxima Nova Rg";
   cursor: default;
 }
 
@@ -10789,7 +10770,6 @@ a.text-dark:focus {
   font-family: "Proxima Nova Rg";
   font-size: 16px;
   font-weight: bold;
-  font-family: "Proxima Nova Rg";
   box-shadow: 0 3px 6px 0 #24BF51;
 }
 
@@ -10804,7 +10784,6 @@ a.text-dark:focus {
   font-family: "Proxima Nova Rg";
   font-size: 16px;
   font-weight: bold;
-  font-family: "Proxima Nova Rg";
   box-shadow: none;
   cursor: pointer;
 }
@@ -10879,6 +10858,9 @@ input[type=radio]:checked + label:after {
   border-radius: 2px;
   border: 1px solid #ccc;
   padding-left: 20px;
+  font-family: "Proxima Nova Rg";
+  font-size: 14px;
+  font-weight: normal;
 }
 
 .input-error {
