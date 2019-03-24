@@ -10682,6 +10682,11 @@ a.text-dark:focus {
   }
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .header-1 {
   font-family: "Proxima Nova Rg";
   font-size: 24px;
@@ -10719,6 +10724,8 @@ a.text-dark:focus {
 }
 
 .btn-blue {
+  display: block;
+  margin: 0 auto;
   width: 140px;
   height: 40px;
   border-radius: 4px;
@@ -10732,6 +10739,8 @@ a.text-dark:focus {
 }
 
 .btn-blue:hover {
+  display: block;
+  margin: 0 auto;
   width: 140px;
   height: 40px;
   border-radius: 4px;
@@ -10746,6 +10755,8 @@ a.text-dark:focus {
 }
 
 .btn-off {
+  display: block;
+  margin: 0 auto;
   width: 140px;
   height: 40px;
   border-radius: 4px;
@@ -10760,6 +10771,8 @@ a.text-dark:focus {
 }
 
 .btn-green {
+  display: block;
+  margin: 0 auto;
   width: 140px;
   height: 40px;
   border-radius: 4px;
@@ -10774,6 +10787,8 @@ a.text-dark:focus {
 }
 
 .btn-green:hover {
+  display: block;
+  margin: 0 auto;
   width: 140px;
   height: 40px;
   border-radius: 4px;
@@ -10887,5 +10902,95 @@ input[type=radio]:checked + label:after {
   background-color: #37DB67;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
   color: #fff;
+}
+
+.trip-card {
+  width: 300px;
+  height: 380px;
+  box-sizing: border-box;
+  border-radius: 0 0 4px 4px;
+  border: solid 2px #f6fafb;
+  background: #fff;
+  position: relative;
+}
+
+.picture {
+  line-height: 1px;
+  display: block;
+  height: 220px;
+}
+
+.foto {
+  width: 296px;
+  height: 216px;
+}
+
+.green-bottom {
+  height: 4px;
+  background-color: #37db67;
+}
+
+.proposition {
+  position: absolute;
+  top: 140px;
+  left: 0;
+  width: 300px;
+  height: 240px;
+  background: black transparent;
+  padding-top: 43px;
+  text-align: center;
+}
+
+.trip-condition {
+  display: flex;
+  align-items: center;
+  height: 24px;
+  line-height: 24px;
+  color: #fff;
+  margin-bottom: 36px;
+}
+
+.trip-type {
+  margin-left: 20px;
+  height: 14px;
+  width: 14px;
+  line-height: 1px;
+}
+
+.trip-duration,
+.trip-hotel {
+  margin-left: 11px;
+  font-family: "Proxima Nova Rg";
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.trip-cost {
+  margin-left: 45px;
+  font-family: "Proxima Nova Rg";
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.trip-currency {
+  margin-left: 5px;
+  font-family: "Proxima Nova Rg";
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.trip-kurort {
+  font-family: "Proxima Nova Rg";
+  font-size: 18px;
+  font-weight: bold;
+  color: #084599;
+}
+
+.trip-route {
+  font-family: "Proxima Nova Rg";
+  font-size: 14px;
+  font-weight: normal;
+  color: #ccc;
+  margin-bottom: 20px;
 }
 

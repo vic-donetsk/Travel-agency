@@ -17,6 +17,7 @@
                 width: 90%;
                 display: flex;
                 justify-content: space-around;
+                flex-wrap:wrap;
             }
         </style>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -51,7 +52,13 @@
             <input type="text" class="input-text" value="Иван Иванов">
             <input type="text" class="input-text input-error" value="Пиво вредно">
         </div>  
+        
+
 
         @include('components.pagination')
+
+        <div class="show_block">
+            @include('components.trip-card')
+        </div>
     </body>
 </html>
