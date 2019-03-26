@@ -52,13 +52,31 @@
             <input type="text" class="input-text" value="Иван Иванов">
             <input type="text" class="input-text input-error" value="Пиво вредно">
         </div>  
-        
-
 
         @include('components.pagination')
 
+        <?php $classes_type = ['trip-card', 'trip-card client-hover', 'trip-card seller-hover']; ?>
         <div class="show_block">
-            @include('components.trip-card')
+            @each('components.trip-card', $classes_type, 'classes')
         </div>
+
+
+       
+        @include('components.main-menu',['user_name' => 'Василий Пупкин', 'user_foto' => 'img/user.jpg'])
+        <br>
+        @include('components.main-menu')
+
+        <div class="show_block">
+            @include('components.mob-main-menu')
+            @include('components.mob-head-menu')
+        </div>  
+<br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
     </body>
 </html>

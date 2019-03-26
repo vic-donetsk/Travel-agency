@@ -22,3 +22,9 @@
 	box-shadow: none;
 	cursor: pointer;
 }
+.btn-white  {
+	@include button($main-light, 180px);
+	box-shadow: none;
+	cursor: pointer;	
+	color: $accent-light-blue;
+}

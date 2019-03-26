@@ -10,10 +10,10 @@
 	font-weight: normal;	
 }
 
-@mixin button ($bg: $accent-light-blue) {
+@mixin button ($bg: $accent-light-blue, $width: 140px) {
 	display: block;
 	margin: 0 auto;
-	width: 140px;
+	width: $width;
 	height: 40px;
 	border-radius: 4px;
 	background-color: $bg;

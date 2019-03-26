@@ -1,0 +1,51 @@
+.mobile-header-menu {
+	width: 320px;
+	height: 80px;
+	line-height: 80px;
+	padding: 0 20px;
+	display: flex;
+	justify-content: space-between;
+	background-image: $gradient-background;
+	color: $main-light;
+
+	.main-button {
+		cursor: pointer;
+	}
+}
+
+.mobile-main-menu {
+	width: 320px;
+	height: 440px;
+	padding: 0px 40px 40px;
+	background-image: $gradient-background;
+	// color: $main-light;
+	position: relative;
+	.close img {
+		position: absolute;
+		right: 14px;
+		top: 14px;
+		width: 29px;
+		height: 29px;
+		color: $main-light;
+		cursor: pointer;
+	}
+	.mobile-menu-items {
+		margin-top: 100px;
+		height: 300px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		.mobile-trip-transport {
+			height: 110px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+		a {
+			color:$main-light;
+		}
+		.btn-green {
+			width: 240px;
+		}
+	}
+}
