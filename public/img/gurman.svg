@@ -1,0 +1,15 @@
+<svg id="outline-room_service-24px" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #ccc;
+      }
+    </style>
+  </defs>
+  <path id="Path_480" data-name="Path 480" class="cls-1" d="M0,0H24V24H0Z"/>
+  <path id="Path_481" data-name="Path 481" class="cls-2" d="M20.338,20.429H2V23H23.6V20.429Zm2.182-1.286c-.292-5.233-3.51-9.514-7.733-10.556a3.094,3.094,0,0,0,.173-1.016A2.4,2.4,0,0,0,12.8,5a2.4,2.4,0,0,0-2.16,2.571,3.094,3.094,0,0,0,.173,1.016C6.59,9.629,3.372,13.91,3.08,19.143ZM12.8,10.889c3.186,0,5.908,2.353,7.02,5.67H5.78C6.892,13.241,9.614,10.889,12.8,10.889Z" transform="translate(-0.8 -2)"/>
+</svg>

@@ -27,6 +27,15 @@ input[type=radio]:not(:checked) + label:after {
   cursor: pointer;
 }
 
+.trip-category .trip-category-icon {
+  margin: 0 auto;
+  width: 46px;
+  height: 46px;
+  line-height: 46px;
+  border: solid 1px #ccc;
+  border-radius: 50%;
+}
+
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -10687,6 +10696,10 @@ a.text-dark:focus {
   padding: 0;
 }
 
+body {
+  padding: 0 40px;
+}
+
 .header-1 {
   font-family: "Proxima Nova Rg";
   font-size: 24px;
@@ -11099,12 +11112,6 @@ input[type=radio]:checked + label:after {
   margin-right: 3.9%;
 }
 
-.main-menu .menu-block .user-foto {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-}
-
 .main-menu .operation-block {
   margin-top: 17px;
   display: flex;
@@ -11135,6 +11142,12 @@ input[type=radio]:checked + label:after {
   line-height: 40px;
   font-size: 14px;
   cursor: pointer;
+}
+
+.user-foto {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
 }
 
 .mobile-header-menu {
@@ -11191,5 +11204,51 @@ input[type=radio]:checked + label:after {
 
 .mobile-main-menu .mobile-menu-items .btn-green {
   width: 240px;
+}
+
+.footer {
+  margin: 0 auto;
+  max-width: 1280px;
+  height: 200px;
+  text-align: center;
+  background-image: linear-gradient(to right, #084599, #05a8d4);
+  color: #fff;
+  padding-top: 30px;
+}
+
+.footer .btn-green {
+  width: 170px;
+  margin-bottom: 30px;
+}
+
+.footer a {
+  color: #fff;
+}
+
+.footer .authors {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer .authors .author {
+  width: 103px;
+  text-align: center;
+}
+
+.trip-category {
+  text-align: center;
+}
+
+.trip-category .trip-category-icon .img {
+  width: 24px;
+  height: 24px;
+}
+
+.trip-category .trip-category-name {
+  font-family: "Proxima Nova Rg";
+  font-size: 12px;
+  font-weight: normal;
+  color: #084599;
 }
 

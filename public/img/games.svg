@@ -1,0 +1,15 @@
+<svg id="outline-games-24px" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #ccc;
+      }
+    </style>
+  </defs>
+  <path id="Path_474" data-name="Path 474" class="cls-1" d="M0,0H24V24H0Z"/>
+  <path id="Path_475" data-name="Path 475" class="cls-2" d="M13.88,4.16V7.044L12.8,8.124l-1.08-1.08V4.16h2.16m7.56,7.56v2.16H18.556l-1.08-1.08,1.08-1.08H21.44m-14.4,0,1.08,1.08-1.08,1.08H4.16V11.72H7.044M12.8,17.476l1.08,1.08V21.44H11.72V18.556l1.08-1.08M16.04,2H9.56V7.94l3.24,3.24,3.24-3.24ZM23.6,9.56H17.66L14.42,12.8l3.24,3.24H23.6Zm-15.66,0H2v6.48H7.94l3.24-3.24Zm4.86,4.86L9.56,17.66V23.6h6.48V17.66Z" transform="translate(-0.8 -0.8)"/>
+</svg>

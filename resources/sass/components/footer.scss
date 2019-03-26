@@ -1,0 +1,25 @@
+.footer {
+	margin: 0 auto;
+	max-width: 1280px;
+	height: 200px;
+	text-align: center;
+	background-image: $gradient-background;
+	color: $main-light;
+	padding-top: 30px;
+	.btn-green {
+		width: 170px;
+		margin-bottom: 30px;
+	}
+	a {
+		color: $main-light;
+	}
+	.authors {
+		margin-top: 30px;
+		display: flex;
+		justify-content: center;
+		.author {
+			width: 103px;
+			text-align: center;
+		}
+	}
+}

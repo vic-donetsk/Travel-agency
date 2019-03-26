@@ -1,0 +1,14 @@
+.trip-category {
+	text-align: center;
+	.trip-category-icon {
+		@extend %category-icon;
+		.img {
+			width: 24px;
+			height: 24px;
+		}
+	}
+	.trip-category-name {
+		@include font-text($text-size-2);
+		color: $accent-light-blue;
+	}
+}

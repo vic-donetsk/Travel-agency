@@ -13,10 +13,19 @@
 
 %pagi-element {
 	@include font-header();
-		margin: 0 5px;
-		height: 30px;
-		border-radius: 2px;
-		line-height: 30px;
-		padding: 0 12px;
-		cursor: pointer;
+	margin: 0 5px;
+	height: 30px;
+	border-radius: 2px;
+	line-height: 30px;
+	padding: 0 12px;
+	cursor: pointer;
+}
+
+%category-icon {
+	margin: 0 auto;
+	width: 46px;
+  	height: 46px;
+  	line-height: 46px;
+  	border: solid 1px $extra-grey-4;
+  	border-radius: 50%;
 }

@@ -69,9 +69,34 @@
         <div class="show_block">
             @include('components.mob-main-menu')
             @include('components.mob-head-menu')
-        </div>  
-<br><br><br><br><br><br><br><br>
+        </div> 
 
+        @include('components.footer',['user_name' => 'Василий Пупкин', 'user_foto' => 'img/user.jpg']) 
+        <br>
+        @include('components.footer') 
+        <br>
+        <div class="test-mobile" style="width:320px; margin: 0 auto">
+           @include('components.footer')  
+        </div>       
+        
+        <div class="show_block">
+        <?php
+            $trip_types = [
+                ['name' => 'Индустриальный', 'img' => 'img/industry.svg'],
+                ['name' => 'Шоппинг', 'img' => 'img/shopping.svg'],
+                ['name' => 'Экстрим', 'img' => 'img/extrim.svg'],
+                ['name' => 'Luxury', 'img' => 'img/luxury.svg'],
+                ['name' => 'Всё включено', 'img' => 'img/all-inclusive.svg'],
+                ['name' => 'Программы развлечений', 'img' => 'img/games.svg'],
+                ['name' => 'Пляжный', 'img' => 'img/beach.svg'],
+                ['name' => 'Гастрономический', 'img' => 'img/gurman.svg'],
+                ['name' => 'SPA', 'img' => 'img/spa.svg'],
+                ['name' => 'Семейный', 'img' => 'img/family.svg'],
+                ['name' => 'Спокойный отдых', 'img' => 'img/rest.svg']]
+
+        ?>
+             @each('components.trip-type', $trip_types, 'type')
+        </div>
 
 
 
