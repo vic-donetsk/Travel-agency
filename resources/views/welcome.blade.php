@@ -54,6 +54,8 @@
         </div>  
 
         @include('components.pagination')
+        <br>
+        @include('components.popup-window')
 
         <?php $classes_type = ['trip-card', 'trip-card client-hover', 'trip-card seller-hover']; ?>
         <div class="show_block">
