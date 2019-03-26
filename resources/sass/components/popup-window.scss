@@ -1,0 +1,28 @@
+.popup-window {
+	width: 180px;
+	height: 184px;
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+	background-color: $main-light;
+	padding-top: 29px;
+		a {
+			color: $extra-grey-5;
+		}
+		a:hover {
+			color: $accent-light-blue;
+			text-decoration: none;
+		}
+	.popup-item {
+		line-height: 1;
+		margin-left: 21px;
+		margin-bottom: 14px;
+	}
+	.popup-exit {
+		margin-top: 27px;
+		padding-left: 17px;
+		width: 100%;
+		height: 35px;
+		line-height: 35px;
+		background-color: $extra-grey-3;
+
+	}
+}
