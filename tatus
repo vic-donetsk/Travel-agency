@@ -1,0 +1,41 @@
+[33mcommit 115d49413830ebfe5e5610751b513c2c7ac8495b[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Vic Pavlovsky <pavlovskyi.va@gmail.com>
+Date:   Tue Mar 26 15:40:49 2019 +0200
+
+    fixed last version
+
+[33mcommit 998b5f62155514fc926a54abd38acc1cdb9f8e44[m
+Author: Vic Pavlovsky <pavlovskyi.va@gmail.com>
+Date:   Tue Mar 26 15:40:00 2019 +0200
+
+    added pop-up window
+
+[33mcommit 7914352d54f5f85816c1fa4b5c964525af158610[m
+Author: Vic Pavlovsky <pavlovskyi.va@gmail.com>
+Date:   Tue Mar 26 14:25:44 2019 +0200
+
+    add footer and icons
+
+[33mcommit 44a13ad915bd64971dc50f82afc9109e70bcb741[m
+Author: Vic Pavlovsky <pavlovskyi.va@gmail.com>
+Date:   Tue Mar 26 12:42:58 2019 +0200
+
+    add menu
+
+[33mcommit 2fd2fe62ae028e4973e1f0655eea2e160574d43f[m
+Author: Vic Pavlovsky <pavlovskyi.va@gmail.com>
+Date:   Sun Mar 24 21:35:27 2019 +0200
+
+    added trip-card
+
+[33mcommit 4d957d7702782ca4037dc1034c58b380661ef813[m
+Author: Vic Pavlovsky <pavlovskyi.va@gmail.com>
+Date:   Sat Mar 23 11:15:33 2019 +0200
+
+    fonts remove to public
+
+[33mcommit 9b8f74c3aa92457d1ab11e92caf3c63093c54694[m
+Author: Vic Pavlovsky <pavlovskyi.va@gmail.com>
+Date:   Sat Mar 23 11:08:53 2019 +0200
+
+    first task done until table

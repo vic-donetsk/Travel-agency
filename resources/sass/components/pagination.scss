@@ -1,8 +1,5 @@
 .pagination{
-	display: flex;
-	justify-content: center;
-
-
+	@include flex(center);
 	.elem {
 		@extend %pagi-element;
 		background-color: $extra-grey-3;
@@ -19,6 +16,7 @@
 		background-color: $accent-light-green;
 		box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
 		color: $main-light;
+		cursor: default;
 	}
 
 

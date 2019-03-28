@@ -31,3 +31,9 @@
 	padding-left: 20px;
 	@include font-text();
 }
+
+@mixin flex ($justify: space-between, $direction: row) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+}

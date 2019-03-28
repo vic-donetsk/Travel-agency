@@ -53,6 +53,8 @@
             <input type="text" class="input-text input-error" value="Пиво вредно">
         </div>  
 
+        @include('components.table')
+
         @include('components.pagination')
         <br>
         @include('components.popup-window')
@@ -64,7 +66,7 @@
 
 
        
-        @include('components.main-menu',['user_name' => 'Василий Пупкин', 'user_foto' => 'img/user.jpg'])
+        @include('components.main-menu',['user_name' => 'Василий Пупкин', 'user_foto' => 'img/user.png'])
         <br>
         @include('components.main-menu')
 
@@ -73,7 +75,7 @@
             @include('components.mob-head-menu')
         </div> 
 
-        @include('components.footer',['user_name' => 'Василий Пупкин', 'user_foto' => 'img/user.jpg']) 
+        @include('components.footer',['user_name' => 'Василий Пупкин', 'user_foto' => 'img/user.png']) 
         <br>
         @include('components.footer') 
         <br>

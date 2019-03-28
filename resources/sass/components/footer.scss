@@ -15,8 +15,7 @@
 	}
 	.authors {
 		margin-top: 30px;
-		display: flex;
-		justify-content: center;
+		@include flex(center);
 		.author {
 			width: 103px;
 			text-align: center;
