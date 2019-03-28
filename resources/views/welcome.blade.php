@@ -30,11 +30,11 @@
             <div class="btn-off">Подробнее</div>
             <div class="btn-green">Заказать</div>
         </div>
+
         <div class="show_block">
             <div>
                 <input type="radio" name="rb" id="rb1" checked> <label for="rb1">Диван 1</label>
             </div>
-
             <div>
                 <input type="radio" name="rb" id="rb2"> <label for="rb2">Диван 2</label>
             </div>
@@ -42,22 +42,30 @@
             <div>
                 <input type="radio" name="rb" id="rb3"> <label for="rb3">Диван 3</label>
             </div>
-        </div>    
+        </div>  
+
         <div class="show_block">
             <a class="link-style" href="#">Ссылка 1</a>
             <a class="link-style" href="#">Ссылка 2</a>
-        </div>  
+        </div> 
+
         <div class="show_block">
             <input type="text" class="input-text" placeholder="Введите чё-то">
             <input type="text" class="input-text" value="Иван Иванов">
             <input type="text" class="input-text input-error" value="Пиво вредно">
         </div>  
 
+
         @include('components.table')
 
+
         @include('components.pagination')
+
         <br>
+
         @include('components.popup-window')
+
+
 
         <?php $classes_type = ['trip-card', 'trip-card client-hover', 'trip-card seller-hover']; ?>
         <div class="show_block">
@@ -82,6 +90,8 @@
         <div class="test-mobile" style="width:320px; margin: 0 auto">
            @include('components.footer')  
         </div>       
+        
+
         
         <div class="show_block">
         <?php
