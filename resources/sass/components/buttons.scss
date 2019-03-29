@@ -1,3 +1,29 @@
+/*
+.btn {
+    &-blue {
+	    @include button($accent-light-blue);
+    }
+
+    &-blue:hover {
+        @include button($accent-dark-blue);
+        cursor: pointer;
+
+        &:first-of-type {
+
+        }
+    }
+
+    &.mod-green {
+        @include button($accent-light-green);
+        box-shadow: 0 3px 6px 0 $accent-dark-green;
+    }
+}
+
+.page_home {
+
+}
+*/
+
 .btn-blue {
 	@include button($accent-light-blue);
 }
@@ -25,6 +51,6 @@
 .btn-white  {
 	@include button($main-light, 180px);
 	box-shadow: none;
-	cursor: pointer;	
+	cursor: pointer;
 	color: $accent-light-blue;
 }

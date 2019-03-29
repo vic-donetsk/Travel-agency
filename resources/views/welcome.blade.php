@@ -9,9 +9,9 @@
         <!-- Styles -->
         <style>
             body {
-               background-color: #fff !important; 
+               background-color: #fff !important;
             }
-           
+
             .show_block {
                 margin: 50px auto;
                 width: 90%;
@@ -23,8 +23,8 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     </head>
-    <body>
-  
+    <body data-page="{{ Route::currentRouteName() }}" class="page_{{ Route::currentRouteName() }}">
+
         <div class="show_block">
             <div class="btn-blue">Подробнее</div>
             <div class="btn-off">Подробнее</div>
@@ -42,18 +42,18 @@
             <div>
                 <input type="radio" name="rb" id="rb3"> <label for="rb3">Диван 3</label>
             </div>
-        </div>  
+        </div>
 
         <div class="show_block">
             <a class="link-style" href="#">Ссылка 1</a>
             <a class="link-style" href="#">Ссылка 2</a>
-        </div> 
+        </div>
 
         <div class="show_block">
             <input type="text" class="input-text" placeholder="Введите чё-то">
             <input type="text" class="input-text" value="Иван Иванов">
             <input type="text" class="input-text input-error" value="Пиво вредно">
-        </div>  
+        </div>
 
 
         @include('components.table')
@@ -73,7 +73,7 @@
         </div>
 
 
-       
+
         @include('components.main-menu',['user_name' => 'Василий Пупкин', 'user_foto' => 'img/user.png'])
         <br>
         @include('components.main-menu')
@@ -81,18 +81,18 @@
         <div class="show_block">
             @include('components.mob-main-menu')
             @include('components.mob-head-menu')
-        </div> 
+        </div>
 
-        @include('components.footer',['user_name' => 'Василий Пупкин', 'user_foto' => 'img/user.png']) 
+        @include('components.footer',['user_name' => 'Василий Пупкин', 'user_foto' => 'img/user.png'])
         <br>
-        @include('components.footer') 
+        @include('components.footer')
         <br>
         <div class="test-mobile" style="width:320px; margin: 0 auto">
-           @include('components.footer')  
-        </div>       
-        
+           @include('components.footer')
+        </div>
 
-            
+
+
         <div class="show_block">
         <?php
             $trip_types = [
