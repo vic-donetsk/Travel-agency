@@ -1,4 +1,4 @@
-<div class="footer">
+<footer class="footer">
 	<div class="btn-green">Заказать</div>
 	<div class="header-3">
 		<a href="#">
@@ -9,4 +9,4 @@
 		<div class="author"> Design from Zirella </div>
 		<div class="author"> © Virus, 2018 </div>
 	</div>
-</div>
+</footer>
