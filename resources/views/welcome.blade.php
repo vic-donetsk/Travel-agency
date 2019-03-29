@@ -92,7 +92,7 @@
         </div>       
         
 
-        
+            
         <div class="show_block">
         <?php
             $trip_types = [
