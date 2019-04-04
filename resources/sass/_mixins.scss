@@ -10,6 +10,10 @@
 	font-weight: normal;	
 }
 
+@mixin background-gradient($angle: to right) {
+    background-image:  linear-gradient($angle, $gradient-from, $gradient-to);
+}
+
 @mixin button ($bg: $accent-light-blue, $width: 140px) {
 	display: block;
 	margin: 0 auto;
@@ -32,8 +36,9 @@
 	@include font-text();
 }
 
-@mixin flex ($justify: space-between, $direction: row) {
+@mixin flex ($justify: space-between, $direction: row, $wrap: nowrap) {
 	display: flex;
 	flex-direction: $direction;
 	justify-content: $justify;
+	flex-wrap: $wrap; 
 }

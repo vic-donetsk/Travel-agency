@@ -1,19 +1,22 @@
-<div class="main-menu">
+<nav class="main-menu">
 	<div class="menu-block">
-		<div class="trip-transport"> <a href=""> Автобусные туры </a> </div>
-		<div class="trip-transport"> <a href=""> Авиационные туры </a></div>
-		<div class="trip-transport"> <a href=""> Круизы </a> </div>
-		@include('components.logo')
-		<div class="user">
-			<a href="#">
-				@include('components.user-or-guest', ['text' => 'Вход/Регистрация'])
-			</a>
+		<div class="trip-transport">
+			<div class="trip-transport-item"> <a href=""> Автобусные туры </a> </div>
+			<div class="trip-transport-item"> <a href=""> Авиационные туры </a></div>
+			<div class="trip-transport-item"> <a href=""> Круизы </a> </div>
 		</div>
-		  	
-		<div>	
-			<a href="#">				
-				<i class="fas fa-shopping-cart"></i> &nbsp; Корзина (3555 <i class="fab fa-btc"> )</i>
-			</a>
+		@include('components.logo')
+		<div class="right-menu">
+			<div class="user">
+				<a href="#">
+					@include('components.user-or-guest', ['text' => 'Вход/Регистрация'])
+				</a>
+			</div>
+			<div>	
+				<a href="#">				
+					<i class="fas fa-shopping-cart"></i> &nbsp; Корзина (3555 <i class="fab fa-btc"> )</i>
+				</a>
+			</div>
 		</div>
 	</div>
 
@@ -26,4 +29,4 @@
 			<i class="fas fa-plus"></i>&nbsp; Добавить тур
 		</div>
 	</div>
-</div>
+</nav>

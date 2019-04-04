@@ -1,10 +1,13 @@
 .mobile-header-menu {
+	@include background-gradient(76deg);
+	@include media(">tablet") {
+		display: none;
+	} 
 	width: 320px;
 	height: 80px;
 	line-height: 80px;
 	padding: 0 20px;
 	@include flex();
-	background-image: $gradient-background;
 	color: $main-light;
 
 	.main-button {
@@ -24,34 +27,39 @@
 //    }
 //}
 
-.mobile-main-menu {
+
+.mobile-menu-wrapper {
+	@include background-gradient(36deg);
+	@include media(">tablet") {
+		display: none;
+	} 
 	width: 320px;
 	height: 440px;
-	padding: 0px 40px 40px;
-	background-image: $gradient-background;
+	padding: 100px 40px 40px;
 	position: relative;
-	.close img {
-		position: absolute;
-		right: 14px;
-		top: 14px;
-		width: 29px;
-		height: 29px;
-		color: $main-light;
-		cursor: pointer;
-	}
-	.mobile-menu-items {
-		margin-top: 100px;
-		height: 300px;
-		@include flex(space-between,column);
-		.mobile-trip-transport {
-			height: 110px;
+	.mobile-main-menu {
+		.close img {
+			position: absolute;
+			right: 14px;
+			top: 14px;
+			width: 29px;
+			height: 29px;
+			color: $main-light;
+			cursor: pointer;
+		}
+		.mobile-menu-items {
+			height: 300px;
 			@include flex(space-between,column);
-		}
-		a {
-			color:$main-light;
-		}
-		.btn-green {
-			width: 240px;
+			.mobile-trip-transport {
+				height: 110px;
+				@include flex(space-between,column);
+			}
+			a {
+				color:$main-light;
+			}
+			.btn-green {
+				width: 240px;
+			}
 		}
 	}
 }

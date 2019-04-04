@@ -4,7 +4,7 @@
 	border: 2px solid $extra-grey-3;
 	.table-header {
 		height: 50px;
-		background-image: $gradient-background;
+		@include background-gradient();
 		border-radius: 2px;
 		color: $main-light;
 	}

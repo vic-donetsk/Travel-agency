@@ -24,7 +24,8 @@ $extra-grey-3: #f2f2f2;
 $extra-grey-4: #ccc;
 $extra-grey-5: #666;
 $extra-grey-6: #4d4d4d;
-$gradient-background: linear-gradient(to right, #084599, #05a8d4);
+$gradient-from: #084599;
+$gradient-to: #05a8d4;
 
 // Lists
 $list-size: 14px;
@@ -32,4 +33,7 @@ $mark-list-line-height: 1.86;
 $num-list-line-height: 1.57;
 $mark-list-padding-left: 14px;
 $num-list-padding-left: 5px;
+
+// Include Media
+$breakpoints: (phone: 320px, tablet: 960px, small_desktop: 1100px, desktop: 1280px);
 
