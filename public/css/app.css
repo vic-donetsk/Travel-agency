@@ -11317,10 +11317,12 @@ input[type=radio]:checked + label:after {
 .mobile-menu-wrapper {
   background-image: linear-gradient(36deg, #084599, #05a8d4);
   display: none;
-  max-width: 960px;
   height: 440px;
+  width: calc(100% - 80px);
   padding: 100px 40px 40px;
-  position: relative;
+  position: absolute;
+  top: 0;
+  z-index: 10;
 }
 
 .mobile-menu-wrapper .mobile-main-menu .close img {

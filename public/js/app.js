@@ -49174,14 +49174,11 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
-  //$(".mobile-menu-wrapper").css("display", "none");
   $(".main-button").click(function () {
-    $(".mobile-header-menu").css("display", "none");
     $(".mobile-menu-wrapper").slideDown("slow");
   });
   $(".close").click(function () {
-    $(".mobile-menu-wrapper").slideUp("fast");
-    $(".mobile-header-menu").css("display", "flex");
+    $(".mobile-menu-wrapper").slideUp("slow");
   });
 });
 
