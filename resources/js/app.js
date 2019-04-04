@@ -33,3 +33,5 @@ const app = new Vue({
 
 
 require('./scripts/test');
+
+require('./index');
