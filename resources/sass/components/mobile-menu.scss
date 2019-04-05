@@ -33,6 +33,9 @@
 	display: none;
 	height: 440px;
 	width: calc(100% - 80px);
+	@include media(">phone", "<=440px") {
+		width: calc(100% - 40px);
+	} 
 	padding: 100px 40px 40px;
 	position: absolute;
 	top: 0;
@@ -58,6 +61,7 @@
 				color:$main-light;
 			}
 			.mod-240 {
+				margin: 0 auto;
 				@include media(">phone", "<=400px") {
 					width: 170px;
 				} 

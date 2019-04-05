@@ -11294,6 +11294,12 @@ input[type=radio]:checked + label:after {
   z-index: 10;
 }
 
+@media (min-width: 321px) and (max-width: 440px) {
+  .mobile-menu-wrapper {
+    width: calc(100% - 40px);
+  }
+}
+
 .mobile-menu-wrapper .mobile-main-menu .close img {
   position: absolute;
   right: 14px;
@@ -11324,6 +11330,10 @@ input[type=radio]:checked + label:after {
   color: #fff;
 }
 
+.mobile-menu-wrapper .mobile-main-menu .mobile-menu-items .mod-240 {
+  margin: 0 auto;
+}
+
 @media (min-width: 321px) and (max-width: 400px) {
   .mobile-menu-wrapper .mobile-main-menu .mobile-menu-items .mod-240 {
     width: 170px;
@@ -11341,7 +11351,7 @@ input[type=radio]:checked + label:after {
 }
 
 .footer .single-btn {
-  margin-bottom: 30px;
+  margin: 0 auto 30px;
 }
 
 .footer a {
