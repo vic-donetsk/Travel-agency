@@ -5,6 +5,19 @@ input[type=radio]:not(:checked) + label:after {
   transition: all 0.2s ease;
 }
 
+.single-btn {
+  font-family: "Proxima Nova Rg";
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  height: 40px;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
 .link-style {
   text-decoration: underline;
   font-family: "Proxima Nova Rg";
@@ -10758,122 +10771,47 @@ body {
   font-weight: normal;
 }
 
-/*
-.btn {
-    &-blue {
-	    @include button($accent-light-blue);
-    }
-
-    &-blue:hover {
-        @include button($accent-dark-blue);
-        cursor: pointer;
-
-        &:first-of-type {
-
-        }
-    }
-
-    &.mod-green {
-        @include button($accent-light-green);
-        box-shadow: 0 3px 6px 0 $accent-dark-green;
-    }
-}
-
-.page_home {
-
-}
-*/
-
-.btn-blue {
-  display: block;
-  width: 140px;
-  height: 40px;
-  border-radius: 4px;
+.single-btn.mod-blue {
   background-color: #084599;
-  text-align: center;
-  line-height: 40px;
-  color: #fff;
-  font-family: "Proxima Nova Rg";
-  font-size: 16px;
-  font-weight: bold;
 }
 
-.btn-blue:hover {
-  display: block;
-  width: 140px;
-  height: 40px;
-  border-radius: 4px;
+.single-btn.mod-blue:hover {
   background-color: #023881;
-  text-align: center;
-  line-height: 40px;
-  color: #fff;
-  font-family: "Proxima Nova Rg";
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
 }
 
-.btn-off {
-  display: block;
-  width: 140px;
-  height: 40px;
-  border-radius: 4px;
-  background-color: #ccc;
-  text-align: center;
-  line-height: 40px;
-  color: #fff;
-  font-family: "Proxima Nova Rg";
-  font-size: 16px;
-  font-weight: bold;
-  cursor: default;
-}
-
-.mod-green {
-  display: block;
-  width: 140px;
-  height: 40px;
-  border-radius: 4px;
+.single-btn.mod-green {
   background-color: #37DB67;
-  text-align: center;
-  line-height: 40px;
-  color: #fff;
-  font-family: "Proxima Nova Rg";
-  font-size: 16px;
-  font-weight: bold;
   box-shadow: 0 3px 6px 0 #24BF51;
 }
 
-.mod-green:hover {
-  display: block;
-  width: 140px;
-  height: 40px;
-  border-radius: 4px;
+.single-btn.mod-green:hover {
   background-color: #24BF51;
-  text-align: center;
-  line-height: 40px;
-  color: #fff;
-  font-family: "Proxima Nova Rg";
-  font-size: 16px;
-  font-weight: bold;
   box-shadow: none;
-  cursor: pointer;
 }
 
-.btn-white {
-  display: block;
-  width: 180px;
-  height: 40px;
-  border-radius: 4px;
+.single-btn.mod-white {
   background-color: #fff;
-  text-align: center;
-  line-height: 40px;
-  color: #fff;
-  font-family: "Proxima Nova Rg";
-  font-size: 16px;
-  font-weight: bold;
-  box-shadow: none;
-  cursor: pointer;
   color: #084599;
+}
+
+.single-btn.mod-white:hover {
+  color: #023881;
+}
+
+.single-btn.mod-140 {
+  width: 140px;
+}
+
+.single-btn.mod-170 {
+  width: 170px;
+}
+
+.single-btn.mod-180 {
+  width: 180px;
+}
+
+.single-btn.mod-240 {
+  width: 240px;
 }
 
 input[type=radio]:checked,
@@ -11386,12 +11324,8 @@ input[type=radio]:checked + label:after {
   color: #fff;
 }
 
-.mobile-menu-wrapper .mobile-main-menu .mobile-menu-items .btn-green {
-  width: 240px;
-}
-
 @media (min-width: 321px) and (max-width: 400px) {
-  .mobile-menu-wrapper .mobile-main-menu .mobile-menu-items .btn-green {
+  .mobile-menu-wrapper .mobile-main-menu .mobile-menu-items .mod-240 {
     width: 170px;
   }
 }
@@ -11406,8 +11340,7 @@ input[type=radio]:checked + label:after {
   padding-top: 30px;
 }
 
-.footer .btn-green {
-  width: 170px;
+.footer .single-btn {
   margin-bottom: 30px;
 }
 

@@ -14,18 +14,7 @@
     background-image:  linear-gradient($angle, $gradient-from, $gradient-to);
 }
 
-@mixin button ($bg: $accent-light-blue, $width: 140px) {
-	display: block;
-	//margin: 0 auto;
-	width: $width;
-	height: 40px;
-	border-radius: 4px;
-	background-color: $bg;
-	text-align: center;
-	line-height: 40px;
-	color: $main-light;
-	@include font-header($header-size-4);
-}
+
 
 @mixin input-text ($width: 300px, $height: 50px) {
 	width: $width;

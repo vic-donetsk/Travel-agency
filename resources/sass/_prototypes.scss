@@ -5,6 +5,18 @@
     transition: all 0.2s ease;
 }
 
+%button  {
+	@include font-header($header-size-4);
+	display: block;
+	height: 40px;
+	border-radius: 4px;
+	text-align: center;
+	line-height: 40px;
+	color: $main-light;
+	cursor: pointer;
+}
+
+
 %a-style {
 	text-decoration: underline;
 	@include font-text();

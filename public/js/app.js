@@ -49174,12 +49174,17 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
+  // mobile menu
   $(".main-button").click(function () {
     $(".mobile-menu-wrapper").slideDown("slow");
   });
   $(".close").click(function () {
     $(".mobile-menu-wrapper").slideUp("slow");
-  });
+  }); // trip-cards client or seller hover
+
+  var isSeller = 1; // это тестовое значение, его надо будет убрать в дальнейшем
+
+  var hoverClass = isSeller ? 'seller-hover' : 'client-hover';
 });
 
 /***/ }),

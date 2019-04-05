@@ -1,5 +1,5 @@
 <footer class="footer">
-	<div class="btn-green"><i class="fas fa-plus"></i>&nbsp; Добавить тур</div>
+	<div class="single-btn mod-green mod-170"><i class="fas fa-plus"></i>&nbsp; Добавить тур</div>
 	<div class="header-3">
 		<a href="#">
 			@include('components.user-or-guest', ['text' => 'Вход/Регистрация'])

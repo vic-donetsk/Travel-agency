@@ -1,58 +1,42 @@
-/*
-.btn {
-    &-blue {
-	    @include button($accent-light-blue);
+.single-btn {
+	@extend %button;
+
+    &.mod-blue {
+	    background-color: $accent-light-blue;
     }
-
-    &-blue:hover {
-        @include button($accent-dark-blue);
-        cursor: pointer;
-
-        &:first-of-type {
-
-        }
+    &.mod-blue:hover {
+        background-color: $accent-dark-blue;
     }
 
     &.mod-green {
-        @include button($accent-light-green);
+        background-color: $accent-light-green;
         box-shadow: 0 3px 6px 0 $accent-dark-green;
+    }
+    &.mod-green:hover {
+        background-color: $accent-dark-green;
+        box-shadow: none;
+    }
+
+ 	&.mod-white {
+        background-color: $main-light;
+        color: $accent-light-blue;
+    }
+    &.mod-white:hover {
+		color: $accent-dark-blue;
+    }
+
+    &.mod-140 {
+		width: 140px;
+    }
+    &.mod-170 {
+		width: 170px;
+    }
+    &.mod-180 {
+		width: 180px;
+    }
+    &.mod-240 {
+		width: 240px;
     }
 }
 
-.page_home {
 
-}
-*/
-
-.btn-blue {
-	@include button($accent-light-blue);
-}
-
-.btn-blue:hover {
-	@include button($accent-dark-blue);
-	cursor: pointer;
-}
-
-.btn-off {
-	@include button($extra-grey-4);
-	cursor: default;
-}
-
-.mod-green {
-	@include button($accent-light-green);
-	box-shadow: 0 3px 6px 0 $accent-dark-green;
-
-	&:hover {
-		@include button($accent-dark-green);
-		box-shadow: none;
-		cursor: pointer;
-	}
-}
-
-
-.btn-white  {
-	@include button($main-light, 180px);
-	box-shadow: none;
-	cursor: pointer;
-	color: $accent-light-blue;
-}

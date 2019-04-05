@@ -25,7 +25,7 @@
 			<input class="search-tour text-2" type="text" placeholder="Поиск предложения">
 			<a class="search" href="#"><i class="fas fa-search"></i></a>
 		</div>
-		<div class="btn-white">
+		<div class="single-btn mod-white mod-180">
 			<i class="fas fa-plus"></i>&nbsp; Добавить тур
 		</div>
 	</div>

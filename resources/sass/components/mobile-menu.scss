@@ -57,8 +57,7 @@
 			a {
 				color:$main-light;
 			}
-			.btn-green {
-				width: 240px;
+			.mod-240 {
 				@include media(">phone", "<=400px") {
 					width: 170px;
 				} 
