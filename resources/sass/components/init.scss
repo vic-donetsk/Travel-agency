@@ -4,4 +4,7 @@
 }
 body {
 	padding:0 40px;
+	@include media(">phone", "<=440px") { 
+		padding:0 20px;;
+	}
 }

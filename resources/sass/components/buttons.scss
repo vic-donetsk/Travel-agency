@@ -38,16 +38,18 @@
 	cursor: default;
 }
 
-.btn-green {
+.mod-green {
 	@include button($accent-light-green);
 	box-shadow: 0 3px 6px 0 $accent-dark-green;
+
+	&:hover {
+		@include button($accent-dark-green);
+		box-shadow: none;
+		cursor: pointer;
+	}
 }
 
-.btn-green:hover {
-	@include button($accent-dark-green);
-	box-shadow: none;
-	cursor: pointer;
-}
+
 .btn-white  {
 	@include button($main-light, 180px);
 	box-shadow: none;

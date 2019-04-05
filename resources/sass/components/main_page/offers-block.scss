@@ -1,0 +1,83 @@
+.trip-block {
+	margin: 0 auto;
+	max-width: 960px;
+	.block-title {
+		margin: 45px 10px 35px;
+		@include media(">phone", "<=440px") { 
+			margin: 60px 0 35px;;
+		}
+		@include flex;
+		//align-items:center;
+		.block-title-header {
+			@include font-header($header-size-2);
+			color: $main-dark;
+		}
+		.block-title-link a {
+			@include font-text;
+			color: $extra-grey-6;
+			&:hover {
+				cursor: pointer;
+				color: $accent-light-blue;
+			}
+		}
+		@include media(">phone", "<=736px") {
+			@include flex(flex-start, column, no-wrap);
+		}
+	}
+	// size of trip-cards instead of display width
+	.firsts {
+		width: 460px;
+		height: 300px;
+		.proposition {
+			height: 160px;
+		}
+		.trip-description {
+			@include flex;
+		}
+		.trip-route {
+			text-align: left;
+		}
+		@include media(">phone", "<=1057px") { 
+				width: 300px;
+				height: 380px;
+				.trip-description {
+					@include flex(center, column);
+				}
+				.mod-green {
+					margin: 0 auto;
+				}
+				.trip-route {
+					text-align: center;
+				}
+
+		}
+
+	}
+	.nexts {
+		width: 300px;
+		height: 380px;
+		.trip-description {
+			@include flex(center, column);
+		}
+		.mod-green {
+			margin: 0 auto;
+		}
+	}
+	.others {
+		width: 300px;
+		height: 380px;
+		.trip-description {
+			@include flex(center, column);
+		}
+		.mod-green {
+			margin: 0 auto;
+		}
+		@include media(">phone", "<=736px") {
+			display: none;
+		}
+	}
+	.show-block {
+		@include flex(center, row, wrap);
+
+	}
+}

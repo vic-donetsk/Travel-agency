@@ -16,7 +16,7 @@
 
 @mixin button ($bg: $accent-light-blue, $width: 140px) {
 	display: block;
-	margin: 0 auto;
+	//margin: 0 auto;
 	width: $width;
 	height: 40px;
 	border-radius: 4px;

@@ -10716,6 +10716,12 @@ body {
   padding: 0 40px;
 }
 
+@media (min-width: 321px) and (max-width: 440px) {
+  body {
+    padding: 0 20px;
+  }
+}
+
 .header-1 {
   font-family: "Proxima Nova Rg";
   font-size: 24px;
@@ -10780,7 +10786,6 @@ body {
 
 .btn-blue {
   display: block;
-  margin: 0 auto;
   width: 140px;
   height: 40px;
   border-radius: 4px;
@@ -10795,7 +10800,6 @@ body {
 
 .btn-blue:hover {
   display: block;
-  margin: 0 auto;
   width: 140px;
   height: 40px;
   border-radius: 4px;
@@ -10811,7 +10815,6 @@ body {
 
 .btn-off {
   display: block;
-  margin: 0 auto;
   width: 140px;
   height: 40px;
   border-radius: 4px;
@@ -10825,9 +10828,8 @@ body {
   cursor: default;
 }
 
-.btn-green {
+.mod-green {
   display: block;
-  margin: 0 auto;
   width: 140px;
   height: 40px;
   border-radius: 4px;
@@ -10841,9 +10843,8 @@ body {
   box-shadow: 0 3px 6px 0 #24BF51;
 }
 
-.btn-green:hover {
+.mod-green:hover {
   display: block;
-  margin: 0 auto;
   width: 140px;
   height: 40px;
   border-radius: 4px;
@@ -10860,7 +10861,6 @@ body {
 
 .btn-white {
   display: block;
-  margin: 0 auto;
   width: 180px;
   height: 40px;
   border-radius: 4px;
@@ -11050,15 +11050,20 @@ input[type=radio]:checked + label:after {
 }
 
 .trip-card {
-  width: 300px;
-  height: 380px;
+  margin: 0 10px 20px;
   box-sizing: border-box;
   border-radius: 0 0 4px 4px;
   border: solid 2px #f6fafb;
   background: #fff;
   position: relative;
-  /* hower mask for seller hover */
+  /* hover mask for seller hover */
   /* end hover*/
+}
+
+@media (min-width: 321px) and (max-width: 440px) {
+  .trip-card {
+    margin: 0 0 20px;
+  }
 }
 
 .trip-card .seller-modal {
@@ -11091,7 +11096,7 @@ input[type=radio]:checked + label:after {
 }
 
 .trip-card .foto {
-  width: 296px;
+  width: 100%;
   height: 216px;
 }
 
@@ -11104,59 +11109,81 @@ input[type=radio]:checked + label:after {
   position: absolute;
   top: 140px;
   left: 0;
-  width: 300px;
+  width: 100%;
   height: 240px;
   background: black transparent;
-  padding-top: 43px;
+  padding: 43px 20px 0;
   text-align: center;
 }
 
 .trip-card .trip-condition {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
   align-items: center;
   height: 24px;
   line-height: 24px;
   color: #fff;
-  margin-bottom: 36px;
+  margin-bottom: 30px;
 }
 
-.trip-card .trip-type {
-  margin-left: 20px;
-  height: 14px;
-  width: 14px;
+.trip-card .trip-condition .trip-condition-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.trip-card .trip-condition .trip-condition-block .trip-type {
+  margin-top: 2px;
+  height: 15px;
+  width: 15px;
   line-height: 1px;
 }
 
-.trip-card .trip-duration,
-.trip-card .trip-hotel {
-  margin-left: 11px;
+.trip-card .trip-condition .trip-condition-block .trip-duration,
+.trip-card .trip-condition .trip-condition-block .trip-hotel {
+  margin-left: 10px;
   font-family: "Proxima Nova Rg";
   font-size: 14px;
   font-weight: bold;
 }
 
-.trip-card .trip-cost {
-  margin-left: 45px;
+@media (min-width: 321px) and (max-width: 440px) {
+  .trip-card .trip-condition .trip-condition-block .trip-duration,
+  .trip-card .trip-condition .trip-condition-block .trip-hotel {
+    font-family: "Proxima Nova Rg";
+    font-size: 12px;
+    font-weight: bold;
+  }
+}
+
+.trip-card .trip-condition .trip-condition-block .trip-cost {
   font-family: "Proxima Nova Rg";
   font-size: 18px;
   font-weight: bold;
 }
 
-.trip-card .trip-currency {
-  margin-left: 5px;
+.trip-card .trip-condition .trip-condition-block .trip-currency {
   font-family: "Proxima Nova Rg";
   font-size: 12px;
   font-weight: normal;
+  margin-left: 5px;
+  margin-top: 2px;
+  line-height: 2;
 }
 
-.trip-card .trip-kurort {
+.trip-card .trip-description .trip-kurort {
   font-family: "Proxima Nova Rg";
   font-size: 18px;
   font-weight: bold;
   color: #084599;
+  margin: 0;
+  line-height: 1;
 }
 
-.trip-card .trip-route {
+.trip-card .trip-description .trip-route {
   font-family: "Proxima Nova Rg";
   font-size: 14px;
   font-weight: normal;
@@ -11291,6 +11318,10 @@ input[type=radio]:checked + label:after {
   border-radius: 50%;
 }
 
+.user-name {
+  display: inline-block;
+}
+
 .mobile-header-menu {
   background-image: linear-gradient(76deg, #084599, #05a8d4);
   max-width: 960px;
@@ -11412,5 +11443,139 @@ input[type=radio]:checked + label:after {
   font-size: 12px;
   font-weight: normal;
   color: #084599;
+}
+
+.trip-block {
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+.trip-block .block-title {
+  margin: 45px 10px 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+@media (min-width: 321px) and (max-width: 440px) {
+  .trip-block .block-title {
+    margin: 60px 0 35px;
+  }
+}
+
+.trip-block .block-title .block-title-header {
+  font-family: "Proxima Nova Rg";
+  font-size: 22px;
+  font-weight: bold;
+  color: #323232;
+}
+
+.trip-block .block-title .block-title-link a {
+  font-family: "Proxima Nova Rg";
+  font-size: 14px;
+  font-weight: normal;
+  color: #4d4d4d;
+}
+
+.trip-block .block-title .block-title-link a:hover {
+  cursor: pointer;
+  color: #084599;
+}
+
+@media (min-width: 321px) and (max-width: 736px) {
+  .trip-block .block-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: no-wrap;
+  }
+}
+
+.trip-block .firsts {
+  width: 460px;
+  height: 300px;
+}
+
+.trip-block .firsts .proposition {
+  height: 160px;
+}
+
+.trip-block .firsts .trip-description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.trip-block .firsts .trip-route {
+  text-align: left;
+}
+
+@media (min-width: 321px) and (max-width: 1057px) {
+  .trip-block .firsts {
+    width: 300px;
+    height: 380px;
+  }
+
+  .trip-block .firsts .trip-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+  .trip-block .firsts .mod-green {
+    margin: 0 auto;
+  }
+
+  .trip-block .firsts .trip-route {
+    text-align: center;
+  }
+}
+
+.trip-block .nexts {
+  width: 300px;
+  height: 380px;
+}
+
+.trip-block .nexts .trip-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.trip-block .nexts .mod-green {
+  margin: 0 auto;
+}
+
+.trip-block .others {
+  width: 300px;
+  height: 380px;
+}
+
+.trip-block .others .trip-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.trip-block .others .mod-green {
+  margin: 0 auto;
+}
+
+@media (min-width: 321px) and (max-width: 736px) {
+  .trip-block .others {
+    display: none;
+  }
+}
+
+.trip-block .show-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 

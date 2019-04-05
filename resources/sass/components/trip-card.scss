@@ -1,14 +1,15 @@
 .trip-card {
-    width: 300px;
-    height: 380px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+    margin: 0 10px 20px;
+    @include media(">phone", "<=440px") { 
+		margin: 0 0 20px;;
+	}
+    //height: 380px;
     box-sizing: border-box;
     border-radius: 0 0 4px 4px;
     border: solid 2px #f6fafb;
     background: #fff;
     position: relative;
-	/* hower mask for seller hover */
+	/* hover mask for seller hover */
 	.seller-modal {
 		display: none;
 		position: absolute;
@@ -38,7 +39,7 @@
 	    position: relative;
 	}
 	.foto {
-	    width: 296px;
+	    width: 100%;// calc(100% - 4px);
 	    height: 216px;
 	}
 	.green-bottom {
@@ -49,47 +50,61 @@
 	    position: absolute;
 	    top: 140px;
 	    left: 0;
-	    width: 300px;
+	    width: 100%;
 	    height: 240px;
 	    background: black transparent;
-	    padding-top: 43px;
+	    padding: 43px 20px 0;
 		text-align: center;
 	}
 	.trip-condition {
-	    display: flex;
+	    @include flex;
 	    align-items: center;
 	    height: 24px;
 	    line-height: 24px;
 		color: $main-light;
-		margin-bottom: 36px;
-	}
-	.trip-type {
-		margin-left: 20px;
-		height: 14px;
-		width: 14px;
-		line-height: 1px;
-	}
-	.trip-duration, .trip-hotel {
-		margin-left: 11px;
-		@include font-header(14px);
-	}
-	.trip-cost {
-		margin-left: 45px;
-		@include font-header($header-size-3);
+		margin-bottom: 30px;
 
+		.trip-condition-block {
+			@include flex;
+	
+			.trip-type {
+				margin-top: 2px;
+				height: 15px;
+				width: 15px;
+				line-height: 1px;
+			}
+			.trip-duration, .trip-hotel {
+				margin-left: 10px;
+				@include font-header(14px);
+				@include media(">phone", "<=440px") { 
+					@include font-header(12px);
+				}
+			}
+			.trip-cost {
+				@include font-header($header-size-3);
+
+			}
+			.trip-currency {
+				@include font-text($text-size-2);
+				margin-left: 5px;
+				margin-top: 2px;
+				line-height: 2;
+			}
+		}
 	}
-	.trip-currency {
-		margin-left: 5px;
-		@include font-text($text-size-2);
-	}
-	.trip-kurort {
-		@include font-header($header-size-3);
-		color: $accent-light-blue;
-	}
-	.trip-route {
-		@include font-text($text-size-1);
-		color: $extra-grey-4;
-		margin-bottom: 20px;
+	.trip-description {
+		//@include flex;
+		.trip-kurort {
+			@include font-header($header-size-3);
+			color: $accent-light-blue;
+			margin: 0;
+			line-height: 1;
+		}
+		.trip-route {
+			@include font-text($text-size-1);
+			color: $extra-grey-4;
+			margin-bottom: 20px;
+		}
 	}
 }
 

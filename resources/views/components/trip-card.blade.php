@@ -1,8 +1,6 @@
- <div class="{{ $classes }}">  <!-- !!!!!! здесь надо будет жестко поставить trip-card !!!!!! -->
-
+ <div class="trip-card {{ $show }}"> 
 <!-- hover продавца - докинуть класс seller-hover
      hover клиента - докинуть класс client-hover -->
-     
     <div class="picture">
       <img class="foto" src="img/test-trip.png" alt="Beauty">
               <div class="seller-modal">
@@ -17,14 +15,22 @@
     </div>
     <div class="proposition">
       <div class="trip-condition">
-        <img  class="trip-type" src="img/outline-pool-24px.svg" alt="П">
-        <div class="trip-duration"> 4 дня/5 ночей</div>
-        <div class="trip-hotel"> 5*</div>
-        <div class="trip-cost">35 895</div>
-        <div class="trip-currency"><i class="fab fa-btc"></i> </div>
+        <div class="trip-condition-block">
+          <img  class="trip-type" src="img/outline-pool-24px.svg" alt="П">
+            <div class="trip-duration"> 4 дня/5 ночей</div>
+            <div class="trip-hotel"> 5*</div>
+        </div>
+        <div class="trip-condition-block">
+            <div class="trip-cost">35 895</div>
+            <div class="trip-currency"><i class="fab fa-btc"></i> </div>
+        </div>
       </div>
-      <div class="trip-kurort">Индонезия (о.Бали)</div>
-    <div class="trip-route">Вылет из Киева</div>
-    <div class="btn-blue">Заказать</div>
+      <div class="trip-description">
+          <div class="trip-where">
+              <p class="trip-kurort">Индонезия (о.Бали)</p>
+              <p class="trip-route">Вылет из Киева</p>
+          </div>
+          <div class="mod-green">Заказать</div>
+      </div>
     </div>
   </div>  

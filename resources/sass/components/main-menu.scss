@@ -29,7 +29,8 @@
 			margin-right: 50px;
 			@include media(">tablet", "<=small_desktop") {
 				margin-right: 18px;
-			}  
+			}
+
 		}
 		.right-menu {
 			@include flex();
@@ -67,4 +68,7 @@
 	width: 26px;	
 	height: 26px;
 	border-radius: 50%;	
+}
+.user-name   {
+	display: inline-block;
 }
