@@ -13,7 +13,9 @@ $(document).ready( ()=>{
 
 	let hoverClass = (isSeller) ? 'seller-hover' : 'client-hover';
 
-
+	$(".trip-card").hover( (e) => {
+		$(e.delegateTarget).toggleClass(hoverClass);
+	})
 
 	 
 

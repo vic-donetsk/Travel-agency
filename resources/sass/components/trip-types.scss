@@ -1,3 +1,23 @@
+.trip-types {
+	@include flex;
+	align-items: center;
+	height: 100px;
+	line-height: 100px;
+	padding: 0 40px;
+	background-color: $extra-grey-2;
+	.trip-types-header {
+		@include font-header($header-size-3);
+	}
+	.trip-types-icons {
+		@include flex(flex-end);
+		line-height: 100px;
+	}
+}
+
+
+
+
+
 .trip-category {
 	margin: 0 10px;
 	text-align: center;

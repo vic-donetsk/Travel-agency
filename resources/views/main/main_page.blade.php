@@ -9,6 +9,9 @@
 
 	@include('components.mob-main-menu',['user_name' => 'Василий Пупкин', 'user_foto' => 'img/user.png'])
 
+	@include('components.trip-types')
+
+
 	<section class="offers-block">
 		<div class="trip-block">
 			<div class="block-title">
