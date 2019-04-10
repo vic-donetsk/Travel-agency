@@ -13,11 +13,15 @@
 		color: $main-light;
 	}
 	.authors {
-		margin-top: 30px;
 		@include flex(center);
+		margin-top: 30px;
 		.author {
+			margin: 0 18px;
 			width: 103px;
 			text-align: center;
+			@include media(">phone", "<=327px") { 
+			margin: 0 11px;
+		}
 		}
 	}
 }

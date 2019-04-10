@@ -49187,6 +49187,11 @@ $(document).ready(function () {
   var hoverClass = isSeller ? 'seller-hover' : 'client-hover';
   $(".trip-card").hover(function (e) {
     $(e.delegateTarget).toggleClass(hoverClass);
+  }); // set tooltips by JQuery UI for trip categories
+
+  $('.trip-category-icon').tooltip({
+    placement: 'top' //offset: 10 
+
   });
 });
 

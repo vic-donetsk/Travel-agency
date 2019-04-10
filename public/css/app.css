@@ -40,10 +40,10 @@ input[type=radio]:not(:checked) + label:after {
   cursor: pointer;
 }
 
-.trip-category .trip-category-icon {
+.trip-category-icon {
   margin: 0 auto;
-  width: 46px;
-  height: 46px;
+  min-width: 46px;
+  min-height: 46px;
   line-height: 40px;
   border: solid 1px #ccc;
   border-radius: 50%;
@@ -11359,37 +11359,63 @@ input[type=radio]:checked + label:after {
 }
 
 .footer .authors {
-  margin-top: 30px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   flex-wrap: nowrap;
+  margin-top: 30px;
 }
 
 .footer .authors .author {
+  margin: 0 18px;
   width: 103px;
   text-align: center;
 }
 
-.trip-types {
+@media (min-width: 321px) and (max-width: 327px) {
+  .footer .authors .author {
+    margin: 0 11px;
+  }
+}
+
+.trip-types-container {
+  height: 100px;
+  background-color: #f7f7f7;
+  line-height: 100px;
+}
+
+.trip-types-container .trip-types {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: nowrap;
   align-items: center;
-  height: 100px;
-  line-height: 100px;
-  padding: 0 40px;
-  background-color: #f7f7f7;
+  margin: 0 auto;
+  max-width: 940px;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
-.trip-types .trip-types-header {
+@media (min-width: 441px) and (max-width: 1056px) {
+  .trip-types-container .trip-types {
+    padding: 0 10px;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 440px) {
+  .trip-types-container .trip-types {
+    padding: 0;
+  }
+}
+
+.trip-types-container .trip-types .trip-types-header {
   font-family: "Proxima Nova Rg";
   font-size: 18px;
   font-weight: bold;
+  min-width: 140px;
 }
 
-.trip-types .trip-types-icons {
+.trip-types-container .trip-types .trip-types-icons {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -11397,21 +11423,44 @@ input[type=radio]:checked + label:after {
   line-height: 100px;
 }
 
-.trip-category {
-  margin: 0 10px;
+.trip-category-icon {
+  margin: 0 12px;
   text-align: center;
 }
 
-.trip-category .trip-category-icon .img {
+.trip-category-icon .img {
   width: 24px;
   height: 24px;
 }
 
-.trip-category .trip-category-name {
+.trip-category-icon:hover {
+  background-image: linear-gradient(to bottom, #084599, #05a8d4);
+}
+
+.trip-category-icon:last-of-type {
+  margin-right: 0;
+}
+
+.tooltip-inner {
   font-family: "Proxima Nova Rg";
   font-size: 12px;
-  font-weight: normal;
+  font-weight: bold;
   color: #084599;
+  background: #fff;
+  padding: 0 15px;
+  border: 1px solid #084599;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.bs-tooltip-auto[x-placement^=bottom] .arrow::before,
+.bs-tooltip-bottom .arrow::before {
+  top: 0;
+  left: 50%;
+  margin-left: -10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 7px solid #084599;
 }
 
 .trip-block {

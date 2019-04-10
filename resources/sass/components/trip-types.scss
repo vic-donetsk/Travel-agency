@@ -1,35 +1,65 @@
-.trip-types {
-	@include flex;
-	align-items: center;
-	height: 100px;
-	line-height: 100px;
-	padding: 0 40px;
-	background-color: $extra-grey-2;
-	.trip-types-header {
-		@include font-header($header-size-3);
-	}
-	.trip-types-icons {
-		@include flex(flex-end);
+.trip-types-container {
+		height: 100px;
+		background-color: $extra-grey-2;
 		line-height: 100px;
+	.trip-types {
+		@include flex;
+		align-items: center;
+		margin: 0 auto;
+		max-width: 940px;
+		overflow-x: auto;
+		overflow-y: hidden;
+		@include media(">440px", "<=1056px") { 
+			padding: 0 10px;
+		}
+		@include media(">phone", "<=440px") { 
+			padding: 0;
+		}
+		.trip-types-header {
+			@include font-header($header-size-3);
+			min-width: 140px;
+		}
+		.trip-types-icons {
+			@include flex(flex-end);
+			line-height: 100px;
+		}
 	}
 }
 
-
-
-
-
-.trip-category {
-	margin: 0 10px;
+.trip-category-icon {
+	margin: 0 12px;
 	text-align: center;
-	.trip-category-icon {
 		@extend %category-icon;
 		.img {
 			width: 24px;
 			height: 24px;
 		}
+
+	&:hover {
+		@include background-gradient(to bottom);
+
 	}
-	.trip-category-name {
-		@include font-text($text-size-2);
-		color: $accent-light-blue;
+	&:last-of-type {
+		margin-right: 0;
 	}
+}
+
+.tooltip-inner {
+	@include font-header(12px);
+
+    color: $accent-light-blue;
+    background: $main-light;
+    padding: 0 15px;	
+    border: 1px solid $accent-light-blue;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.bs-tooltip-auto[x-placement^=bottom] .arrow::before, .bs-tooltip-bottom .arrow::before {
+    top:0;
+    left:50%;
+    margin-left:-10px;
+    border-left:10px solid transparent;
+    border-right:10px solid transparent;
+    border-bottom:7px solid $accent-light-blue;
 }
