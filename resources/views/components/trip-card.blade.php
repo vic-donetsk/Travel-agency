@@ -1,7 +1,7 @@
  <div class="trip-card {{ $show }}"> 
 <!-- hover продавца - докинуть класс seller-hover
      hover клиента - докинуть класс client-hover -->
-    <div class="picture">
+    <div class="trip-card-picture">
       <img class="foto" src="img/test-trip.png" alt="Beauty">
               <div class="seller-modal">
                 <div class="seller-choice">
@@ -11,24 +11,24 @@
                   <a href="#"><img src="img/rubbish-bin.svg" alt="П"></a>
                 </div>
               </div>
-      <div class="green-bottom"></div>
+      <div class="trip-card-green-bottom"></div>
     </div>
-    <div class="proposition">
-      <div class="trip-condition">
-        <div class="trip-condition-block">
-          <img  class="trip-type" src="img/outline-pool-24px.svg" alt="П">
-            <div class="trip-duration"> 4 дня/5 ночей</div>
-            <div class="trip-hotel"> 5*</div>
+    <div class="trip-card-proposition">
+      <div class="trip-condition-block">
+        <div class="trip-condition">
+          <img  class="trip-condition-type" src="img/outline-pool-24px.svg" alt="П">
+            <div class="trip-condition-duration"> 4 дня/5 ночей</div>
+            <div class="trip-condition-hotel"> 5*</div>
         </div>
-        <div class="trip-condition-block">
-            <div class="trip-cost">35 895</div>
-            <div class="trip-currency"><i class="fab fa-btc"></i> </div>
+        <div class="trip-condition">
+            <div class="trip-condition-cost">35 895</div>
+            <div class="trip-condition-currency"><i class="fab fa-btc"></i> </div>
         </div>
       </div>
       <div class="trip-description">
-          <div class="trip-where">
-              <p class="trip-kurort">Индонезия (о.Бали)</p>
-              <p class="trip-route">Вылет из Киева</p>
+          <div class="trip-description-where">
+              <p class="trip-description-kurort">Индонезия (о.Бали)</p>
+              <p class="trip-description-route">Вылет из Киева</p>
           </div>
           <div class="single-btn mod-green mod-140">Заказать</div>
       </div>

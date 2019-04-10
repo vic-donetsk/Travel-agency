@@ -49190,8 +49190,7 @@ $(document).ready(function () {
   }); // set tooltips by JQuery UI for trip categories
 
   $('.trip-category-icon').tooltip({
-    placement: 'top' //offset: 10 
-
+    placement: 'top'
   });
 });
 

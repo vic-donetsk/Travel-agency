@@ -18,7 +18,6 @@ $(document).ready( ()=>{
 	// set tooltips by JQuery UI for trip categories
 	$('.trip-category-icon').tooltip({   
 		placement: 'top',
-		//offset: 10 
 	});
 
 

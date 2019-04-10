@@ -11026,24 +11026,24 @@ input[type=radio]:checked + label:after {
   border: 1px solid #fff;
 }
 
-.trip-card .picture {
+.trip-card .trip-card-picture {
   line-height: 1px;
   display: block;
   height: 220px;
   position: relative;
 }
 
-.trip-card .foto {
+.trip-card .trip-card-picture .foto {
   width: 100%;
   height: 216px;
 }
 
-.trip-card .green-bottom {
+.trip-card .trip-card-green-bottom {
   height: 4px;
   background-color: #37db67;
 }
 
-.trip-card .proposition {
+.trip-card .trip-card-proposition {
   position: absolute;
   top: 140px;
   left: 0;
@@ -11054,7 +11054,7 @@ input[type=radio]:checked + label:after {
   text-align: center;
 }
 
-.trip-card .trip-condition {
+.trip-card .trip-condition-block {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -11066,44 +11066,38 @@ input[type=radio]:checked + label:after {
   margin-bottom: 30px;
 }
 
-.trip-card .trip-condition .trip-condition-block {
+.trip-card .trip-condition-block .trip-condition {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: nowrap;
 }
 
-.trip-card .trip-condition .trip-condition-block .trip-type {
+.trip-card .trip-condition-block .trip-condition .trip-condition-type {
   margin-top: 2px;
   height: 15px;
   width: 15px;
   line-height: 1px;
 }
 
-.trip-card .trip-condition .trip-condition-block .trip-duration,
-.trip-card .trip-condition .trip-condition-block .trip-hotel {
+.trip-card .trip-condition-block .trip-condition .trip-condition-duration,
+.trip-card .trip-condition-block .trip-condition .trip-condition-hotel {
+  font-family: "Proxima Nova Rg";
+  font-size: 12px;
+  font-weight: bold;
   margin-left: 10px;
   font-family: "Proxima Nova Rg";
   font-size: 14px;
   font-weight: bold;
 }
 
-@media (min-width: 321px) and (max-width: 440px) {
-  .trip-card .trip-condition .trip-condition-block .trip-duration,
-  .trip-card .trip-condition .trip-condition-block .trip-hotel {
-    font-family: "Proxima Nova Rg";
-    font-size: 12px;
-    font-weight: bold;
-  }
-}
-
-.trip-card .trip-condition .trip-condition-block .trip-cost {
+.trip-card .trip-condition-block .trip-condition .trip-condition-cost {
   font-family: "Proxima Nova Rg";
   font-size: 18px;
   font-weight: bold;
 }
 
-.trip-card .trip-condition .trip-condition-block .trip-currency {
+.trip-card .trip-condition-block .trip-condition .trip-condition-currency {
   font-family: "Proxima Nova Rg";
   font-size: 12px;
   font-weight: normal;
@@ -11112,7 +11106,7 @@ input[type=radio]:checked + label:after {
   line-height: 2;
 }
 
-.trip-card .trip-description .trip-kurort {
+.trip-card .trip-description .trip-description-kurort {
   font-family: "Proxima Nova Rg";
   font-size: 18px;
   font-weight: bold;
@@ -11121,7 +11115,7 @@ input[type=radio]:checked + label:after {
   line-height: 1;
 }
 
-.trip-card .trip-description .trip-route {
+.trip-card .trip-description .trip-description-route {
   font-family: "Proxima Nova Rg";
   font-size: 14px;
   font-weight: normal;
@@ -11468,7 +11462,7 @@ input[type=radio]:checked + label:after {
   max-width: 960px;
 }
 
-.trip-block .block-title {
+.trip-block .trip-block-title {
   margin: 45px 10px 35px;
   display: flex;
   flex-direction: row;
@@ -11477,32 +11471,32 @@ input[type=radio]:checked + label:after {
 }
 
 @media (min-width: 321px) and (max-width: 440px) {
-  .trip-block .block-title {
+  .trip-block .trip-block-title {
     margin: 60px 0 35px;
   }
 }
 
-.trip-block .block-title .block-title-header {
+.trip-block .trip-block-title .trip-block-title-header {
   font-family: "Proxima Nova Rg";
   font-size: 22px;
   font-weight: bold;
   color: #323232;
 }
 
-.trip-block .block-title .block-title-link a {
+.trip-block .trip-block-title .trip-block-title-link a {
   font-family: "Proxima Nova Rg";
   font-size: 14px;
   font-weight: normal;
   color: #4d4d4d;
 }
 
-.trip-block .block-title .block-title-link a:hover {
+.trip-block .trip-block-title .trip-block-title-link a:hover {
   cursor: pointer;
   color: #084599;
 }
 
 @media (min-width: 321px) and (max-width: 736px) {
-  .trip-block .block-title {
+  .trip-block .trip-block-title {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -11590,7 +11584,7 @@ input[type=radio]:checked + label:after {
   }
 }
 
-.trip-block .show-block {
+.trip-block .trip-block-cards-show {
   display: flex;
   flex-direction: row;
   justify-content: center;

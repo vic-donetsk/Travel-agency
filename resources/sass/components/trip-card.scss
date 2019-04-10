@@ -32,21 +32,21 @@
 	}
 	/* end hover*/
 	
-	.picture {   
+	.trip-card-picture {   
 	    line-height: 1px;
 	    display: block;
 	    height: 220px;
 	    position: relative;
+		& .foto {
+		    width: 100%;// calc(100% - 4px);
+		    height: 216px;
+		}
 	}
-	.foto {
-	    width: 100%;// calc(100% - 4px);
-	    height: 216px;
-	}
-	.green-bottom {
+	.trip-card-green-bottom {
 	    height: 4px;
 	    background-color: #37db67;
 	}
-	.proposition {
+	.trip-card-proposition {
 	    position: absolute;
 	    top: 140px;
 	    left: 0;
@@ -56,7 +56,7 @@
 	    padding: 43px 20px 0;
 		text-align: center;
 	}
-	.trip-condition {
+	.trip-condition-block {
 	    @include flex;
 	    align-items: center;
 	    height: 24px;
@@ -64,27 +64,27 @@
 		color: $main-light;
 		margin-bottom: 30px;
 
-		.trip-condition-block {
+		.trip-condition {
 			@include flex;
 	
-			.trip-type {
+			.trip-condition-type {
 				margin-top: 2px;
 				height: 15px;
 				width: 15px;
 				line-height: 1px;
 			}
-			.trip-duration, .trip-hotel {
+			.trip-condition-duration, .trip-condition-hotel {
+				@include font-header(12px);
 				margin-left: 10px;
 				@include font-header(14px);
 				@include media(">phone", "<=440px") { 
-					@include font-header(12px);
 				}
 			}
-			.trip-cost {
+			.trip-condition-cost {
 				@include font-header($header-size-3);
 
 			}
-			.trip-currency {
+			.trip-condition-currency {
 				@include font-text($text-size-2);
 				margin-left: 5px;
 				margin-top: 2px;
@@ -93,14 +93,13 @@
 		}
 	}
 	.trip-description {
-		//@include flex;
-		.trip-kurort {
+		.trip-description-kurort {
 			@include font-header($header-size-3);
 			color: $accent-light-blue;
 			margin: 0;
 			line-height: 1;
 		}
-		.trip-route {
+		.trip-description-route {
 			@include font-text($text-size-1);
 			color: $extra-grey-4;
 			margin-bottom: 20px;
