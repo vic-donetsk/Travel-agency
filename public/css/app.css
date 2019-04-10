@@ -18,7 +18,7 @@ input[type=radio]:not(:checked) + label:after {
   cursor: pointer;
 }
 
-.link-style {
+.mod-link-style {
   text-decoration: underline;
   font-family: "Proxima Nova Rg";
   font-size: 14px;
@@ -10873,7 +10873,7 @@ input[type=radio]:checked + label:after {
   opacity: 1;
 }
 
-.link-style:hover {
+.mod-link-style:hover {
   cursor: pointer;
   color: #084599;
 }
@@ -11589,5 +11589,58 @@ input[type=radio]:checked + label:after {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.about {
+  margin: 60px auto 100px;
+  max-width: 940px;
+  height: auto;
+}
+
+@media (min-width: 738px) and (max-width: 1057px) {
+  .about {
+    max-width: 620px;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 736px) {
+  .about {
+    max-width: 300px;
+  }
+}
+
+.about .about-header {
+  font-family: "Proxima Nova Rg";
+  font-size: 22px;
+  font-weight: bold;
+  color: #323232;
+  margin-bottom: 33px;
+}
+
+.about .about-content {
+  font-family: "Proxima Nova Rg";
+  font-size: 14px;
+  font-weight: normal;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.about .mod-hidden {
+  height: 400px;
+  overflow: hidden;
+  margin-top: -80px;
+}
+
+.about .mod-hidden:before {
+  content: "";
+  display: block;
+  height: 80px;
+  position: relative;
+  top: 320px;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+}
+
+.about .about-showMore {
+  display: none;
 }
 

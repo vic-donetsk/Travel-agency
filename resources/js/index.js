@@ -17,10 +17,16 @@ $(document).ready( ()=>{
 
 	// set tooltips by JQuery UI for trip categories
 	$('.trip-category-icon').tooltip({   
-		placement: 'top',
+		placement: 'top'
 	});
 
-
+	if ($(window).width() <= 719) {
+		$(".about-content").addClass("mod-hidden");
+		$(".about-showMore").css("display", "block").click( ()=>{
+			$(".about-content").removeClass("mod-hidden");
+			$(".about-showMore").css("display", "none");
+		});
+	}
 
 
 });

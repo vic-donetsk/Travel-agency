@@ -13,8 +13,10 @@
 
 
 	@include('main.offers-block')
+	
+	@include('main.about')
 
-
+	
 
 
 	@include('components.footer',['user_name' => 'Василий Пупкин', 'user_foto' => 'img/user.png'])

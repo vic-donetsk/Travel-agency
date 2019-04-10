@@ -49192,6 +49192,14 @@ $(document).ready(function () {
   $('.trip-category-icon').tooltip({
     placement: 'top'
   });
+
+  if ($(window).width() <= 719) {
+    $(".about-content").addClass("mod-hidden");
+    $(".about-showMore").css("display", "block").click(function () {
+      $(".about-content").removeClass("mod-hidden");
+      $(".about-showMore").css("display", "none");
+    });
+  }
 });
 
 /***/ }),

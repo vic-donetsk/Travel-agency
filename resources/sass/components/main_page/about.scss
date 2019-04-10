@@ -1,0 +1,38 @@
+.about {
+	margin: 60px auto 100px;
+	max-width: 940px;
+	height: auto;
+	@include media(">737px", "<=1057px") { 
+		max-width: 620px;
+	}
+	@include media(">phone", "<=736px") {
+		max-width: 300px;
+	}
+	.about-header {
+		@include font-header($header-size-2);
+		color: $main-dark;
+		margin-bottom: 33px;
+	}
+	.about-content {
+		@include font-text;
+		color: $extra-grey-5;
+		margin-bottom: 25px;
+	}
+	.mod-hidden {
+		height: 400px;
+		overflow: hidden;
+		margin-top: -80px;
+
+		&:before{
+		    content:"";
+		    display:block;
+		    height:80px;
+		    position:relative;
+		    top:320px;
+		    background-image:linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+		}
+	}
+	.about-showMore {
+		display:none;
+	}
+}
