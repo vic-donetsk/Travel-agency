@@ -35,10 +35,10 @@ $(document).ready( ()=>{
 	});
 
 	if ($(window).width() <= 719) {
-		$(".about-content").addClass("mod-hidden");
-		$(".about-showMore").css("display", "block").click( ()=>{
-			$(".about-content").removeClass("mod-hidden");
-			$(".about-showMore").css("display", "none");
+		$(".about_content").addClass("mod_hidden");
+		$(".about_showMore").css("display", "block").click( ()=>{
+			$(".about_content").removeClass("mod_hidden");
+			$(".about_showMore").css("display", "none");
 		});
 	}
 

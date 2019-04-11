@@ -18,7 +18,7 @@ input[type=radio]:not(:checked) + label:after {
   cursor: pointer;
 }
 
-.mod-link-style {
+.mod_link-style {
   text-decoration: underline;
   font-family: "Proxima Nova Rg";
   font-size: 14px;
@@ -11398,7 +11398,7 @@ body {
   font-weight: bold;
 }
 
-.header-3 {
+.mod_header-3 {
   font-family: "Proxima Nova Rg";
   font-size: 18px;
   font-weight: bold;
@@ -11416,7 +11416,7 @@ body {
   font-weight: normal;
 }
 
-.mod-text-2 {
+.mod_text-2 {
   font-family: "Proxima Nova Rg";
   font-size: 12px;
   font-weight: normal;
@@ -11528,7 +11528,7 @@ input[type=radio]:checked + label:after {
   opacity: 1;
 }
 
-.mod-link-style:hover {
+.mod_link-style:hover {
   cursor: pointer;
   color: #084599;
 }
@@ -12014,7 +12014,7 @@ input[type=radio]:checked + label:after {
   color: #fff;
 }
 
-.footer .authors {
+.footer .footer_authors {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -12022,14 +12022,14 @@ input[type=radio]:checked + label:after {
   margin-top: 30px;
 }
 
-.footer .authors .author {
+.footer .footer_authors .author {
   margin: 0 18px;
   width: 103px;
   text-align: center;
 }
 
 @media (min-width: 321px) and (max-width: 327px) {
-  .footer .authors .author {
+  .footer .footer_authors .author {
     margin: 0 11px;
   }
 }
@@ -12328,7 +12328,7 @@ input[type=radio]:checked + label:after {
   }
 }
 
-.about .about-header {
+.about .about_header {
   font-family: "Proxima Nova Rg";
   font-size: 22px;
   font-weight: bold;
@@ -12336,7 +12336,7 @@ input[type=radio]:checked + label:after {
   margin-bottom: 33px;
 }
 
-.about .about-content {
+.about .about_content {
   font-family: "Proxima Nova Rg";
   font-size: 14px;
   font-weight: normal;
@@ -12344,13 +12344,13 @@ input[type=radio]:checked + label:after {
   margin-bottom: 25px;
 }
 
-.about .mod-hidden {
+.about .mod_hidden {
   height: 400px;
   overflow: hidden;
   margin-top: -80px;
 }
 
-.about .mod-hidden:before {
+.about .mod_hidden:before {
   content: "";
   display: block;
   height: 80px;
@@ -12359,7 +12359,7 @@ input[type=radio]:checked + label:after {
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
 }
 
-.about .about-showMore {
+.about .about_showMore {
   display: none;
 }
 

@@ -3,9 +3,9 @@
         <div class="close"><img src="/img/Group 484.svg" alt="X"></div>
         <div class="mobile-menu-items">
             <div class="mobile-trip-transport">
-                <div class="header-3"><a href="#"> Автобусные туры </a></div>
-                <div class="header-3"><a href="#"> Авиационные туры </a></div>
-                <div class="header-3"><a href="#"> Круизы </a></div>
+                <div class="mod_header-3"><a href="#"> Автобусные туры </a></div>
+                <div class="mod_header-3"><a href="#"> Авиационные туры </a></div>
+                <div class="mod_header-3"><a href="#"> Круизы </a></div>
             </div>
             <div class="user header-3">
                 

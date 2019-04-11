@@ -4,7 +4,7 @@
 .header-2 {
 	@include font-header($header-size-2);
 }
-.header-3 {
+.mod_header-3 {
 	@include font-header($header-size-3);
 }
 .header-4 {
@@ -13,6 +13,6 @@
 .text-1 {
 	@include font-text($text-size-1);
 }
-.mod-text-2 {
+.mod_text-2 {
 	@include font-text($text-size-2);
 }

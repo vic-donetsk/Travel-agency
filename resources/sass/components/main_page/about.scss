@@ -8,17 +8,17 @@
 	@include media(">phone", "<=736px") {
 		max-width: 300px;
 	}
-	.about-header {
+	.about_header {
 		@include font-header($header-size-2);
 		color: $main-dark;
 		margin-bottom: 33px;
 	}
-	.about-content {
+	.about_content {
 		@include font-text;
 		color: $extra-grey-5;
 		margin-bottom: 25px;
 	}
-	.mod-hidden {
+	.mod_hidden {
 		height: 400px;
 		overflow: hidden;
 		margin-top: -80px;
@@ -32,7 +32,7 @@
 		    background-image:linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
 		}
 	}
-	.about-showMore {
+	.about_showMore {
 		display:none;
 	}
 }

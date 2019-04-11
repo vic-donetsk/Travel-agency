@@ -12,7 +12,7 @@
 	a {
 		color: $main-light;
 	}
-	.authors {
+	.footer_authors {
 		@include flex(center);
 		margin-top: 30px;
 		.author {

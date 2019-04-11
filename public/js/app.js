@@ -57653,10 +57653,10 @@ $(document).ready(function () {
   });
 
   if ($(window).width() <= 719) {
-    $(".about-content").addClass("mod-hidden");
-    $(".about-showMore").css("display", "block").click(function () {
-      $(".about-content").removeClass("mod-hidden");
-      $(".about-showMore").css("display", "none");
+    $(".about_content").addClass("mod_hidden");
+    $(".about_showMore").css("display", "block").click(function () {
+      $(".about_content").removeClass("mod_hidden");
+      $(".about_showMore").css("display", "none");
     });
   } // popup-window for registered user
 
