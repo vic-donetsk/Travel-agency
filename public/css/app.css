@@ -12228,18 +12228,18 @@ input[type=radio]:checked + label:after {
   height: 300px;
 }
 
-.trip-block .firsts .proposition {
+.trip-block .firsts .tripCard_proposition {
   height: 160px;
 }
 
-.trip-block .firsts .trip-description {
+.trip-block .firsts .tripDescription {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: nowrap;
 }
 
-.trip-block .firsts .trip-route {
+.trip-block .firsts .tripDescription_route {
   text-align: left;
 }
 
@@ -12249,7 +12249,7 @@ input[type=radio]:checked + label:after {
     height: 380px;
   }
 
-  .trip-block .firsts .trip-description {
+  .trip-block .firsts .tripDescription {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12260,7 +12260,7 @@ input[type=radio]:checked + label:after {
     margin: 0 auto;
   }
 
-  .trip-block .firsts .trip-route {
+  .trip-block .firsts .tripDescription_route {
     text-align: center;
   }
 }
@@ -12270,7 +12270,7 @@ input[type=radio]:checked + label:after {
   height: 380px;
 }
 
-.trip-block .nexts .trip-description {
+.trip-block .nexts .tripDescription {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12286,7 +12286,7 @@ input[type=radio]:checked + label:after {
   height: 380px;
 }
 
-.trip-block .others .trip-description {
+.trip-block .others .tripDescription {
   display: flex;
   flex-direction: column;
   justify-content: center;
