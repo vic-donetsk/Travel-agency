@@ -7,6 +7,18 @@ $(document).ready( ()=>{
 		$(".mobile-menu-wrapper").slideUp("slow");
 	});
 
+
+	//swiper slider
+	var mySwiper = new Swiper ('.swiper-container', {
+      direction: 'horizontal',
+      autoplay: {
+      	delay: 2000
+      },
+      loop: true
+    });
+    mySwiper.autoplay.start();
+
+
 	// trip-cards client or seller hover
 	let isSeller = 1;
 	// это тестовое значение, его надо будет убрать в дальнейшем

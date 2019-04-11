@@ -34,4 +34,6 @@ const app = new Vue({
 
 require('./scripts/test');
 
+require('C:/OSPanel/domains/tourism/node_modules/swiper/dist/js/swiper.min');
+
 require('./index');

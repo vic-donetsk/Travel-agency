@@ -15,6 +15,9 @@
 // Include Media
 @import '~include-media/dist/_include-media';
 
+// Swiper
+@import '~swiper/dist/css/swiper';
+
 //  Components
 @import 'fonts';
 @import 'components/init';
@@ -32,5 +35,6 @@
 @import 'components/mobile-menu';
 @import 'components/footer';
 @import 'components/trip-types';
+@import 'components/main_page/swiper';
 @import 'components/main_page/offers-block';
 @import 'components/main_page/about';
