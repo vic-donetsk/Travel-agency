@@ -30,7 +30,7 @@
               <p class="tripDescription_kurort">Индонезия (о.Бали)</p>
               <p class="tripDescription_route">Вылет из Киева</p>
           </div>
-          <div class="single-btn mod_green mod-140">Заказать</div>
+          <div class="single-btn mod_green mod_140">Заказать</div>
       </div>
     </div>
   </div>  

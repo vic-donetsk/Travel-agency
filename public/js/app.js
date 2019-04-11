@@ -57626,11 +57626,11 @@ __webpack_require__.r(__webpack_exports__);
 
 $(document).ready(function () {
   // mobile menu
-  $(".main-button").click(function () {
-    $(".mobile-menu-wrapper").slideDown("slow");
+  $(".mobileHeaderMenu_mainButton").click(function () {
+    $(".mobileMenu_wrapper").slideDown("slow");
   });
-  $(".close").click(function () {
-    $(".mobile-menu-wrapper").slideUp("slow");
+  $(".mobileMenu_close").click(function () {
+    $(".mobileMenu_wrapper").slideUp("slow");
   }); //swiper slider
 
   var mySwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper-container', {

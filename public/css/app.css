@@ -11386,13 +11386,13 @@ body {
   }
 }
 
-.header-1 {
+.mod_header-1 {
   font-family: "Proxima Nova Rg";
   font-size: 24px;
   font-weight: bold;
 }
 
-.header-2 {
+.mod_header-2 {
   font-family: "Proxima Nova Rg";
   font-size: 22px;
   font-weight: bold;
@@ -11404,29 +11404,29 @@ body {
   font-weight: bold;
 }
 
-.header-4 {
+.mod_header-4 {
   font-family: "Proxima Nova Rg";
   font-size: 16px;
   font-weight: bold;
 }
 
-.text-1 {
+.mod_text-1 {
   font-family: "Proxima Nova Rg";
   font-size: 14px;
   font-weight: normal;
 }
 
-.mod_text-2 {
+.mod_mod_text-2 {
   font-family: "Proxima Nova Rg";
   font-size: 12px;
   font-weight: normal;
 }
 
-.single-btn.mod-blue {
+.single-btn.mod_blue {
   background-color: #084599;
 }
 
-.single-btn.mod-blue:hover {
+.single-btn.mod_blue:hover {
   background-color: #023881;
 }
 
@@ -11440,32 +11440,32 @@ body {
   box-shadow: none;
 }
 
-.single-btn.mod-white {
+.single-btn.mod_white {
   background-color: #fff;
   color: #084599;
 }
 
-.single-btn.mod-white:hover {
+.single-btn.mod_white:hover {
   color: #023881;
 }
 
-.single-btn.mod-140 {
+.single-btn.mod_140 {
   width: 140px;
 }
 
-.single-btn.mod-160 {
+.single-btn.mod_160 {
   width: 160px;
 }
 
-.single-btn.mod-170 {
+.single-btn.mod_170 {
   width: 170px;
 }
 
-.single-btn.mod-180 {
+.single-btn.mod_180 {
   width: 180px;
 }
 
-.single-btn.mod-240 {
+.single-btn.mod_240 {
   width: 240px;
 }
 
@@ -11916,7 +11916,7 @@ input[type=radio]:checked + label:after {
   text-decoration: none;
 }
 
-.mobile-header-menu {
+.mobileHeaderMenu {
   background-image: linear-gradient(76deg, #084599, #05a8d4);
   max-width: 960px;
   height: 80px;
@@ -11930,16 +11930,16 @@ input[type=radio]:checked + label:after {
 }
 
 @media (min-width: 961px) {
-  .mobile-header-menu {
+  .mobileHeaderMenu {
     display: none;
   }
 }
 
-.mobile-header-menu .main-button {
+.mobileHeaderMenu .mobileHeaderMenu_mainButton {
   cursor: pointer;
 }
 
-.mobile-menu-wrapper {
+.mobileMenu_wrapper {
   background-image: linear-gradient(36deg, #084599, #05a8d4);
   display: none;
   height: 440px;
@@ -11951,12 +11951,12 @@ input[type=radio]:checked + label:after {
 }
 
 @media (min-width: 321px) and (max-width: 440px) {
-  .mobile-menu-wrapper {
+  .mobileMenu_wrapper {
     width: calc(100% - 40px);
   }
 }
 
-.mobile-menu-wrapper .mobile-main-menu .close img {
+.mobileMenu_wrapper .mobileMenu .mobileMenu_close img {
   position: absolute;
   right: 14px;
   top: 14px;
@@ -11966,7 +11966,7 @@ input[type=radio]:checked + label:after {
   cursor: pointer;
 }
 
-.mobile-menu-wrapper .mobile-main-menu .mobile-menu-items {
+.mobileMenu_wrapper .mobileMenu .mobileMenu_items {
   height: 300px;
   display: flex;
   flex-direction: column;
@@ -11974,7 +11974,7 @@ input[type=radio]:checked + label:after {
   flex-wrap: nowrap;
 }
 
-.mobile-menu-wrapper .mobile-main-menu .mobile-menu-items .mobile-trip-transport {
+.mobileMenu_wrapper .mobileMenu .mobileMenu_items .mobile-trip-transport {
   height: 110px;
   display: flex;
   flex-direction: column;
@@ -11982,16 +11982,16 @@ input[type=radio]:checked + label:after {
   flex-wrap: nowrap;
 }
 
-.mobile-menu-wrapper .mobile-main-menu .mobile-menu-items a {
+.mobileMenu_wrapper .mobileMenu .mobileMenu_items a {
   color: #fff;
 }
 
-.mobile-menu-wrapper .mobile-main-menu .mobile-menu-items .mod-240 {
+.mobileMenu_wrapper .mobileMenu .mobileMenu_items .mod_240 {
   margin: 0 auto;
 }
 
 @media (min-width: 321px) and (max-width: 400px) {
-  .mobile-menu-wrapper .mobile-main-menu .mobile-menu-items .mod-240 {
+  .mobileMenu_wrapper .mobileMenu .mobileMenu_items .mod_240 {
     width: 170px;
   }
 }

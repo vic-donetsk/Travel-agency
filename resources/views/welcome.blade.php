@@ -26,9 +26,9 @@
     <body data-page="{{ Route::currentRouteName() }}" class="page_{{ Route::currentRouteName() }}">
 
         <div class="show_block">
-            <div class="single-btn mod-blue mod-140">Подробнее</div>
-            <div class="single-btn mod-white mod-140">Подробнее</div>
-            <div class="single-btn mod_green mod-170">Заказать</div>
+            <div class="single-btn mod_blue mod_140">Подробнее</div>
+            <div class="single-btn mod_white mod_140">Подробнее</div>
+            <div class="single-btn mod_green mod_170">Заказать</div>
         </div>
 
         <div class="show_block">

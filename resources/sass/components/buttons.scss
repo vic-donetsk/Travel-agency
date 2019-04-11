@@ -1,10 +1,10 @@
 .single-btn {
 	@extend %button;
 
-    &.mod-blue {
+    &.mod_blue {
 	    background-color: $accent-light-blue;
     }
-    &.mod-blue:hover {
+    &.mod_blue:hover {
         background-color: $accent-dark-blue;
     }
 
@@ -17,27 +17,27 @@
         box-shadow: none;
     }
 
- 	&.mod-white {
+ 	&.mod_white {
         background-color: $main-light;
         color: $accent-light-blue;
     }
-    &.mod-white:hover {
+    &.mod_white:hover {
 		color: $accent-dark-blue;
     }
 
-    &.mod-140 {
+    &.mod_140 {
         width: 140px;
     }   
-    &.mod-160 {
+    &.mod_160 {
 		width: 160px;
     }
-    &.mod-170 {
+    &.mod_170 {
 		width: 170px;
     }
-    &.mod-180 {
+    &.mod_180 {
 		width: 180px;
     }
-    &.mod-240 {
+    &.mod_240 {
 		width: 240px;
     }
 }

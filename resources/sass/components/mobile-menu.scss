@@ -1,4 +1,4 @@
-.mobile-header-menu {
+.mobileHeaderMenu {
 	@include background-gradient(76deg);
 	@include media(">tablet") {
 		display: none;
@@ -10,7 +10,7 @@
 	@include flex();
 	color: $main-light;
 
-	.main-button {
+	.mobileHeaderMenu_mainButton {
 		cursor: pointer;
 	}
 }
@@ -28,7 +28,7 @@
 //}
 
 
-.mobile-menu-wrapper {
+.mobileMenu_wrapper {
 	@include background-gradient(36deg);
 	display: none;
 	height: 440px;
@@ -40,8 +40,8 @@
 	position: absolute;
 	top: 0;
 	z-index:10;
-	.mobile-main-menu {
-		.close img {
+	.mobileMenu {
+		.mobileMenu_close img {
 			position: absolute;
 			right: 14px;
 			top: 14px;
@@ -50,7 +50,7 @@
 			color: $main-light;
 			cursor: pointer;
 		}
-		.mobile-menu-items {
+		.mobileMenu_items {
 			height: 300px;
 			@include flex(space-between,column);
 			.mobile-trip-transport {
@@ -60,7 +60,7 @@
 			a {
 				color:$main-light;
 			}
-			.mod-240 {
+			.mod_240 {
 				margin: 0 auto;
 				@include media(">phone", "<=400px") {
 					width: 170px;

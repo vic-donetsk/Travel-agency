@@ -2,11 +2,11 @@ import Swiper from 'swiper'
 
 $(document).ready( ()=>{
 	// mobile menu
-	$(".main-button").click( ()=> {
-		$(".mobile-menu-wrapper").slideDown("slow");
+	$(".mobileHeaderMenu_mainButton").click( ()=> {
+		$(".mobileMenu_wrapper").slideDown("slow");
 	});
-	$(".close").click( ()=> {
-		$(".mobile-menu-wrapper").slideUp("slow");
+	$(".mobileMenu_close").click( ()=> {
+		$(".mobileMenu_wrapper").slideUp("slow");
 	});
 
 
