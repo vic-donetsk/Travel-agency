@@ -11585,7 +11585,7 @@ input[type=radio]:checked + label:after {
   border-top: none;
 }
 
-.popupWindow {
+.popupWindow_wrapper {
   display: none;
   position: absolute;
   width: 180px;
@@ -11596,22 +11596,22 @@ input[type=radio]:checked + label:after {
   padding-top: 29px;
 }
 
-.popupWindow a {
+.popupWindow_wrapper a {
   color: #666;
 }
 
-.popupWindow a:hover {
+.popupWindow_wrapper a:hover {
   color: #084599;
   text-decoration: none;
 }
 
-.popupWindow .popupWindow_item {
+.popupWindow_wrapper .popupWindow_item {
   line-height: 1;
   margin-left: 21px;
   margin-bottom: 14px;
 }
 
-.popupWindow .popupWindow_exit {
+.popupWindow_wrapper .popupWindow_exit {
   margin-top: 30px;
   padding-left: 17px;
   width: 100%;
