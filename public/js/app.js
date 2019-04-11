@@ -57635,9 +57635,9 @@ $(document).ready(function () {
 
   var mySwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper-container', {
     direction: 'horizontal',
-    // autoplay: {
-    // 	delay: 2000
-    // },
+    autoplay: {
+      delay: 2000
+    },
     loop: true
   }); // trip-cards client or seller hover
 

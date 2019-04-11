@@ -12136,7 +12136,7 @@ input[type=radio]:checked + label:after {
   height: 100%;
 }
 
-.swiper .swiper-slide-describe {
+.swiper .swiper-slide_describe {
   position: absolute;
   top: 35%;
   left: 0;
@@ -12145,7 +12145,7 @@ input[type=radio]:checked + label:after {
   color: #fff;
 }
 
-.swiper .swiper-slide-describe .swiper-slide-describe-title {
+.swiper .swiper-slide_describe .swiper-slide_describe_title {
   font-family: "Proxima Nova Rg";
   font-size: 48px;
   font-weight: bold;
@@ -12154,24 +12154,24 @@ input[type=radio]:checked + label:after {
 }
 
 @media (min-width: 321px) and (max-width: 736px) {
-  .swiper .swiper-slide-describe .swiper-slide-describe-title {
+  .swiper .swiper-slide_describe .swiper-slide_describe_title {
     font-size: 30px;
   }
 }
 
-.swiper .swiper-slide-describe .swiper-slide-describe-slogan {
+.swiper .swiper-slide_describe .swiper-slide_describe_slogan {
   font-family: "Proxima Nova Rg";
   font-size: 24px;
   font-weight: bold;
 }
 
 @media (min-width: 321px) and (max-width: 736px) {
-  .swiper .swiper-slide-describe .swiper-slide-describe-slogan {
+  .swiper .swiper-slide_describe .swiper-slide_describe_slogan {
     font-size: 18px;
   }
 }
 
-.swiper .swiper-slide-describe .mod-transparent {
+.swiper .swiper-slide_describe .mod_transparent {
   margin: 0 auto;
   border: 2px solid #fff;
 }
