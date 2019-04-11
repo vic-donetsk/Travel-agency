@@ -1,3 +1,5 @@
+require('swiper');
+
 $(document).ready( ()=>{
 	// mobile menu
 	$(".main-button").click( ()=> {
@@ -28,7 +30,7 @@ $(document).ready( ()=>{
 	})
 
 	// set tooltips by JQuery UI for trip categories
-	$('.trip-category-icon').tooltip({   
+	$('.trip-category-icon').tooltip({
 		placement: 'top'
 	});
 
