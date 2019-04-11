@@ -55,7 +55,7 @@ $(document).ready( ()=>{
 				// window pop up
 				topPopup -= 155;
 			}  
-			$('.popup-window').css({'left' : leftPopup, 'top' : topPopup}).slideDown().mouseleave( (e) => {
+			$('.popupWindow').css({'left' : leftPopup, 'top' : topPopup}).slideDown().mouseleave( (e) => {
 				$(e.currentTarget).slideUp();
 			});
 

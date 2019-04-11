@@ -57674,7 +57674,7 @@ $(document).ready(function () {
         topPopup -= 155;
       }
 
-      $('.popup-window').css({
+      $('.popupWindow').css({
         'left': leftPopup,
         'top': topPopup
       }).slideDown().mouseleave(function (e) {
