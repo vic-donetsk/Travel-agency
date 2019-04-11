@@ -1,4 +1,4 @@
-require('swiper');
+import Swiper from 'swiper'
 
 $(document).ready( ()=>{
 	// mobile menu
