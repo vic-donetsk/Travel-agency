@@ -1,8 +1,8 @@
-.trip-types-container {
+.tripTypes_container {
 		height: 100px;
 		background-color: $extra-grey-2;
 		line-height: 100px;
-	.trip-types {
+	.tripTypes {
 		@include flex;
 		align-items: center;
 		margin: 0 auto;
@@ -15,18 +15,18 @@
 		@include media(">phone", "<=440px") { 
 			padding: 0;
 		}
-		.trip-types-header {
+		.tripTypes_header {
 			@include font-header($header-size-3);
 			min-width: 140px;
 		}
-		.trip-types-icons {
+		.tripTypes_icons {
 			@include flex(flex-end);
 			line-height: 100px;
 		}
 	}
 }
 
-.trip-category-icon {
+.tripCategoryIcon {
 	margin: 0 12px;
 	text-align: center;
 		@extend %category-icon;

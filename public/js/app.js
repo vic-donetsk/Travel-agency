@@ -57648,7 +57648,7 @@ $(document).ready(function () {
     $(e.delegateTarget).toggleClass(hoverClass);
   }); // set tooltips by JQuery UI for trip categories
 
-  $('.trip-category-icon').tooltip({
+  $('.tripCategoryIcon').tooltip({
     placement: 'top'
   });
 

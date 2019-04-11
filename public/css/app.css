@@ -40,7 +40,7 @@ input[type=radio]:not(:checked) + label:after {
   cursor: pointer;
 }
 
-.trip-category-icon {
+.tripCategoryIcon {
   margin: 0 auto;
   min-width: 46px;
   min-height: 46px;
@@ -12034,13 +12034,13 @@ input[type=radio]:checked + label:after {
   }
 }
 
-.trip-types-container {
+.tripTypes_container {
   height: 100px;
   background-color: #f7f7f7;
   line-height: 100px;
 }
 
-.trip-types-container .trip-types {
+.tripTypes_container .tripTypes {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -12053,25 +12053,25 @@ input[type=radio]:checked + label:after {
 }
 
 @media (min-width: 441px) and (max-width: 1056px) {
-  .trip-types-container .trip-types {
+  .tripTypes_container .tripTypes {
     padding: 0 10px;
   }
 }
 
 @media (min-width: 321px) and (max-width: 440px) {
-  .trip-types-container .trip-types {
+  .tripTypes_container .tripTypes {
     padding: 0;
   }
 }
 
-.trip-types-container .trip-types .trip-types-header {
+.tripTypes_container .tripTypes .tripTypes_header {
   font-family: "Proxima Nova Rg";
   font-size: 18px;
   font-weight: bold;
   min-width: 140px;
 }
 
-.trip-types-container .trip-types .trip-types-icons {
+.tripTypes_container .tripTypes .tripTypes_icons {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -12079,21 +12079,21 @@ input[type=radio]:checked + label:after {
   line-height: 100px;
 }
 
-.trip-category-icon {
+.tripCategoryIcon {
   margin: 0 12px;
   text-align: center;
 }
 
-.trip-category-icon .img {
+.tripCategoryIcon .img {
   width: 24px;
   height: 24px;
 }
 
-.trip-category-icon:hover {
+.tripCategoryIcon:hover {
   background-image: linear-gradient(to bottom, #084599, #05a8d4);
 }
 
-.trip-category-icon:last-of-type {
+.tripCategoryIcon:last-of-type {
   margin-right: 0;
 }
 

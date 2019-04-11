@@ -30,7 +30,7 @@ $(document).ready( ()=>{
 	})
 
 	// set tooltips by JQuery UI for trip categories
-	$('.trip-category-icon').tooltip({
+	$('.tripCategoryIcon').tooltip({
 		placement: 'top'
 	});
 
