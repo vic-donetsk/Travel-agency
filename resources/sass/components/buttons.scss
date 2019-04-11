@@ -8,11 +8,11 @@
         background-color: $accent-dark-blue;
     }
 
-    &.mod-green {
+    &.mod_green {
         background-color: $accent-light-green;
         box-shadow: 0 3px 6px 0 $accent-dark-green;
     }
-    &.mod-green:hover {
+    &.mod_green:hover {
         background-color: $accent-dark-green;
         box-shadow: none;
     }

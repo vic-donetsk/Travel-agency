@@ -13,7 +13,7 @@
                 
             </div>
 
-            <div class="single-btn mod-green mod-240"><i class="fas fa-plus"></i>&nbsp; Добавить тур</div>
+            <div class="single-btn mod_green mod-240"><i class="fas fa-plus"></i>&nbsp; Добавить тур</div>
         </div>
     </div>
 </div>

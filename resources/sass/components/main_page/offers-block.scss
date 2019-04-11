@@ -1,18 +1,18 @@
-.trip-block {
+.tripBlock {
 	margin: 0 auto;
 	max-width: 960px;
-	.trip-block-title {
+	.tripBlock_title {
 		margin: 45px 10px 35px;
 		@include media(">phone", "<=440px") { 
 			margin: 60px 0 35px;;
 		}
 		@include flex;
 		//align-items:center;
-		.trip-block-title-header {
+		.tripBlock_title_header {
 			@include font-header($header-size-2);
 			color: $main-dark;
 		}
-		.trip-block-title-link a {
+		.tripBlock_title_link a {
 			@include font-text;
 			color: $extra-grey-6;
 			&:hover {
@@ -43,7 +43,7 @@
 				.tripDescription {
 					@include flex(center, column);
 				}
-				.mod-green {
+				.mod_green {
 					margin: 0 auto;
 				}
 				.tripDescription_route {
@@ -59,7 +59,7 @@
 		.tripDescription {
 			@include flex(center, column);
 		}
-		.mod-green {
+		.mod_green {
 			margin: 0 auto;
 		}
 	}
@@ -69,14 +69,14 @@
 		.tripDescription {
 			@include flex(center, column);
 		}
-		.mod-green {
+		.mod_green {
 			margin: 0 auto;
 		}
 		@include media(">phone", "<=736px") {
 			display: none;
 		}
 	}
-	.trip-block-cards-show {
+	.tripBlock_cards {
 		@include flex(center, row, wrap);
 
 	}

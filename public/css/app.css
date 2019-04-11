@@ -11430,12 +11430,12 @@ body {
   background-color: #023881;
 }
 
-.single-btn.mod-green {
+.single-btn.mod_green {
   background-color: #37DB67;
   box-shadow: 0 3px 6px 0 #24BF51;
 }
 
-.single-btn.mod-green:hover {
+.single-btn.mod_green:hover {
   background-color: #24BF51;
   box-shadow: none;
 }
@@ -12176,12 +12176,12 @@ input[type=radio]:checked + label:after {
   border: 2px solid #fff;
 }
 
-.trip-block {
+.tripBlock {
   margin: 0 auto;
   max-width: 960px;
 }
 
-.trip-block .trip-block-title {
+.tripBlock .tripBlock_title {
   margin: 45px 10px 35px;
   display: flex;
   flex-direction: row;
@@ -12190,32 +12190,32 @@ input[type=radio]:checked + label:after {
 }
 
 @media (min-width: 321px) and (max-width: 440px) {
-  .trip-block .trip-block-title {
+  .tripBlock .tripBlock_title {
     margin: 60px 0 35px;
   }
 }
 
-.trip-block .trip-block-title .trip-block-title-header {
+.tripBlock .tripBlock_title .tripBlock_title_header {
   font-family: "Proxima Nova Rg";
   font-size: 22px;
   font-weight: bold;
   color: #323232;
 }
 
-.trip-block .trip-block-title .trip-block-title-link a {
+.tripBlock .tripBlock_title .tripBlock_title_link a {
   font-family: "Proxima Nova Rg";
   font-size: 14px;
   font-weight: normal;
   color: #4d4d4d;
 }
 
-.trip-block .trip-block-title .trip-block-title-link a:hover {
+.tripBlock .tripBlock_title .tripBlock_title_link a:hover {
   cursor: pointer;
   color: #084599;
 }
 
 @media (min-width: 321px) and (max-width: 736px) {
-  .trip-block .trip-block-title {
+  .tripBlock .tripBlock_title {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -12223,87 +12223,87 @@ input[type=radio]:checked + label:after {
   }
 }
 
-.trip-block .firsts {
+.tripBlock .firsts {
   width: 460px;
   height: 300px;
 }
 
-.trip-block .firsts .tripCard_proposition {
+.tripBlock .firsts .tripCard_proposition {
   height: 160px;
 }
 
-.trip-block .firsts .tripDescription {
+.tripBlock .firsts .tripDescription {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: nowrap;
 }
 
-.trip-block .firsts .tripDescription_route {
+.tripBlock .firsts .tripDescription_route {
   text-align: left;
 }
 
 @media (min-width: 321px) and (max-width: 1057px) {
-  .trip-block .firsts {
+  .tripBlock .firsts {
     width: 300px;
     height: 380px;
   }
 
-  .trip-block .firsts .tripDescription {
+  .tripBlock .firsts .tripDescription {
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex-wrap: nowrap;
   }
 
-  .trip-block .firsts .mod-green {
+  .tripBlock .firsts .mod_green {
     margin: 0 auto;
   }
 
-  .trip-block .firsts .tripDescription_route {
+  .tripBlock .firsts .tripDescription_route {
     text-align: center;
   }
 }
 
-.trip-block .nexts {
+.tripBlock .nexts {
   width: 300px;
   height: 380px;
 }
 
-.trip-block .nexts .tripDescription {
+.tripBlock .nexts .tripDescription {
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex-wrap: nowrap;
 }
 
-.trip-block .nexts .mod-green {
+.tripBlock .nexts .mod_green {
   margin: 0 auto;
 }
 
-.trip-block .others {
+.tripBlock .others {
   width: 300px;
   height: 380px;
 }
 
-.trip-block .others .tripDescription {
+.tripBlock .others .tripDescription {
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex-wrap: nowrap;
 }
 
-.trip-block .others .mod-green {
+.tripBlock .others .mod_green {
   margin: 0 auto;
 }
 
 @media (min-width: 321px) and (max-width: 736px) {
-  .trip-block .others {
+  .tripBlock .others {
     display: none;
   }
 }
 
-.trip-block .trip-block-cards-show {
+.tripBlock .tripBlock_cards {
   display: flex;
   flex-direction: row;
   justify-content: center;
