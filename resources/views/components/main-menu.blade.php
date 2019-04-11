@@ -7,10 +7,10 @@
 		</div>
 		@include('components.logo')
 		<div class="right-menu">
-			<div class="user">
-				<a href="#">
+			<div class="user trip-user-item">
+				
 					@include('components.user-or-guest', ['text' => 'Вход/Регистрация'])
-				</a>
+				
 			</div>
 			<div>	
 				<a href="#">				
@@ -22,7 +22,7 @@
 
 	<div class="operation-block">
 		<div class="search-field">
-			<input class="search-tour text-2" type="text" placeholder="Поиск предложения">
+			<input class="search-tour mod-text-2" type="text" placeholder="Поиск предложения">
 			<a class="search" href="#"><i class="fas fa-search"></i></a>
 		</div>
 		<div class="single-btn mod-white mod-180">

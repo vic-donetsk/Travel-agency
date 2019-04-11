@@ -1,6 +1,10 @@
 .popup-window {
+	display: none;
+	position: absolute;
 	width: 180px;
 	height: 184px;
+	z-index: 10;
+
 	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
 	background-color: $main-light;
 	padding-top: 29px;
@@ -11,12 +15,12 @@
 			color: $accent-light-blue;
 			text-decoration: none;
 		}
-	.popup-item {
+	.popup-window-item {
 		line-height: 1;
 		margin-left: 21px;
 		margin-bottom: 14px;
 	}
-	.popup-exit {
+	.popup-window-exit {
 		margin-top: 30px;
 		padding-left: 17px;
 		width: 100%;

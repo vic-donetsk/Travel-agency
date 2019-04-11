@@ -9,4 +9,31 @@
 		width: 100%;
 		height: 100%;
 	}
+	.swiper-slide-describe {
+		position: absolute;
+		top:35%;
+		left:0;
+		width: 100%;
+		text-align: center;
+		color: $main-light;
+		.swiper-slide-describe-title {
+			@include font-header(48px);
+			text-transform: uppercase;
+			margin-bottom: 0;
+			@include media('>phone', '<=736px') {
+				font-size: 30px;
+			}
+		}
+		.swiper-slide-describe-slogan {
+			@include font-header($header-size-1);
+			@include media('>phone', '<=736px') {
+				font-size: $header-size-3;
+			}
+		}
+		.mod-transparent {
+			margin: 0 auto;
+			border: 2px solid $main-light;
+		}
+	}
+	
 }

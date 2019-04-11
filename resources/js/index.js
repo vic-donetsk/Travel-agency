@@ -13,12 +13,12 @@ $(document).ready( ()=>{
 	//swiper slider
 	var mySwiper = new Swiper ('.swiper-container', {
       direction: 'horizontal',
-      autoplay: {
-      	delay: 2000
-      },
+      // autoplay: {
+      // 	delay: 2000
+      // },
       loop: true
     });
-    mySwiper.autoplay.start();
+
 
 
 	// trip-cards client or seller hover
@@ -41,6 +41,26 @@ $(document).ready( ()=>{
 			$(".about-showMore").css("display", "none");
 		});
 	}
+
+
+	// popup-window for registered user
+	let regUser = 1;
+	// это тестовое значение, его надо будет убрать в дальнейшем
+	$('.user a').mouseenter( (e) => {
+		if (regUser) {
+			let leftPopup = $(e.currentTarget).offset().left;
+			// window pop down
+			let topPopup = $(e.currentTarget).offset().top - 5;
+			if ( ( $(e.currentTarget).offset().top - $(window).scrollTop() ) > ( $(window).height() / 2 ) ) {
+				// window pop up
+				topPopup -= 155;
+			}  
+			$('.popup-window').css({'left' : leftPopup, 'top' : topPopup}).slideDown().mouseleave( (e) => {
+				$(e.currentTarget).slideUp();
+			});
+
+		}
+	});
 
 
 });

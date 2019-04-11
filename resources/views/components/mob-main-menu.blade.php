@@ -7,10 +7,10 @@
                 <div class="header-3"><a href="#"> Авиационные туры </a></div>
                 <div class="header-3"><a href="#"> Круизы </a></div>
             </div>
-            <div class="header-3">
-                <a href="#">
+            <div class="user header-3">
+                
                     @include('components.user-or-guest', ['text' => 'Войти'])
-                </a>
+                
             </div>
 
             <div class="single-btn mod-green mod-240"><i class="fas fa-plus"></i>&nbsp; Добавить тур</div>
