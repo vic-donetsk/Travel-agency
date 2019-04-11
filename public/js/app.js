@@ -57643,8 +57643,8 @@ $(document).ready(function () {
 
   var isSeller = 1; // это тестовое значение, его надо будет убрать в дальнейшем
 
-  var hoverClass = isSeller ? 'seller-hover' : 'client-hover';
-  $(".trip-card").hover(function (e) {
+  var hoverClass = isSeller ? 'tripCard_sellerHover' : 'tripCard_clientHover';
+  $(".tripCard").hover(function (e) {
     $(e.delegateTarget).toggleClass(hoverClass);
   }); // set tooltips by JQuery UI for trip categories
 

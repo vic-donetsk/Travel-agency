@@ -11645,7 +11645,7 @@ input[type=radio]:checked + label:after {
   cursor: default;
 }
 
-.trip-card {
+.tripCard {
   margin: 0 10px 20px;
   box-sizing: border-box;
   border-radius: 0 0 4px 4px;
@@ -11657,12 +11657,12 @@ input[type=radio]:checked + label:after {
 }
 
 @media (min-width: 321px) and (max-width: 440px) {
-  .trip-card {
+  .tripCard {
     margin: 0 0 20px;
   }
 }
 
-.trip-card .seller-modal {
+.tripCard .tripCard_sellerModal {
   display: none;
   position: absolute;
   left: 0;
@@ -11674,34 +11674,34 @@ input[type=radio]:checked + label:after {
   align-items: center;
 }
 
-.trip-card .seller-modal .seller-choice {
+.tripCard .tripCard_sellerModal .sellerChoice {
   width: 30px;
   height: 30px;
-  line-height: 1.75;
+  line-height: 24px;
   text-align: center;
   margin: 5px;
   border-radius: 50%;
   border: 1px solid #fff;
 }
 
-.trip-card .trip-card-picture {
+.tripCard .tripCard_picture {
   line-height: 1px;
   display: block;
   height: 220px;
   position: relative;
 }
 
-.trip-card .trip-card-picture .foto {
+.tripCard .tripCard_picture .foto {
   width: 100%;
   height: 216px;
 }
 
-.trip-card .trip-card-green-bottom {
+.tripCard .tripCard_greenBottom {
   height: 4px;
   background-color: #37db67;
 }
 
-.trip-card .trip-card-proposition {
+.tripCard .tripCard_proposition {
   position: absolute;
   top: 140px;
   left: 0;
@@ -11712,7 +11712,7 @@ input[type=radio]:checked + label:after {
   text-align: center;
 }
 
-.trip-card .trip-condition-block {
+.tripCard .tripCondition_wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -11724,22 +11724,22 @@ input[type=radio]:checked + label:after {
   margin-bottom: 30px;
 }
 
-.trip-card .trip-condition-block .trip-condition {
+.tripCard .tripCondition_wrapper .tripCondition {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: nowrap;
 }
 
-.trip-card .trip-condition-block .trip-condition .trip-condition-type {
+.tripCard .tripCondition_wrapper .tripCondition .tripCondition_type {
   margin-top: 2px;
   height: 15px;
   width: 15px;
   line-height: 1px;
 }
 
-.trip-card .trip-condition-block .trip-condition .trip-condition-duration,
-.trip-card .trip-condition-block .trip-condition .trip-condition-hotel {
+.tripCard .tripCondition_wrapper .tripCondition .tripCondition_duration,
+.tripCard .tripCondition_wrapper .tripCondition .tripCondition_hotel {
   font-family: "Proxima Nova Rg";
   font-size: 12px;
   font-weight: bold;
@@ -11749,13 +11749,13 @@ input[type=radio]:checked + label:after {
   font-weight: bold;
 }
 
-.trip-card .trip-condition-block .trip-condition .trip-condition-cost {
+.tripCard .tripCondition_wrapper .tripCondition .tripCondition_cost {
   font-family: "Proxima Nova Rg";
   font-size: 18px;
   font-weight: bold;
 }
 
-.trip-card .trip-condition-block .trip-condition .trip-condition-currency {
+.tripCard .tripCondition_wrapper .tripCondition .tripCondition_currency {
   font-family: "Proxima Nova Rg";
   font-size: 12px;
   font-weight: normal;
@@ -11764,7 +11764,7 @@ input[type=radio]:checked + label:after {
   line-height: 2;
 }
 
-.trip-card .trip-description .trip-description-kurort {
+.tripCard .tripDescription .tripDescription_kurort {
   font-family: "Proxima Nova Rg";
   font-size: 18px;
   font-weight: bold;
@@ -11773,7 +11773,7 @@ input[type=radio]:checked + label:after {
   line-height: 1;
 }
 
-.trip-card .trip-description .trip-description-route {
+.tripCard .tripDescription .tripDescription_route {
   font-family: "Proxima Nova Rg";
   font-size: 14px;
   font-weight: normal;
@@ -11781,15 +11781,15 @@ input[type=radio]:checked + label:after {
   margin-bottom: 20px;
 }
 
-.seller-hover .seller-modal {
+.tripCard_sellerHover .tripCard_sellerModal {
   display: flex;
 }
 
-.seller-hover .seller-modal .seller-choice {
+.tripCard_sellerHover .tripCard_sellerModal .sellerChoice {
   cursor: pointer;
 }
 
-.client-hover {
+.tripCard_clientHover {
   box-shadow: 0 4px 8px 0 rgba(2, 56, 129, 0.17);
 }
 

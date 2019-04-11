@@ -24,8 +24,8 @@ $(document).ready( ()=>{
 	// trip-cards client or seller hover
 	let isSeller = 1;
 	// это тестовое значение, его надо будет убрать в дальнейшем
-	let hoverClass = (isSeller) ? 'seller-hover' : 'client-hover';
-	$(".trip-card").hover( (e) => {
+	let hoverClass = (isSeller) ? 'tripCard_sellerHover' : 'tripCard_clientHover';
+	$(".tripCard").hover( (e) => {
 		$(e.delegateTarget).toggleClass(hoverClass);
 	})
 
