@@ -14,7 +14,7 @@ $(document).ready( ()=>{
 	var mySwiper = new Swiper ('.swiper-container', {
       direction: 'horizontal',
       autoplay: {
-      	delay: 2000
+      	delay: 4000
       },
       loop: true
     });
