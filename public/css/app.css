@@ -12035,6 +12035,8 @@ input[type=radio]:checked + label:after {
 }
 
 .tripTypes_container {
+  max-width: 1280px;
+  margin: 0 auto;
   height: 100px;
   background-color: #f7f7f7;
   line-height: 100px;
@@ -12122,6 +12124,7 @@ input[type=radio]:checked + label:after {
 .swiper {
   max-width: 1280px;
   height: 500px;
+  margin: 0 auto;
 }
 
 @media (min-width: 321px) and (max-width: 736px) {
