@@ -5,7 +5,7 @@
 			@include('components.user-or-guest', ['text' => 'Вход/Регистрация'])
 		
 	</div>
-	<div class="footer_authors mod_mod_text-2">
+	<div class="footer_authors mod_text-2">
 		<div class="author"> Design from Zirella </div>
 		<div class="author"> © ColorLife, 2018 </div>
 	</div>

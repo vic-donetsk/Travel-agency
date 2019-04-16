@@ -5,7 +5,7 @@
 	@include media(">737px", "<=1057px") { 
 		max-width: 620px;
 	}
-	@include media(">phone", "<=736px") {
+	@include media(">=phone", "<=736px") {
 		max-width: 300px;
 	}
 	.about_header {

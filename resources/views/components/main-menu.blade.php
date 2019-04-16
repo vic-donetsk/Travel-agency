@@ -23,8 +23,8 @@
 
 		<div class="mainMenu_operationBlock">
 			<div class="mainMenu_operationBlock_searchField">
-				<input class="search-tour mod_mod_text-2" type="text" placeholder="Поиск предложения">
-				<a class="search-sign" href="#"><i class="fas fa-search"></i></a>
+				<input class="search-tour mod_text-2" type="text" placeholder="Поиск предложения">
+				<button type="submit" class="search-sign"><i class="fas fa-search"></i></a>
 			</div>
 			<div class="single-btn mod_white mod_180">
 				<i class="fas fa-plus"></i>&nbsp; Добавить тур

@@ -3,7 +3,7 @@
 	max-width: 960px;
 	.tripBlock_title {
 		margin: 45px 10px 35px;
-		@include media(">phone", "<=440px") { 
+		@include media(">=phone", "<=440px") { 
 			margin: 60px 0 35px;;
 		}
 		@include flex;
@@ -20,7 +20,7 @@
 				color: $accent-light-blue;
 			}
 		}
-		@include media(">phone", "<=736px") {
+		@include media(">=phone", "<=736px") {
 			@include flex(flex-start, column, no-wrap);
 		}
 	}
@@ -37,7 +37,7 @@
 		.tripDescription_route {
 			text-align: left;
 		}
-		@include media(">phone", "<=1057px") { 
+		@include media(">=phone", "<=1057px") { 
 				width: 300px;
 				height: 380px;
 				.tripDescription {
@@ -72,7 +72,7 @@
 		.mod_green {
 			margin: 0 auto;
 		}
-		@include media(">phone", "<=736px") {
+		@include media(">=phone", "<=736px") {
 			display: none;
 		}
 	}

@@ -11,10 +11,7 @@
 		max-width: 940px;
 		overflow-x: auto;
 		overflow-y: hidden;
-		// @include media(">440px", "<=1056px") { 
-		// 	padding: 0 10px;
-		// }
-		@include media(">phone", "<=440px") { 
+		@include media(">=phone", "<=440px") { 
 			padding: 0;
 		}
 		.tripTypes_header {

@@ -13,9 +13,9 @@ $(document).ready( ()=>{
 	//swiper slider
 	var mySwiper = new Swiper ('.swiper-container', {
       direction: 'horizontal',
-      autoplay: {
-      	delay: 4000
-      },
+      // autoplay: {
+      // 	delay: 4000
+      // },
       loop: true
     });
 

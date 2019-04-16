@@ -46,7 +46,7 @@
 			}
 			.mod_240 {
 				margin: 0 auto;
-				@include media(">phone", "<=400px") {
+				@include media(">=phone", "<=400px") {
 					width: 170px;
 				} 
 			}

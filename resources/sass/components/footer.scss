@@ -1,7 +1,5 @@
 .footer {
 	@include background-gradient(81deg);
-	margin: 0 auto;
-	max-width: 1280px;
 	height: 200px;
 	text-align: center;
 	color: $main-light;
@@ -19,9 +17,9 @@
 			margin: 0 18px;
 			width: 103px;
 			text-align: center;
-			@include media(">phone", "<=327px") { 
-			margin: 0 11px;
-		}
+			@include media(">=phone", "<=327px") { 
+				margin: 0 11px;
+			}
 		}
 	}
 }

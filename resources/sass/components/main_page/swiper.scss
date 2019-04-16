@@ -1,6 +1,6 @@
 .swiper {
 	height: calc(100vh - 120px);
-	@include media('>phone', '<=tablet') {
+	@include media('>=phone', '<=tablet') {
 		height: calc(100vh - 80px);
 	}
 	.swiper-container {
@@ -23,14 +23,14 @@
 			@include font-header(48px);
 			text-transform: uppercase;
 			margin-bottom: 0;
-			@include media('>phone', '<=big_phone') {
+			@include media('>=phone', '<=big_phone') {
 				font-size: 30px;
 			}
 		}
 		.swiper-slide_describe_slogan {
 			@include font-header($header-size-1);
 			margin-bottom: 25px;
-			@include media('>phone', '<=big_phone') {
+			@include media('>=phone', '<=big_phone') {
 				font-size: $header-size-3;
 				margin-top: 13px;
 				margin-bottom: 15px;
