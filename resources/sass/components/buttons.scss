@@ -24,6 +24,10 @@
     &.mod_white:hover {
 		color: $accent-dark-blue;
     }
+    &.mod_transparent {
+        margin: 0 auto;
+        border: 2px solid $main-light;
+    }
 
     &.mod_140 {
         width: 140px;

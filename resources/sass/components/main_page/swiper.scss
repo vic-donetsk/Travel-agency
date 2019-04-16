@@ -1,10 +1,7 @@
 .swiper {
-	max-width: 1280px;
-	height: 500px;
-	margin: 0 auto;
-	@include media('>phone', '<=736px') {
-		max-width: 736px;
-		height: 400px;
+	height: calc(100vh - 120px);
+	@include media('>phone', '<=tablet') {
+		height: calc(100vh - 80px);
 	}
 	.swiper-container {
 		width: 100%;
@@ -26,20 +23,18 @@
 			@include font-header(48px);
 			text-transform: uppercase;
 			margin-bottom: 0;
-			@include media('>phone', '<=736px') {
+			@include media('>phone', '<=big_phone') {
 				font-size: 30px;
 			}
 		}
 		.swiper-slide_describe_slogan {
 			@include font-header($header-size-1);
-			@include media('>phone', '<=736px') {
+			margin-bottom: 25px;
+			@include media('>phone', '<=big_phone') {
 				font-size: $header-size-3;
+				margin-top: 13px;
+				margin-bottom: 15px;
 			}
 		}
-		.mod_transparent {
-			margin: 0 auto;
-			border: 2px solid $main-light;
-		}
 	}
-	
 }

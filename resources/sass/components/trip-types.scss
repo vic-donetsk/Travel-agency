@@ -1,6 +1,6 @@
 .tripTypes_container {
-		max-width: 1280px;
-		margin: 0 auto;
+		//max-width: 1280px;
+		//margin: 0 auto;
 		height: 100px;
 		background-color: $extra-grey-2;
 		line-height: 100px;
@@ -11,9 +11,9 @@
 		max-width: 940px;
 		overflow-x: auto;
 		overflow-y: hidden;
-		@include media(">440px", "<=1056px") { 
-			padding: 0 10px;
-		}
+		// @include media(">440px", "<=1056px") { 
+		// 	padding: 0 10px;
+		// }
 		@include media(">phone", "<=440px") { 
 			padding: 0;
 		}

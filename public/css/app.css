@@ -11371,19 +11371,9 @@ button.swiper-pagination-bullet {
   font-style: normal;
 }
 
-* {
+body * {
   margin: 0;
   padding: 0;
-}
-
-body {
-  padding: 0 40px;
-}
-
-@media (min-width: 321px) and (max-width: 440px) {
-  body {
-    padding: 0 20px;
-  }
 }
 
 .mod_header-1 {
@@ -11447,6 +11437,11 @@ body {
 
 .single-btn.mod_white:hover {
   color: #023881;
+}
+
+.single-btn.mod_transparent {
+  margin: 0 auto;
+  border: 2px solid #fff;
 }
 
 .single-btn.mod_140 {
@@ -11808,7 +11803,6 @@ input[type=radio]:checked + label:after {
 
 .mainMenu-wrapper {
   background-image: linear-gradient(85deg, #084599, #05a8d4);
-  max-width: 1280px;
   height: 120px;
   margin: 0 auto;
   padding: 7px 40px;
@@ -11879,7 +11873,6 @@ input[type=radio]:checked + label:after {
 
 .mainMenu-wrapper .mainMenu_operationBlock .mainMenu_operationBlock_searchField {
   flex: 1;
-  max-width: 990px;
   margin-right: 30px;
   display: flex;
   opacity: 0.5;
@@ -11918,7 +11911,6 @@ input[type=radio]:checked + label:after {
 
 .mobileHeaderMenu {
   background-image: linear-gradient(76deg, #084599, #05a8d4);
-  max-width: 960px;
   height: 80px;
   line-height: 80px;
   padding: 0 20px;
@@ -11943,17 +11935,11 @@ input[type=radio]:checked + label:after {
   background-image: linear-gradient(36deg, #084599, #05a8d4);
   display: none;
   height: 440px;
-  width: calc(100% - 80px);
+  width: 100%;
   padding: 100px 40px 40px;
   position: absolute;
   top: 0;
   z-index: 10;
-}
-
-@media (min-width: 321px) and (max-width: 440px) {
-  .mobileMenu_wrapper {
-    width: calc(100% - 40px);
-  }
 }
 
 .mobileMenu_wrapper .mobileMenu .mobileMenu_close img {
@@ -12035,8 +12021,6 @@ input[type=radio]:checked + label:after {
 }
 
 .tripTypes_container {
-  max-width: 1280px;
-  margin: 0 auto;
   height: 100px;
   background-color: #f7f7f7;
   line-height: 100px;
@@ -12052,12 +12036,6 @@ input[type=radio]:checked + label:after {
   max-width: 940px;
   overflow-x: auto;
   overflow-y: hidden;
-}
-
-@media (min-width: 441px) and (max-width: 1056px) {
-  .tripTypes_container .tripTypes {
-    padding: 0 10px;
-  }
 }
 
 @media (min-width: 321px) and (max-width: 440px) {
@@ -12137,15 +12115,12 @@ input[type=radio]:checked + label:after {
 }
 
 .swiper {
-  max-width: 1280px;
-  height: 500px;
-  margin: 0 auto;
+  height: calc(100vh - 120px);
 }
 
-@media (min-width: 321px) and (max-width: 736px) {
+@media (min-width: 321px) and (max-width: 960px) {
   .swiper {
-    max-width: 736px;
-    height: 400px;
+    height: calc(100vh - 80px);
   }
 }
 
@@ -12178,7 +12153,7 @@ input[type=radio]:checked + label:after {
   margin-bottom: 0;
 }
 
-@media (min-width: 321px) and (max-width: 736px) {
+@media (min-width: 321px) and (max-width: 660px) {
   .swiper .swiper-slide_describe .swiper-slide_describe_title {
     font-size: 30px;
   }
@@ -12188,17 +12163,15 @@ input[type=radio]:checked + label:after {
   font-family: "Proxima Nova Rg";
   font-size: 24px;
   font-weight: bold;
+  margin-bottom: 25px;
 }
 
-@media (min-width: 321px) and (max-width: 736px) {
+@media (min-width: 321px) and (max-width: 660px) {
   .swiper .swiper-slide_describe .swiper-slide_describe_slogan {
     font-size: 18px;
+    margin-top: 13px;
+    margin-bottom: 15px;
   }
-}
-
-.swiper .swiper-slide_describe .mod_transparent {
-  margin: 0 auto;
-  border: 2px solid #fff;
 }
 
 .tripBlock {

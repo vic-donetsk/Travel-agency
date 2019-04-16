@@ -3,7 +3,7 @@
 	@include media(">tablet") {
 		display: none;
 	} 
-	max-width: 960px;
+	//max-width: 960px;
 	height: 80px;
 	line-height: 80px;
 	padding: 0 20px;
@@ -15,27 +15,11 @@
 	}
 }
 
-//
-//.mobile-main-menu {
-//    overflow: auto;
-//
-//    width: 160px;
-//    height: 240px;
-//
-//    .mobile-menu-items {
-//        width: 700px;
-//    }
-//}
-
-
 .mobileMenu_wrapper {
 	@include background-gradient(36deg);
 	display: none;
 	height: 440px;
-	width: calc(100% - 80px);
-	@include media(">phone", "<=440px") {
-		width: calc(100% - 40px);
-	} 
+	width: 100%;
 	padding: 100px 40px 40px;
 	position: absolute;
 	top: 0;
