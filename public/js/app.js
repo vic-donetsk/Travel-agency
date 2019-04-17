@@ -57652,7 +57652,7 @@ $(document).ready(function () {
     placement: 'top'
   });
 
-  if ($(window).width() <= 719) {
+  if ($(window).width() <= 640) {
     $(".about_content").addClass("mod_hidden");
     $(".about_showMore").css("display", "block").click(function () {
       $(".about_content").removeClass("mod_hidden");

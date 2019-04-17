@@ -1,8 +1,5 @@
 .tripCard {
     margin: 0 10px 20px;
-    @include media(">=phone", "<=440px") { 
-		margin: 0 0 20px;;
-	}
     box-sizing: border-box;
     border-radius: 0 0 4px 4px;
     border: solid 2px #f6fafb;
@@ -76,12 +73,9 @@
 				@include font-header(12px);
 				margin-left: 10px;
 				@include font-header(14px);
-				@include media(">=phone", "<=440px") { 
-				}
 			}
 			.tripCondition_cost {
 				@include font-header($header-size-3);
-
 			}
 			.tripCondition_currency {
 				@include font-text($text-size-2);

@@ -11651,12 +11651,6 @@ input[type=radio]:checked + label:after {
   /* end hover*/
 }
 
-@media (min-width: 320px) and (max-width: 440px) {
-  .tripCard {
-    margin: 0 0 20px;
-  }
-}
-
 .tripCard .tripCard_sellerModal {
   display: none;
   position: absolute;
@@ -12049,6 +12043,13 @@ input[type=radio]:checked + label:after {
   height: 100px;
   background-color: #f7f7f7;
   line-height: 100px;
+  padding: 0 40px;
+}
+
+@media (min-width: 320px) and (max-width: 960px) {
+  .tripTypes_container {
+    padding: 0px 20px;
+  }
 }
 
 .tripTypes_container .tripTypes {
@@ -12229,7 +12230,7 @@ input[type=radio]:checked + label:after {
 
 @media (min-width: 320px) and (max-width: 440px) {
   .tripBlock .tripBlock_title {
-    margin: 60px 0 35px;
+    margin-top: 60px;
   }
 }
 
@@ -12317,7 +12318,7 @@ input[type=radio]:checked + label:after {
 
 @media (min-width: 320px) and (max-width: 399px) {
   .tripBlock .main-propositions {
-    min-width: 279px;
+    min-width: 276px;
   }
 }
 
@@ -12342,6 +12343,35 @@ input[type=radio]:checked + label:after {
   margin: 0 auto;
 }
 
+@media (min-width: 880px) and (max-width: 960px) {
+  .tripBlock .next-propositions,
+  .tripBlock .hidden-on-mobile-propositions {
+    min-width: 400px;
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 879px) {
+  .tripBlock .next-propositions,
+  .tripBlock .hidden-on-mobile-propositions {
+    min-width: 280px;
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 639px) {
+  .tripBlock .next-propositions {
+    min-width: 300px;
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 399px) {
+  .tripBlock .next-propositions {
+    min-width: 276px;
+  }
+}
+
 @media (min-width: 320px) and (max-width: 639px) {
   .tripBlock .hidden-on-mobile-propositions {
     display: none;
@@ -12356,20 +12386,15 @@ input[type=radio]:checked + label:after {
 }
 
 .about {
+  padding: 0 40px;
   margin: 60px auto 100px;
-  max-width: 940px;
+  max-width: 1020px;
   height: auto;
 }
 
-@media (min-width: 738px) and (max-width: 1057px) {
+@media (min-width: 320px) and (max-width: 960px) {
   .about {
-    max-width: 620px;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 736px) {
-  .about {
-    max-width: 300px;
+    padding: 0px 20px;
   }
 }
 

@@ -1,13 +1,17 @@
 .about {
+	padding: 0 40px;
+	@include media(">=phone", "<=tablet") { 
+			padding: 0px 20px;
+	}
 	margin: 60px auto 100px;
-	max-width: 940px;
+	max-width: 1020px;
 	height: auto;
-	@include media(">737px", "<=1057px") { 
-		max-width: 620px;
-	}
-	@include media(">=phone", "<=736px") {
-		max-width: 300px;
-	}
+	// @include media(">737px", "<=1057px") { 
+	// 	max-width: 620px;
+	// }
+	// @include media(">=phone", "<=736px") {
+	// 	max-width: 300px;
+	// }
 	.about_header {
 		@include font-header($header-size-2);
 		color: $main-dark;

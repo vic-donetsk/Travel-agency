@@ -2,6 +2,10 @@
 		height: 100px;
 		background-color: $extra-grey-2;
 		line-height: 100px;
+		padding: 0 40px;
+		@include media(">=phone", "<=tablet") { 
+			padding: 0px 20px;
+		}
 	.tripTypes {
 		@include flex;
 		align-items: center;
@@ -52,7 +56,6 @@
     border-radius: 5px;
     text-align: center;
 }
-
 .tooltip-inner::before {
 	position:      absolute;
 	content:       ''; 
@@ -69,8 +72,6 @@
     border:        10px solid transparent;
     border-bottom: 7px solid $main-light;
 }
-
-
 .bs-tooltip-auto[x-placement^=bottom] .arrow::before, .bs-tooltip-bottom .arrow::before {
 	//hide standart bootstrap arrow, because it does not work correctly
   	display: none;

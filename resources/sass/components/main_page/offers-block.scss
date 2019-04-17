@@ -10,7 +10,7 @@
 	.tripBlock_title {
 		margin: 45px 10px 35px;
 		@include media(">=phone", "<=440px") { 
-			margin: 60px 0 35px;
+			margin-top: 60px;
 		}
 		@include flex;
 		.tripBlock_title_header {
@@ -32,8 +32,8 @@
 	// size of trip-cards instead of display width
 	.main-propositions {
 		min-width: 400px;
-		flex: 1;
-		height: 300px;
+		flex:      1;
+		height:    300px;
 		.tripCard_proposition {
 			height: 160px;
 		}
@@ -44,7 +44,6 @@
 			text-align: left;
 		}
 		@include media(">=phone", "<=tablet") { 
-				//min-width: 400px;
 				height: 380px;
 				.tripDescription {
 					@include flex(center, column);
@@ -63,21 +62,37 @@
 				min-width: 300px;
 		}
 		@include media(">=phone", "<400px") { 
-				min-width: 279px;
+				min-width: 276px;
 		}
-
 	}
 	.next-propositions, .hidden-on-mobile-propositions {
 		min-width: 274px;
 		max-width: 300px;
-		flex: 1;
-		height: 380px;
+		flex:      1;
+		height:    380px;
 		.tripDescription {
 			@include flex(center, column);
 		}
 		.mod_green {
 			margin: 0 auto;
 		}
+		@include media(">=880px", "<=tablet") { 
+			min-width: 400px;
+			max-width: 500px;
+		}
+		@include media(">=big_phone", "<880px") { 
+			min-width: 280px;
+			max-width: 400px;
+		}
+	}
+	.next-propositions {
+		@include media(">=400px", "<big_phone") { 
+			min-width: 300px;
+			max-width: 600px;
+		}
+		@include media(">=phone", "<400px") { 
+			min-width: 276px;
+			}
 	}
 	.hidden-on-mobile-propositions {
 		@include media(">=phone", "<big_phone") {
@@ -86,6 +101,5 @@
 	}
 	.tripBlock_cards {
 		@include flex(center, row, wrap);
-
 	}
 }
