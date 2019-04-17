@@ -1,4 +1,4 @@
-.mainMenu-wrapper {
+.main-menu-wrapper {
     @include background-gradient(85deg);
 	@include media(">=phone", "<=tablet") {
 		display: none;
@@ -10,36 +10,36 @@
     a {
     	color: $main-light;
     }
-	.mainMenu_menuBlock {
+	.main-menu_menu-block {
 		@include flex();
 		@include font-text();
 		height: 36px;	
 		line-height: 36px;		
-		.mainMenu_menuBlock_tripTransport {
+		.main-menu_menu-block_trip-transport {
 			@include flex();
-			.tripTransport_item {
+			.trip-transport_item {
 				margin-right: 30px; 
 				@include media(">tablet", "<=small_desktop") {
 					margin-right: 15px;
 				}  
 			}
 		}
-		.mod_tripUserItem {
+		.mod_trip-user-item {
 			margin-right: 50px;
 			@include media(">tablet", "<=small_desktop") {
 				margin-right: 18px;
 			}
 
 		}
-		.mainMenu_menuBlock_rightMenu {
+		.main-menu_menu-block_right-menu {
 			@include flex();
 		}
 	}
-	.mainMenu_operationBlock {
+	.main-menu_operation-block {
 		margin-top: 17px;
 		display: flex;
 		height: 40px;
-		.mainMenu_operationBlock_searchField {
+		.main-menu_operation-block_search-field {
 			@include flex;
 			flex:              1;
 			margin-right:      30px;

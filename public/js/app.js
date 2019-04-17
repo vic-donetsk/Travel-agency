@@ -57626,11 +57626,11 @@ __webpack_require__.r(__webpack_exports__);
 
 $(document).ready(function () {
   // mobile menu
-  $(".mobileHeaderMenu_mainButton").click(function () {
-    $(".mobileMenu_wrapper").slideDown("slow");
+  $(".mobile-header-menu_main-button").click(function () {
+    $(".mobile-menu_wrapper").slideDown("slow");
   });
-  $(".mobileMenu_close").click(function () {
-    $(".mobileMenu_wrapper").slideUp("slow");
+  $(".mobile-menu_close").click(function () {
+    $(".mobile-menu_wrapper").slideUp("slow");
   }); //swiper slider
 
   var mySwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper-container', {
@@ -57643,12 +57643,12 @@ $(document).ready(function () {
 
   var isSeller = 1; // это тестовое значение, его надо будет убрать в дальнейшем
 
-  var hoverClass = isSeller ? 'tripCard_sellerHover' : 'tripCard_clientHover';
-  $(".tripCard").hover(function (e) {
+  var hoverClass = isSeller ? 'trip-card_seller-hover' : 'trip-card_client-hover';
+  $(".trip-card").hover(function (e) {
     $(e.delegateTarget).toggleClass(hoverClass);
   }); // set tooltips by JQuery UI for trip categories
 
-  $('.tripCategoryIcon').tooltip({
+  $('.trip-category-icon').tooltip({
     placement: 'top'
   });
 
@@ -57674,7 +57674,7 @@ $(document).ready(function () {
         topPopup -= 155;
       }
 
-      $('.popupWindow_wrapper').css({
+      $('.popup-window_wrapper').css({
         'left': leftPopup,
         'top': topPopup
       }).slideDown().mouseleave(function (e) {

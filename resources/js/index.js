@@ -2,11 +2,11 @@ import Swiper from 'swiper'
 
 $(document).ready( ()=>{
 	// mobile menu
-	$(".mobileHeaderMenu_mainButton").click( ()=> {
-		$(".mobileMenu_wrapper").slideDown("slow");
+	$(".mobile-header-menu_main-button").click( ()=> {
+		$(".mobile-menu_wrapper").slideDown("slow");
 	});
-	$(".mobileMenu_close").click( ()=> {
-		$(".mobileMenu_wrapper").slideUp("slow");
+	$(".mobile-menu_close").click( ()=> {
+		$(".mobile-menu_wrapper").slideUp("slow");
 	});
 
 
@@ -24,13 +24,13 @@ $(document).ready( ()=>{
 	// trip-cards client or seller hover
 	let isSeller = 1;
 	// это тестовое значение, его надо будет убрать в дальнейшем
-	let hoverClass = (isSeller) ? 'tripCard_sellerHover' : 'tripCard_clientHover';
-	$(".tripCard").hover( (e) => {
+	let hoverClass = (isSeller) ? 'trip-card_seller-hover' : 'trip-card_client-hover';
+	$(".trip-card").hover( (e) => {
 		$(e.delegateTarget).toggleClass(hoverClass);
 	})
 
 	// set tooltips by JQuery UI for trip categories
-	$('.tripCategoryIcon').tooltip({
+	$('.trip-category-icon').tooltip({
 		placement: 'top'
 	});
 
@@ -55,7 +55,7 @@ $(document).ready( ()=>{
 				// window pop up
 				topPopup -= 155;
 			}  
-			$('.popupWindow_wrapper').css({'left' : leftPopup, 'top' : topPopup}).slideDown().mouseleave( (e) => {
+			$('.popup-window_wrapper').css({'left' : leftPopup, 'top' : topPopup}).slideDown().mouseleave( (e) => {
 				$(e.currentTarget).slideUp();
 			});
 

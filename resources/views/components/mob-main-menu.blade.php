@@ -1,7 +1,7 @@
-<div class="mobileMenu_wrapper">
-    <div class="mobileMenu">
-        <div class="mobileMenu_close"><img src="/img/Group 484.svg" alt="X"></div>
-        <div class="mobileMenu_items">
+<div class="mobile-menu_wrapper">
+    <div class="mobile-menu">
+        <div class="mobile-menu_close"><img src="/img/Group 484.svg" alt="X"></div>
+        <div class="mobile-menu_items">
             <div class="mobile-trip-transport">
                 <div class="mod_header-3"><a href="#"> Автобусные туры </a></div>
                 <div class="mod_header-3"><a href="#"> Авиационные туры </a></div>

@@ -1,4 +1,4 @@
-.tripCard {
+.trip-card {
     margin: 0 10px 20px;
     box-sizing: border-box;
     border-radius: 0 0 4px 4px;
@@ -6,7 +6,7 @@
     background: #fff;
     position: relative;
 	/* hover mask for seller hover */
-	.tripCard_sellerModal {
+	.trip-card_seller-modal {
 		display: none;
 		position: absolute;
 		left:0;
@@ -16,7 +16,7 @@
 		background: rgba(0, 0, 0, 0.5);
 		justify-content: center;
 		align-items: center;
-		.sellerChoice {
+		.seller-choice {
 			width: 30px;
 			height: 30px;
 			line-height: 24px;
@@ -28,7 +28,7 @@
 	}
 	/* end hover*/
 	
-	.tripCard_picture {   
+	.trip-card_picture {   
 	    line-height: 1px;
 	    display: block;
 	    height: 220px;
@@ -38,11 +38,11 @@
 		    height: 216px;
 		}
 	}
-	.tripCard_greenBottom {
+	.trip-card_green-bottom {
 	    height: 4px;
 	    background-color: #37db67;
 	}
-	.tripCard_proposition {
+	.trip-card_proposition {
 	    position: absolute;
 	    top: 140px;
 	    left: 0;
@@ -52,7 +52,7 @@
 	    padding: 43px 20px 0;
 		text-align: center;
 	}
-	.tripCondition_wrapper {
+	.trip-condition_wrapper {
 	    @include flex;
 	    align-items: center;
 	    height: 24px;
@@ -60,24 +60,24 @@
 		color: $main-light;
 		margin-bottom: 30px;
 
-		.tripCondition {
+		.trip-condition {
 			@include flex;
 	
-			.tripCondition_type {
+			.trip-condition_type {
 				margin-top: 2px;
 				height: 15px;
 				width: 15px;
 				line-height: 1px;
 			}
-			.tripCondition_duration, .tripCondition_hotel {
+			.trip-condition_duration, .trip-condition_hotel {
 				@include font-header(12px);
 				margin-left: 10px;
 				@include font-header(14px);
 			}
-			.tripCondition_cost {
+			.trip-condition_cost {
 				@include font-header($header-size-3);
 			}
-			.tripCondition_currency {
+			.trip-condition_currency {
 				@include font-text($text-size-2);
 				margin-left: 5px;
 				margin-top: 2px;
@@ -85,14 +85,14 @@
 			}
 		}
 	}
-	.tripDescription {
-		.tripDescription_kurort {
+	.trip-description {
+		.trip-description_kurort {
 			@include font-header($header-size-3);
 			color: $accent-light-blue;
 			margin: 0;
 			line-height: 1;
 		}
-		.tripDescription_route {
+		.trip-description_route {
 			@include font-text($text-size-1);
 			color: $extra-grey-4;
 			margin-bottom: 20px;
@@ -100,16 +100,16 @@
 	}
 }
 
-.tripCard_sellerHover {
-	.tripCard_sellerModal {
+.trip-card_seller-hover {
+	.trip-card_seller-modal {
 		display: flex;
-		.sellerChoice {
+		.seller-choice {
 			cursor: pointer;
 		}
 	}
 }
 
-.tripCard_clientHover {
+.trip-card_client-hover {
 	box-shadow: 0 4px 8px 0 rgba(2, 56, 129, 0.17);
 }
 

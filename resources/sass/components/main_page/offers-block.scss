@@ -35,24 +35,24 @@
 		min-width: 400px;
 		flex:      1;
 		height:    300px;
-		.tripCard_proposition {
+		.trip-card_proposition {
 			height: 160px;
 		}
-		.tripDescription {
+		.trip-description {
 			@include flex;
 		}
-		.tripDescription_route {
+		.trip-description_route {
 			text-align: left;
 		}
 		@include media(">=phone", "<=tablet") { 
 				height: 380px;
-				.tripDescription {
+				.trip-description {
 					@include flex(center, column);
 				}
 				.mod_green {
 					margin: 0 auto;
 				}
-				.tripDescription_route {
+				.trip-description_route {
 					text-align: center;
 				}
 		}
@@ -71,7 +71,7 @@
 		max-width: 300px;
 		flex:      1;
 		height:    380px;
-		.tripDescription {
+		.trip-description {
 			@include flex(center, column);
 		}
 		.mod_green {

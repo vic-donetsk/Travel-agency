@@ -1,14 +1,14 @@
-<section class="mainMenu-wrapper">
-	<nav class="mainMenu">
-		<div class="mainMenu_menuBlock">
-			<div class="mainMenu_menuBlock_tripTransport">
-				<div class="tripTransport_item"> <a href=""> Автобусные туры </a> </div>
-				<div class="tripTransport_item"> <a href=""> Авиационные туры </a></div>
-				<div class="tripTransport_item"> <a href=""> Круизы </a> </div>
+<section class="main-menu-wrapper">
+	<nav class="main-menu">
+		<div class="main-menu_menu-block">
+			<div class="main-menu_menu-block_trip-transport">
+				<div class="trip-transport_item"> <a href=""> Автобусные туры </a> </div>
+				<div class="trip-transport_item"> <a href=""> Авиационные туры </a></div>
+				<div class="trip-transport_item"> <a href=""> Круизы </a> </div>
 			</div>
 			@include('components.logo')
-			<div class="mainMenu_menuBlock_rightMenu">
-				<div class="user mod_tripUserItem">
+			<div class="main-menu_menu-block_right-menu">
+				<div class="user mod_trip-user-item">
 					
 						@include('components.user-or-guest', ['text' => 'Вход/Регистрация'])
 					
@@ -21,8 +21,8 @@
 			</div>
 		</div>
 
-		<div class="mainMenu_operationBlock">
-			<div class="mainMenu_operationBlock_searchField">
+		<div class="main-menu_operation-block">
+			<div class="main-menu_operation-block_search-field">
 				<input class="search-tour mod_text-2" type="text" placeholder="Поиск предложения">
 				<button type="submit" class="search-sign"><i class="fas fa-search"></i></a>
 			</div>

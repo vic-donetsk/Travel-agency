@@ -1,4 +1,4 @@
-.mobileHeaderMenu {
+.mobile-header-menu {
 	@include background-gradient(76deg);
 	@include media(">tablet") {
 		display: none;
@@ -10,12 +10,12 @@
 	@include flex();
 	color: $main-light;
 
-	.mobileHeaderMenu_mainButton {
+	.mobile-header-menu_main-button {
 		cursor: pointer;
 	}
 }
 
-.mobileMenu_wrapper {
+.mobile-menu_wrapper {
 	@include background-gradient(36deg);
 	display: none;
 	height: 440px;
@@ -24,8 +24,8 @@
 	position: absolute;
 	top: 0;
 	z-index:10;
-	.mobileMenu {
-		.mobileMenu_close img {
+	.mobile-menu {
+		.mobile-menu_close img {
 			position: absolute;
 			right: 14px;
 			top: 14px;
@@ -34,7 +34,7 @@
 			color: $main-light;
 			cursor: pointer;
 		}
-		.mobileMenu_items {
+		.mobile-menu_items {
 			height: 300px;
 			@include flex(space-between,column);
 			.mobile-trip-transport {

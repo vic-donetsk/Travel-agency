@@ -4,9 +4,7 @@
 		<div class="trip-block">
 			<div class="trip-block_title">
 				<p class="trip-block_title_header"> ColorLife рекомендует</p>
-				<!-- <div class="trip-block_title_link"> -->
-					<a class="trip-block_title_link"href="#">Показать все (598) &nbsp;<i class="fas fa-long-arrow-alt-right"></i></a>
-				<!-- </div> -->
+				<a class="trip-block_title_link"href="#">Показать все (598) &nbsp;<i class="fas fa-long-arrow-alt-right"></i></a>
 			</div>
 			<div class="trip-block_cards">
 		       

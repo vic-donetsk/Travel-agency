@@ -20,14 +20,14 @@
 ?>
 
 
-<section class="tripTypes_container">
-    <div class="tripTypes">
-        <div class="tripTypes_header">
+<section class="trip-types_container">
+    <div class="trip-types">
+        <div class="trip-types_header">
             <a href="#">Виды отдыха &nbsp;<i class="fas fa-long-arrow-alt-right"></i></a>
         </div>
-        <div class="tripTypes_icons">
+        <div class="trip-types_icons">
             @foreach($trip_types as $type)
-                <div class="tripCategoryIcon" data-toggle="tooltip" title="{{ $type['name'] }}">
+                <div class="trip-category-icon" data-toggle="tooltip" title="{{ $type['name'] }}">
                     <a  href=""> 
                         <svg class="svg-icon">
                             <use xlink:href="#{{$type['img']}}">

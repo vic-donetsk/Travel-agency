@@ -40,7 +40,7 @@ input[type=radio]:not(:checked) + label:after {
   cursor: pointer;
 }
 
-.tripCategoryIcon {
+.trip-category-icon {
   margin: 0 auto;
   min-width: 46px;
   min-height: 46px;
@@ -11580,7 +11580,7 @@ input[type=radio]:checked + label:after {
   border-top: none;
 }
 
-.popupWindow_wrapper {
+.popup-window_wrapper {
   display: none;
   position: absolute;
   width: 180px;
@@ -11591,22 +11591,22 @@ input[type=radio]:checked + label:after {
   padding-top: 29px;
 }
 
-.popupWindow_wrapper a {
+.popup-window_wrapper a {
   color: #666;
 }
 
-.popupWindow_wrapper a:hover {
+.popup-window_wrapper a:hover {
   color: #084599;
   text-decoration: none;
 }
 
-.popupWindow_wrapper .popupWindow_item {
+.popup-window_wrapper .popup-window_item {
   line-height: 1;
   margin-left: 21px;
   margin-bottom: 14px;
 }
 
-.popupWindow_wrapper .popupWindow_exit {
+.popup-window_wrapper .popup-window_exit {
   margin-top: 30px;
   padding-left: 17px;
   width: 100%;
@@ -11640,7 +11640,7 @@ input[type=radio]:checked + label:after {
   cursor: default;
 }
 
-.tripCard {
+.trip-card {
   margin: 0 10px 20px;
   box-sizing: border-box;
   border-radius: 0 0 4px 4px;
@@ -11651,7 +11651,7 @@ input[type=radio]:checked + label:after {
   /* end hover*/
 }
 
-.tripCard .tripCard_sellerModal {
+.trip-card .trip-card_seller-modal {
   display: none;
   position: absolute;
   left: 0;
@@ -11663,7 +11663,7 @@ input[type=radio]:checked + label:after {
   align-items: center;
 }
 
-.tripCard .tripCard_sellerModal .sellerChoice {
+.trip-card .trip-card_seller-modal .seller-choice {
   width: 30px;
   height: 30px;
   line-height: 24px;
@@ -11673,24 +11673,24 @@ input[type=radio]:checked + label:after {
   border: 1px solid #fff;
 }
 
-.tripCard .tripCard_picture {
+.trip-card .trip-card_picture {
   line-height: 1px;
   display: block;
   height: 220px;
   position: relative;
 }
 
-.tripCard .tripCard_picture .foto {
+.trip-card .trip-card_picture .foto {
   width: 100%;
   height: 216px;
 }
 
-.tripCard .tripCard_greenBottom {
+.trip-card .trip-card_green-bottom {
   height: 4px;
   background-color: #37db67;
 }
 
-.tripCard .tripCard_proposition {
+.trip-card .trip-card_proposition {
   position: absolute;
   top: 140px;
   left: 0;
@@ -11701,7 +11701,7 @@ input[type=radio]:checked + label:after {
   text-align: center;
 }
 
-.tripCard .tripCondition_wrapper {
+.trip-card .trip-condition_wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -11713,22 +11713,22 @@ input[type=radio]:checked + label:after {
   margin-bottom: 30px;
 }
 
-.tripCard .tripCondition_wrapper .tripCondition {
+.trip-card .trip-condition_wrapper .trip-condition {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: nowrap;
 }
 
-.tripCard .tripCondition_wrapper .tripCondition .tripCondition_type {
+.trip-card .trip-condition_wrapper .trip-condition .trip-condition_type {
   margin-top: 2px;
   height: 15px;
   width: 15px;
   line-height: 1px;
 }
 
-.tripCard .tripCondition_wrapper .tripCondition .tripCondition_duration,
-.tripCard .tripCondition_wrapper .tripCondition .tripCondition_hotel {
+.trip-card .trip-condition_wrapper .trip-condition .trip-condition_duration,
+.trip-card .trip-condition_wrapper .trip-condition .trip-condition_hotel {
   font-family: "Proxima Nova Rg";
   font-size: 12px;
   font-weight: bold;
@@ -11738,13 +11738,13 @@ input[type=radio]:checked + label:after {
   font-weight: bold;
 }
 
-.tripCard .tripCondition_wrapper .tripCondition .tripCondition_cost {
+.trip-card .trip-condition_wrapper .trip-condition .trip-condition_cost {
   font-family: "Proxima Nova Rg";
   font-size: 18px;
   font-weight: bold;
 }
 
-.tripCard .tripCondition_wrapper .tripCondition .tripCondition_currency {
+.trip-card .trip-condition_wrapper .trip-condition .trip-condition_currency {
   font-family: "Proxima Nova Rg";
   font-size: 12px;
   font-weight: normal;
@@ -11753,7 +11753,7 @@ input[type=radio]:checked + label:after {
   line-height: 2;
 }
 
-.tripCard .tripDescription .tripDescription_kurort {
+.trip-card .trip-description .trip-description_kurort {
   font-family: "Proxima Nova Rg";
   font-size: 18px;
   font-weight: bold;
@@ -11762,7 +11762,7 @@ input[type=radio]:checked + label:after {
   line-height: 1;
 }
 
-.tripCard .tripDescription .tripDescription_route {
+.trip-card .trip-description .trip-description_route {
   font-family: "Proxima Nova Rg";
   font-size: 14px;
   font-weight: normal;
@@ -11770,15 +11770,15 @@ input[type=radio]:checked + label:after {
   margin-bottom: 20px;
 }
 
-.tripCard_sellerHover .tripCard_sellerModal {
+.trip-card_seller-hover .trip-card_seller-modal {
   display: flex;
 }
 
-.tripCard_sellerHover .tripCard_sellerModal .sellerChoice {
+.trip-card_seller-hover .trip-card_seller-modal .seller-choice {
   cursor: pointer;
 }
 
-.tripCard_clientHover {
+.trip-card_client-hover {
   box-shadow: 0 4px 8px 0 rgba(2, 56, 129, 0.17);
 }
 
@@ -11795,7 +11795,7 @@ input[type=radio]:checked + label:after {
   height: 36px;
 }
 
-.mainMenu-wrapper {
+.main-menu-wrapper {
   background-image: linear-gradient(85deg, #084599, #05a8d4);
   height: 120px;
   margin: 0 auto;
@@ -11804,16 +11804,16 @@ input[type=radio]:checked + label:after {
 }
 
 @media (min-width: 320px) and (max-width: 960px) {
-  .mainMenu-wrapper {
+  .main-menu-wrapper {
     display: none;
   }
 }
 
-.mainMenu-wrapper a {
+.main-menu-wrapper a {
   color: #fff;
 }
 
-.mainMenu-wrapper .mainMenu_menuBlock {
+.main-menu-wrapper .main-menu_menu-block {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -11825,47 +11825,47 @@ input[type=radio]:checked + label:after {
   line-height: 36px;
 }
 
-.mainMenu-wrapper .mainMenu_menuBlock .mainMenu_menuBlock_tripTransport {
+.main-menu-wrapper .main-menu_menu-block .main-menu_menu-block_trip-transport {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: nowrap;
 }
 
-.mainMenu-wrapper .mainMenu_menuBlock .mainMenu_menuBlock_tripTransport .tripTransport_item {
+.main-menu-wrapper .main-menu_menu-block .main-menu_menu-block_trip-transport .trip-transport_item {
   margin-right: 30px;
 }
 
 @media (min-width: 961px) and (max-width: 1100px) {
-  .mainMenu-wrapper .mainMenu_menuBlock .mainMenu_menuBlock_tripTransport .tripTransport_item {
+  .main-menu-wrapper .main-menu_menu-block .main-menu_menu-block_trip-transport .trip-transport_item {
     margin-right: 15px;
   }
 }
 
-.mainMenu-wrapper .mainMenu_menuBlock .mod_tripUserItem {
+.main-menu-wrapper .main-menu_menu-block .mod_trip-user-item {
   margin-right: 50px;
 }
 
 @media (min-width: 961px) and (max-width: 1100px) {
-  .mainMenu-wrapper .mainMenu_menuBlock .mod_tripUserItem {
+  .main-menu-wrapper .main-menu_menu-block .mod_trip-user-item {
     margin-right: 18px;
   }
 }
 
-.mainMenu-wrapper .mainMenu_menuBlock .mainMenu_menuBlock_rightMenu {
+.main-menu-wrapper .main-menu_menu-block .main-menu_menu-block_right-menu {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: nowrap;
 }
 
-.mainMenu-wrapper .mainMenu_operationBlock {
+.main-menu-wrapper .main-menu_operation-block {
   margin-top: 17px;
   display: flex;
   height: 40px;
 }
 
-.mainMenu-wrapper .mainMenu_operationBlock .mainMenu_operationBlock_searchField {
+.main-menu-wrapper .main-menu_operation-block .main-menu_operation-block_search-field {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -11874,7 +11874,7 @@ input[type=radio]:checked + label:after {
   margin-right: 30px;
 }
 
-.mainMenu-wrapper .mainMenu_operationBlock .mainMenu_operationBlock_searchField .search-tour {
+.main-menu-wrapper .main-menu_operation-block .main-menu_operation-block_search-field .search-tour {
   flex: 1;
   color: #fff;
   background-image: linear-gradient(to right, #83a4cd, #7ec3de);
@@ -11882,28 +11882,28 @@ input[type=radio]:checked + label:after {
   border: none;
 }
 
-.mainMenu-wrapper .mainMenu_operationBlock .mainMenu_operationBlock_searchField .search-tour::-webkit-input-placeholder {
+.main-menu-wrapper .main-menu_operation-block .main-menu_operation-block_search-field .search-tour::-webkit-input-placeholder {
   color: #fff;
 }
 
-.mainMenu-wrapper .mainMenu_operationBlock .mainMenu_operationBlock_searchField .search-tour::-moz-placeholder {
+.main-menu-wrapper .main-menu_operation-block .main-menu_operation-block_search-field .search-tour::-moz-placeholder {
   color: #fff;
 }
 
-.mainMenu-wrapper .mainMenu_operationBlock .mainMenu_operationBlock_searchField .search-tour:-moz-placeholder {
+.main-menu-wrapper .main-menu_operation-block .main-menu_operation-block_search-field .search-tour:-moz-placeholder {
   color: #fff;
 }
 
-.mainMenu-wrapper .mainMenu_operationBlock .mainMenu_operationBlock_searchField .search-tour:-ms-input-placeholder {
+.main-menu-wrapper .main-menu_operation-block .main-menu_operation-block_search-field .search-tour:-ms-input-placeholder {
   color: #fff;
 }
 
-.mainMenu-wrapper .mainMenu_operationBlock .mainMenu_operationBlock_searchField .search-tour:focus {
+.main-menu-wrapper .main-menu_operation-block .main-menu_operation-block_search-field .search-tour:focus {
   border: none;
   outline: none;
 }
 
-.mainMenu-wrapper .mainMenu_operationBlock .mainMenu_operationBlock_searchField .search-sign {
+.main-menu-wrapper .main-menu_operation-block .main-menu_operation-block_search-field .search-sign {
   background: #7ec3de;
   color: #fff;
   text-align: center;
@@ -11930,7 +11930,7 @@ input[type=radio]:checked + label:after {
   text-decoration: none;
 }
 
-.mobileHeaderMenu {
+.mobile-header-menu {
   background-image: linear-gradient(76deg, #084599, #05a8d4);
   height: 80px;
   line-height: 80px;
@@ -11943,16 +11943,16 @@ input[type=radio]:checked + label:after {
 }
 
 @media (min-width: 961px) {
-  .mobileHeaderMenu {
+  .mobile-header-menu {
     display: none;
   }
 }
 
-.mobileHeaderMenu .mobileHeaderMenu_mainButton {
+.mobile-header-menu .mobile-header-menu_main-button {
   cursor: pointer;
 }
 
-.mobileMenu_wrapper {
+.mobile-menu_wrapper {
   background-image: linear-gradient(36deg, #084599, #05a8d4);
   display: none;
   height: 440px;
@@ -11963,7 +11963,7 @@ input[type=radio]:checked + label:after {
   z-index: 10;
 }
 
-.mobileMenu_wrapper .mobileMenu .mobileMenu_close img {
+.mobile-menu_wrapper .mobile-menu .mobile-menu_close img {
   position: absolute;
   right: 14px;
   top: 14px;
@@ -11973,7 +11973,7 @@ input[type=radio]:checked + label:after {
   cursor: pointer;
 }
 
-.mobileMenu_wrapper .mobileMenu .mobileMenu_items {
+.mobile-menu_wrapper .mobile-menu .mobile-menu_items {
   height: 300px;
   display: flex;
   flex-direction: column;
@@ -11981,7 +11981,7 @@ input[type=radio]:checked + label:after {
   flex-wrap: nowrap;
 }
 
-.mobileMenu_wrapper .mobileMenu .mobileMenu_items .mobile-trip-transport {
+.mobile-menu_wrapper .mobile-menu .mobile-menu_items .mobile-trip-transport {
   height: 110px;
   display: flex;
   flex-direction: column;
@@ -11989,16 +11989,16 @@ input[type=radio]:checked + label:after {
   flex-wrap: nowrap;
 }
 
-.mobileMenu_wrapper .mobileMenu .mobileMenu_items a {
+.mobile-menu_wrapper .mobile-menu .mobile-menu_items a {
   color: #fff;
 }
 
-.mobileMenu_wrapper .mobileMenu .mobileMenu_items .mod_240 {
+.mobile-menu_wrapper .mobile-menu .mobile-menu_items .mod_240 {
   margin: 0 auto;
 }
 
 @media (min-width: 320px) and (max-width: 400px) {
-  .mobileMenu_wrapper .mobileMenu .mobileMenu_items .mod_240 {
+  .mobile-menu_wrapper .mobile-menu .mobile-menu_items .mod_240 {
     width: 170px;
   }
 }
@@ -12039,7 +12039,7 @@ input[type=radio]:checked + label:after {
   }
 }
 
-.tripTypes_container {
+.trip-types_container {
   height: 100px;
   background-color: #f7f7f7;
   line-height: 100px;
@@ -12047,12 +12047,12 @@ input[type=radio]:checked + label:after {
 }
 
 @media (min-width: 320px) and (max-width: 960px) {
-  .tripTypes_container {
+  .trip-types_container {
     padding: 0px 20px;
   }
 }
 
-.tripTypes_container .tripTypes {
+.trip-types_container .trip-types {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -12065,19 +12065,19 @@ input[type=radio]:checked + label:after {
 }
 
 @media (min-width: 320px) and (max-width: 440px) {
-  .tripTypes_container .tripTypes {
+  .trip-types_container .trip-types {
     padding: 0;
   }
 }
 
-.tripTypes_container .tripTypes .tripTypes_header {
+.trip-types_container .trip-types .trip-types_header {
   font-family: "Proxima Nova Rg";
   font-size: 18px;
   font-weight: bold;
   min-width: 140px;
 }
 
-.tripTypes_container .tripTypes .tripTypes_icons {
+.trip-types_container .trip-types .trip-types_icons {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -12085,26 +12085,26 @@ input[type=radio]:checked + label:after {
   line-height: 100px;
 }
 
-.tripCategoryIcon {
+.trip-category-icon {
   margin: 0 12px;
   text-align: center;
 }
 
-.tripCategoryIcon .svg-icon {
+.trip-category-icon .svg-icon {
   width: 24px;
   height: 24px;
   fill: #ccc;
 }
 
-.tripCategoryIcon:hover {
+.trip-category-icon:hover {
   background-image: linear-gradient(to bottom, #084599, #05a8d4);
 }
 
-.tripCategoryIcon:hover .svg-icon {
+.trip-category-icon:hover .svg-icon {
   fill: #fff;
 }
 
-.tripCategoryIcon:last-of-type {
+.trip-category-icon:last-of-type {
   margin-right: 0;
 }
 
@@ -12269,18 +12269,18 @@ input[type=radio]:checked + label:after {
   height: 300px;
 }
 
-.trip-block .main-propositions .tripCard_proposition {
+.trip-block .main-propositions .trip-card_proposition {
   height: 160px;
 }
 
-.trip-block .main-propositions .tripDescription {
+.trip-block .main-propositions .trip-description {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: nowrap;
 }
 
-.trip-block .main-propositions .tripDescription_route {
+.trip-block .main-propositions .trip-description_route {
   text-align: left;
 }
 
@@ -12289,7 +12289,7 @@ input[type=radio]:checked + label:after {
     height: 380px;
   }
 
-  .trip-block .main-propositions .tripDescription {
+  .trip-block .main-propositions .trip-description {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12300,7 +12300,7 @@ input[type=radio]:checked + label:after {
     margin: 0 auto;
   }
 
-  .trip-block .main-propositions .tripDescription_route {
+  .trip-block .main-propositions .trip-description_route {
     text-align: center;
   }
 }
@@ -12331,8 +12331,8 @@ input[type=radio]:checked + label:after {
   height: 380px;
 }
 
-.trip-block .next-propositions .tripDescription,
-.trip-block .hidden-on-mobile-propositions .tripDescription {
+.trip-block .next-propositions .trip-description,
+.trip-block .hidden-on-mobile-propositions .trip-description {
   display: flex;
   flex-direction: column;
   justify-content: center;
