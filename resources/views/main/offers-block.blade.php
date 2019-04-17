@@ -1,4 +1,6 @@
 <section class="offers-block">
+	<?php $show_class = ['main-propositions', 'main-propositions', 'next-propositions', 'next-propositions', 'hidden-on-mobile-propositions', 'hidden-on-mobile-propositions','hidden-on-mobile-propositions','hidden-on-mobile-propositions']; ?>
+		
 		<div class="tripBlock">
 			<div class="tripBlock_title">
 				<div class="tripBlock_title_header"> ColorLife рекомендует</div>
@@ -7,7 +9,6 @@
 				</div>
 			</div>
 			<div class="tripBlock_cards">
-				<?php $show_class = ['firsts', 'firsts', 'nexts', 'nexts', 'others', 'others','others','others']; ?>
 		       
 	            @each('components.trip-card', $show_class, 'show')
 		       
@@ -22,13 +23,9 @@
 				</div>
 			</div>
 			<div class="tripBlock_cards">
-				<?php $show_class = ['firsts', 'firsts', 'nexts', 'nexts', 'others', 'others','others','others']; ?>
 
 	            @each('components.trip-card', $show_class, 'show')
 
 			</div>
 		</div>
-
-
-
-	</section>
+</section>

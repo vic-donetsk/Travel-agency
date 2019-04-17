@@ -1,13 +1,18 @@
+.offers-block {
+	padding: 0 30px;
+	@include media(">=phone", "<=tablet") { 
+			padding: 0px 10px;
+	}
+}
 .tripBlock {
 	margin: 0 auto;
 	max-width: 960px;
 	.tripBlock_title {
 		margin: 45px 10px 35px;
 		@include media(">=phone", "<=440px") { 
-			margin: 60px 0 35px;;
+			margin: 60px 0 35px;
 		}
 		@include flex;
-		//align-items:center;
 		.tripBlock_title_header {
 			@include font-header($header-size-2);
 			color: $main-dark;
@@ -20,13 +25,14 @@
 				color: $accent-light-blue;
 			}
 		}
-		@include media(">=phone", "<=736px") {
+		@include media(">=phone", "<big_phone") {
 			@include flex(flex-start, column, no-wrap);
 		}
 	}
 	// size of trip-cards instead of display width
-	.firsts {
-		width: 460px;
+	.main-propositions {
+		min-width: 400px;
+		flex: 1;
 		height: 300px;
 		.tripCard_proposition {
 			height: 160px;
@@ -37,8 +43,8 @@
 		.tripDescription_route {
 			text-align: left;
 		}
-		@include media(">=phone", "<=1057px") { 
-				width: 300px;
+		@include media(">=phone", "<=tablet") { 
+				//min-width: 400px;
 				height: 380px;
 				.tripDescription {
 					@include flex(center, column);
@@ -49,12 +55,22 @@
 				.tripDescription_route {
 					text-align: center;
 				}
-
+		}
+		@include media(">=big_phone", "<880px") { 
+				min-width: 280px;
+		}
+		@include media(">=400px", "<big_phone") { 
+				min-width: 300px;
+		}
+		@include media(">=phone", "<400px") { 
+				min-width: 279px;
 		}
 
 	}
-	.nexts {
-		width: 300px;
+	.next-propositions, .hidden-on-mobile-propositions {
+		min-width: 274px;
+		max-width: 300px;
+		flex: 1;
 		height: 380px;
 		.tripDescription {
 			@include flex(center, column);
@@ -63,16 +79,8 @@
 			margin: 0 auto;
 		}
 	}
-	.others {
-		width: 300px;
-		height: 380px;
-		.tripDescription {
-			@include flex(center, column);
-		}
-		.mod_green {
-			margin: 0 auto;
-		}
-		@include media(">=phone", "<=736px") {
+	.hidden-on-mobile-propositions {
+		@include media(">=phone", "<big_phone") {
 			display: none;
 		}
 	}

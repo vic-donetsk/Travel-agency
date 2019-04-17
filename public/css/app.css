@@ -12183,7 +12183,7 @@ input[type=radio]:checked + label:after {
   margin-bottom: 0;
 }
 
-@media (min-width: 320px) and (max-width: 660px) {
+@media (min-width: 320px) and (max-width: 640px) {
   .swiper .swiper-slide_describe .swiper-slide_describe_title {
     font-size: 30px;
   }
@@ -12196,11 +12196,21 @@ input[type=radio]:checked + label:after {
   margin-bottom: 25px;
 }
 
-@media (min-width: 320px) and (max-width: 660px) {
+@media (min-width: 320px) and (max-width: 640px) {
   .swiper .swiper-slide_describe .swiper-slide_describe_slogan {
     font-size: 18px;
     margin-top: 13px;
     margin-bottom: 15px;
+  }
+}
+
+.offers-block {
+  padding: 0 30px;
+}
+
+@media (min-width: 320px) and (max-width: 960px) {
+  .offers-block {
+    padding: 0px 10px;
   }
 }
 
@@ -12242,7 +12252,7 @@ input[type=radio]:checked + label:after {
   color: #084599;
 }
 
-@media (min-width: 320px) and (max-width: 736px) {
+@media (min-width: 320px) and (max-width: 639px) {
   .tripBlock .tripBlock_title {
     display: flex;
     flex-direction: column;
@@ -12251,82 +12261,89 @@ input[type=radio]:checked + label:after {
   }
 }
 
-.tripBlock .firsts {
-  width: 460px;
+.tripBlock .main-propositions {
+  min-width: 400px;
+  flex: 1;
   height: 300px;
 }
 
-.tripBlock .firsts .tripCard_proposition {
+.tripBlock .main-propositions .tripCard_proposition {
   height: 160px;
 }
 
-.tripBlock .firsts .tripDescription {
+.tripBlock .main-propositions .tripDescription {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: nowrap;
 }
 
-.tripBlock .firsts .tripDescription_route {
+.tripBlock .main-propositions .tripDescription_route {
   text-align: left;
 }
 
-@media (min-width: 320px) and (max-width: 1057px) {
-  .tripBlock .firsts {
-    width: 300px;
+@media (min-width: 320px) and (max-width: 960px) {
+  .tripBlock .main-propositions {
     height: 380px;
   }
 
-  .tripBlock .firsts .tripDescription {
+  .tripBlock .main-propositions .tripDescription {
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex-wrap: nowrap;
   }
 
-  .tripBlock .firsts .mod_green {
+  .tripBlock .main-propositions .mod_green {
     margin: 0 auto;
   }
 
-  .tripBlock .firsts .tripDescription_route {
+  .tripBlock .main-propositions .tripDescription_route {
     text-align: center;
   }
 }
 
-.tripBlock .nexts {
-  width: 300px;
+@media (min-width: 640px) and (max-width: 879px) {
+  .tripBlock .main-propositions {
+    min-width: 280px;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 639px) {
+  .tripBlock .main-propositions {
+    min-width: 300px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 399px) {
+  .tripBlock .main-propositions {
+    min-width: 279px;
+  }
+}
+
+.tripBlock .next-propositions,
+.tripBlock .hidden-on-mobile-propositions {
+  min-width: 274px;
+  max-width: 300px;
+  flex: 1;
   height: 380px;
 }
 
-.tripBlock .nexts .tripDescription {
+.tripBlock .next-propositions .tripDescription,
+.tripBlock .hidden-on-mobile-propositions .tripDescription {
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex-wrap: nowrap;
 }
 
-.tripBlock .nexts .mod_green {
+.tripBlock .next-propositions .mod_green,
+.tripBlock .hidden-on-mobile-propositions .mod_green {
   margin: 0 auto;
 }
 
-.tripBlock .others {
-  width: 300px;
-  height: 380px;
-}
-
-.tripBlock .others .tripDescription {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-wrap: nowrap;
-}
-
-.tripBlock .others .mod_green {
-  margin: 0 auto;
-}
-
-@media (min-width: 320px) and (max-width: 736px) {
-  .tripBlock .others {
+@media (min-width: 320px) and (max-width: 639px) {
+  .tripBlock .hidden-on-mobile-propositions {
     display: none;
   }
 }
