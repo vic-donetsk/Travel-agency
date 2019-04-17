@@ -1,6 +1,5 @@
 .tripTypes_container {
-		//max-width: 1280px;
-		//margin: 0 auto;
+
 		height: 100px;
 		background-color: $extra-grey-2;
 		line-height: 100px;
@@ -28,15 +27,17 @@
 .tripCategoryIcon {
 	margin: 0 12px;
 	text-align: center;
-		@extend %category-icon;
-		.img {
-			width: 24px;
-			height: 24px;
-		}
-
+	@extend %category-icon;
+	.svg-icon {
+		width: 24px;
+		height: 24px;
+		fill: $extra-grey-4;
+	}
 	&:hover {
 		@include background-gradient(to bottom);
-
+		.svg-icon {
+			fill: $main-light;
+		}
 	}
 	&:last-of-type {
 		margin-right: 0;
@@ -54,19 +55,19 @@
 }
 
 .tooltip-inner::before {
-	position: absolute;
-	content: ''; 
-   	margin-left: -10px;
-    left: 50%; top: -10px;
-    border: 10px solid transparent;
+	position:      absolute;
+	content:       ''; 
+   	margin-left:   -10px;
+    left:          50%; top: -10px;
+    border:        10px solid transparent;
     border-bottom: 7px solid $accent-light-blue;
 }
 .tooltip-inner::after {
-	position: absolute;
-	content: ''; 
-    margin-left: -10px;
-    left: 50%; top: -9px;
-    border: 10px solid transparent;
+	position:      absolute;
+	content:       ''; 
+    margin-left:   -10px;
+    left:          50%; top: -9px;
+    border:        10px solid transparent;
     border-bottom: 7px solid $main-light;
 }
 

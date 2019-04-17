@@ -1,18 +1,22 @@
 <!-- возможно, типы надо будет забить в БД, тогда вместо готового массива сюда
 должен приходить массив-параметр с нужными данными -->
+
+@include('components.svg-images')
+
+
 <?php
     $trip_types = [
-        ['name' => 'Индустриальный', 'img' => 'img/trip_types/industry.svg'],
-        ['name' => 'Шоппинг', 'img' => 'img/trip_types/shopping.svg'],
-        ['name' => 'Экстрим', 'img' => 'img/trip_types/extrim.svg'],
-        ['name' => 'Luxury', 'img' => 'img/trip_types/luxury.svg'],
-        ['name' => 'Всё включено', 'img' => 'img/trip_types/all-inclusive.svg'],
-        ['name' => 'Программы развлечений', 'img' => 'img/trip_types/games.svg'],
-        ['name' => 'Пляжный', 'img' => 'img/trip_types/beach.svg'],
-        ['name' => 'Гастрономический', 'img' => 'img/trip_types/gurman.svg'],
-        ['name' => 'SPA', 'img' => 'img/trip_types/spa.svg'],
-        ['name' => 'Семейный', 'img' => 'img/trip_types/family.svg'],
-        ['name' => 'Спокойный отдых', 'img' => 'img/trip_types/rest.svg']]
+        ['name' => 'Индустриальный', 'img' => 'industrial'],
+        ['name' => 'Шоппинг', 'img' => 'shopping'],
+        ['name' => 'Экстрим', 'img' => 'extrim'],
+        ['name' => 'Luxury', 'img' => 'luxury'],
+        ['name' => 'Всё включено', 'img' => 'all-inclusive'],
+        ['name' => 'Программы развлечений', 'img' => 'games'],
+        ['name' => 'Пляжный', 'img' => 'beach'],
+        ['name' => 'Гастрономический', 'img' => 'gurman'],
+        ['name' => 'SPA', 'img' => 'spa'],
+        ['name' => 'Семейный', 'img' => 'family'],
+        ['name' => 'Спокойный отдых', 'img' => 'rest']]
 ?>
 
 
@@ -24,7 +28,11 @@
         <div class="tripTypes_icons">
             @foreach($trip_types as $type)
                 <div class="tripCategoryIcon" data-toggle="tooltip" title="{{ $type['name'] }}">
-                    <a  href=""> <img src="{{ $type['img'] }}" alt=""> </a>
+                    <a  href=""> 
+                        <svg class="svg-icon">
+                            <use xlink:href="#{{$type['img']}}">
+                        </svg>
+                    </a>
                 </div>
             @endforeach
         </div>

@@ -12089,13 +12089,18 @@ input[type=radio]:checked + label:after {
   text-align: center;
 }
 
-.tripCategoryIcon .img {
+.tripCategoryIcon .svg-icon {
   width: 24px;
   height: 24px;
+  fill: #ccc;
 }
 
 .tripCategoryIcon:hover {
   background-image: linear-gradient(to bottom, #084599, #05a8d4);
+}
+
+.tripCategoryIcon:hover .svg-icon {
+  fill: #fff;
 }
 
 .tripCategoryIcon:last-of-type {
