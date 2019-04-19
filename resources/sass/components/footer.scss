@@ -1,21 +1,21 @@
 .footer {
-	@include background-gradient(81deg);
-	height: 200px;
-	text-align: center;
-	color: $main-light;
+	@include     background-gradient(81deg);
+	height:      200px;
+	text-align:  center;
+	color:       $main-light;
 	padding-top: 30px;
 	.single-btn {
-		margin: 0 auto 30px;
+		margin:  0 auto 30px;
 	}
 	a {
-		color: $main-light;
+		color:   $main-light;
 	}
 	.footer_authors {
 		@include flex(center);
-		margin-top: 30px;
+		margin-top:     30px;
 		.author {
-			margin: 0 18px;
-			width: 103px;
+			margin:     0 18px;
+			width:      103px;
 			text-align: center;
 			@include media(">=phone", "<=327px") { 
 				margin: 0 11px;

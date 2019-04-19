@@ -10,16 +10,16 @@
 
     &.mod_green {
         background-color: $accent-light-green;
-        box-shadow: 0 3px 6px 0 $accent-dark-green;
+        box-shadow:       0 3px 6px 0 $accent-dark-green;
     }
     &.mod_green:hover {
         background-color: $accent-dark-green;
-        box-shadow: none;
+        box-shadow:       none;
     }
 
  	&.mod_white {
         background-color: $main-light;
-        color: $accent-light-blue;
+        color:            $accent-light-blue;
     }
     &.mod_white:hover {
 		color: $accent-dark-blue;

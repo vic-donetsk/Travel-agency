@@ -1,26 +1,26 @@
 .offers-block {
-	padding: 0 30px;
 	@include media(">=phone", "<=tablet") { 
 			padding: 0px 10px;
 	}
+	padding: 0 30px;
 }
 .trip-block {
-	margin: 0 auto;
+	margin:    0 auto;
 	max-width: 960px;
 	.trip-block_title {
-		@include flex;
+		@include     flex;
 		align-items: center;
-		margin: 45px 10px 35px;
-		@include media(">=phone", "<=440px") { 
+		margin:      45px 10px 35px;
+		@include     media(">=phone", "<=440px") { 
 			margin-top: 60px;
 		}
 		.trip-block_title_header {
 			@include font-header($header-size-2);
-			color: $main-dark;
+			color:   $main-dark;
 		}
 		.trip-block_title_link {
 			@include font-text;
-			color: $extra-grey-6;
+			color:   $extra-grey-6;
 			&:hover {
 				cursor: pointer;
 				color: $accent-light-blue;
@@ -28,6 +28,7 @@
 		}
 		@include media(">=phone", "<big_phone") {
 			@include flex(flex-start, column, no-wrap);
+			align-items: flex-start;
 		}
 	}
 	// size of trip-cards instead of display width

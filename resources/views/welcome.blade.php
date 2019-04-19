@@ -11,7 +11,7 @@
             body {
                background-color: #fff !important;
             }
-
+            
             .show_block {
                 margin: 50px auto;
                 width: 90%;
@@ -67,10 +67,10 @@
 
 
 
-        <!-- <?php $classes_type = ['trip-card', 'trip-card client-hover', 'trip-card seller-hover']; ?>
         <div class="show_block">
-            @each('components.trip-card', $classes_type, 'classes')
-        </div> -->
+            <?php $classes_type = ['', 'client-hover', 'seller-hover']; ?>
+            @each('components.trip-card', $classes_type, 'show')
+        </div>
 
 
 
@@ -94,22 +94,9 @@
 
 
         <div class="show_block">
-        <?php
-            $trip_types = [
-                ['name' => 'Индустриальный', 'img' => 'img/trip_types/industry.svg'],
-                ['name' => 'Шоппинг', 'img' => 'imgtrip_types//shopping.svg'],
-                ['name' => 'Экстрим', 'img' => 'img/trip_types/extrim.svg'],
-                ['name' => 'Luxury', 'img' => 'img/trip_types/luxury.svg'],
-                ['name' => 'Всё включено', 'img' => 'imgtrip_types//all-inclusive.svg'],
-                ['name' => 'Программы развлечений', 'img' => 'img/trip_types/games.svg'],
-                ['name' => 'Пляжный', 'img' => 'img/trip_types/beach.svg'],
-                ['name' => 'Гастрономический', 'img' => 'img/trip_types/gurman.svg'],
-                ['name' => 'SPA', 'img' => 'img/trip_types/spa.svg'],
-                ['name' => 'Семейный', 'img' => 'img/trip_types/family.svg'],
-                ['name' => 'Спокойный отдых', 'img' => 'img/trip_types/rest.svg']]
-        ?>
-             @each('components.trip-type', $trip_types, 'type')
+             @include('components.trip-types')
         </div>
+        
 
 
 

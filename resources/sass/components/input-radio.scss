@@ -8,27 +8,26 @@ input[type="radio"]:not(:checked)
 // label styles
 input[type="radio"]:checked + label, 
 input[type="radio"]:not(:checked) + label {
-    display: inline-block;
-    position: relative;
+    display:      inline-block;
+    position:     relative;
     padding-left: 23px;  //18 input + 5 padding
-    line-height: 18px;
-    cursor: pointer;
-    @include font-header($header-size-4);
-    color: $main-dark;
+    line-height:  18px;
+    cursor:       pointer;
+    @include      font-header($header-size-4);
+    color:        $main-dark;
 }
 
 // external circle
 input[type="radio"]:checked + label:before, 
 input[type="radio"]:not(:checked) + label:before {
-    content: "";
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 18px;
-    height: 18px;
-    
+    content:          "";
+    position:         absolute;
+    left:             0px;
+    top:              0px;
+    width:            18px;
+    height:           18px;
     background-color: $main-light;
-    border-radius: 100%;
+    border-radius:    100%;
 }
 
 input[type="radio"]:checked + label:before {
@@ -41,14 +40,14 @@ input[type="radio"]:not(:checked) + label:before {
 // internal filled circle
 input[type="radio"]:checked + label:after, 
 input[type="radio"]:not(:checked) + label:after {
-    content: "";
-    position: absolute;
     @extend %soft-transition;
-    left: 4px;
-    top: 4px;
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
+    content:          "";
+    position:         absolute;
+    left:             4px;
+    top:              4px;
+    width:            10px;
+    height:           10px;
+    border-radius:    100%;
     background-color: $accent-light-blue;
 }
 

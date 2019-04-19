@@ -3,12 +3,11 @@
 	@include media(">tablet") {
 		display: none;
 	} 
-	//max-width: 960px;
-	height: 80px;
+	height:      80px;
 	line-height: 80px;
-	padding: 0 20px;
-	@include flex();
-	color: $main-light;
+	padding:     0 20px;
+	@include     flex();
+	color:       $main-light;
 
 	.mobile-header-menu_main-button {
 		cursor: pointer;
@@ -16,30 +15,30 @@
 }
 
 .mobile-menu_wrapper {
-	@include background-gradient(36deg);
-	display: none;
-	height: 440px;
-	width: 100%;
-	padding: 100px 40px 40px;
+	@include  background-gradient(36deg);
+	display:  none;
+	height:   440px;
+	width:    100%;
+	padding:  100px 40px 40px;
 	position: absolute;
-	top: 0;
-	z-index:10;
+	top:      0;
+	z-index:  10;
 	.mobile-menu {
 		.mobile-menu_close img {
 			position: absolute;
-			right: 14px;
-			top: 14px;
-			width: 29px;
-			height: 29px;
-			color: $main-light;
-			cursor: pointer;
+			right:    14px;
+			top:      14px;
+			width:    29px;
+			height:   29px;
+			color:    $main-light;
+			cursor:   pointer;
 		}
 		.mobile-menu_items {
 			height: 300px;
 			@include flex(space-between,column);
 			.mobile-trip-transport {
-				height: 110px;
 				@include flex(space-between,column);
+				height: 110px;
 			}
 			a {
 				color:$main-light;

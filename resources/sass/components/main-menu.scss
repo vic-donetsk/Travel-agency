@@ -3,9 +3,9 @@
 	@include media(">=phone", "<=tablet") {
 		display: none;
 	} 
-	height: 120px;	
-	margin: 0 auto;
-	padding:7px 40px;
+	height:     120px;	
+	margin:     0 auto;
+	padding:    7px 40px;
 	box-shadow: 0 3px 6px 0 rgba(2, 56, 129, 0.26);
     a {
     	color: $main-light;
@@ -13,7 +13,7 @@
 	.main-menu_menu-block {
 		@include flex();
 		@include font-text();
-		height: 36px;	
+		height:      36px;	
 		line-height: 36px;		
 		.main-menu_menu-block_trip-transport {
 			@include flex();
@@ -37,8 +37,8 @@
 	}
 	.main-menu_operation-block {
 		margin-top: 17px;
-		display: flex;
-		height: 40px;
+		display:    flex;
+		height:     40px;
 		.main-menu_operation-block_search-field {
 			@include flex;
 			flex:              1;

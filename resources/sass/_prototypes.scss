@@ -1,43 +1,43 @@
 %soft-transition {
 	-webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+    -moz-transition:    all 0.2s ease;
+    -o-transition:      all 0.2s ease;
+    transition:         all 0.2s ease;
 }
 
 %button  {
 	@include font-header($header-size-4);
-	display: block;
-	height: 40px;
+	display:       block;
+	height:        40px;
 	border-radius: 4px;
-	text-align: center;
-	line-height: 40px;
-	color: $main-light;
-	cursor: pointer;
+	text-align:    center;
+	line-height:   40px;
+	color:         $main-light;
+	cursor:        pointer;
 }
 
 
 %a-style {
 	text-decoration: underline;
 	@include font-text();
-	color: $main-dark;
+	color:   $main-dark;
 }
 
 %pagi-element {
-	@include font-header();
-	margin: 0 5px;
-	height: 30px;
+	@include       font-header();
+	margin:        0 5px;
+	height:        30px;
 	border-radius: 2px;
-	line-height: 30px;
-	padding: 0 12px;
-	cursor: pointer;
+	line-height:   30px;
+	padding:       0 12px;
+	cursor:        pointer;
 }
 
 %category-icon {
-	margin: 0 auto;
-	min-width: 46px;
-  	min-height: 46px;
-  	line-height: 40px;
-  	border: solid 1px $extra-grey-4;
+	margin:        0 auto;
+	min-width:     46px;
+  	min-height:    46px;
+  	line-height:   40px;
+  	border:        solid 1px $extra-grey-4;
   	border-radius: 50%;
 }

@@ -1,27 +1,27 @@
 .table {
-	margin: 50px auto;
+	margin:    50px auto;
 	max-width: 1120px;
-	border: 2px solid $extra-grey-3;
+	border:    2px solid $extra-grey-3;
 	.table-header {
-		height: 50px;
-		@include background-gradient();
+		height:        50px;
+		@include       background-gradient();
 		border-radius: 2px;
-		color: $main-light;
+		color:         $main-light;
 	}
 	.table-content {
 		padding: 12px 40px 12px 30px;
-		color: $main-dark;
+		color:   $main-dark;
 	}
 	.first {
-		max-width: 600px;
+		max-width:  600px;
 		text-align: left;
 	}
 	.second {
-		max-width: 300px;
+		max-width:  300px;
 		text-align: left;
 	}
 	.del-row {
-		max-width: 220px;
+		max-width:  220px;
 		text-align: right;
 	}
 	td {

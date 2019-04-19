@@ -1,31 +1,31 @@
 .popup-window_wrapper {
-	display: none;
+	display:  none;
 	position: absolute;
-	width: 180px;
-	height: 184px;
-	z-index: 10;
+	width:    180px;
+	height:   184px;
+	z-index:  10;
 
-	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+	box-shadow:       0 3px 6px 0 rgba(0, 0, 0, 0.16);
 	background-color: $main-light;
-	padding-top: 29px;
+	padding-top:      29px;
 		a {
 			color: $extra-grey-5;
 		}
 		a:hover {
-			color: $accent-light-blue;
+			color:           $accent-light-blue;
 			text-decoration: none;
 		}
 	.popup-window_item {
-		line-height: 1;
-		margin-left: 21px;
+		line-height:   1;
+		margin-left:   21px;
 		margin-bottom: 14px;
 	}
 	.popup-window_exit {
-		margin-top: 30px;
-		padding-left: 17px;
-		width: 100%;
-		height: 35px;
-		line-height: 35px;
+		margin-top:       30px;
+		padding-left:     17px;
+		width:            100%;
+		height:           35px;
+		line-height:      35px;
 		background-color: $extra-grey-3;
 
 	}

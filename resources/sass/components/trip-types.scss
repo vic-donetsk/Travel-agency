@@ -1,40 +1,40 @@
 .trip-types_container {
-		height: 100px;
+		height:           100px;
 		background-color: $extra-grey-2;
-		line-height: 100px;
-		padding: 0 40px;
-		@include media(">=phone", "<=tablet") { 
+		line-height:      100px;
+		padding:          0 40px;
+		@include          media(">=phone", "<=tablet") { 
 			padding: 0px 20px;
 		}
 	.trip-types {
-		@include flex;
+		@include     flex;
 		align-items: center;
-		margin: 0 auto;
-		max-width: 940px;
-		overflow-x: auto;
-		overflow-y: hidden;
-		@include media(">=phone", "<=440px") { 
+		margin:      0 auto;
+		max-width:   940px;
+		overflow-x:  auto;
+		overflow-y:  hidden;
+		@include     media(">=phone", "<=440px") { 
 			padding: 0;
 		}
 		.trip-types_header {
-			@include font-header($header-size-3);
+			@include   font-header($header-size-3);
 			min-width: 140px;
 		}
 		.trip-types_icons {
-			@include flex(flex-end);
+			@include     flex(flex-end);
 			line-height: 100px;
 		}
 	}
 }
 
 .trip-category-icon {
-	margin: 0 12px;
+	margin:     0 12px;
 	text-align: center;
-	@extend %category-icon;
+	@extend     %category-icon;
 	.svg-icon {
-		width: 24px;
+		width:  24px;
 		height: 24px;
-		fill: $extra-grey-4;
+		fill:   $extra-grey-4;
 	}
 	&:hover {
 		@include background-gradient(to bottom);
@@ -48,13 +48,13 @@
 }
 
 .tooltip-inner {
-	@include font-header(12px);
-    color: $accent-light-blue;
+	@include          font-header(12px);
+    color:            $accent-light-blue;
     background-color: $main-light;
-    padding: 0 15px;	
-    border: 1px solid $accent-light-blue;
-    border-radius: 5px;
-    text-align: center;
+    padding:          0 15px;	
+    border:           1px solid $accent-light-blue;
+    border-radius:    5px;
+    text-align:       center;
 }
 .tooltip-inner::before {
 	position:      absolute;
