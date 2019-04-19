@@ -1,6 +1,8 @@
 <div class="mobile-header-menu">
 	@include('components.logo')
-	<div class="mobile-header-menu_main-button">
-		<img src="img/Group 485.svg" alt="#">
-	</div>
+	<button class="hamburger hamburger--collapse" type="button">
+		<span class="hamburger-box">
+			<span class="hamburger-inner"></span>
+		</span>
+	</button>
 </div>

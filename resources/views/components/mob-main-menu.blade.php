@@ -1,6 +1,5 @@
 <div class="mobile-menu_wrapper">
     <div class="mobile-menu">
-        <div class="mobile-menu_close"><img src="/img/Group 484.svg" alt="X"></div>
         <div class="mobile-menu_items">
             <div class="mobile-trip-transport">
                 <div class="mod_header-3"><a href="#"> Автобусные туры </a></div>
@@ -13,7 +12,7 @@
                 
             </div>
 
-            <div class="single-btn mod_green mod_240"><i class="fas fa-plus"></i>&nbsp; Добавить тур</div>
+            <div class="single-btn mod_green mod_max-size"><i class="fas fa-plus"></i>&nbsp; Добавить тур</div>
         </div>
     </div>
 </div>

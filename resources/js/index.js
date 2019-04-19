@@ -2,12 +2,17 @@ import Swiper from 'swiper'
 
 $(document).ready( ()=>{
 	// mobile menu
-	$(".mobile-header-menu_main-button").click( ()=> {
-		$(".mobile-menu_wrapper").slideDown("slow");
+	$(".hamburger").click( (e)=> {
+		if ( $(e.delegateTarget).hasClass('is-active') ) {
+			$(".mobile-menu_wrapper").slideUp("slow");
+		} else {
+			$(".mobile-menu_wrapper").slideDown("slow").css("display", "flex");
+		}
+		$(e.delegateTarget).toggleClass('is-active');
 	});
-	$(".mobile-menu_close").click( ()=> {
-		$(".mobile-menu_wrapper").slideUp("slow");
-	});
+	// $(".mobile-menu_close").click( ()=> {
+	// 	$(".mobile-menu_wrapper").slideUp("slow");
+	// });
 
 
 	//swiper slider
