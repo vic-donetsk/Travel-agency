@@ -11,9 +11,7 @@
                   <a href="#"><img src="img/rubbish-bin.svg" alt="П"></a>
                 </div>
               </div>
-      <div class="trip-card_green-bottom"></div>
-    </div>
-    <div class="trip-card_proposition">
+    
       <div class="trip-condition_wrapper">
         <div class="trip-condition">
           <img  class="trip-condition_type" src="img/outline-pool-24px.svg" alt="П">
@@ -25,6 +23,9 @@
             <div class="trip-condition_currency"><i class="fab fa-btc"></i> </div>
         </div>
       </div>
+      
+    </div>
+    <div class="trip-card_proposition">
       <div class="trip-description">
           <div class="trip-description_where">
               <p class="trip-description_kurort">Индонезия (о.Бали)</p>

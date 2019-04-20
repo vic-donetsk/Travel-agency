@@ -3,6 +3,7 @@
     box-sizing:    border-box;
     border-radius: 0 0 4px 4px;
     border: solid  2px #f6fafb;
+
     background:    #fff;
     position:      relative;
 	/* hover mask for seller hover */
@@ -33,58 +34,56 @@
 	    display:     block;
 	    height:      220px;
 	    position:    relative;
+	    border-bottom: 4px solid $accent-light-green;
 		& .foto {
 		    width:  100%;// calc(100% - 4px);
 		    height: 216px;
 		}
-	}
-	.trip-card_green-bottom {
-	    height:           4px;
-	    background-color: #37db67;
-	}
-	.trip-card_proposition {
-	    position:   absolute;
-	    top:        140px;
-	    left:       0;
-	    width:      100%;
-	    height:     240px;
-	    background: black transparent;
-	    padding:    43px 20px 0;
-		text-align: center;
-	}
-	.trip-condition_wrapper {
-	    @include       flex;
-	    align-items:   center;
-	    height:        24px;
-	    line-height:   24px;
-		color:         $main-light;
-		margin-bottom: 30px;
-
-		.trip-condition {
-			@include flex;
-	
-			.trip-condition_type {
-				margin-top:  2px;
-				height:      15px;
-				width:       15px;
-				line-height: 1px;
-			}
-			.trip-condition_duration, .trip-condition_hotel {
-				@include     font-header(12px);
-				margin-left: 10px;
-				@include     font-header(14px);
-			}
-			.trip-condition_cost {
-				@include font-header($header-size-3);
-			}
-			.trip-condition_currency {
-				@include     font-text($text-size-2);
-				margin-left: 5px;
-				margin-top:  2px;
-				line-height: 2;
+		.trip-condition_wrapper {
+		    @include       flex;
+		    align-items:   center;
+		    // position: absolute;
+		    // left: 0;
+		    // bottom: 15px;
+		    padding: 0 20px;
+		    // width: 100%;
+		    height:        24px;
+		    line-height:   24px;
+			color:         $main-light;
+			margin-top: -32px; // 15mg + 17 block height
+			.trip-condition {
+				@include flex;
+				.trip-condition_type {
+					margin-top:  2px;
+					height:      15px;
+					width:       15px;
+					line-height: 1px;
+				}
+				.trip-condition_duration, .trip-condition_hotel {
+					@include     font-header(12px);
+					margin-left: 10px;
+					@include     font-header(14px);
+				}
+				.trip-condition_cost {
+					@include font-header($header-size-3);
+				}
+				.trip-condition_currency {
+					@include     font-text($text-size-2);
+					margin-left: 5px;
+					margin-top:  2px;
+					line-height: 2;
+				}
 			}
 		}
 	}
+	.trip-card_proposition {
+	    width:      100%;
+	    height:     100px;
+	    background: black transparent;
+	    padding:    20px 20px 0;
+		text-align: center;
+	}
+	
 	.trip-description {
 		.trip-description_kurort {
 			@include     font-header($header-size-3);
