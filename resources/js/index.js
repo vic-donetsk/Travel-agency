@@ -10,9 +10,6 @@ $(document).ready( ()=>{
 		}
 		$(e.delegateTarget).toggleClass('is-active');
 	});
-	// $(".mobile-menu_close").click( ()=> {
-	// 	$(".mobile-menu_wrapper").slideUp("slow");
-	// });
 
 
 	//swiper slider

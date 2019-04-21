@@ -15,8 +15,8 @@
       <div class="trip-condition_wrapper">
         <div class="trip-condition">
           <img  class="trip-condition_type" src="img/outline-pool-24px.svg" alt="П">
-            <div class="trip-condition_duration"> 4 дня/5 ночей</div>
-            <div class="trip-condition_hotel"> 5*</div>
+          <div class="trip-condition_duration"> 4 дня/5 ночей</div>
+          <div class="trip-condition_hotel"> 5*</div>
         </div>
         <div class="trip-condition">
             <div class="trip-condition_cost">35 895</div>

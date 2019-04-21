@@ -57,7 +57,7 @@
 					margin-top:  2px;
 					height:      15px;
 					width:       15px;
-					line-height: 1px;
+					fill: $main-light;
 				}
 				.trip-condition_duration, .trip-condition_hotel {
 					@include     font-header(12px);
