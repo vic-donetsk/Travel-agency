@@ -1,6 +1,6 @@
 .swiper {
 	height: calc(100vh - 120px);
-	@include media('>=phone', '<=1100px') {
+	@include media('>=phone', '<=small_desktop') {
 		height: calc(100vh - 80px);
 	}
 	.swiper-container {

@@ -1,6 +1,6 @@
 .mobile-header-menu {
 	@include background-gradient(76deg);
-	@include media(">1100px") {
+	@include media(">small_desktop") {
 		display: none;
 	} 
 	height:      80px;

@@ -1,6 +1,6 @@
 .main-menu-wrapper {
     @include background-gradient(85deg);
-	@include media(">=phone", "<=1100px") {
+	@include media(">=phone", "<=small_desktop") {
 		display: none;
 	} 
 	height:     120px;	

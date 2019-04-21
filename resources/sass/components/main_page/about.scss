@@ -1,6 +1,20 @@
 .about {
 	@include   media(">=phone", "<=tablet") { 
 		padding: 0px 20px;
+		.mod_hidden {
+			height:     400px;
+			overflow:   hidden;
+			margin-top: -80px;
+
+			&:before{
+			    content:         "";
+			    display:         block;
+			    height:          80px;
+			    position:        relative;
+			    top:             320px;
+			    background-image:linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+			}
+		}
 	}
 	padding:   0 40px;
 	margin:    60px auto 100px;
@@ -16,21 +30,10 @@
 		color:         $extra-grey-5;
 		margin-bottom: 25px;
 	}
-	.mod_hidden {
-		height:     400px;
-		overflow:   hidden;
-		margin-top: -80px;
-
-		&:before{
-		    content:         "";
-		    display:         block;
-		    height:          80px;
-		    position:        relative;
-		    top:             320px;
-		    background-image:linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
-		}
-	}
-	.about_showMore {
+	.about_show-more {
 		display:none;
+		@include   media(">=phone", "<=tablet") { 
+			display: block;
+		}
 	}
 }
