@@ -12,14 +12,20 @@
 .seller-page {
 	@include flex;
 	margin-top: 37px;
+	@include media(">=phone", "<=tablet") { 
+		flex-direction: column;
+	}
 
 	.seller-page_categories {
 		
 		box-sizing: border-box;
 		@include flex(flex-start, column);
-		width: 200px;
+		width: 208px;
+		margin-right: 40px;
 		@include media(">=phone", "<=tablet") { 
-			max-width: 100%;
+			width: 100%;
+			margin-right: 0;
+			margin-bottom: 40px;
 		}
 
 		.seller-page_categories_title {
@@ -43,16 +49,44 @@
 			.input-item {
 				margin: 11px 0;
 			}
+		}
+	}
+	.seller-page_trip-cards {
+		flex: 1;
+		@include flex(space-between, row, wrap);
 
+		.main-seller-trip,
+		.hidden-on-mobile-seller-trip,
+		.hidden-on-tablet-seller-trip {
+			width: calc( (100% - 60px)/3 );
+			@include media(">tablet", "<=desktop") { 
+				width: calc( (100% - 30px)/2 );
+			}
+			@include media(">=phone", "<=tablet") { 
+				width: 100%;
+			}
+			height: 380px;
+			margin: 0 0 30px;
+			.mod_green {
+				margin: 0 auto;
+			}
 		}
 
-
-
+		.hidden-on-tablet-seller-trip {
+			@include media(">=phone", "<=desktop") { 
+				display: none;
+			}
+		}
+		.hidden-on-mobile-seller-trip {
+			@include media(">=phone", "<=tablet") { 
+				display: none;
+			}
+		}
 	}
-
-
-
-
-
-
+	.seller-page_pagination {
+		margin: 70px auto 100px;
+		@include media(">=phone", "<=tablet") { 
+				display: none;
+			}
+	}
 }

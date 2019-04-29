@@ -54,15 +54,16 @@
 				
 			</div>
 			<div class="seller-page_trip-cards">
-				<?php $show_class = ['main-propositions', 'main-propositions', 'main-propositions', 'main-propositions', 'main-propositions', 'hidden-on-mobile-propositions','hidden-on-mobile-propositions','hidden-on-tablet-propositions']; ?>
+				<?php $show_class = ['main-seller-trip', 'main-seller-trip', 'main-seller-trip', 'main-seller-trip', 'main-seller-trip', 'hidden-on-mobile-seller-trip','hidden-on-mobile-seller-trip', 'hidden-on-mobile-seller-trip','hidden-on-tablet-seller-trip']; ?>
 
 				  @each('components.trip-card', $show_class, 'show')
 				
+				<div class="seller-page_pagination">
+					@include('components.pagination')
+				</div>	
+
 			</div>
 		</div>
-			<div class="seller-page_pagination">
-				
-			</div>		
 	</div>
 
 
