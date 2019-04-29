@@ -1,0 +1,10 @@
+.breadcrumbs {
+	@include flex(flex-start);
+	.breadcrumbs_item {
+		@include font-text(11px);
+		color: $extra-grey-5;
+		margin-right: 23px;
+
+	}
+
+}

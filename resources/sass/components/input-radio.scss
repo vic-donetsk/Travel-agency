@@ -10,11 +10,11 @@ input[type="radio"]:checked + label,
 input[type="radio"]:not(:checked) + label {
     display:      inline-block;
     position:     relative;
-    padding-left: 23px;  //18 input + 5 padding
+    padding-left: 28px;  //18 input + 10 padding
     line-height:  18px;
     cursor:       pointer;
-    @include      font-header($header-size-4);
-    color:        $main-dark;
+    @include      font-text(11px);
+    color:        $extra-grey-5;
 }
 
 // external circle

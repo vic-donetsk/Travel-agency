@@ -1,0 +1,58 @@
+.seller-page_wrapper {
+	padding: 25px 40px;
+	@include media(">=phone", "<=tablet") { 
+			padding: 25px 20px;
+	}
+}
+.seller-page_title {
+	text-transform: uppercase;
+	color: $main-dark; 
+}
+
+.seller-page {
+	@include flex;
+	margin-top: 37px;
+
+	.seller-page_categories {
+		
+		box-sizing: border-box;
+		@include flex(flex-start, column);
+		width: 200px;
+		@include media(">=phone", "<=tablet") { 
+			max-width: 100%;
+		}
+
+		.seller-page_categories_title {
+			text-transform: uppercase;
+			color: $accent-light-blue;
+			height: 40px;
+			padding-left: 21px;
+			border-radius: 2px;
+  			border: solid 4px #f6fafb;
+			margin-bottom: 20px;
+			& h2 {
+				line-height: 1.8;
+			}
+		}
+		.seller-page_categories_items {
+			@include flex(flex-start, column);
+			@include font-text(11px);
+			border: solid 4px #f6fafb; 
+			padding: 10px 20px;
+
+			.input-item {
+				margin: 11px 0;
+			}
+
+		}
+
+
+
+	}
+
+
+
+
+
+
+}
