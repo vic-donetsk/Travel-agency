@@ -12,3 +12,7 @@ Route::get('/', function () {
 Route::get('/seller', function () {
     return view('seller.seller_page');
 })->name('seller_page');
+
+Route::get('/tovar', function () {
+    return view('tovar.tovar_page');
+})->name('tovar_page');

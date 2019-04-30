@@ -1,0 +1,117 @@
+.tovar_wrapper {
+	padding: 25px 40px;
+	@include media(">=phone", "<=tablet") { 
+			padding: 25px 20px;
+	}
+	.tovar {
+		@include flex(center);
+		margin-top: 40px;
+		
+		.tovar_describe {
+			width: 520px;
+			height: 500px;
+			padding-top: 40px;
+			padding-right: 40px;
+			border-radius: 0 4px 4px 0;
+	  		border-right: solid 4px #f6fafb;
+	  		border-top: solid 4px #f6fafb;
+	  		border-bottom: solid 4px #f6fafb;
+
+			.tovar_describe_type {
+				@include font-header(14px);
+				display: inline-block;
+				height: 40px;
+				line-height: 2.6;
+				color: $accent-light-green;
+				border: 2px solid $accent-light-green;
+				border-radius: 5px;
+				padding: 0 22px;
+				margin-right: 20px;
+			}
+	  		.tovar_describe_text {
+	  			margin-top: 20px;
+	  			display: block;
+	  			@include font-text($text-size-1);
+	  			color: $main-dark;
+	  		}
+		}
+		
+		.tovar-info {
+			@include flex(space-between, column);
+			width: 240px;
+			height: 500px;
+			margin-left: 20px;
+
+			.tovar-info_finance_wrapper {
+				height: 180px;
+				border: solid 4px #f6fafb;
+				border-radius: 4px;
+
+				.tovar-info_finance {
+					margin: 36px 16px 16px;
+					background-color: #f6fafb;
+					border-radius: 4px;
+					padding-top: 20px;
+					padding-bottom: 20px;
+
+					.price {
+						margin-bottom: 5px;
+						@include font-header($header-size-2);
+						color: $accent-light-blue;
+						text-align: center;
+					}
+					.mod_blue {
+						margin: 0 auto;
+					}
+				}
+			}
+
+			.tovar-info_conditions {
+				height: 300px;
+				border: 4px solid #f6fafb;
+				border-radius: 4px;
+				padding: 0 16px;
+				@include flex(center,column);
+
+				.tovar-info_seller-info {
+					flex: 1;
+					@include flex(flex-start);
+
+					.seller-foto {
+						width: 40px;
+						height: 40px;
+						border-radius: 50%;
+						margin-top: 7px;
+					}
+				}
+				.tovar-info_conditions_item {
+					flex: 1;
+					border-top: 4px solid #f6fafb;
+
+					.conditions_item_title {
+						@include font-header($header-size-4);
+						margin-top: 7px;
+						color: $accent-light-blue;
+					}
+					.conditions_item_content {
+						@include font-text($text-size-2);
+						color: $main-dark;
+					}
+				}
+				.tovar-info_conditions_item:first-of-type {
+					border-top: none;
+					margin-left: 15px;
+				}
+			}
+
+
+		}
+
+
+	}
+
+
+
+
+
+}

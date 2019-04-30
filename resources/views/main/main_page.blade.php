@@ -10,7 +10,7 @@
 
 	@include('components.mob-main-menu',['user_name' => 'Василий Пупкин', 'user_foto' => 'img/user.png'])
 
-	@include('main.swiper')
+	@include('main.main-swiper')
 	
 	@include('components.trip-types')
 
