@@ -113,7 +113,7 @@
 	}
 	
 	.tovar-reviews {
-		margin-top: 55px;
+		margin: 55px 0 45px;
 		border: 4px solid #f6fafb;
 		padding: 0 40px;
 
@@ -165,9 +165,57 @@
 		.review_wrapper:last-of-type {
 			border-bottom: none;
 		}
-
-
 	}
+	
+	.send-review_wrapper {
+		margin-top: 15px;
+		border: 4px solid #f6fafb;
+		padding: 40px;
 
+		.send-review {
+			@include flex;
+
+
+			.send-review_content {
+				flex:1;
+				margin-right: 20px;
+				[name="review"] {
+					border: none;
+					outline: none;
+					width: 100%;
+					height: 100%;
+					background: #f6fafb;
+					padding: 10px 0 0 20px;
+					resize: none;
+					&::-webkit-input-placeholder {
+						@include font-text(11px);
+						color: $extra-grey-5;
+					}
+				}	
+			}
+			.send-review_info {
+				@include flex(space-between, column);
+				width: 400px;
+				.send-review_info_input {
+					height: 40px;
+					border:none;
+					background-color: #f6fafb;
+					border-radius: 4px;
+					margin-bottom: 20px;
+					padding-left: 20px;
+					padding-bottom: 6px;
+					&::-webkit-input-placeholder {
+						@include font-text(11px);
+						color: $extra-grey-5;
+		  
+					}
+				}
+				[type="submit"] {
+					border: none;
+					outline: none;
+				}
+			}
+		}
+	}
 
 }
