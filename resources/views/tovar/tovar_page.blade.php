@@ -4,11 +4,11 @@
 
 @section('content')
 
-	@include('components.main-menu',['user_name' => 'Василий Пупкин', 'user_foto' => 'img/user.png'])
+	@include('components.main-menu',['text' => 'Вход/Регистрация'])
 
     @include('components.mob-head-menu')
 
-	@include('components.mob-main-menu',['user_name' => 'Василий Пупкин', 'user_foto' => 'img/user.png'])
+	@include('components.mob-main-menu',['text' => 'Войти'])
 
 	<div class="tovar_wrapper">
 		<div class="breadcrumbs">
@@ -19,7 +19,7 @@
 
 		<h1 class="tovar_title mod_header-3">Отель Мараколь Неаполь 4*</h1>
 
-		<div class="tovar">
+		<section class="tovar">
 
 			<div class="tovar_slider">
 
@@ -67,7 +67,44 @@
 					
 				</div>
 			</div>
-		</div>
+		</section>
+
+		<h2 class="tovar-section_header">Отзывы</h2>
+		
+		<section class="tovar-reviews">
+			
+			
+			<div class="review_wrapper">
+				<img class="review_author-foto" src="img/review.jpg" alt="">
+				<div class="review">
+					<div class="review_data">
+						<div class="review_data_title">
+							<div class="review_data_author-name">Александра Серова</div>
+							<div class="review_data_date">22 сентября 2018</div>
+						</div>
+						<div class="mod_link-style">Показать объявление</div>
+					</div>
+					<div class="review_content">Оценивайте трезво ситуацию, зачастую компания еще не готова к крауд-маркетингу. При наличии действительно качественной продукции можно использовать данный метод, однако, упоминание лишь плюсов сделает ваш комментарий неестественным. 
+					</div>
+				</div>
+			</div>
+
+			<div class="review_wrapper">
+				<img class="review_author-foto" src="img/review.jpg" alt="">
+				<div class="review">
+					<div class="review_data">
+						<div class="review_data_title">
+							<div class="review_data_author-name">Александра Серова</div>
+							<div class="review_data_date">22 сентября 2018</div>
+						</div>
+						<div class="mod_link-style">Показать объявление</div>
+					</div>
+					<div class="review_content">Не стоит обманывать потенциальных клиентов. Если вам известны все недоработки в сфере услуг или минусы своего товара, то не стоит писать на форумах, что это лучший продукт из всего, что вы когда-либо пробовали. Также не нужно выдумывать дополнительных преимуществ, которыми в действительности ваш продукт не обладает. Оценивайте трезво ситуацию, зачастую компания еще не готова к крауд-маркетингу. При наличии действительно качественной продукции можно использовать данный метод, однако, упоминание лишь плюсов сделает ваш комментарий неестественным. Несовершенства можно найти даже у самых авторитетных производителей, не стесняйтесь упоминать о них в отзывах!? 
+					</div>
+				</div>
+			</div>
+
+		</section>
 
 	</div>
 
@@ -75,7 +112,7 @@
 
 
 
-	@include('components.footer',['user_name' => 'Василий Пупкин', 'user_foto' => 'img/user.png'])
+	@include('components.footer',['text' => 'Вход/Регистрация'])
 
 	@include('components.popup-window')
 	
