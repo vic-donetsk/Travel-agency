@@ -1,5 +1,6 @@
 .tovar_wrapper {
 	padding: 25px 40px;
+	margin-bottom: 55px;
 	@include media(">=phone", "<=tablet") { 
 			padding: 25px 20px 0;
 	}
@@ -171,6 +172,7 @@
 		margin-top: 15px;
 		border: 4px solid #f6fafb;
 		padding: 40px;
+		margin-bottom: 45px;
 
 		.send-review {
 			@include flex;
@@ -216,6 +218,55 @@
 				}
 			}
 		}
+	}
+
+	.gallery {
+		@include flex(space-between);
+		margin-top: 15px;
+		margin-bottom: 45px;
+		@include media(">=phone", "<=desktop") { 
+				flex-wrap:  wrap;
+		}
+
+		.main-card {
+			flex: 1;
+			margin: 0 30px 0 0;
+			@include media(">tablet", "<=desktop") { 
+				flex: 0;
+				width: 600px;//calc( (100% - 30px)/2 );
+			}
+			// @include media(">=phone", "<=tablet") { 
+			// 	width: 100%;
+			// }
+
+			.mod_green {
+				margin: 0 auto;
+			}
+		}
+		.gallery_show-more {
+			width: 210px;
+		    height: 380px;
+		    border-radius: 4px;
+		    border: solid 4px #f6fafb;
+		    @include flex(center, column); 
+		    .gallery_show-more_link {
+		    	width: 54px;
+  				height: 54px;
+  				border: solid 2px #084599;
+  				border-radius: 50%;
+  				margin: 0 auto 7px;
+  				padding: 11px 0 0 12px;
+  				cursor: pointer;
+		    }
+		    .gallery_show-more_text {
+		    	@include font-header($text-size-1);
+		    	text-align: center;
+		    	color: $accent-light-blue;
+		    	margin: 7px 20px 0;
+
+		    }
+		}
+
 	}
 
 }

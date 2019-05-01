@@ -122,6 +122,42 @@
 			</form>
 		</section>
 
+		<h2 class="tovar-section_header">Еще объявления Василия</h2>
+
+		<section class="gallery seller-more-tovars">
+			<?php $show_class = ['main-card', 'main-card', 'main-card']; ?>
+
+			@each('components.trip-card', $show_class, 'show')
+
+				<div class="gallery_show-more">
+					<div class="gallery_show-more_link">
+						<img class="plus" src="img/plus.svg" alt="">
+					</div>
+					<div class="gallery_show-more_text">
+						Перейти к объявлениям Василия
+					</div>
+				</div>
+
+		</section>
+
+		<h2 class="tovar-section_header">Еще в категории "Luxury"</h2>
+
+		<section class="gallery category-more-tovars">
+			<?php $show_class = ['main-card', 'main-card', 'main-card']; ?>
+
+			@each('components.trip-card', $show_class, 'show')
+
+			<div class="gallery_show-more">
+				<div class="gallery_show-more_link">
+					<img class="plus" src="img/plus.svg" alt="">
+				</div>
+				<div class="gallery_show-more_text">
+					Перейти в категорию "Luxury"
+				</div>
+			</div>
+			
+		</section>
+
 	</div>
 
 		
