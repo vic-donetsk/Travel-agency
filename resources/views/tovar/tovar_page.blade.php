@@ -37,7 +37,9 @@
 				<div class="tovar-info_finance_wrapper">
 					<div class="tovar-info_finance">
 						<div class="price"> 20 000 &nbsp; <i class="fab fa-btc"></i></div>
-						<div class="single-btn mod_160 mod_blue">В корзину</div>
+						<div class="to-cart">
+							<div class="single-btn mod_160 mod_blue">В корзину</div>
+						</div>
 					</div>
 				</div>
 				<div class="tovar-info_conditions">
@@ -64,7 +66,6 @@
 						<div class="conditions_item_title"> Класс отеля </div>
 						<div class="conditions_item_content"> 5* </div>
 					</div>
-					
 				</div>
 			</div>
 		</section>
@@ -72,7 +73,6 @@
 		<h2 class="tovar-section_header">Отзывы</h2>
 		
 		<section class="tovar-reviews">
-			
 			
 			<div class="review_wrapper">
 				<img class="review_author-foto" src="img/review.jpg" alt="">
@@ -110,9 +110,11 @@
 
 		<section class="send-review_wrapper">
 			<form class="send-review" action="#">
+
 				<div class="send-review_content">
 					<textarea type="textarea" placeholder="Сообщение" name="review"></textarea>
 				</div>
+
 				<div class="send-review_info">
 					<input class="send-review_info_input" type="text" pattern="[A-Z0-9-_]+" placeholder="Ваше имя" name="name"/>
 					<input class="send-review_info_input" type="email" placeholder="Email" name="email"/>
