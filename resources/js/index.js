@@ -13,7 +13,7 @@ $(document).ready( ()=>{
 
 
 	//swiper slider on main page
-	var mySwiper = new Swiper ('.swiper-container', {
+	var mySwiper = new Swiper ('.main-swiper', {
       direction: 'horizontal',
       // autoplay: {
       // 	delay: 4000
@@ -22,22 +22,36 @@ $(document).ready( ()=>{
     });
 
 	// swiper slider on tovar card
-    var galleryThumbs = new Swiper('.gallery-thumbs', {
-      spaceBetween: 10,
+    var galleryThumbs = new Swiper('.tovar-swiper-thumbs', {
+      spaceBetween: 20,
       slidesPerView: 4,
       freeMode: true,
       watchSlidesVisibility: true,
       watchSlidesProgress: true,
     });
-    var galleryTop = new Swiper('.gallery-top', {
+    var galleryTop = new Swiper('.tovar-swiper-top', {
       spaceBetween: 10,
-      // navigation: {
-      //   nextEl: '.swiper-button-next',
-      //   prevEl: '.swiper-button-prev',
-      // },
+      direction: 'horizontal',
+      slidesPerView: 1,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
       thumbs: {
         swiper: galleryThumbs
       }
+    });
+    // swiper slider on tovar card
+    var galleryTop = new Swiper('.tovar-mobile-swiper', {
+      direction: 'horizontal',
+      slidesPerView: 1.3,
+      centeredSlides: true,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      loop: true,
     });
 
 

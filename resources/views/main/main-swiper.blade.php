@@ -1,5 +1,5 @@
 <section class="swiper">
-	<div class="swiper-container">
+	<div class="swiper-container main-swiper">
 	    <div class="swiper-wrapper">
 	        <!-- Slides -->
 	        <div class="swiper-slide">

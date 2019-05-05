@@ -1,5 +1,5 @@
 .breadcrumbs {
-	@include flex(flex-start);
+	@include flex(flex-start, row, wrap);
 	.breadcrumbs_item {
 		@include font-text(11px);
 		color: $extra-grey-5;

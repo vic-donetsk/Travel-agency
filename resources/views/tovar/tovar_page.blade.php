@@ -10,7 +10,7 @@
 
 	@include('components.mob-main-menu',['text' => 'Войти'])
 
-	<div class="tovar_wrapper">
+	<div class="tovar_header">
 		<div class="breadcrumbs">
 			<div class="breadcrumbs_item"> Главная</div>
 			<div class="breadcrumbs_item"> Василий Пупкин</div>
@@ -18,14 +18,14 @@
 		</div>
 
 		<h1 class="tovar_title mod_header-3">Отель Мараколь Неаполь 4*</h1>
+	</div>
 
+		@include ('tovar.tovar-mobile-swiper')
+
+	<div class="tovar_wrapper">
 		<section class="tovar">
 
-			<div class="tovar_slider">
-
-				@include ('tovar.tovar-swiper')
-
-			</div>
+			@include ('tovar.tovar-swiper')
 
 			<div class="tovar_describe">
 				<div class="tovar_describe_type">Luxury</div>
