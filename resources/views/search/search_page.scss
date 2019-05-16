@@ -1,0 +1,116 @@
+.search_wrapper {
+	padding: 25px 40px 105px;
+	@include media(">=phone", "<=small_desktop") {
+		padding: 25px 20px 60px;
+	}
+	.search_title {
+		text-transform: uppercase;
+	}
+	
+	.search_main {
+		@include flex;
+		margin-top: 37px;
+
+		.search_filters {
+			margin-right: 40px;	
+
+	  		.search_filters_one-filter {
+				width: 200px;
+				padding: 20px;
+				border-radius: 4px;
+		  		border: solid 4px $extra-grey-1;
+		  		margin-bottom: 20px;
+
+		  		.one-filter_title {
+		  			text-transform: uppercase;
+		  			color: $accent_light_blue;
+		  			margin-bottom: 20px;
+		  		}
+		  		.one-filter_select {
+					@include font-text($text-size-2);
+		  			width: 160px;
+					height: 40px;
+					border-radius: 4px;
+					background-color: $extra-grey-1;
+					color: $main-dark;
+					padding: 0 20px;
+					border: none;
+					outline: none;
+					cursor: pointer;
+		  		}
+		  		.input-item {
+		  			margin-bottom: 12px;
+		  			&:last-of-type {
+		  				margin-bottom: 0;
+		  			}
+		  		} 
+	  		}
+		}
+
+		.search_results {
+			flex-grow: 1;
+			.search_results_sort {
+				@include flex;
+				padding: 7px 40px 20px;
+				.results_quantity {
+					@include font-text(11px);
+					color: $extra-grey-5;
+				}
+				.sort_select {
+					@include font-text(11px);
+					color: $main-dark;
+					outline: none;
+					border: none;
+				}
+			}
+
+			.search_results_active-filters {
+				border-radius: 4px;
+  				border: solid 4px #f6fafb;
+  				@include flex;
+  				padding: 15px 40px;
+
+  				.active-filters_wrapper {
+  					@include flex(flex-start, row, wrap);
+
+  					.active-filter {
+  						@include font-text($text-size-2);
+  						color: $main-dark;
+  						margin-right: 10px;
+  						height: 30px;
+  						line-height: 30px;
+  						min-width: 100px;
+  						padding: 0 20px;
+  						background-color: $extra-grey-1;
+						.active-filter_value {
+						display: inline-block;
+						margin-right: 20px;
+						}
+  					}
+  				}
+
+				.reset-filters {
+					flex-grow: 1;
+					height: 30px;
+					text-align: right;
+					.reset-filters_text {
+						@include font-text($text-size-2);
+  					line-height: 30px;
+						color: $extra-grey-5;
+						display: inline-block;
+						margin-right: 20px;
+						cursor: pointer;
+						}
+				}
+
+				.close {
+					display: inline;
+					margin-top: 9px;
+					width: 10px;
+					height: 10px;
+					cursor: pointer;
+				}
+  			}
+		}
+	}
+}

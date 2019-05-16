@@ -28,7 +28,7 @@
 				</div>
 
 				<div class="seller-page_categories_items">
-					<?php
+					@php
 					    $trip_types = [
 					        ['name' => 'Индустриальный', 'id' => 'industrial'],
 					        ['name' => 'Шоппинг', 'id' => 'shopping'],
@@ -41,7 +41,7 @@
 					        ['name' => 'SPA', 'id' => 'spa'],
 					        ['name' => 'Семейный', 'id' => 'family'],
 					        ['name' => 'Спокойный отдых', 'id' => 'rest']]
-					?>
+					@endphp
 					
 					@foreach ($trip_types as $trip_type)
 						<div class="input-item">

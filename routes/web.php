@@ -16,3 +16,7 @@ Route::get('/seller', function () {
 Route::get('/tovar', function () {
     return view('tovar.tovar_page');
 })->name('tovar_page');
+
+Route::get('/search', function () {
+    return view('search.search_page');
+})->name('search_page');
