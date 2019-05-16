@@ -54,7 +54,8 @@
 				
 			</div>
 			<div class="seller-page_trip-cards">
-				<?php $show_class = ['main-seller-trip', 'main-seller-trip', 'main-seller-trip', 'main-seller-trip', 'main-seller-trip', 'hidden-on-mobile-seller-trip','hidden-on-mobile-seller-trip', 'hidden-on-mobile-seller-trip','hidden-on-tablet-seller-trip']; ?>
+				@php $show_class = ['main-seller-trip', 'main-seller-trip', 'main-seller-trip', 'main-seller-trip', 'main-seller-trip', 'hidden-on-mobile-seller-trip','hidden-on-mobile-seller-trip', 'hidden-on-mobile-seller-trip','hidden-on-tablet-seller-trip']; 
+				@endphp
 
 				  @each('components.trip-card', $show_class, 'show')
 				

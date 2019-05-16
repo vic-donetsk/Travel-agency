@@ -41,7 +41,7 @@ $(document).ready( ()=>{
         swiper: galleryThumbs
       }
     });
-    // swiper slider on tovar card
+    // mobile version of swiper slider on tovar card
     var galleryTop = new Swiper('.tovar-mobile-swiper', {
       direction: 'horizontal',
       slidesPerView: 1.3,

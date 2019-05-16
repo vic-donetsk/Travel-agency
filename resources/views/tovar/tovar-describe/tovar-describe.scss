@@ -1,0 +1,35 @@
+.tovar_describe {
+	width: 100%;
+	height: 500px;
+	padding-top: 40px;
+	padding-right: 40px;
+	border-radius: 0 4px 4px 0;
+		border-right: solid 4px #f6fafb;
+		border-top: solid 4px #f6fafb;
+		border-bottom: solid 4px #f6fafb;
+		@include media(">=phone", "<=small_desktop") { 
+		order: 3; 
+		border: solid 4px #f6fafb;
+		border-radius: 4px;
+		padding: 20px;
+		height: auto;
+	}
+
+	.tovar_describe_type {
+		@include font-header(14px);
+		display: inline-block;
+		height: 40px;
+		line-height: 2.6;
+		color: $accent-light-green;
+		border: 2px solid $accent-light-green;
+		border-radius: 5px;
+		padding: 0 22px;
+		margin-right: 20px;
+			margin-bottom: 20px;
+	}
+		.tovar_describe_text {
+			display: block;
+			@include font-text($text-size-1);
+			color: $main-dark;
+		}
+}

@@ -1,0 +1,61 @@
+.gallery {
+		@include flex(space-between);
+		margin-top: 15px;
+		margin-bottom: 45px;
+		@include media(">=phone", "<=desktop") { 
+				flex-wrap:  wrap;
+				justify-content: flex-start;
+		}
+
+		.main-card {
+			margin: 0 30px 0 0;
+			width: calc( (100% - 90px)/3 );
+			height: 380px;
+			@include media(">tablet", "<=desktop") { 
+				width: calc( (100% - 30px)/2 );
+				&:nth-child(2) {
+					margin-right: 0;
+					margin-bottom: 20px;
+				}
+			}
+			@include media(">=phone", "<=tablet") { 
+				margin-right: 0;
+				margin-bottom: 20px;
+				width: 100%;
+			}
+
+			.mod_green {
+				margin: 0 auto;
+			}
+		}
+		.gallery_show-more {
+		    @include flex(center, column); 
+			width: 210px;
+		    height: 380px;
+		    border-radius: 4px;
+		    border: solid 4px #f6fafb;
+		    @include media(">=phone", "<=tablet") {
+		    	width: 100%;
+		    	height: 160px;
+		    }
+		    .gallery_show-more_link {
+		    	width: 54px;
+  				height: 54px;
+  				border: solid 2px #084599;
+  				border-radius: 50%;
+  				margin: 0 auto 7px;
+  				padding: 11px 0 0 12px;
+  				cursor: pointer;
+		    }
+		    .gallery_show-more_text {
+		    	@include font-header($text-size-1);
+		    	text-align: center;
+		    	color: $accent-light-blue;
+		    	margin: 7px 20px 0;
+
+		    }
+		}
+
+	}
+
+

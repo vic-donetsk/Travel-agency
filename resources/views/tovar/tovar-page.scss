@@ -1,0 +1,31 @@
+.tovar_header {
+	padding: 25px 40px 0;
+	@include media(">=phone", "<=small_desktop") { 
+			padding: 25px 20px 0;
+	}
+}
+.tovar_wrapper {
+	padding: 0 40px 25px;
+	margin-bottom: 55px;
+	@include media(">=phone", "<=small_desktop") { 
+			padding: 0 20px 25px;
+	}
+	.tovar {
+		@include flex(center);
+		margin-top: 40px;
+		margin-bottom: 45px;
+		@include media(">=phone", "<=small_desktop") { 
+			flex-direction: column;
+		}
+	}
+
+	.tovar-section_header {
+		@include font-header($header-size-3);
+		color: $main-dark;
+	}
+	
+}	
+	
+	
+
+	

@@ -1,0 +1,67 @@
+.tovar-reviews {
+	margin: 15px 0 45px;
+	border: 4px solid #f6fafb;
+	padding: 0 40px;
+	@include media(">=phone", "<=tablet") {
+		padding: 0px;
+	}
+
+	.review_wrapper {
+		@include flex;
+		padding-bottom: 40px;
+		padding-top: 40px;
+		border-bottom: 4px solid #f6fafb;
+		@include media(">=phone", "<=tablet") {
+			padding: 20px;
+		}
+
+		.review_author-foto {
+			margin-right: 20px;
+			width: 100px;
+			height: 100px;
+			border-radius: 10px;
+			object-fit: cover;
+			@include media(">=phone", "<=tablet") {
+				display: none;
+			}
+		}
+
+		.review {
+			flex: 1;
+			.review_data {
+				@include flex;
+				align-items: center;
+				margin-bottom: 20px;
+				@include media(">=phone", "<=tablet") {
+					@include flex(flex-start, column);
+					align-items: flex-start;
+				}
+
+				.review_data_author-name {
+					@include font-header($header-size-3);
+					color: $accent-light-blue;
+				}
+				.review_data_date {
+					@include font-text(11px);
+					color: $extra-grey-5;
+				}
+				.mod_link-style {
+					@include font-text(14px);
+					color: $extra-grey-5;
+					&:hover {
+						color: $accent-light-blue;
+					}
+				}
+			}
+
+			.review_content {
+				@include font-text(14px);
+				color: $extra-grey-5;
+			}
+		}
+	}
+
+	.review_wrapper:last-of-type {
+		border-bottom: none;
+	}
+}

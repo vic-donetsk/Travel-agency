@@ -1,0 +1,90 @@
+.tovar-info {
+	@include flex(space-between, column);
+	min-width: 240px;
+	height: 500px;
+	margin-left: 20px;
+	@include media(">=phone", "<=small_desktop") { 
+		order: 2; 
+		height: 550px;
+		margin-left: 0;
+		margin-bottom: 40px;
+	}
+
+	.tovar-info_finance_wrapper {
+		height: 180px;
+		border: solid 4px #f6fafb;
+		border-radius: 4px;
+		margin-bottom: 20px;
+
+		.tovar-info_finance {
+			margin: 36px 16px 16px;
+			background-color: #f6fafb;
+			border-radius: 4px;
+			@include media(">=phone", "<=small_desktop") { 
+				margin: 16px;
+			}
+
+			.price {
+				padding-top: 16px;
+				height: 60px;
+				@include font-header($header-size-2);
+				color: $accent-light-blue;
+				text-align: center;
+			}
+			.to-cart {
+				width: 160px;
+				margin: 0 auto;
+				height: 60px;
+				@include media(">=phone", "<=small_desktop") { 
+					height: 80px;
+					padding-top: 18px;
+					border-top: 2px solid $main-light;
+				}
+			}
+		}
+	}
+
+	.tovar-info_conditions {
+		flex: 1;
+		border: 4px solid #f6fafb;
+		border-radius: 4px;
+		padding: 0 16px;
+		@include flex(center,column);
+
+		.tovar-info_seller-info {
+			flex: 1;
+			@include flex(flex-start);
+
+			.seller-foto {
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				margin-top: 7px;
+				@include media(">=phone", "<=small_desktop") { 
+					margin-top: 12px;
+				}
+			}
+		}
+		.tovar-info_conditions_item {
+			flex: 1;
+			border-top: 4px solid #f6fafb;
+
+			.conditions_item_title {
+				@include font-header($header-size-4);
+				margin-top: 7px;
+				color: $accent-light-blue;
+				@include media(">=phone", "<=small_desktop") { 
+					margin-top: 12px;
+				}
+			}
+			.conditions_item_content {
+				@include font-text($text-size-2);
+				color: $main-dark;
+			}
+		}
+		.tovar-info_conditions_item:first-of-type {
+			border-top: none;
+			margin-left: 15px;
+		}
+	}
+}
