@@ -53,22 +53,11 @@
 
 				
 			</div>
-			<div class="seller-page_trip-cards">
-				@php $show_class = ['main-seller-trip', 'main-seller-trip', 'main-seller-trip', 'main-seller-trip', 'main-seller-trip', 'hidden-on-mobile-seller-trip','hidden-on-mobile-seller-trip', 'hidden-on-mobile-seller-trip','hidden-on-tablet-seller-trip']; 
-				@endphp
 
-				  @each('components.trip-card', $show_class, 'show')
-				
-				<div class="seller-page_pagination">
-					@include('components.pagination')
-				</div>	
+			@include('components.main-view_trip-cards.main-view_trip-cards')
 
-			</div>
 		</div>
 	</div>
-
-
-
 
 	@include('components.footer',['user_name' => 'Василий Пупкин', 'user_foto' => 'img/user.png'])
 

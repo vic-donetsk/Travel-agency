@@ -1,7 +1,7 @@
 .search_wrapper {
-	padding: 25px 40px 105px;
+	padding: 25px 40px 25px;
 	@include media(">=phone", "<=small_desktop") {
-		padding: 25px 20px 60px;
+		padding: 25px 20px;
 	}
 	.search_title {
 		text-transform: uppercase;
@@ -65,10 +65,10 @@
 			}
 
 			.search_results_active-filters {
+  				@include flex;
 				border-radius: 4px;
   				border: solid 4px #f6fafb;
-  				@include flex;
-  				padding: 15px 40px;
+  				padding: 15px 40px 0;
 
   				.active-filters_wrapper {
   					@include flex(flex-start, row, wrap);
@@ -77,6 +77,7 @@
   						@include font-text($text-size-2);
   						color: $main-dark;
   						margin-right: 10px;
+  						margin-bottom: 15px;
   						height: 30px;
   						line-height: 30px;
   						min-width: 100px;
@@ -90,12 +91,11 @@
   				}
 
 				.reset-filters {
-					flex-grow: 1;
+					min-width: 125px;
 					height: 30px;
-					text-align: right;
 					.reset-filters_text {
 						@include font-text($text-size-2);
-  					line-height: 30px;
+  						line-height: 30px;
 						color: $extra-grey-5;
 						display: inline-block;
 						margin-right: 20px;
@@ -111,6 +111,9 @@
 					cursor: pointer;
 				}
   			}
+			.main-view_trip-cards {
+				margin-top: 40px;
+			}
 		}
 	}
 }

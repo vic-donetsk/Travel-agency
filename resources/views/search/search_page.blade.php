@@ -152,12 +152,9 @@
 					</div>
 					
 				</div>
-				<div class="search_results_trip-cards">
-					
-				</div>
 
-				@include('components.pagination')
-				
+					@include('components.main-view_trip-cards.main-view_trip-cards')
+					
 			</div>
 		</section>
 

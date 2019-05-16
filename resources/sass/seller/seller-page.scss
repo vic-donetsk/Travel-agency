@@ -51,42 +51,7 @@
 			}
 		}
 	}
-	.seller-page_trip-cards {
+	.main-view_trip-cards {
 		flex: 1;
-		@include flex(space-between, row, wrap);
-
-		.main-seller-trip,
-		.hidden-on-mobile-seller-trip,
-		.hidden-on-tablet-seller-trip {
-			width: calc( (100% - 60px)/3 );
-			@include media(">tablet", "<=desktop") { 
-				width: calc( (100% - 30px)/2 );
-			}
-			@include media(">=phone", "<=tablet") { 
-				width: 100%;
-			}
-			height: 380px;
-			margin: 0 0 30px;
-			.mod_green {
-				margin: 0 auto;
-			}
-		}
-
-		.hidden-on-tablet-seller-trip {
-			@include media(">=phone", "<=desktop") { 
-				display: none;
-			}
-		}
-		.hidden-on-mobile-seller-trip {
-			@include media(">=phone", "<=tablet") { 
-				display: none;
-			}
-		}
-	}
-	.seller-page_pagination {
-		margin: 70px auto 100px;
-		@include media(">=phone", "<=tablet") { 
-				display: none;
-			}
 	}
 }

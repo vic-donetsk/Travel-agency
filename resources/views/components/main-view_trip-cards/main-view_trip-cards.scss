@@ -1,0 +1,37 @@
+.main-view_trip-cards {
+	@include flex(space-between, row, wrap);
+
+	.main-trip,
+	.hidden-on-mobile-trip,
+	.hidden-on-tablet-trip {
+		width: calc( (100% - 60px)/3 );
+		@include media(">tablet", "<=desktop") { 
+			width: calc( (100% - 30px)/2 );
+		}
+		@include media(">=phone", "<=tablet") { 
+			width: 100%;
+		}
+		height: 380px;
+		margin: 0 0 30px;
+		.mod_green {
+			margin: 0 auto;
+		}
+	}
+
+	.hidden-on-tablet-trip {
+		@include media(">=phone", "<=desktop") { 
+			display: none;
+		}
+	}
+	.hidden-on-mobile-trip {
+		@include media(">=phone", "<=tablet") { 
+			display: none;
+		}
+	}
+}
+.main-view_trip-cards_pagination {
+	margin: 40px auto 75px;
+	@include media(">=phone", "<=tablet") { 
+		margin: 20px auto 35px;
+	}
+}
