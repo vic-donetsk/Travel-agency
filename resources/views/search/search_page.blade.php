@@ -10,7 +10,7 @@
 
 	@include('components.mob-main-menu',['text' => 'Войти'])
 
-	<section class="search_wrapper">
+	<div class="search_wrapper">
 		<div class="searh_header">
 			<div class="breadcrumbs">
 				<div class="breadcrumbs_item"> Главная</div>
@@ -118,6 +118,10 @@
 
 			<div class="search_results">
 
+				<div class="search_result_mobile-header">
+					<h2 class="mod_header-3"=>показать фильтр</h2>
+				</div>
+
 				<div class="search_results_sort">
 					<p class="results_quantity">254шт</p>
 					<select class="sort_select">
@@ -154,12 +158,12 @@
 				</div>
 
 					@include('components.main-view_trip-cards.main-view_trip-cards')
-					
+
 			</div>
 		</section>
 
 
-	</section>
+	</div>
 
 	@include('components.footer',['text' => 'Вход/Регистрация'])
 

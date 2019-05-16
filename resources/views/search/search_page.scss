@@ -1,6 +1,6 @@
 .search_wrapper {
 	padding: 25px 40px 25px;
-	@include media(">=phone", "<=small_desktop") {
+	@include media(">=phone", "<=tablet") {
 		padding: 25px 20px;
 	}
 	.search_title {
@@ -10,8 +10,14 @@
 	.search_main {
 		@include flex;
 		margin-top: 37px;
+			@include media(">=phone", "<=tablet") {
+			margin-top: 15px;
+		}
 
 		.search_filters {
+			@include media(">=phone", "<=tablet") {
+					display: none;
+				}
 			margin-right: 40px;	
 
 	  		.search_filters_one-filter {
@@ -49,6 +55,22 @@
 
 		.search_results {
 			flex-grow: 1;
+
+			.search_result_mobile-header {
+				margin: 15px auto 0;
+				text-align: center;
+				display: none;
+				@include media(">=phone", "<=tablet") {
+					margin-top: 15px;
+					display: block;
+				}
+				& h2 {
+					text-transform: uppercase;
+					color: $accent_light_blue;
+					cursor: pointer;
+				}
+			}
+
 			.search_results_sort {
 				@include flex;
 				padding: 7px 40px 20px;
