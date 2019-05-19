@@ -32,16 +32,28 @@
         </div>
 
         <div class="show_block">
-            <div>
-                <input type="radio" name="rb" id="rb1" checked> <label for="rb1">Диван 1</label>
-            </div>
-            <div>
-                <input type="radio" name="rb" id="rb2"> <label for="rb2">Диван 2</label>
+            <div class="radio-switch">
+                 <label>
+                    <input class="radio" type="radio" name="rb" id="rb1" checked> 
+                    <span class="radio-custom"></span>
+                    <span class="radio-label">Путешествие 1</span>
+                 </label>
+            </div>            
+            <div class="radio-switch">
+                 <label>
+                    <input class="radio" type="radio" name="rb" id="rb2"> 
+                    <span class="radio-custom"></span>
+                    <span class="radio-label">Путешествие 2</span>
+                 </label>
+            </div>            
+            <div class="radio-switch">
+                 <label>
+                    <input class="radio" type="radio" name="rb" id="rb3"> 
+                    <span class="radio-custom"></span>
+                    <span class="radio-label">Путешествие 3</span>
+                 </label>
             </div>
 
-            <div>
-                <input type="radio" name="rb" id="rb3"> <label for="rb3">Диван 3</label>
-            </div>
         </div>
 
         <div class="show_block">

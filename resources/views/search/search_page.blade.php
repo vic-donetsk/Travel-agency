@@ -75,46 +75,89 @@
 				</div>
 				<div class="search_filters_one-filter">
 					<div class="one-filter_title mod_header-3">питание</div>
-					<div class="one-filter_radio">
-						<div class="input-item">
-		                	<input type="radio" name="rb1" id="All" checked> <label for="All">Любое</label>
-		            	</div>
-		            	<div class="input-item">
-		                	<input type="radio" name="rb1"1 id="breakfast"> <label for="breakfast">Завтра</label>
-		            	</div>
-		            	<div class="input-item">
-		                	<input type="radio" name="rb1" id="breakfast-supper"> <label for="breakfast-supper">Завтрак и ужин</label>
-		            	</div>
-		            	<div class="input-item">
-		                	<input type="radio" name="rb1" id="none"> <label for="none">Без питания</label>
-		            	</div>
+					<div class="nutrition-filter one-filter_radio">
+						<div class="radio-switch">
+			                 <label>
+			                    <input class="radio" type="radio" name="rb1" id="nutrition_0" checked> 
+			                    <span class="radio-custom"></span>
+			                    <span class="radio-label">Любое</span>
+			                 </label>
+			            </div>
+			            <div class="radio-switch">
+			                 <label>
+			                    <input class="radio" type="radio" name="rb1" id="nutrition_1"> 
+			                    <span class="radio-custom"></span>
+			                    <span class="radio-label">Завтрак</span>
+			                 </label>
+			            </div>
+			            <div class="radio-switch">
+			                 <label>
+			                    <input class="radio" type="radio" name="rb1" id="nutrition_2"> 
+			                    <span class="radio-custom"></span>
+			                    <span class="radio-label">Завтрак и ужин</span>
+			                 </label>
+			            </div>
+			            <div class="radio-switch">
+			                 <label>
+			                    <input class="radio" type="radio" name="rb1" id="nutrition_3"> 
+			                    <span class="radio-custom"></span>
+			                    <span class="radio-label">Без питания</span>
+			                 </label>
+			            </div>
 					</div>
 				</div>
 				<div class="search_filters_one-filter">
 					<div class="one-filter_title mod_header-3">цена</div>
-					<div class="one-filter_radio">
-						<div class="input-item">
-		                	<input type="radio" name="rb2" id="price_0" checked> <label for="price_0">Любая</label>
-		            	</div>
-		            	<div class="input-item">
-		                	<input type="radio" name="rb2" id="price_1"> <label for="price_1">До 10</label>
-		            	</div>
-		            	<div class="input-item">
-		                	<input type="radio" name="rb2" id="price_2"> <label for="price_2">От 11 до 50</label>
-		            	</div>
-		            	<div class="input-item">
-		                	<input type="radio" name="rb2" id="price_3"> <label for="price_3">от 51 до 100</label>
-		            	</div>
-		            	<div class="input-item">
-		                	<input type="radio" name="rb2" id="price_4"> <label for="price_4">от 100 до 500</label>
-		            	</div>
-		            	<div class="input-item">
-		                	<input type="radio" name="rb2" id="price_5"> <label for="price_5">от 501 до 1000</label>
-		            	</div>
-		            	<div class="input-item">
-		                	<input type="radio" name="rb2" id="price_6" > <label for="price_6">Более 1000</label>
-		            	</div>
-						
+					<div class="price-filter one-filter_radio">
+						<div class="radio-switch">
+			                 <label>
+			                    <input class="radio" type="radio" name="rb2" id="price_0" checked> 
+			                    <span class="radio-custom"></span>
+			                    <span class="radio-label">Любая</span>
+			                 </label>
+			            </div>
+			            <div class="radio-switch">
+			                 <label>
+			                    <input class="radio" type="radio" name="rb2" id="price_1"> 
+			                    <span class="radio-custom"></span>
+			                    <span class="radio-label">До 10</span>
+			                 </label>
+			            </div>
+			            <div class="radio-switch">
+			                 <label>
+			                    <input class="radio" type="radio" name="rb2" id="price_2"> 
+			                    <span class="radio-custom"></span>
+			                    <span class="radio-label">От 11 до 50</span>
+			                 </label>
+			            </div>
+			            <div class="radio-switch">
+			                 <label>
+			                    <input class="radio" type="radio" name="rb2" id="price_3"> 
+			                    <span class="radio-custom"></span>
+			                    <span class="radio-label">От 51 до 100</span>
+			                 </label>
+			            </div>
+			            <div class="radio-switch">
+			                 <label>
+			                    <input class="radio" type="radio" name="rb2" id="price_4"> 
+			                    <span class="radio-custom"></span>
+			                    <span class="radio-label">От 100 до 500</span>
+			                 </label>
+			            </div>
+			            <div class="radio-switch">
+			                 <label>
+			                    <input class="radio" type="radio" name="rb2" id="price_5"> 
+			                    <span class="radio-custom"></span>
+			                    <span class="radio-label">От 501 до 1000</span>
+			                 </label>
+			            </div>
+			            <div class="radio-switch">
+			                 <label>
+			                    <input class="radio" type="radio" name="rb2" id="price_6"> 
+			                    <span class="radio-custom"></span>
+			                    <span class="radio-label">Более 1000</span>
+			                 </label>
+			            </div>
 					</div>
 				</div>
 				<div class="search_filters_one-filter">

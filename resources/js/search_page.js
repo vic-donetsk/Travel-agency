@@ -11,12 +11,18 @@
 		$('.search_filters').slideUp(500);
 	});
 
+	let savedFilters = (localStorage.getItem('tourism_filters')) ? localStorage.getItem('tourism_filters') : [];
 
+	//renderFilters(savedFilters);
 
-
-
-	//let saved_filters = localStorage.getItem();
-
+	$('.price-filter').click( (e)=> {
+//		console.log(e);
+//		console.log($('.price-filter:selected').text());
+		console.log('target: ' , $(e.target).text());
+		//console.log('current target: ' , e.currentTarget);
+		//console.log('delegate target: ' , e.delegateTarget);
+		console.log($('input[name=rb2]:checked').val());
+	});
 
 //}
 

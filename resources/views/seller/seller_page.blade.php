@@ -30,22 +30,28 @@
 				<div class="seller-page_categories_items">
 					@php
 					    $trip_types = [
-					        ['name' => 'Индустриальный', 'id' => 'industrial'],
-					        ['name' => 'Шоппинг', 'id' => 'shopping'],
-					        ['name' => 'Экстрим', 'id' => 'extrim'],
-					        ['name' => 'Luxury', 'id' => 'luxury'],
-					        ['name' => 'Всё включено', 'id' => 'all-inclusive'],
-					        ['name' => 'Программы развлечений', 'id' => 'games'],
-					        ['name' => 'Пляжный', 'id' => 'beach'],
-					        ['name' => 'Гастрономический', 'id' => 'gurman'],
-					        ['name' => 'SPA', 'id' => 'spa'],
-					        ['name' => 'Семейный', 'id' => 'family'],
-					        ['name' => 'Спокойный отдых', 'id' => 'rest']]
+					        ['name' => 'Индустриальный', 'id' => 'industrial', 'checked' => 'checked'],
+					        ['name' => 'Шоппинг', 'id' => 'shopping', 'checked' => ''],
+					        ['name' => 'Экстрим', 'id' => 'extrim', 'checked' => ''],
+					        ['name' => 'Luxury', 'id' => 'luxury', 'checked' => ''],
+					        ['name' => 'Всё включено', 'id' => 'all-inclusive', 'checked' => ''],
+					        ['name' => 'Программы развлечений', 'id' => 'games', 'checked' => ''],
+					        ['name' => 'Пляжный', 'id' => 'beach', 'checked' => ''],
+					        ['name' => 'Гастрономический', 'id' => 'gurman', 'checked' => ''],
+					        ['name' => 'SPA', 'id' => 'spa', 'checked' => ''],
+					        ['name' => 'Семейный', 'id' => 'family', 'checked' => ''],
+					        ['name' => 'Спокойный отдых', 'id' => 'rest', 'checked' => '']]
 					@endphp
 					
 					@foreach ($trip_types as $trip_type)
 						<div class="input-item">
-		                	<input type="radio" name="rb" id="{{$trip_type['id']}}" checked> <label for="{{$trip_type['id']}}">{{$trip_type['name']}}</label>
+							<div class="radio-switch">
+				                 <label>
+				                    <input class="radio" type="radio" name="rb" id="{{$trip_type['id']}}" {{$trip_type['checked']}}> 
+				                    <span class="radio-custom"></span>
+				                    <span class="radio-label">{{$trip_type['name']}}</span>
+				                 </label>
+			            	</div>
 		            	</div>
 		            @endforeach
 					

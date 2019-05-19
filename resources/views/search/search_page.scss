@@ -73,7 +73,9 @@
 			            -moz-column-count: 2;
 			            column-count: 2;   
 					}
-					.input-item {
+					.radio-switch {
+						@include font-text(11px);
+						color: $extra-grey-5;
 						height: 25px;
 						margin-bottom: 12px;
 			  			&:last-of-type {
