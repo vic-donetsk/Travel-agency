@@ -35,3 +35,4 @@ window.Vue = require('vue');
 require('./scripts/test');
 
 require('./index');
+require('./search_page');

@@ -22,9 +22,15 @@
 
 		<section class="search_main">
 			<aside class="search_filters">
+
+				<div class="close-search">
+					<img class="search_close" src="img/search-close.svg" alt="">
+				</div>
+
 				<div class="search_filters_one-filter">
 					<div class="one-filter_title mod_header-3">страна</div>
 					<select class="one-filter_select" name="country" id="country">
+						<option value="All" selected>Все</option>
 						<option value="Китай">Китай</option>
 						<option value="Италия">Италия</option>
 						<option value="Мальдивы">Мальдивы</option>
@@ -35,10 +41,10 @@
 				<div class="search_filters_one-filter">
 					<div class="one-filter_title mod_header-3">класс отеля</div>
 					<select class="one-filter_select" name="hotel" id="hotel">
+							<option value="0" selected>Любой</option>
 							<option value="3">3*</option>
 							<option value="4">4*</option>
 							<option value="5">5*</option>
-							<option value="6">WOW!!!</option>
 					</select>
 						
 
@@ -47,21 +53,22 @@
 					<div class="one-filter_title mod_header-3">тип тура</div>
 					@php
 					    $trip_types = [
-					        ['name' => 'Индустриальный', 'id' => 'industrial'],
-					        ['name' => 'Шоппинг', 'id' => 'shopping'],
-					        ['name' => 'Экстрим', 'id' => 'extrim'],
-					        ['name' => 'Luxury', 'id' => 'luxury'],
-					        ['name' => 'Всё включено', 'id' => 'all-inclusive'],
-					        ['name' => 'Программы развлечений', 'id' => 'games'],
-					        ['name' => 'Пляжный', 'id' => 'beach'],
-					        ['name' => 'Гастрономический', 'id' => 'gurman'],
-					        ['name' => 'SPA', 'id' => 'spa'],
-					        ['name' => 'Семейный', 'id' => 'family'],
-					        ['name' => 'Спокойный отдых', 'id' => 'rest']]
+					        ['name' => 'Все', 'status' => 'selected'],
+					        ['name' => 'Индустриальный', 'status' => ''],
+					        ['name' => 'Шоппинг', 'status' => ''],
+					        ['name' => 'Экстрим', 'status' => ''],
+					        ['name' => 'Luxury', 'status' => ''],
+					        ['name' => 'Всё включено', 'status' => ''],
+					        ['name' => 'Программы развлечений', 'status' => ''],
+					        ['name' => 'Пляжный', 'status' => ''],
+					        ['name' => 'Гастрономический', 'status' => ''],
+					        ['name' => 'SPA', 'status' => ''],
+					        ['name' => 'Семейный', 'status' => ''],
+					        ['name' => 'Спокойный отдых', 'status' => '']]
 					@endphp
 					<select class="one-filter_select" name="trip_type" id="tryp_type">
 						@foreach ($trip_types as $trip_type)
-							<option value="{{$trip_type['name']}}">{{$trip_type['name']}}</option>
+							<option value="{{$trip_type['name']}}" {{$trip_type['status']}}>{{$trip_type['name']}}</option>
 			            @endforeach
 						
 					</select>
@@ -70,16 +77,16 @@
 					<div class="one-filter_title mod_header-3">питание</div>
 					<div class="one-filter_radio">
 						<div class="input-item">
-		                	<input type="radio" name="rb1" id="Any" checked> <label for="Any">Любое</label>
+		                	<input type="radio" name="rb1" id="All" checked> <label for="All">Любое</label>
 		            	</div>
 		            	<div class="input-item">
-		                	<input type="radio" name="rb1"1 id="breakfast" checked> <label for="breakfast">Завтра</label>
+		                	<input type="radio" name="rb1"1 id="breakfast"> <label for="breakfast">Завтра</label>
 		            	</div>
 		            	<div class="input-item">
-		                	<input type="radio" name="rb1" id="breakfast-supper" checked> <label for="breakfast-supper">Завтрак и ужин</label>
+		                	<input type="radio" name="rb1" id="breakfast-supper"> <label for="breakfast-supper">Завтрак и ужин</label>
 		            	</div>
 		            	<div class="input-item">
-		                	<input type="radio" name="rb1" id="none" checked> <label for="none">Без питания</label>
+		                	<input type="radio" name="rb1" id="none"> <label for="none">Без питания</label>
 		            	</div>
 					</div>
 				</div>
@@ -87,22 +94,25 @@
 					<div class="one-filter_title mod_header-3">цена</div>
 					<div class="one-filter_radio">
 						<div class="input-item">
-		                	<input type="radio" name="rb2" id="price_1" checked> <label for="price_1">До 10</label>
+		                	<input type="radio" name="rb2" id="price_0" checked> <label for="price_0">Любая</label>
 		            	</div>
 		            	<div class="input-item">
-		                	<input type="radio" name="rb2" id="price_2" checked> <label for="price_2">От 11 до 50</label>
+		                	<input type="radio" name="rb2" id="price_1"> <label for="price_1">До 10</label>
 		            	</div>
 		            	<div class="input-item">
-		                	<input type="radio" name="rb2" id="price_3" checked> <label for="price_3">от 51 до 100</label>
+		                	<input type="radio" name="rb2" id="price_2"> <label for="price_2">От 11 до 50</label>
 		            	</div>
 		            	<div class="input-item">
-		                	<input type="radio" name="rb2" id="price_4" checked> <label for="price_4">от 100 до 500</label>
+		                	<input type="radio" name="rb2" id="price_3"> <label for="price_3">от 51 до 100</label>
 		            	</div>
 		            	<div class="input-item">
-		                	<input type="radio" name="rb2" id="price_5" checked> <label for="price_5">от 501 до 1000</label>
+		                	<input type="radio" name="rb2" id="price_4"> <label for="price_4">от 100 до 500</label>
 		            	</div>
 		            	<div class="input-item">
-		                	<input type="radio" name="rb2" id="price_6" checked> <label for="price_6">Более 1000</label>
+		                	<input type="radio" name="rb2" id="price_5"> <label for="price_5">от 501 до 1000</label>
+		            	</div>
+		            	<div class="input-item">
+		                	<input type="radio" name="rb2" id="price_6" > <label for="price_6">Более 1000</label>
 		            	</div>
 						
 					</div>
@@ -110,8 +120,9 @@
 				<div class="search_filters_one-filter">
 					<div class="one-filter_title mod_header-3">доступно для&nbsp;детей</div>
 					<select class="one-filter_select">
-						<option value="Да">Да</option>
-						<option value="Нет">Нет</option>
+						<option value="All" selected>Все равно</option>
+						<option value="Yes">Да</option>
+						<option value="No">Нет</option>
 					</select>
 				</div>
 			</aside>
@@ -119,7 +130,7 @@
 			<div class="search_results">
 
 				<div class="search_result_mobile-header">
-					<h2 class="mod_header-3"=>показать фильтр</h2>
+					<h2 class="show-filters mod_header-3">показать фильтр</h2>
 				</div>
 
 				<div class="search_results_sort">

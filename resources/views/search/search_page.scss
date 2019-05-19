@@ -12,6 +12,7 @@
 		margin-top: 37px;
 			@include media(">=phone", "<=tablet") {
 			margin-top: 15px;
+			flex-direction: column;
 		}
 
 		.search_filters {
@@ -20,12 +21,29 @@
 				}
 			margin-right: 40px;	
 
+			.close-search {
+				text-align: right;
+				margin-bottom: 15px;
+				cursor: pointer;
+				@include media(">tablet") {
+					display: none;
+				}
+				.search_close {
+					width: 22px;
+					height: 22px;
+					fill: $accent-light-blue;
+				}
+			}
+
 	  		.search_filters_one-filter {
 				width: 200px;
 				padding: 20px;
 				border-radius: 4px;
 		  		border: solid 4px $extra-grey-1;
 		  		margin-bottom: 20px;
+		  		@include media(">=phone", "<=tablet") {
+					width: 100%;
+				}
 
 		  		.one-filter_title {
 		  			text-transform: uppercase;
@@ -43,13 +61,27 @@
 					border: none;
 					outline: none;
 					cursor: pointer;
+					@include media(">=phone", "<=tablet") {
+						width: 100%;
+					}
 		  		}
-		  		.input-item {
-		  			margin-bottom: 12px;
-		  			&:last-of-type {
-		  				margin-bottom: 0;
-		  			}
-		  		} 
+
+		  		.one-filter_radio {
+					list-style: none;
+		  			@include media(">=phone", "<=tablet") {
+						-webkit-column-count: 2; 
+			            -moz-column-count: 2;
+			            column-count: 2;   
+					}
+					.input-item {
+						height: 25px;
+						margin-bottom: 12px;
+			  			&:last-of-type {
+			  				margin-bottom: 0;
+		  				}
+					}
+
+				}
 	  		}
 		}
 
@@ -87,7 +119,7 @@
 			}
 
 			.search_results_active-filters {
-  				@include flex;
+  				@include flex(space-between, row, wrap);
 				border-radius: 4px;
   				border: solid 4px #f6fafb;
   				padding: 15px 40px 0;
