@@ -29,7 +29,7 @@
 
 				<div class="search_filters_one-filter">
 					<div class="one-filter_title mod_header-3">страна</div>
-					<select class="one-filter_select" name="country" id="country">
+					<select class="country_select one-filter_select" name="country" id="country">
 						<option value="All" selected>Все</option>
 						<option value="Китай">Китай</option>
 						<option value="Италия">Италия</option>
@@ -40,7 +40,7 @@
 				</div>
 				<div class="search_filters_one-filter">
 					<div class="one-filter_title mod_header-3">класс отеля</div>
-					<select class="one-filter_select" name="hotel" id="hotel">
+					<select class="hotel_select one-filter_select" name="hotel" id="hotel">
 							<option value="0" selected>Любой</option>
 							<option value="3">3*</option>
 							<option value="4">4*</option>
@@ -66,7 +66,7 @@
 					        ['name' => 'Семейный', 'status' => ''],
 					        ['name' => 'Спокойный отдых', 'status' => '']]
 					@endphp
-					<select class="one-filter_select" name="trip_type" id="tryp_type">
+					<select class="tripType_select one-filter_select" name="trip_type" id="tryp_type">
 						@foreach ($trip_types as $trip_type)
 							<option value="{{$trip_type['name']}}" {{$trip_type['status']}}>{{$trip_type['name']}}</option>
 			            @endforeach
@@ -78,28 +78,28 @@
 					<div class="nutrition-filter one-filter_radio">
 						<div class="radio-switch">
 			                 <label>
-			                    <input class="radio" type="radio" name="rb1" id="nutrition_0" checked> 
+			                    <input class="radio" type="radio" name="nutrition" id="nutrition_0" checked> 
 			                    <span class="radio-custom"></span>
 			                    <span class="radio-label">Любое</span>
 			                 </label>
 			            </div>
 			            <div class="radio-switch">
 			                 <label>
-			                    <input class="radio" type="radio" name="rb1" id="nutrition_1"> 
+			                    <input class="radio" type="radio" name="nutrition" id="nutrition_1"> 
 			                    <span class="radio-custom"></span>
 			                    <span class="radio-label">Завтрак</span>
 			                 </label>
 			            </div>
 			            <div class="radio-switch">
 			                 <label>
-			                    <input class="radio" type="radio" name="rb1" id="nutrition_2"> 
+			                    <input class="radio" type="radio" name="nutrition" id="nutrition_2"> 
 			                    <span class="radio-custom"></span>
 			                    <span class="radio-label">Завтрак и ужин</span>
 			                 </label>
 			            </div>
 			            <div class="radio-switch">
 			                 <label>
-			                    <input class="radio" type="radio" name="rb1" id="nutrition_3"> 
+			                    <input class="radio" type="radio" name="nutrition" id="nutrition_3"> 
 			                    <span class="radio-custom"></span>
 			                    <span class="radio-label">Без питания</span>
 			                 </label>
@@ -111,49 +111,49 @@
 					<div class="price-filter one-filter_radio">
 						<div class="radio-switch">
 			                 <label>
-			                    <input class="radio" type="radio" name="rb2" id="price_0" checked> 
+			                    <input class="radio" type="radio" name="price" id="price_0" checked> 
 			                    <span class="radio-custom"></span>
 			                    <span class="radio-label">Любая</span>
 			                 </label>
 			            </div>
 			            <div class="radio-switch">
 			                 <label>
-			                    <input class="radio" type="radio" name="rb2" id="price_1"> 
+			                    <input class="radio" type="radio" name="price" id="price_1"> 
 			                    <span class="radio-custom"></span>
 			                    <span class="radio-label">До 10</span>
 			                 </label>
 			            </div>
 			            <div class="radio-switch">
 			                 <label>
-			                    <input class="radio" type="radio" name="rb2" id="price_2"> 
+			                    <input class="radio" type="radio" name="price" id="price_2"> 
 			                    <span class="radio-custom"></span>
 			                    <span class="radio-label">От 11 до 50</span>
 			                 </label>
 			            </div>
 			            <div class="radio-switch">
 			                 <label>
-			                    <input class="radio" type="radio" name="rb2" id="price_3"> 
+			                    <input class="radio" type="radio" name="price" id="price_3"> 
 			                    <span class="radio-custom"></span>
 			                    <span class="radio-label">От 51 до 100</span>
 			                 </label>
 			            </div>
 			            <div class="radio-switch">
 			                 <label>
-			                    <input class="radio" type="radio" name="rb2" id="price_4"> 
+			                    <input class="radio" type="radio" name="price" id="price_4"> 
 			                    <span class="radio-custom"></span>
 			                    <span class="radio-label">От 100 до 500</span>
 			                 </label>
 			            </div>
 			            <div class="radio-switch">
 			                 <label>
-			                    <input class="radio" type="radio" name="rb2" id="price_5"> 
+			                    <input class="radio" type="radio" name="price" id="price_5"> 
 			                    <span class="radio-custom"></span>
 			                    <span class="radio-label">От 501 до 1000</span>
 			                 </label>
 			            </div>
 			            <div class="radio-switch">
 			                 <label>
-			                    <input class="radio" type="radio" name="rb2" id="price_6"> 
+			                    <input class="radio" type="radio" name="price" id="price_6"> 
 			                    <span class="radio-custom"></span>
 			                    <span class="radio-label">Более 1000</span>
 			                 </label>
@@ -162,10 +162,10 @@
 				</div>
 				<div class="search_filters_one-filter">
 					<div class="one-filter_title mod_header-3">доступно для&nbsp;детей</div>
-					<select class="one-filter_select">
+					<select class="children_select one-filter_select">
 						<option value="All" selected>Все равно</option>
-						<option value="Yes">Да</option>
-						<option value="No">Нет</option>
+						<option value="Yes">С детьми</option>
+						<option value="No">Без детей</option>
 					</select>
 				</div>
 			</aside>
@@ -186,7 +186,7 @@
 					
 				</div>
 				<div class="search_results_active-filters">
-					<div class="active-filters_wrapper">
+					{{-- <div class="active-filters_wrapper">
 						<div class="active-filter country">
 							<p class="active-filter_value">Китай</p>
 							<img src="img/close.svg" alt="" class="close">
@@ -207,7 +207,7 @@
 					<div class="reset-filters">
 						<p class="reset-filters_text">Очистить фильтр</p>
 						<img src="img/close.svg" alt="" class="close">
-					</div>
+					</div> --}}
 					
 				</div>
 
