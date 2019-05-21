@@ -53,22 +53,22 @@
 					<div class="one-filter_title mod_header-3">тип тура</div>
 					@php
 					    $trip_types = [
-					        ['name' => 'Все', 'status' => 'selected'],
-					        ['name' => 'Индустриальный', 'status' => ''],
-					        ['name' => 'Шоппинг', 'status' => ''],
-					        ['name' => 'Экстрим', 'status' => ''],
-					        ['name' => 'Luxury', 'status' => ''],
-					        ['name' => 'Всё включено', 'status' => ''],
-					        ['name' => 'Программы развлечений', 'status' => ''],
-					        ['name' => 'Пляжный', 'status' => ''],
-					        ['name' => 'Гастрономический', 'status' => ''],
-					        ['name' => 'SPA', 'status' => ''],
-					        ['name' => 'Семейный', 'status' => ''],
-					        ['name' => 'Спокойный отдых', 'status' => '']]
+					        ['name' => 'Все'],
+					        ['name' => 'Индустриальный'],
+					        ['name' => 'Шоппинг'],
+					        ['name' => 'Экстрим'],
+					        ['name' => 'Luxury'],
+					        ['name' => 'Всё включено'],
+					        ['name' => 'Программы развлечений'],
+					        ['name' => 'Пляжный'],
+					        ['name' => 'Гастрономический'],
+					        ['name' => 'SPA'],
+					        ['name' => 'Семейный'],
+					        ['name' => 'Спокойный отдых']]
 					@endphp
 					<select class="tripType_select one-filter_select" name="trip_type" id="tryp_type">
 						@foreach ($trip_types as $trip_type)
-							<option value="{{$trip_type['name']}}" {{$trip_type['status']}}>{{$trip_type['name']}}</option>
+							<option value="{{$trip_type['name']}}" >{{$trip_type['name']}}</option>
 			            @endforeach
 						
 					</select>
@@ -78,7 +78,7 @@
 					<div class="nutrition-filter one-filter_radio">
 						<div class="radio-switch">
 			                 <label>
-			                    <input class="radio" type="radio" name="nutrition" id="nutrition_0" checked> 
+			                    <input class="radio" type="radio" name="nutrition" id="nutrition_0"> 
 			                    <span class="radio-custom"></span>
 			                    <span class="radio-label">Любое</span>
 			                 </label>
@@ -111,7 +111,7 @@
 					<div class="price-filter one-filter_radio">
 						<div class="radio-switch">
 			                 <label>
-			                    <input class="radio" type="radio" name="price" id="price_0" checked> 
+			                    <input class="radio" type="radio" name="price" id="price_0"> 
 			                    <span class="radio-custom"></span>
 			                    <span class="radio-label">Любая</span>
 			                 </label>
@@ -186,27 +186,20 @@
 					
 				</div>
 				<div class="search_results_active-filters">
-					{{-- <div class="active-filters_wrapper">
+					{{-- filled by JS
+
+					<div class="active-filters_wrapper">
 						<div class="active-filter country">
 							<p class="active-filter_value">Китай</p>
 							<img src="img/close.svg" alt="" class="close">
 						</div>
-						<div class="active-filter hotel">
-							<p class="active-filter_value">3*</p>
-							<img src="img/close.svg" alt="" class="close">
-						</div>
-						<div class="active-filter">
-							<p class="active-filter_value">Без питания</p>
-							<img src="img/close.svg" alt="" class="close">
-						</div>
-						<div class="active-filter">
-							<p class="active-filter_value">От 11 до 50</p>
-							<img src="img/close.svg" alt="" class="close">
-						</div>
+						......
+						......
 					</div>
+						
 					<div class="reset-filters">
 						<p class="reset-filters_text">Очистить фильтр</p>
-						<img src="img/close.svg" alt="" class="close">
+						<img src="img/close.svg" alt="" class="close-all">
 					</div> --}}
 					
 				</div>

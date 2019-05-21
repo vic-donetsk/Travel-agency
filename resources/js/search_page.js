@@ -24,7 +24,7 @@
 			savedFilters = $.extend({}, noFiltersArray);
 	};
 
-	// отрисовываем измененииые фильтры в обоих блоках
+	// отрисовываем измененные фильтры в обоих блоках
 	renderAsideFilters(savedFilters);
 	renderTopFilters(savedFilters);
 
@@ -47,8 +47,7 @@
 		let toLS = JSON.stringify(savedFilters);
 		localStorage.setItem('tourism_filters', toLS);
 
-		// отрисовываем измененииые фильтры в обоих блоках
-		//renderAsideFilters(savedFilters);
+		// отрисовываем измененные фильтры в обоих блоках
 		renderTopFilters(savedFilters);
 	});
 
@@ -79,9 +78,6 @@
 	handleSelectFilter('children_select');
 
 
-
-
-
 // обработка фильтра select
 function handleSelectFilter(filterClass) {
 	$('.' + filterClass).change( (e)=> {
@@ -95,7 +91,7 @@ function handleSelectFilter(filterClass) {
 	});
 }
 
-// отрисовка блока фильтров в топе главной части
+// отрисовка блока выбранных фильтров в топе главной части
 function renderTopFilters(filters) {
 
 	let issetFilters = false;
@@ -106,8 +102,8 @@ function renderTopFilters(filters) {
 		if ( filters[key] != noFiltersArray[key] ) {
 			issetFilters = true;
 			filtersContent += 
-			`<div class="active-filter country">
-							<p class="active-filter_value">${filters[key]}</p>
+			`<div class="active-filter" data-type="${key}">
+							<p class="active-filter_value" ">${filters[key]}</p>
 							<img src="img/close.svg" alt="" class="close">
 						</div>`
 		}
@@ -122,45 +118,61 @@ function renderTopFilters(filters) {
 
 		// сброс всех фильтров при нажатии "Очистить"
 		$('.reset-filters').click( (e) => {
-			console.log('erased');
 			savedFilters = $.extend({}, noFiltersArray);
 			localStorage.removeItem('tourism_filters');
 			renderAsideFilters(savedFilters);
 			renderTopFilters(savedFilters);	
 		});
 
+		// удаление одного фильтра из топа
+		$('.active-filter').click( (e) => {
+
+			let filterName = $(e.delegateTarget).data('type');
+			
+			renderOneAsideFilter(filterName, noFiltersArray[filterName]);
+
+			savedFilters[filterName] = noFiltersArray[filterName];
+			let toLS = JSON.stringify(savedFilters);
+			localStorage.setItem('tourism_filters', toLS);
+
+			renderTopFilters(savedFilters);	
+
+		});
 	}
 }
 
+// отрисовка основного блока фильтров (с условиями)
 function renderAsideFilters(filters) {
-	let radio = ['nutrition', 'price'];
-	for (let currentFilter in filters) {
-		if ( radio.indexOf(currentFilter) != -1 ) {
-			// если это input-radio
-			let usedClass = '.' + currentFilter + '-filter';
-			//$(usedClass + ' input:checked').prop('checked', false);
-			$(usedClass + ' > div').each( (index, elem) =>{
-				if ( $(elem).find('.radio-label').text() == filters[currentFilter] ) {
-					$(elem).find('input').prop('checked', true);
-				} else {
-					$(elem).find('input').prop('checked', false);
-				}
-
-			});
-
-		} else {
-			// если это select
-			let usedClass = '.' + currentFilter + '_select';
-			//$(usedClass + ' option:selected').prop('selected', false);
-			$(usedClass + ' > option').each( (index, elem) =>{
-				if ( $(elem).text() == filters[currentFilter] ) {
-					$(elem).prop('selected', true);
-				} else {
-					$(elem).prop('selected', false);
-				}
-
-			});
-		}
+	
+	for (let oneFilter in filters) {
+		renderOneAsideFilter(oneFilter, filters[oneFilter])
 	}
 }
 
+function renderOneAsideFilter(currentFilter, currentValue) {
+	let radio = ['nutrition', 'price'];
+
+	if ( radio.indexOf(currentFilter) != -1 ) {
+		// если это input-radio
+		let usedClass = '.' + currentFilter + '-filter';
+		$(usedClass + ' > div').each( (index, elem) =>{
+			if ( $(elem).find('.radio-label').text() == currentValue ) {
+				$(elem).find('input').prop('checked', true);
+			} else {
+				$(elem).find('input').prop('checked', false);
+			}
+
+		});
+	} else {
+		// если это select
+		let usedClass = '.' + currentFilter + '_select';
+		$(usedClass + ' > option').each( (index, elem) =>{
+			if ( $(elem).text() == currentValue ) {
+				$(elem).prop('selected', true);
+			} else {
+				$(elem).prop('selected', false);
+			}
+
+		});
+	}
+}
