@@ -1,0 +1,51 @@
+.orders {
+	padding: 25px 40px 25px;
+	max-width: 1280px;
+	margin: 0 auto;
+	@include media(">=phone", "<=tablet") {
+		padding: 25px 20px;
+	}
+.orders_title {
+		text-transform: uppercase;
+	}
+}
+
+.orders_list {
+	margin-top: 25px;
+	padding: 40px;
+	border-radius: 4px;
+  	border: solid 4px #f6fafb;
+}
+
+.oneorder_header {
+	@include flex;
+	max-width: 1200px;
+	height: 60px;
+	background-color: #f6fafb;
+	padding: 24px 40px 0;
+	color: $main_dark;
+	text-align: left;
+
+	.oneorder_number {
+		width: 256px;
+
+	}
+	.oneorder_date {
+		width: 305px;
+
+	}
+	.oneorder_owner {
+		width: 348px;
+
+	}
+	.oneorder_details {
+		width: 101px;
+
+	}
+	.oneorder_details-sign {
+		margin-left: 18px;
+		width: 12px;
+
+	}
+
+}

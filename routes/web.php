@@ -20,3 +20,8 @@ Route::get('/tovar', function () {
 Route::get('/search', function () {
     return view('search.search_page');
 })->name('search_page');
+
+Route::get('/orders', 'OrderController@index')->name('orders_page');
+
+Route::get('/purchases', 'PurchaseController@index')->name('purchases_page');
+

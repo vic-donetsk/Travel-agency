@@ -6,7 +6,7 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue');
+//window.Vue = require('vue');
 
 /**
  * The following block of code may be used to automatically register your
@@ -32,7 +32,6 @@ window.Vue = require('vue');
 // });
 
 
-require('./scripts/test');
-
 require('./index');
-require('./search_page');
+require('../views/search/search_page');
+require('../views/orders/orders_page');
