@@ -1,0 +1,24 @@
+.logotype {
+	.logotype_container {
+		@include flex(center);
+		align-items: center;
+	}
+	.logotype_elem {
+		color: $main-light; 
+		text-decoration: none; 
+		cursor: pointer;
+	}
+	.logotype_text {
+		margin-left: 8px;
+		padding-bottom: 10px;
+
+		@include media(">=phone", "<=small_desktop") {
+			padding-bottom: 20px;
+		} 
+	}
+}
+.logo-img {
+	width:  36px;	
+	height: 36px;	
+	//cursor: pointer;
+}

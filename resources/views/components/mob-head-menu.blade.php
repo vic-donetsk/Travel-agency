@@ -1,5 +1,5 @@
 <div class="mobile-header-menu">
-	@include('components.logo')
+	@include('components.logo.logo')
 	<button class="hamburger hamburger--collapse" type="button">
 		<span class="hamburger-box">
 			<span class="hamburger-inner"></span>

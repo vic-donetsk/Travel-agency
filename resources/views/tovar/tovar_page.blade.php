@@ -4,7 +4,7 @@
 
 @section('content')
 
-	@include('components.main-menu',['text' => 'Вход/Регистрация'])
+	@include('components.main-menu.main-menu',['text' => 'Вход/Регистрация'])
 
     @include('components.mob-head-menu')
 
