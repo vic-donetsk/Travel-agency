@@ -1,16 +1,15 @@
-<section class="main-menu-wrapper">
-	<nav class="main-menu">
-		<div class="main-menu_menu-block">
-			<div class="main-menu_menu-block_trip-transport">
+<nav class="main-menu">
+		<div class="main-menu_first-block">
+			<div class="trip-transport">
 				<div class="trip-transport_item"> <a href=""> Автобусные туры </a> </div>
 				<div class="trip-transport_item"> <a href=""> Авиационные туры </a></div>
 				<div class="trip-transport_item"> <a href=""> Круизы </a> </div>
 			</div>
 			@include('components.logo.logo')
-			<div class="main-menu_menu-block_right-menu">
-				<div class="user mod_trip-user-item">
+			<div class="main-menu_right">
+				<div class="user mod_main-menu">
 					
-						@include('components.user-or-guest', ['text' => 'Вход/Регистрация'])
+						@include('components.main-menu.user-or-guest', ['text' => 'Вход/Регистрация'])
 					
 				</div>
 				<div>	
@@ -30,5 +29,4 @@
 				<i class="fas fa-plus"></i>&nbsp; Добавить тур
 			</div>
 		</div>
-	</nav>
-</section>
+</nav>

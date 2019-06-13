@@ -91,16 +91,16 @@
         @include('components.main-menu')
 
         <div class="show_block">
-            @include('components.mob-main-menu')
-            @include('components.mob-head-menu')
+            @include('components.main-menu.mob-main-menu')
+            @include('components.main-menu.mob-head-menu')
         </div>
 
-        @include('components.footer',['user_name' => 'Василий Пупкин', 'user_foto' => 'img/user.png'])
+        @include('components.footer.footer',['user_name' => 'Василий Пупкин', 'user_foto' => 'img/user.png'])
         <br>
-        @include('components.footer')
+        @include('components.footer.footer')
         <br>
         <div class="test-mobile" style="width:320px; margin: 0 auto">
-           @include('components.footer')
+           @include('components.footer.footer')
         </div>
 
 

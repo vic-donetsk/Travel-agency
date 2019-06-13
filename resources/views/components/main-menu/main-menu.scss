@@ -1,4 +1,4 @@
-.main-menu-wrapper {
+.main-menu {
     @include background-gradient(85deg);
 	@include media(">=phone", "<=small_desktop") {
 		display: none;
@@ -6,16 +6,16 @@
 	height:     120px;	
 	margin:     0 auto;
 	padding:    7px 40px;
-	//box-shadow: 0 3px 6px 0 rgba(2, 56, 129, 0.26);
+
     a {
     	color: $main-light;
     }
-	.main-menu_menu-block {
+	.main-menu_first-block {
 		@include flex();
 		@include font-text();
 		height:      36px;	
 		line-height: 36px;		
-		.main-menu_menu-block_trip-transport {
+		.trip-transport {
 			@include flex();
 			.trip-transport_item {
 				margin-right: 30px; 
@@ -24,14 +24,13 @@
 				}  
 			}
 		}
-		.mod_trip-user-item {
-			margin-right: 50px;
+		.mod_main-menu {
+			margin-right: 40px;
 			@include media(">tablet", "<=small_desktop") {
 				margin-right: 18px;
 			}
-
 		}
-		.main-menu_menu-block_right-menu {
+		.main-menu_right {
 			@include flex();
 		}
 	}
@@ -75,14 +74,18 @@
 }
 
 .user {
+	@include flex(center);
+	align-items: center;
+	width: 180px;
 	.user-foto {
+		margin-top: 10px;
 		width:         26px;	
 		height:        26px;
 		border-radius: 50%;	
 	}
 	.user-name   {
 		display: inline-block;
-		margin-left: 5px;
+		margin-left: 10px;
 	}
 	a {
 		text-decoration: none;

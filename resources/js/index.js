@@ -4,9 +4,9 @@ $(document).ready( ()=>{
 	// mobile menu
 	$(".hamburger").click( (e)=> {
 		if ( $(e.delegateTarget).hasClass('is-active') ) {
-			$(".mobile-menu_wrapper").slideUp("slow");
+			$(".mobile-menu_wrapper").slideUp();
 		} else {
-			$(".mobile-menu_wrapper").slideDown("slow").css("display", "flex");
+			$(".mobile-menu_wrapper").slideDown().css("display", "flex");
 		}
 		$(e.delegateTarget).toggleClass('is-active');
 	});
@@ -79,17 +79,17 @@ $(document).ready( ()=>{
 	// popup-window for registered user
 	let regUser = 1;
 	// это тестовое значение, его надо будет убрать в дальнейшем
-	$('.user a').mouseenter( (e) => {
+	$('.user').mouseenter( (e) => {
 		if (regUser) {
-			let leftPopup = $(e.currentTarget).offset().left;
+			let leftPopup = $(e.delegateTarget).offset().left;
 			// window pop down
-			let topPopup = $(e.currentTarget).offset().top - 5;
-			if ( ( $(e.currentTarget).offset().top - $(window).scrollTop() ) > ( $(window).height() / 2 ) ) {
+			let topPopup = $(e.delegateTarget).offset().top - 5;
+			if ( ( $(e.delegateTarget).offset().top - $(window).scrollTop() ) > ( $(window).height() / 2 ) ) {
 				// window pop up
-				topPopup -= 155;
+				topPopup -= 145;
 			}  
 			$('.popup-window_wrapper').css({'left' : leftPopup, 'top' : topPopup}).slideDown().mouseleave( (e) => {
-				$(e.currentTarget).slideUp();
+				$(e.delegateTarget).slideUp();
 			});
 
 		}

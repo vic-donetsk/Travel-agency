@@ -8,7 +8,7 @@
             </div>
             <div class="user mod_header-3">
                 
-                    @include('components.user-or-guest', ['text' => 'Войти'])
+                    @include('components.main-menu.user-or-guest', ['text' => 'Войти'])
                 
             </div>
 

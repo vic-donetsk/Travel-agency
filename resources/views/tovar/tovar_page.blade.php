@@ -6,9 +6,9 @@
 
 	@include('components.main-menu.main-menu',['text' => 'Вход/Регистрация'])
 
-    @include('components.mob-head-menu')
+    @include('components.main-menu.mob-head-menu')
 
-	@include('components.mob-main-menu',['text' => 'Войти'])
+	@include('components.main-menu.mob-main-menu',['text' => 'Войти'])
 
 	<div class="tovar_header">
 		<div class="breadcrumbs">
@@ -52,7 +52,7 @@
 
 	</div>
 
-	@include('components.footer',['text' => 'Вход/Регистрация'])
+	@include('components.footer.footer',['text' => 'Вход/Регистрация'])
 
 	@include('components.popup-window')
 	
