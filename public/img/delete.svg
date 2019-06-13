@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <g id="Group_695" data-name="Group 695" transform="translate(-1153 -355)">
+    <g id="rubbish-bin" transform="translate(1080.867 362)">
+      <g id="Group_597" data-name="Group 597" transform="translate(81.133)">
+        <path id="Path_237" data-name="Path 237" d="M92.1,1.788H90.071V.47A.471.471,0,0,0,89.592,0a.072.072,0,0,0-.051.017A.065.065,0,0,0,89.506,0H84.674a.464.464,0,0,0-.47.47V1.788H82.168a1.022,1.022,0,0,0-1.035,1.035V4.516h.9v9.639a1.008,1.008,0,0,0,1.026,1.026h8.151a1.015,1.015,0,0,0,1.035-1.026V4.516h.89V2.823A1.022,1.022,0,0,0,92.1,1.788ZM85.144.941h3.977v.847H85.144Zm6.15,13.215c0,.06-.026.086-.086.086H83.057c-.06,0-.086-.026-.086-.086V4.516h8.322Zm.89-10.58h-10.1V2.823c0-.06.026-.094.086-.094H92.1c.06,0,.086.034.086.094Z" transform="translate(-81.133)" fill="#c1c1c1"/>
+        <rect id="Rectangle_326" data-name="Rectangle 326" width="0.949" height="7.783" transform="translate(7.723 5.619)" fill="#c1c1c1"/>
+        <rect id="Rectangle_327" data-name="Rectangle 327" width="0.949" height="7.783" transform="translate(5.534 5.619)" fill="#c1c1c1"/>
+        <rect id="Rectangle_328" data-name="Rectangle 328" width="0.949" height="7.783" transform="translate(3.344 5.619)" fill="#c1c1c1"/>
+      </g>
+    </g>
+    <g id="Ellipse_70" data-name="Ellipse 70" transform="translate(1153 355)" fill="none" stroke="#c1c1c1" stroke-width="1">
+      <circle cx="15" cy="15" r="15" stroke="none"/>
+      <circle cx="15" cy="15" r="14.5" fill="none"/>
+    </g>
+  </g>
+</svg>

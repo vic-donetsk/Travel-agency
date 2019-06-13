@@ -82,6 +82,10 @@
 		width:         26px;	
 		height:        26px;
 		border-radius: 50%;	
+
+		@include media(">=phone", "<=small_desktop") { 
+				margin-top: 5px;
+			}
 	}
 	.user-name   {
 		display: inline-block;

@@ -25,3 +25,7 @@ Route::get('/orders', 'OrderController@index')->name('orders_page');
 
 Route::get('/purchases', 'PurchaseController@index')->name('purchases_page');
 
+Route::get('/basket', function () {
+    return view('basket.basket_page');
+})->name('search_page');
+
