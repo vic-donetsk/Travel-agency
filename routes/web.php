@@ -29,3 +29,7 @@ Route::get('/basket', function () {
     return view('basket.basket_page');
 })->name('search_page');
 
+Route::get('/user_edit', function () {
+    return view('user_edit.user_edit');
+})->name('user_edit');
+

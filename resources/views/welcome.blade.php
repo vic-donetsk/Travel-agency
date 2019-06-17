@@ -88,7 +88,7 @@
 
         @include('components.main-menu.main-menu',['user_name' => 'Василий Пупкин', 'user_foto' => 'img/user.png'])
         <br>
-        @include('components.main-menu')
+        @include('components.main-menu.main-menu')
 
         <div class="show_block">
             @include('components.main-menu.mob-main-menu')

@@ -1,0 +1,128 @@
+body, body * {
+	@extend %init-page;
+} 
+
+.userEdit {
+	padding: 25px 40px 25px;
+	max-width: 1280px;
+	margin: 0 auto;
+	@include media(">=phone", "<=tablet") {
+		padding: 25px 20px;
+	}
+.userEdit_title {
+		text-transform: uppercase;
+	}
+}
+
+.userEdit_wrapper {
+	@include flex(flex-start, column);
+	align-items: flex-start;
+	margin: 35px auto 100px;
+	max-width: 940px;
+
+	@include media (">=phone", "<=small_desktop") {
+		align-items: center;
+	}
+
+	@include media (">=phone", "<=tablet") {
+
+	}
+
+	.userEdit_content {
+		@include flex;
+		padding: 36px;
+		border-radius: 4px;
+	  	border: solid 4px #f6fafb;
+	  	height: 260px;
+
+		@include media (">=phone", "<=small_desktop") {
+			flex-direction: column;
+			align-items: center;
+			height: auto;
+			padding: 16px;
+		}
+		@include media (">=phone", "<=tablet") {
+			width: 100%;
+		}
+	}
+}
+
+.userEdit_content-foto img {
+	width: 180px;
+	height: 180px;
+	@include media (">tablet", "<=small_desktop") {
+		margin-bottom: 44px;
+		width: 360px;
+		height: 360px;
+	}
+	@include media (">=phone", "<=tablet") {
+		margin-bottom: 44px;
+		width: 240px;
+		height: 240px;
+	}
+}
+
+
+.userEdit_content-inputs {
+	@include flex(flex-start, row, wrap);
+
+	@include media (">tablet", "<=small_desktop") {
+		justify-content: center;
+	}
+	@include media (">=phone", "<=tablet") {
+		flex-direction: column;
+		width: 100%;
+		flex-wrap: nowrap;
+	}
+
+	.inputItem {
+		width: 300px;
+		margin-left: 40px;
+
+		@include media (">tablet", "<=small_desktop") {
+			margin: 0 20px;
+		}
+		@include media (">=phone", "<=tablet") {
+			width: 100%;
+			margin: 0;
+		}
+
+		&:first-of-type {
+			margin-bottom: 20px;
+		}
+
+		@include media (">=phone", "<=tablet") {
+			margin-bottom: 23px;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+
+		.inputItem_name {
+			margin-top: 5px;
+		}
+		.inputItem_value {
+			@include input-text(300px, 40px);
+			margin-top: 15px;
+			background-color: #F6FAFB;
+
+			@include media (">=phone", "<=tablet") {
+				max-width: 100%;
+			}
+		}
+	}
+
+}
+
+.userEdit_content-submit {
+	margin-top: 40px;
+	width: 250px;
+
+	@include media (">=phone", "<=tablet") {
+		width: 100%;
+	}
+}
+
+
+
