@@ -267,11 +267,5 @@ body, body * {
 .psevdoPH {
 	@include font-text(12px);
 	color: $extra-grey-5;
-	position: absolute;
-	top: 15px;
-	left: 20px;
 }
 
-.test {
-	color: green;
-}

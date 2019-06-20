@@ -36,14 +36,12 @@
 					<div class="filtersBlock_item">
 						<div class="dataBlock_item-title mod_header-4">Страна</div>
 						<div class="select_wrapper small-input mod_text-2">
-							@empty ($name)
-								<div class="psevdoPH"> {{$country}} </div>
-							@endempty
-							<select class="dataBlock_item-input select" name="country" id="country">
-								@isset($name)
-									<option value="{{$country}}">{{$country}}</option>
-									@else <option class="emptySelect"></option>
-								@endisset
+							<select class="dataBlock_item-input select
+								@empty($name)
+									psevdoPH 
+								@endempty
+							" name="country" id="country">
+								<option value="{{$country}}">{{$country}}</option>
 								@foreach ($country_list as $country_item)
 									@if ($country_item != $country)
 										<option class="test" value="{{$country_item}}">{{$country_item}}</option>
