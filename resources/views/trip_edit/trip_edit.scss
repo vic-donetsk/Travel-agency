@@ -1,0 +1,277 @@
+body, body * {
+	@extend %init-page;
+} 
+
+.tripEdit {
+	padding: 25px 40px 25px;
+	max-width: 1280px;
+	margin: 0 auto;
+	@include media(">=phone", "<=tablet") {
+		padding: 25px 20px;
+	}
+.tripEdit_title {
+		text-transform: uppercase;
+	}
+}
+
+.tripEdit_container {
+	margin: 35px 0 100px;
+
+	@include media(">=phone", "<=tablet") {
+		margin: 15px 0 60px;
+	}
+}
+
+
+.tripEdit_data {
+	@include flex;
+
+	@include media(">=phone", "<desktop") {
+		-webkit-flex-direction: column;
+		-moz-flex-direction: column;
+		-ms-flex-direction: column;
+		-o-flex-direction: column;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.dataBlock {
+		width: 580px;
+		height: 540px;
+		padding: 21px 36px 36px;
+		border-radius: 4px;
+	  	border: solid 4px #f6fafb;
+
+	  	@include media(">tablet", "<desktop") {
+			margin: 0 auto;
+		}
+
+	  	@include media(">=phone", "<=tablet") {
+	  		width: 100%;
+			padding: 21px 16px 16px;
+			height: auto;
+		}
+
+		.dataBlock_item-title {
+			margin-bottom: 15px;
+		}
+
+		.dataBlock_item-input {
+			border-radius: 4px;
+  			background-color: #f6fafb;
+  			border: none;
+			outline: none;
+		}
+
+		.textarea {
+			width: 100%;
+			height: 440px;
+			resize: none;
+			padding: 20px;
+			line-height: 1.57;
+			color: $extra-grey-5;
+			border: none;
+			outline: none;
+			@include media(">=phone", "<=tablet") {
+				height: 260px;
+			}
+		}
+
+	}
+
+	.filtersBlock {
+		@include flex(space-between, row, wrap);
+		align-content: space-between;
+
+		@include media(">=phone", "<desktop") {
+			margin-bottom: 40px;
+		}
+
+		@include media(">=phone", "<=tablet") {
+			flex-direction: column;
+			height: auto;
+			padding-bottom: 0;
+		}
+
+
+		.filtersBlock_item {
+			@include media(">=phone", "<=tablet") {
+				margin-bottom: 25px;
+				width: 100%;
+
+				&:last-of-type {
+					margin-bottom: 20px;
+				}
+			}
+		}
+
+		.input, .select {
+  			height: 40px;
+  			line-height: 30px;
+  			padding: 0 20px;
+  			width: 100%;
+		}
+
+		.large-input {
+			width: 500px;
+			@include media(">=phone", "<=tablet") {
+				width: 100%;
+			}
+		}
+		.small-input {
+			width: 240px;
+			@include media(">=phone", "<=tablet") {
+				width: 100%;
+			}
+		}
+		.select {
+			appearance: none;
+			transition: 0.3s ease;
+		}
+
+		.select_wrapper {
+
+			position: relative;
+
+			&::after {
+				position: absolute;
+				content: "";
+				background: url('/img/select.svg') center no-repeat;
+		    	right: 20px;
+			    top: 17px;
+			    width: 12px;
+			    height: 6px;
+			    pointer-events: none;
+			}
+		}
+
+		.price {
+
+			position: relative;
+
+			&::after {
+				position: absolute;
+				content: "";
+				background: url('/img/btc.svg') center no-repeat;
+		    	right: 23px;
+			    top: 10px;
+			    width: 14px;
+			    height: 20px;
+			}
+		}
+	}
+}
+
+.tripEdit_foto {
+	
+	margin: 40px auto;
+	height: 200px;
+	padding: 21px 36px 36px;
+	border-radius: 4px;
+  	border: solid 4px #f6fafb;
+
+  	@include media(">tablet", "<desktop") {
+		width: 580px;
+	}
+	@include media(">=phone", "<=tablet") {
+		width: 100%;
+	}
+  	@include media(">=phone", "<desktop") {
+		height: auto;
+		padding: 21px 10px 10px;
+	}
+
+	.mod_foto-title {
+		@include media(">tablet", "<desktop") {
+			margin-left: 5px;
+		}
+	}
+
+}
+
+.fotos {
+	@include flex;
+	margin-top: 15px;
+
+	@include media(">=phone", "<desktop") {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.fotos_item {
+		width: 100px;
+		height: 100px;
+		border: none;
+		outline: none;
+		background: #f6fafb;
+
+		@include media(">=phone", "<desktop") {
+			margin: 5px;
+			width: 105px;
+			height: 105px;
+		}
+
+		.img {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
+
+		&:first-of-type {
+			position: relative;
+
+
+			&::before {
+				position: absolute;
+				content: "";
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: $accent-dark-blue;
+				opacity: 0.4;
+				z-index: 10;
+			}
+			&::after {
+				@include font-header(14px);
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				padding: 33px 15px 0;
+				content: "Основное\Aфото";
+				line-height: 1.43;
+				text-align: center;
+				color: $main-light;
+				z-index: 11;
+			}
+		}
+
+	}
+
+}
+
+.tripEdit_submit {
+	margin-right: auto;
+	width: 250px;
+
+	@include media(">tablet", "<desktop") {
+		margin: 0 auto;
+	}
+	@include media(">=phone", "<=tablet") {
+		width: 100%;
+	}
+}
+
+.psevdoPH {
+	@include font-text(12px);
+	color: $extra-grey-5;
+	position: absolute;
+	top: 15px;
+	left: 20px;
+}
+
+.test {
+	color: green;
+}

@@ -4,6 +4,12 @@
 		@include font-text(11px);
 		color: $extra-grey-5;
 		margin-right: 23px;
+		cursor: pointer;
+
+		&:last-of-type {
+			margin-right: 0;
+			cursor: default;
+		}
 
 	}
 
