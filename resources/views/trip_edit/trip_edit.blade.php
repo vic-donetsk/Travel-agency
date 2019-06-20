@@ -35,13 +35,17 @@
 					</div>
 					<div class="filtersBlock_item">
 						<div class="dataBlock_item-title mod_header-4">Страна</div>
-						<div class="select_wrapper small-input mod_text-2">
-							<select class="dataBlock_item-input select
+						<div class="select_wrapper small-input">
+							<select class="dataBlock_item-input select mod_text-2
 								@empty($name)
 									psevdoPH 
 								@endempty
 							" name="country" id="country">
-								<option value="{{$country}}">{{$country}}</option>
+								<option value="{{$country}}"
+									@empty($name)
+										class="deleted" 
+									@endempty
+								>{{$country}}</option>
 								@foreach ($country_list as $country_item)
 									@if ($country_item != $country)
 										<option class="test" value="{{$country_item}}">{{$country_item}}</option>
@@ -52,9 +56,17 @@
 					</div>
 					<div class="filtersBlock_item">
 						<div class="dataBlock_item-title mod_header-4">Класс отеля</div>
-						<div class="select_wrapper small-input mod_text-2">
-							<select class="dataBlock_item-input select" name="hotel" id="hotel">
-								<option value="{{$hotel}}">{{$hotel}}</option>
+						<div class="select_wrapper small-input">
+							<select class="dataBlock_item-input select mod_text-2 
+								@empty($name)
+									psevdoPH 
+								@endempty
+							" name="hotel" id="hotel">
+								<option value="{{$hotel}}"
+									@empty($name)
+										class="deleted" 
+									@endempty
+								>{{$hotel}}</option>
 								@foreach ($hotel_list as $hotel_item)
 									@if ($hotel_item != $hotel)
 										<option value="{{$hotel_item}}">{{$hotel_item}}</option>
@@ -65,9 +77,17 @@
 					</div>
 					<div class="filtersBlock_item">
 						<div class="dataBlock_item-title mod_header-4">Категория</div>
-						<div class="select_wrapper large-input mod_text-2">
-							<select class="dataBlock_item-input select" name="category" id="category">
-								<option value="{{$category}}">{{$category}}</option>
+						<div class="select_wrapper large-input">
+							<select class="dataBlock_item-input select mod_text-2
+								@empty($name)
+									psevdoPH 
+								@endempty
+							" name="category" id="category">
+								<option value="{{$category}}"
+									@empty($name)
+										class="deleted" 
+									@endempty
+								>{{$category}}</option>
 								@foreach ($category_list as $category_item)
 									@if ($category_item != $category)
 										<option value="{{$category_item}}">{{$category_item}}</option>
@@ -78,9 +98,17 @@
 					</div>
 					<div class="filtersBlock_item">
 						<div class="dataBlock_item-title mod_header-4">Тип тура</div>
-						<div class="select_wrapper small-input mod_text-2">
-							<select class="dataBlock_item-input select" name="type" id="type">
-								<option value="{{$type}}">{{$type}}</option>
+						<div class="select_wrapper small-input">
+							<select class="dataBlock_item-input select mod_text-2
+								@empty($name)
+									psevdoPH 
+								@endempty
+							" name="type" id="type">
+								<option value="{{$type}}"
+									@empty($name)
+										class="deleted" 
+									@endempty
+								>{{$type}}</option>
 								@foreach ($type_list as $type_item)
 									@if ($type_item != $type)
 										<option value="{{$type_item}}">{{$type_item}}</option>
@@ -97,9 +125,17 @@
 					</div>
 					<div class="filtersBlock_item">
 						<div class="dataBlock_item-title mod_header-4">Питание</div>
-						<div class="select_wrapper small-input mod_text-2">
-							<select class="dataBlock_item-input select" name="nutrition" id="nutrition">
-								<option value="{{$nutrition}}">{{$nutrition}}</option>
+						<div class="select_wrapper small-input">
+							<select class="dataBlock_item-input select mod_text-2
+								@empty($name)
+									psevdoPH 
+								@endempty
+							" name="nutrition" id="nutrition">
+								<option value="{{$nutrition}}"
+									@empty($name)
+										class="deleted" 
+									@endempty
+								>{{$nutrition}}</option>
 								@foreach ($nutrition_list as $nutrition_item)
 									@if ($nutrition_item != $nutrition)
 										<option value="{{$nutrition_item}}">{{$nutrition_item}}</option>
@@ -111,9 +147,17 @@
 					</div>
 					<div class="filtersBlock_item">
 						<div class="dataBlock_item-title mod_header-4">Доступно для детей</div>
-						<div class="select_wrapper small-input mod_text-2">
-							<select class="dataBlock_item-input select" name="children" id="children">
-								<option value="{{$children}}">{{$children}}</option>
+						<div class="select_wrapper small-input">
+							<select class="dataBlock_item-input select mod_text-2
+								@empty($name)
+									psevdoPH 
+								@endempty
+							" name="children" id="children">
+								<option value="{{$children}}"
+									@empty($name)
+										class="deleted" 
+									@endempty
+								>{{$children}}</option>
 								@foreach ($children_list as $children_item)
 									@if ($children_item != $children)
 										<option value="{{$children_item}}">{{$children_item}}</option>
@@ -127,8 +171,7 @@
 				<div class="dataBlock describeBlock">
 					<div class="dataBlock_item">
 						<div class="dataBlock_item-title mod_header-4">Описание</div>
-						<textarea class="dataBlock_item-input textarea mod_text-1">Отель The Makadi Palace 5*, располагающий обширной территорией бассейнами, великолепными садами и отличным песчаным пляжем. Рекомендуется для семейного отдыха с детьми, а также для всех кто ценит покой и тишину. Элегантный променад соединяет отель с соседним отелем The Grand Makadi 5*. Благодаря высокому уровню сервиса, развитой инфраструктуре, удачному расположению и великолепно обустроенной территории Вы получите незабываемый отдых в этом отеле.
-						</textarea>
+						<textarea class="dataBlock_item-input textarea mod_text-1" placeholder="Опишите Ваш товар">{{$description}}</textarea>
 					</div>
 				</div>
 			</div>
@@ -138,7 +181,9 @@
 				<div class="fotos">
 					@foreach ([0,1,2,3,4,5,6,7,8,9] as $item)
 						<div class="fotos_item">
-							<img src="img/test-trip1.png" class="img" alt="foto">
+							@isset($name)
+								<img src="img/test-trip1.png" class="img" alt="foto">
+							@endisset
 						</div>
 
 					@endforeach
