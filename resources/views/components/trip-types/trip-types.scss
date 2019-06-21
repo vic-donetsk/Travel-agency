@@ -1,4 +1,4 @@
-.trip-types_container {
+.trip-types {
 		height:           100px;
 		background-color: $extra-grey-2;
 		line-height:      100px;
@@ -6,7 +6,7 @@
 		@include          media(">=phone", "<=tablet") { 
 			padding: 0px 20px;
 		}
-	.trip-types {
+	.trip-types_container {
 		@include     flex;
 		align-items: center;
 		margin:      0 auto;
@@ -16,26 +16,23 @@
 		@include     media(">=phone", "<=440px") { 
 			padding: 0;
 		}
-		.trip-types_header {
-			@include   font-header($header-size-3);
-			min-width: 140px;
-		}
-		.trip-types_icons {
-			@include     flex(flex-end);
-			line-height: 100px;
-		}
 	}
 }
 
-.trip-category-icon {
+.trip-types_header {
+	@include   font-header($header-size-3);
+	min-width: 140px;
+}
+.trip-types_icons {
+	@include     flex(flex-end);
+	line-height: 100px;
+}
+
+.tripCategory {
 	margin:     0 12px;
 	text-align: center;
 	@extend     %category-icon;
-	.svg-icon {
-		width:  24px;
-		height: 24px;
-		fill:   $extra-grey-4;
-	}
+	
 	&:hover {
 		@include background-gradient(to bottom);
 		.svg-icon {
@@ -44,6 +41,19 @@
 	}
 	&:last-of-type {
 		margin-right: 0;
+	}
+}
+.tripCategory_link {
+	position: relative;
+
+	.svg-icon {
+		position: absolute;
+		left: -11px;
+		top: 9px;
+
+		width:  24px;
+		height: 24px;
+		fill:   $extra-grey-4;
 	}
 }
 
@@ -60,7 +70,7 @@
 	position:      absolute;
 	content:       ''; 
    	margin-left:   -10px;
-    left:          50%; top: -10px;
+    left:          50%; top: -16px;
     border:        10px solid transparent;
     border-bottom: 7px solid $accent-light-blue;
 }
@@ -68,10 +78,12 @@
 	position:      absolute;
 	content:       ''; 
     margin-left:   -10px;
-    left:          50%; top: -9px;
+    left:          50%; top: -15px;
     border:        10px solid transparent;
     border-bottom: 7px solid $main-light;
 }
+
+
 .bs-tooltip-auto[x-placement^=bottom] .arrow::before, .bs-tooltip-bottom .arrow::before {
 	//hide standart bootstrap arrow, because it does not work correctly
   	display: none;

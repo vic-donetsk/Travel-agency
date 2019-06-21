@@ -106,7 +106,7 @@
 
 
         <div class="show_block">
-             @include('components.trip-types')
+             @include('components.trip-types.trip-types')
         </div>
         
 

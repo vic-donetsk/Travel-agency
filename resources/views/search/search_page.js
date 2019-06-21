@@ -114,7 +114,7 @@ function renderTopFilters(filters) {
 						<p class="reset-filters_text">Очистить фильтр</p>
 						<img src="img/close.svg" alt="" class="close">
 					</div>`;
-		$('.search_results_active-filters').html(filtersContent);
+		$('.search_results_active-filters').html(filtersContent).css('visibility', 'visible');
 
 		// сброс всех фильтров при нажатии "Очистить"
 		$('.reset-filters').click( (e) => {
@@ -138,6 +138,8 @@ function renderTopFilters(filters) {
 			renderTopFilters(savedFilters);	
 
 		});
+	} else {
+		$('.search_results_active-filters').css('visibility', 'hidden');
 	}
 }
 

@@ -12,7 +12,7 @@
 
 	@include('main.main-swiper')
 	
-	@include('components.trip-types')
+	@include('components.trip-types.trip-types')
 
 	@include('main.offers-block')
 	
