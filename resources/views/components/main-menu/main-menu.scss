@@ -74,7 +74,7 @@
 }
 
 .user {
-	@include flex(center);
+	@include flex(flex-start);
 	align-items: center;
 	width: 180px;
 	.user-foto {

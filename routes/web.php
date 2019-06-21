@@ -57,7 +57,6 @@ Route::get('/trip_edit', function () {
 Route::get('/trip_create', function () {
     return view('trip_edit.trip_edit', 
     	[ 'page_title' => 'Новое объявление',
-    	  // 'name' => "The Makadi Palace 5*",
     	  'country' => 'Укажите страну отдыха',
     	  'country_list' => ['Италия','Испания','Мальдивы','Россия','Куба','Египет','Турция','Индия','Кипр'],
     	  'hotel' => 'Укажите класс отеля',
@@ -74,4 +73,8 @@ Route::get('/trip_create', function () {
     	  'description' => ''
     	]);
 })->name('trip_create');
+
+Route::get('/login', function () {
+    return view('login.login');
+})->name('login');
 
