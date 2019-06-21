@@ -29,7 +29,7 @@
 					<input type="text" class="login_block-input mod_text-2" name="password"placeholder="Введите пароль">
 				</div>
 				<div class="login_forget">
-					<a class="mod_link-style mod_text-2"href="#">Забыли пароль?</a>
+					<a class="mod_link-style mod_text-2"href="{{ route('password_restore') }}">Забыли пароль?</a>
 				</div>
 				<div class="login_submit mod_enter single-btn mod_blue">Войти</div>
 			</div>

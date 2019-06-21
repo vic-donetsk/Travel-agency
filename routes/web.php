@@ -78,3 +78,9 @@ Route::get('/login', function () {
     return view('login.login');
 })->name('login');
 
+Route::get('/password_restore', function () {
+    return view('restore.password_restore');
+})->name('password_restore');
+
+
+
