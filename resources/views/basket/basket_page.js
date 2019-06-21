@@ -1,11 +1,9 @@
 $('.basket_onetrip-delete').on('click', (e) => {
 	
-	$(e.delegateTarget).parents('.basket_onetrip').slideUp(300, ()=>{
-		// не работает обращение через this!!!
-		console.log(this);
-		console.log($(this));
+	$(e.delegateTarget).parents('.basket_onetrip').slideUp(300, function() {
 
-		$(e.delegateTarget).parents('.basket_onetrip').remove();
+
+		$(this).remove();
 
 		if (!$('.basket_onetrip').length) {
 			$('.basket_list-header').hide(0);
