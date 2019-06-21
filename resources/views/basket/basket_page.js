@@ -2,6 +2,9 @@ $('.basket_onetrip-delete').on('click', (e) => {
 	
 	$(e.delegateTarget).parents('.basket_onetrip').slideUp(300, ()=>{
 		// не работает обращение через this!!!
+		console.log(this);
+		console.log($(this));
+
 		$(e.delegateTarget).parents('.basket_onetrip').remove();
 
 		if (!$('.basket_onetrip').length) {

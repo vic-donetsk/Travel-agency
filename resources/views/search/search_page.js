@@ -77,6 +77,31 @@
 	handleSelectFilter('tripType_select');
 	handleSelectFilter('children_select');
 
+	// сброс всех фильтров при нажатии "Очистить"
+	$('body').on('click', '.reset-filters', (e) => {
+
+		savedFilters = $.extend({}, noFiltersArray);
+		localStorage.removeItem('tourism_filters');
+		renderAsideFilters(savedFilters);
+		renderTopFilters(savedFilters);	
+	});
+
+	// // удаление одного фильтра из топа
+	// $('body').on('click', '.active-filter', (e) => {
+	// 	console.log('come to delegation');
+
+	// 	let filterName = $(e.delegateTarget).data('type');
+		
+	// 	renderOneAsideFilter(filterName, noFiltersArray[filterName]);
+
+	// 	savedFilters[filterName] = noFiltersArray[filterName];
+	// 	let toLS = JSON.stringify(savedFilters);
+	// 	localStorage.setItem('tourism_filters', toLS);
+
+	// 	renderTopFilters(savedFilters);	
+
+	// });
+
 
 // обработка фильтра select
 function handleSelectFilter(filterClass) {
@@ -115,14 +140,6 @@ function renderTopFilters(filters) {
 						<img src="img/close.svg" alt="" class="close">
 					</div>`;
 		$('.search_results_active-filters').html(filtersContent).css('visibility', 'visible');
-
-		// сброс всех фильтров при нажатии "Очистить"
-		$('.reset-filters').click( (e) => {
-			savedFilters = $.extend({}, noFiltersArray);
-			localStorage.removeItem('tourism_filters');
-			renderAsideFilters(savedFilters);
-			renderTopFilters(savedFilters);	
-		});
 
 		// удаление одного фильтра из топа
 		$('.active-filter').click( (e) => {
