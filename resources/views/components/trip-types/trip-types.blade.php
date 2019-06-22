@@ -28,11 +28,11 @@
         <div class="trip-types_icons">
             @foreach($trip_types as $type)
                 <div class="tripCategory" data-toggle="tooltip" title="{{ $type['name'] }}">
-                    <a  class="tripCategory_link" href=""> 
+                    <div  class="tripCategory_link"> 
                         <svg class="svg-icon">
                             <use xlink:href="#{{$type['img']}}">
                         </svg>
-                    </a>
+                    </div>
                 </div>
             @endforeach
         </div>

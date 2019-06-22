@@ -81,7 +81,7 @@
 
         <div class="show_block">
             <?php $classes_type = ['', 'client-hover', 'seller-hover']; ?>
-            @each('components.trip-card', $classes_type, 'show')
+            @each('components.trip-card.trip-card', $classes_type, 'show')
         </div>
 
 

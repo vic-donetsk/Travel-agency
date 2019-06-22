@@ -8,7 +8,7 @@
 			</div>
 			<div class="trip-block_cards">
 		       
-	            @each('components.trip-card', $show_class, 'show')
+	            @each('components.trip-card.trip_card', $show_class, 'show')
 		       
 			</div>
 		</div>
@@ -22,7 +22,7 @@
 			</div>
 			<div class="trip-block_cards">
 
-	            @each('components.trip-card', $show_class, 'show')
+	            @each('components.trip-card.trip_card', $show_class, 'show')
 
 			</div>
 		</div>
