@@ -1,5 +1,6 @@
-$('.basket_onetrip-delete').on('click', (e) => {
+$('.basket_onetrip-delete').on('click',  (e) => {
 	
+
 	$(e.delegateTarget).parents('.basket_onetrip').slideUp(300, function() {
 
 

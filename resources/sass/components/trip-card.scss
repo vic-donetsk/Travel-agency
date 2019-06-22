@@ -94,7 +94,8 @@
 		.trip-description_route {
 			@include       font-text($text-size-1);
 			color:         $extra-grey-4;
-			margin-bottom: 20px;
+			margin-top: 4px;
+			margin-bottom: 16px;
 		}
 	}
 }

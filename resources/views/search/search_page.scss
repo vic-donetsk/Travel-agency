@@ -126,12 +126,12 @@
   				border: solid 4px #f6fafb;
   				padding: 15px 40px 0;
   				visibility: hidden;
-  				transition: 0.3s ease;
 
-  				.active-filters_wrapper {
+				.active-filters_wrapper {
   					@include flex(flex-start, row, wrap);
 
   					.active-filter {
+  						@include flex();
   						@include font-text($text-size-2);
   						color: $main-dark;
   						margin-right: 10px;
@@ -141,9 +141,9 @@
   						min-width: 100px;
   						padding: 0 20px;
   						background-color: $extra-grey-1;
+
 						.active-filter_value {
-						display: inline-block;
-						margin-right: 20px;
+							margin-right: 20px;
 						}
   					}
   				}

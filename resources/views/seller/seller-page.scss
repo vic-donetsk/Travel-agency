@@ -48,6 +48,11 @@
 
 			.radio-switch {
 				margin: 11px 0;
+
+				& label {
+					@include flex(flex-start);
+				    align-items: center;
+				}
 			}
 		}
 	}

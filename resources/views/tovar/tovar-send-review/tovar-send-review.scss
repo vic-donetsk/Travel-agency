@@ -18,6 +18,10 @@
 		.send-review_content {
 			flex:1;
 			margin-right: 20px;
+			@include media(">=phone", "<=desktop") {
+				margin-right: 0;
+			}
+
 			[name="review"] {
 				border: none;
 				outline: none;
@@ -32,7 +36,6 @@
 				}
 				@include media(">=phone", "<=desktop") {
 					height: 220px;
-					margin-right: 0;
 					margin-bottom: 16px;
 				}
 			}	

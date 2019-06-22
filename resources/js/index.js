@@ -88,8 +88,15 @@ $(document).ready( ()=>{
 				// window pop up
 				topPopup -= 145;
 			}  
-			$('.popup-window_wrapper').css({'left' : leftPopup, 'top' : topPopup}).slideDown().mouseleave( (e) => {
-				$(e.delegateTarget).slideUp();
+			$('.popup-window_wrapper').css({'left' : leftPopup, 'top' : topPopup}).fadeIn().mouseleave( (e) => {
+				$(e.delegateTarget).fadeOut();
+			});
+			// скрываем при клике вне модального окна
+			$(document).mouseup( (e) => {
+				let elem = $('.popup-window_wrapper');
+				if (!elem.is(e.target) && elem.has(e.target).length === 0) { 
+					elem.fadeOut(); 
+				}
 			});
 
 		}
