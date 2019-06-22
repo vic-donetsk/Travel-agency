@@ -5,10 +5,10 @@
       <img class="foto" src="img/test-trip.png" alt="Beauty">
               <div class="trip-card_seller-modal">
                 <div class="seller-choice">
-                  <a href="#"><img src="img/pencil-edit-button.svg" alt="П"></a>
+                  <img class="seller-choice_image" src="img/pencil-edit-button.svg" alt="П">
                 </div>
                 <div class="seller-choice">
-                  <a href="#"><img src="img/rubbish-bin.svg" alt="П"></a>
+                  <img class="seller-choice_image" src="img/rubbish-bin.svg" alt="П">
                 </div>
               </div>
     

@@ -6,7 +6,7 @@
 
     background:    #fff;
     position:      relative;
-    
+
 	/* hover mask for seller hover */
 	.trip-card_seller-modal {
 		display:         none;
@@ -18,14 +18,24 @@
 		background:      rgba(0, 0, 0, 0.5);
 		justify-content: center;
 		align-items:     center;
+
 		.seller-choice {
+			position:      relative;
 			width:         30px;
 			height:        30px;
-			line-height:   24px;
-			text-align:    center;
 			margin:        5px;
 			border-radius: 50%;
 			border:        1px solid $main-light;
+			cursor: pointer;
+			position: relative;
+
+			.seller-choice_image {
+				position: absolute;
+				left: calc(50% - 6px);
+				top: calc(50% - 7px);
+			}
+
+
 		}
 	}
 	/* end hover*/
