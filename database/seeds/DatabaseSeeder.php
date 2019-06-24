@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CitiesTableSeeder::class);
         $this->call(LocationsTableSeeder::class);
         $this->call(MediaTableSeeder::class);
-        //$this->call(NutritionsTableSeeder::class);
+        $this->call(DietsTableSeeder::class);
         $this->call(ToursTableSeeder::class);
 
     }

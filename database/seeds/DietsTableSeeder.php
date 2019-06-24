@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\Nutrition;
+use App\Models\Diet;
 
-class NutritionsTableSeeder extends Seeder
+class DietsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,16 +12,16 @@ class NutritionsTableSeeder extends Seeder
      */
     public function run()
     {
-        Nutrition::create([
+        Diet::create([
         	'name' => 'Комплексное'
         ]);
-        Nutrition::create([
+        Diet::create([
         	'name' => 'Завтрак и ужин'
         ]);
-        Nutrition::create([
+        Diet::create([
         	'name' => 'Завтрак'
         ]);
-        Nutrition::create([
+        Diet::create([
         	'name' => 'Без питания'
         ]);
 

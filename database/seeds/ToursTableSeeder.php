@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Models\Tour;
+use App\Models\Media;
 
 class ToursTableSeeder extends Seeder
 {
@@ -14,7 +15,7 @@ class ToursTableSeeder extends Seeder
     {
         factory(Tour::class, 200)->create()->each( function($tour) {
         	$randomPicturesQuantity = rand(0, 10);
-        	$randomPictures = Media::where('id', '!=', $tour->main_img_id)->random($randomPicturesQuantity);
+        	$randomPictures = Media::where('id', '!=', $tour->main_img_id)->get()->random($randomPicturesQuantity);
         	$ids = $randomPictures->pluck('id')->all();
         	$tour->media()->attach($ids);
         });;

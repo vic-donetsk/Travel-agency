@@ -28,7 +28,7 @@ class CreateToursTable extends Migration
             $table->unsignedBigInteger('hotel_id');         // ИД уровня размешения
             $table->unsignedBigInteger('category_id');      // ИД категории тура (авто-, авиа-, круиз)
             $table->unsignedBigInteger('type_id');          // ИД типа тура (шоппинг, СПА, семейный итд)
-            $table->unsignedBigInteger('nutrition_id');     // ИД схемы питания в туре
+            $table->unsignedBigInteger('diet_id');     // ИД схемы питания в туре
             $table->unsignedBigInteger('seller_id');        // ИД продавца
 
             $table->timestamps();
@@ -58,9 +58,9 @@ class CreateToursTable extends Migration
                 ->references('id')
                 ->on('types');
                 
-            $table->foreign('nutrition_id')
+            $table->foreign('diet_id')
                 ->references('id')
-                ->on('nutritions');
+                ->on('diets');
                 
             $table->foreign('seller_id')
                 ->references('id')
@@ -79,7 +79,7 @@ class CreateToursTable extends Migration
 
         Schema::table('tours', function (Blueprint $table) {
             $table->dropForeign(['seller_id']);
-            $table->dropForeign(['nutrition_id']);
+            $table->dropForeign(['diet_id']);
             $table->dropForeign(['type_id']);
             $table->dropForeign(['category_id']);
             $table->dropForeign(['hotel_id']);

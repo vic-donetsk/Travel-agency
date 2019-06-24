@@ -18,9 +18,9 @@ class Tour extends Model
     {
     	return $this->belongsTo(Type::class);
     }
-    public function nutrition()  
+    public function diet()  
     {
-    	return $this->belongsTo(Nutrition::class);
+    	return $this->belongsTo(Diet::class);
     }
     public function country()  
     {

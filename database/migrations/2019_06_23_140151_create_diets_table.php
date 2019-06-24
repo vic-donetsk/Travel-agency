@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNutritionsTable extends Migration
+class CreateDietsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateNutritionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('nutritions', function (Blueprint $table) {
+        Schema::create('diets', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');     // описание варианта питания
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateNutritionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nutritions');
+        Schema::dropIfExists('diets');
     }
 }

@@ -7,7 +7,7 @@ use App\Models\Location;
 use App\Models\Hotel;
 use App\Models\Category;
 use App\Models\Type;
-//use App\Models\Nutrition;
+use App\Models\Diet;
 use App\Models\User;
 
 
@@ -17,15 +17,6 @@ use Carbon\Carbon;
 use Faker\Generator as Faker;
 
 $factory->define(Tour::class, function (Faker $faker) {
-
-
-	// считаем количество дней до тура, начало, продолжительность и конец
-	// $current_timestamp = Carbon::now()->timestamp; 
- //    $days_before_start = rand(1, 30);
- //      $start_time = $current_timestamp + 86400 * $days_before_start;
- //    $tour_duration = rand(2, 15);
- //      $finish_time = $start_time + 86400 * $tour_duration;
- //      dd($finish_time)
 
     $current_date = Carbon::now(); 
     $days_before_start = rand(1, 30);
@@ -46,7 +37,7 @@ $factory->define(Tour::class, function (Faker $faker) {
         'hotel_id' => rand(1, Hotel::count()),
         'category_id' => rand(1, Category::count()),
         'type_id' => rand(1, Type::count()),
-        'nutrition_id' => 1, // rand(1, Nutrition::count()), - исправить потом
+        'diet_id' => rand(1, Diet::count()), 
         'seller_id' => rand(1, User::count()),
     ];
 });
