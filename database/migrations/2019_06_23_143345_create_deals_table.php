@@ -17,7 +17,7 @@ class CreateDealsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('buyer_id');        // ИД покупателя
             $table->unsignedBigInteger('seller_id');       // ИД продавца
-            $table->unsignedDecimal('total_price', 8, 2);  // общая цена сделки
+            $table->unsignedInteger('total_price');  // общая цена сделки
             $table->timestamps();
 
             $table->foreign('buyer_id')
@@ -37,7 +37,7 @@ class CreateDealsTable extends Migration
      */
     public function down()
     {
-        Schema::table('products', function (Blueprint $table) {
+        Schema::table('deals', function (Blueprint $table) {
             $table->dropForeign(['seller_id']);
             $table->dropForeign(['buyer_id']);
         });

@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('last_name')->nullable();              // фамилия
             $table->string('phone')->nullable();                  // телефон
             $table->string('email')->unique();                    // адрес электронной почты (он же логин)
-            $table->string('avatar')->unique();                   // адрес аватарки
+            $table->string('avatar');                             // адрес аватарки
             //$table->timestamp('email_verified_at')->nullable();
             $table->string('password');                           // хэш пароля
             //$table->rememberToken();

@@ -1,8 +1,11 @@
 <?php
 
-use App\User;
+use App\Models\User;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
+
+use Illuminate\Support\Facades\Hash;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +19,15 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(User::class, function (Faker $faker) {
+
     return [
-        'name' => $faker->name,
+        'first_name' => $faker->firstName,
+        'last_name' => $faker->lastName,
+        'phone' => $faker->regexify('\+380\d{2}-\d{3}-\d{2}-\d{2}'), 
         'email' => $faker->unique()->safeEmail,
-        'email_verified_at' => now(),
-        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-        'remember_token' => Str::random(10),
+        'avatar' => $faker->imageUrl(),
+        'password' => Hash::make($faker->word),
+        //'email_verified_at' => now(),
+        //'remember_token' => Str::random(10),
     ];
 });

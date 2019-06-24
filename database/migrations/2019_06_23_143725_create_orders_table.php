@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('tour_id');    // Идентификатор тура
             $table->unsignedBigInteger('deal_id');    // В какую сделку входит
-            $table->unsignedDecimal('price', 8, 2);   // Цена этого тура
+            $table->unsignedInteger('price');   // Цена этого тура
             $table->timestamps();
 
             $table->foreign('tour_id')
@@ -37,11 +37,12 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
 
-        Schema::table('products', function (Blueprint $table) {
+        Schema::table('orders', function (Blueprint $table) {
             $table->dropForeign(['deal_id']);
             $table->dropForeign(['tour_id']);
         });
+        
+        Schema::dropIfExists('orders');
     }
 }

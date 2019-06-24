@@ -17,7 +17,7 @@ class CreateToursTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');                         // название тура
             $table->text('description');                    // описание
-            $table->unsignedDecimal('price', 8, 2);         // цена
+            $table->unsignedInteger('price');         // цена
             $table->timestamp('started_at');                // начало тура
             $table->timestamp('finished_at');               // конец тура
 
@@ -77,7 +77,7 @@ class CreateToursTable extends Migration
     public function down()
     {
 
-        Schema::table('products', function (Blueprint $table) {
+        Schema::table('tours', function (Blueprint $table) {
             $table->dropForeign(['seller_id']);
             $table->dropForeign(['nutrition_id']);
             $table->dropForeign(['type_id']);

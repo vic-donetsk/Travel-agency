@@ -37,7 +37,7 @@ class CreateTourMediaTable extends Migration
      */
     public function down()
     {
-        Schema::table('products', function (Blueprint $table) {
+        Schema::table('tour_media', function (Blueprint $table) {
             $table->dropForeign(['media_id']);
             $table->dropForeign(['tour_id']);
         });

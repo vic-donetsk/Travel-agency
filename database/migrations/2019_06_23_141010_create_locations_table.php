@@ -34,7 +34,7 @@ class CreateLocationsTable extends Migration
      */
     public function down()
     {
-        Schema::table('products', function (Blueprint $table) {
+        Schema::table('locations', function (Blueprint $table) {
             $table->dropForeign(['city_id']);
         });
         Schema::dropIfExists('locations');
