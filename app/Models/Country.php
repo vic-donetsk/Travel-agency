@@ -3,6 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Tour;
+use App\Models\City;
+
 
 class Country extends Model
 {

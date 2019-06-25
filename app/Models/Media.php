@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\Tour;
+
 class Media extends Model
 {
     public function main_img_tours()
@@ -13,6 +15,6 @@ class Media extends Model
 
     public function tours()
     {
-        return $this->belongsToMany(Media::class, 'tour_media', 'media_id', 'tour_id');
+        return $this->belongsToMany(Tour::class, 'tour_media', 'media_id', 'tour_id');
     }
 }

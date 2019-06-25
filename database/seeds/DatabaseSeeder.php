@@ -21,6 +21,8 @@ class DatabaseSeeder extends Seeder
         $this->call(MediaTableSeeder::class);
         $this->call(DietsTableSeeder::class);
         $this->call(ToursTableSeeder::class);
+        $this->call(DealsTableSeeder::class);
+        $this->call(OrdersTableSeeder::class);
 
     }
 }

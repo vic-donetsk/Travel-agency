@@ -17,7 +17,7 @@ class CreateDealsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('buyer_id');        // ИД покупателя
             $table->unsignedBigInteger('seller_id');       // ИД продавца
-            $table->unsignedInteger('total_price');  // общая цена сделки
+            $table->unsignedInteger('total_price');        // общая цена сделки
             $table->timestamps();
 
             $table->foreign('buyer_id')
