@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Tour;
 use App\Models\Deal;
+use App\Models\Comment;
 
 
 class User extends Model
@@ -22,5 +23,10 @@ class User extends Model
     public function deal_seller()
     {
         return $this->hasMany(Deal::class, 'seller_id');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'user_id');
     }
 }

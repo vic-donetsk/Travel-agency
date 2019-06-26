@@ -13,6 +13,7 @@ use App\Models\Media;
 use App\Models\Location;
 use App\Models\User;
 use App\Models\Order;
+use App\Models\Comment;
 
 
 class Tour extends Model
@@ -59,4 +60,9 @@ class Tour extends Model
     {
         return $this->hasMany(Order::class);
     }
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
 }
