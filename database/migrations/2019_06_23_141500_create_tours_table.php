@@ -18,17 +18,17 @@ class CreateToursTable extends Migration
             $table->string('name');                         // название тура
             $table->text('description');                    // описание
             $table->unsignedInteger('price');         // цена
-            $table->timestamp('started_at');                // начало тура
-            $table->timestamp('finished_at');               // конец тура
+            $table->timestamp('started_at')->nullable();                // начало тура
+            $table->timestamp('finished_at')->nullable();               // конец тура
 
             $table->boolean('for_children')->default(true); // доступна для детей?
             $table->unsignedBigInteger('main_img_id');      // ИД главной картиники тура
             $table->unsignedBigInteger('country_id');       // ИД страны путешествия
-            $table->unsignedBigInteger('start_location_id');// ИД места старта и способа отбытия
-            $table->unsignedBigInteger('hotel_id');         // ИД уровня размешения
-            $table->unsignedBigInteger('category_id');      // ИД категории тура (авто-, авиа-, круиз)
-            $table->unsignedBigInteger('type_id');          // ИД типа тура (шоппинг, СПА, семейный итд)
-            $table->unsignedBigInteger('diet_id');     // ИД схемы питания в туре
+            $table->unsignedBigInteger('start_location_id')->nullable();// ИД места старта и способа отбытия
+            $table->unsignedBigInteger('hotel_id')->nullable();         // ИД уровня размешения
+            $table->unsignedBigInteger('category_id')->nullable();      // ИД категории тура (авто-, авиа-, круиз)
+            $table->unsignedBigInteger('type_id')->nullable();          // ИД типа тура (шоппинг, СПА, семейный итд)
+            $table->unsignedBigInteger('diet_id')->nullable();     // ИД схемы питания в туре
             $table->unsignedBigInteger('seller_id');        // ИД продавца
 
             $table->timestamps();

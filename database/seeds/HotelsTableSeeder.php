@@ -11,19 +11,10 @@ class HotelsTableSeeder extends Seeder
      */
     public function run()
     {
-        App\Models\Hotel::create([
-			'name' => '5*']);        
-        App\Models\Hotel::create([
-			'name' => '4*']);        
-        App\Models\Hotel::create([
-			'name' => '3*']);        
-        App\Models\Hotel::create([
-			'name' => '2*']);        
-        App\Models\Hotel::create([
-			'name' => 'Бунгало']);        
-        App\Models\Hotel::create([
-			'name' => 'Общежитие']);        
-        App\Models\Hotel::create([
-			'name' => 'Под звездным небом']);
+        $hotels = ['5*','4*','3*', '2*', 'Бунгало', 'Общежитие', 'Под звездным небом'];
+
+        foreach ($hotels as $hotel) {
+            App\Models\Hotel::create(['name' => $hotel]);
+        }
     }
 }

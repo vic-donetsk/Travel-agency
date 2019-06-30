@@ -11,14 +11,10 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        App\Models\Category::create([
-        	'name' => 'Автобусные туры',
-        ]);
-        App\Models\Category::create([
-        	'name' => 'Авиационные туры',
-        ]);
-        App\Models\Category::create([
-        	'name' => 'Круизы',
-        ]);
+    	$categories = ['Автобусные туры','Авиационные туры','Круизы'];
+
+        foreach ($categories as $category) {
+        	App\Models\Category::create(['name' => $category]);
+        }
     }
 }

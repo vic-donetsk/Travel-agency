@@ -12,18 +12,10 @@ class DietsTableSeeder extends Seeder
      */
     public function run()
     {
-        Diet::create([
-        	'name' => 'Комплексное'
-        ]);
-        Diet::create([
-        	'name' => 'Завтрак и ужин'
-        ]);
-        Diet::create([
-        	'name' => 'Завтрак'
-        ]);
-        Diet::create([
-        	'name' => 'Без питания'
-        ]);
+        $diets = ['Комплексное','Завтрак и ужин','Завтрак', 'Без питания'];
 
+        foreach ($diets as $diet) {
+            App\Models\Diet::create(['name' => $diet]);
+        }
     }
 }

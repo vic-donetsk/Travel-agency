@@ -11,38 +11,25 @@ class TypesTableSeeder extends Seeder
      */
     public function run()
     {
-		App\Models\Type::create([
-			'name' => 'Индустриальный', 
-			'icon'  => '/img/industrial']);
-        App\Models\Type::create([
-        	'name' => 'Шоппинг', 
-        	'icon'  => '/img/shopping']);
-        App\Models\Type::create([
-        	'name' => 'Экстрим', 
-        	'icon'  => '/img/extrim']);
-        App\Models\Type::create([
-        	'name' => 'Luxury', 
-        	'icon'  => '/img/luxury']);
-        App\Models\Type::create([
-        	'name' => 'Всё включено', 
-        	'icon'  => '/img/all-inclusive']);
-        App\Models\Type::create([
-        	'name' => 'Программы развлечений', 
-        	'icon'  => '/img/games']);
-        App\Models\Type::create([
-        	'name' => 'Пляжный', 
-        	'icon'  => '/img/beach']);
-        App\Models\Type::create([
-        	'name' => 'Гастрономический', 
-        	'icon'  => '/img/gurman']);
-        App\Models\Type::create([
-        	'name' => 'SPA', 
-        	'icon'  => '/img/spa']);
-        App\Models\Type::create([
-        	'name' => 'Семейный', 
-        	'icon'  => '/img/family']);
-        App\Models\Type::create([
-        	'name' => 'Спокойный отдых', 
-        	'icon'  => '/img/rest']);
+        $tripTypes = [
+            ['name' => 'Индустриальный', 'icon' => '/img/trip_types/industrial.svg'],
+            ['name' => 'Шоппинг', 'icon' => '/img/trip_types/shopping.svg'],
+            ['name' => 'Экстрим', 'icon' => '/img/trip_types/extrim.svg'],
+            ['name' => 'Luxury', 'icon' => '/img/trip_types/luxury.svg'],
+            ['name' => 'Всё включено', 'icon' => '/img/trip_types/all-inclusive.svg'],
+            ['name' => 'Программы развлечений', 'icon' => '/img/trip_types/games.svg'],
+            ['name' => 'Пляжный', 'icon' => '/img/trip_types/beach.svg'],
+            ['name' => 'Гастрономический', 'icon' => '/img/trip_types/gurman.svg'],
+            ['name' => 'SPA', 'icon' => '/img/trip_types/spa.svg'],
+            ['name' => 'Семейный', 'icon' => '/img/trip_types/family.svg'],
+            ['name' => 'Спокойный отдых', 'icon' => '/img/trip_types/rest.svg']
+        ];
+
+        foreach ($tripTypes as $trypType) {
+            App\Models\Type::create([
+                'name' => $trypType['name'],
+                'icon' => $trypType['icon'],
+                ]);
+        }
     }
 }
