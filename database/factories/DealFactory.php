@@ -6,16 +6,16 @@ use App\Models\Tour;
 $factory->define(Deal::class, function() {
 
 	// ищем пользователя, который продает туры
-	do {
-		$seller = rand( 1, App\Models\User::count() );
-	}
-	while (Tour::where('seller_id', $seller)->count() == 0);
 
-	// чтобы избежать совпадений
-	do {
-		$buyer = rand(1, App\Models\User::count());
-	}
-	while ( $seller === $buyer);
+	$seller = App\Models\User::has('tours')->inRandomOrder()->first()->id;
+
+
+	// берем рандомного покупателя, но смотрим, чтобы ИД не совпало с ИД продавца
+	$buyers = App\Models\User::inRandomOrder()->take(2)->pluck('id')->toArray();
+
+	if ($seller === $buyers[0]) {
+		$buyer = $buyers[1];
+	} else $buyer = $buyers[0];
 
     return [
         'seller_id' => $seller,

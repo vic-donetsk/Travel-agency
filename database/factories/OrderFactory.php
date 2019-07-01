@@ -6,7 +6,7 @@ use App\Models\Tour;
 
 $factory->define(Order::class, function () {
 	// берем рандомную сделку
-	$deal_id = rand(1, Deal::count());
+	$deal_id = Deal::inRandomOrder()->first()->id;
 	// находим, кто в ней продавец
 	$seller = Deal::find($deal_id)->seller_id;
 	// получаем ИД всех туров этого продавца

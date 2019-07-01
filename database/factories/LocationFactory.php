@@ -12,7 +12,7 @@ $factory->define(Location::class, function (Faker $faker) {
 
     return [
         'name' => $faker->randomElement($departure_place),
-        'city_id' => $faker->numberBetween(1, City::count()),
+        'city_id' => City::inRandomOrder()->first()->id,
         'variant' => $faker->randomElement($departure)
 
     ];

@@ -7,8 +7,8 @@ use App\Models\Tour;
 
 $factory->define(Comment::class, function (Faker $faker) {
     return [
-        'user_id' => rand(1, User::count()),
-        'tour_id' => rand(1, Tour::count()),
+        'user_id' => User::inRandomOrder()->first()->id,
+        'tour_id' => Tour::inRandomOrder()->first()->id,
         'content' => $faker->text($maxNbChars = 300)  
     ];
 });
