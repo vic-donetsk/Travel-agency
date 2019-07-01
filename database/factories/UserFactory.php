@@ -2,7 +2,6 @@
 
 use App\Models\User;
 use Illuminate\Support\Str;
-use Faker\Generator as Faker;
 
 use Illuminate\Support\Facades\Hash;
 
@@ -18,7 +17,9 @@ use Illuminate\Support\Facades\Hash;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) {
+$factory->define(User::class, function () {
+
+    $faker = Faker\Factory::create('ru_RU');
 
     return [
         'first_name' => $faker->firstName,

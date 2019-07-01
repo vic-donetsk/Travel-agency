@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
 	        'first_name' => 'Vic',
 	        'last_name' => 'Pavlovsky',
 	        'phone' => '+38095-698-62-73', 
-	        'email' => 'pavlovskyi.tester@va',
+	        'email' => 'pavlovskyi.tester@gmai.com',
 	        'avatar' => '',
 	        'password' => Hash::make('test'),
 	        //'email_verified_at' => now(),

@@ -13,6 +13,6 @@ class MediaTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Media::class, 500)->create();
+        factory(Media::class, 50)->create();
     }
 }

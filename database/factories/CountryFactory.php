@@ -1,8 +1,9 @@
 <?php
 
-use Faker\Generator as Faker;
+$factory->define(App\Models\Country::class, function () {
 
-$factory->define(App\Models\Country::class, function (Faker $faker) {
+ 	$faker = Faker\Factory::create('ru_RU');
+
     return [
         'name' => $faker->unique()->country
     ];
