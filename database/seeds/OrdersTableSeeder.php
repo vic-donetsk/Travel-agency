@@ -19,9 +19,9 @@ class OrdersTableSeeder extends Seeder
         // все заказы, нам необходимо удалить
         // сделки, оставшиеся по итогам сидирования пустыми
 
-        $deal_collection = Deal::all();
+        $dealCollection = Deal::all();
 
-        foreach ($deal_collection as $deal) {
+        foreach ($dealCollection as $deal) {
         	// проверяем для каждой сделки, есть ли заказы
         	$orders = $deal->orders()->count();
 
@@ -29,9 +29,9 @@ class OrdersTableSeeder extends Seeder
         	// и если да, то считаем их сумму
         	{
         		$sum = 0;
-        		$tours_prices = $deal->orders()->pluck('price')->toArray();
-        		foreach ($tours_prices as $one_price) {
-        			$sum += $one_price;
+        		$toursPrices = $deal->orders()->pluck('price')->toArray();
+        		foreach ($toursPrices as $onePrice) {
+        			$sum += $onePrice;
         		}
 
         		Deal::where('id', $deal->id)->update(['total_price' => $sum]);

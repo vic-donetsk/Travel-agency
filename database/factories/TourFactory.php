@@ -14,15 +14,15 @@ use Faker\Generator as Faker;
 
 $factory->define(Tour::class, function (Faker $faker) {
 
-    $start_day = $faker->dateTimeBetween('now', '30 days');
-    $finish_day = $faker->dateTimeBetween($start_day, '50 days');
+    $startDay = $faker->dateTimeBetween('now', '30 days');
+    $finishDay = $faker->dateTimeBetween($startDay, '50 days');
 
     return [
         'name' => $faker->sentence($nbWords = 6, $variableNbWords = true),
         'description' => $faker->paragraph($nbSentences = 4, $variableNbSentences = true),
         'price' => rand(100, 2000),
-        'started_at' => $start_day,
-        'finished_at' => $finish_day,
+        'started_at' => $startDay,
+        'finished_at' => $finishDay,
         'for_children' => $faker->boolean($chanceOfGettingTrue = 70),
         'main_img_id' => Media::inRandomOrder()->first()->id,
         'country_id' => Country::inRandomOrder()->first()->id,
