@@ -31,6 +31,11 @@ class CreateToursTable extends Migration
             $table->unsignedBigInteger('diet_id')->nullable();     // ИД схемы питания в туре
             $table->unsignedBigInteger('seller_id');        // ИД продавца
 
+
+            $table->boolean('isTop')->default(false);  // включать в слайдер на главной
+            $table->boolean('isRecommended')->default(false);  // включать в рекомендуемые
+            $table->boolean('isHot')->default(false);  // включать в горящие
+
             $table->timestamps();
 
             // внешние ключи

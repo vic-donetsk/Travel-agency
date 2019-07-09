@@ -7,8 +7,8 @@ use App\Models\Location;
 
 $factory->define(Location::class, function (Faker $faker) {
  
-	$departure = ['выезд','вылет','отплытие'];
-	$departurePlace = ['вокзал', 'аэропорт', 'причал', ''];
+	$departure = ['Выезд','Вылет','Отплытие', 'Отправление'];
+	$departurePlace = ['с вокзала ', 'из аэропорта', 'с причала', ''];
 
     return [
         'name' => $faker->randomElement($departurePlace),

@@ -1,8 +1,8 @@
- <div class="trip-card {{ $show }}"> 
+ <div class="trip-card {{ $oneTour['showClass'] }}"> 
 <!-- hover продавца - докинуть класс seller-hover
      hover клиента - докинуть класс client-hover -->
     <div class="trip-card_picture">
-      <img class="foto" src="img/test-trip.png" alt="Beauty">
+      <img class="foto" src="{{$oneTour['img']}}" alt="Beauty">
               <div class="trip-card_seller-modal">
                 <div class="seller-choice">
                   <img class="seller-choice_image" src="img/pencil-edit-button.svg" alt="П">
@@ -14,12 +14,12 @@
     
       <div class="trip-condition_wrapper">
         <div class="trip-condition">
-          <img  class="trip-condition_type" src="img/outline-pool-24px.svg" alt="П">
-          <div class="trip-condition_duration"> 4 дня/5 ночей</div>
-          <div class="trip-condition_hotel"> 5*</div>
+          <img  class="trip-condition_type" src="{{$oneTour['typeImage']}}" alt="П">
+          <div class="trip-condition_duration"> {{$oneTour['duration']}}</div>
+          <div class="trip-condition_hotel"> {{$oneTour['hotel']}}</div>
         </div>
         <div class="trip-condition">
-            <div class="trip-condition_cost">35 895</div>
+            <div class="trip-condition_cost">{{$oneTour['price']}}</div>
             <div class="trip-condition_currency"><i class="fab fa-btc"></i> </div>
         </div>
       </div>
@@ -28,8 +28,8 @@
     <div class="trip-card_proposition">
       <div class="trip-description">
           <div class="trip-description_where">
-              <p class="trip-description_kurort">Индонезия (о.Бали)</p>
-              <p class="trip-description_route">Вылет из Киева</p>
+              <p class="trip-description_kurort">{{$oneTour['name']}}</p>
+              <p class="trip-description_route">{{$oneTour['startLocation']}}</p>
           </div>
           <div class="single-btn mod_green mod_140">Заказать</div>
       </div>

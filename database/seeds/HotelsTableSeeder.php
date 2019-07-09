@@ -11,7 +11,7 @@ class HotelsTableSeeder extends Seeder
      */
     public function run()
     {
-        $hotels = ['5*','4*','3*', '2*', 'Бунгало', 'Общежитие', 'Под звездным небом'];
+        $hotels = ['5*','4*','3*', '2*', 'Бунгало', 'В поле'];
 
         foreach ($hotels as $hotel) {
             App\Models\Hotel::create(['name' => $hotel]);

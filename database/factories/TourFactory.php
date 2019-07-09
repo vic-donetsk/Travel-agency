@@ -18,7 +18,7 @@ $factory->define(Tour::class, function (Faker $faker) {
     $finishDay = $faker->dateTimeBetween($startDay, '50 days');
 
     return [
-        'name' => $faker->sentence($nbWords = 6, $variableNbWords = true),
+        'name' => str_replace('.', '', substr($faker->sentence($nbWords = 3, $variableNbWords = true), 0, 27)),
         'description' => $faker->paragraph($nbSentences = 4, $variableNbSentences = true),
         'price' => rand(100, 2000),
         'started_at' => $startDay,
@@ -32,5 +32,9 @@ $factory->define(Tour::class, function (Faker $faker) {
         'type_id' => Type::inRandomOrder()->first()->id,
         'diet_id' => Diet::inRandomOrder()->first()->id, 
         'seller_id' => User::inRandomOrder()->first()->id,
+
+        'isTop' => $faker->boolean(15),
+        'isRecommended' => $faker->boolean(30),
+        'isHot' => $faker->boolean(30)
     ];
 });
