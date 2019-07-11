@@ -15,9 +15,9 @@ class TourController extends Controller
 		// данные главного тура страницы
 		$mainTour = Tour::with('comments', 'comments.user')->findOrFail($id);
 		// преобразование путей для сгенерированных сидером картинок
-		$mainTour->main_img->path = '/' . $this->imagePath($mainTour->main_img->path);
+		$mainTour->main_img->path = $this->imagePath($mainTour->main_img->path);
 		foreach ($mainTour->media as $img) {
-			$img->path = '/' . $this->imagePath($img->path);
+			$img->path = $this->imagePath($img->path);
 		}
 		// преобразование даты комментариев для вывода
 		setlocale(LC_TIME, 'Russian');

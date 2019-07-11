@@ -17,10 +17,11 @@ class Controller extends BaseController
 
     // убирает из пути public (для сгенерированных сидами)
     protected function imagePath($path) {
+        $path = str_replace("\\", "/", $path);
     	if (substr($path, 0, 6) == 'public') {
-    		return substr($path, 7);
+    		return '/' . substr($path, 7);
     	} else {
-    		return $path;
+    		return '/' . $path;
     	}
     }
 
@@ -52,7 +53,7 @@ class Controller extends BaseController
 
         foreach ($inCondition as $oneCondition) {
 
-            $imgPath = '/' . $this->imagePath($oneCondition->main_img->path);
+            $imgPath = $this->imagePath($oneCondition->main_img->path);
 
             $startLocation = $this->concatLocation($oneCondition->start_location);
 
