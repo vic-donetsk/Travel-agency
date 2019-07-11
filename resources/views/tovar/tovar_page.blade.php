@@ -14,10 +14,10 @@
 		<div class="breadcrumbs">
 			<div class="breadcrumbs_item"> Главная</div>
 			<div class="breadcrumbs_item"> Василий Пупкин</div>
-			<div class="breadcrumbs_item"> Отель Мараколь Неаполь 4*</div>
+			<div class="breadcrumbs_item"> {{$mainTour->name}}</div>
 		</div>
 
-		<h1 class="tovar_title mod_header-3">Отель Мараколь Неаполь 4*</h1>
+		<h1 class="tovar_title mod_header-3">{{$mainTour->name}}</h1>
 	</div>
 
 	@include ('tovar.tovar-swiper.tovar-mobile-swiper')
@@ -34,21 +34,22 @@
 			
 		</section>
 
-		<h2 class="tovar-section_header">Отзывы</h2>
-		
+		@if ($mainTour->comments->count())
+			<h2 class="tovar-section_header">Отзывы</h2>		
 			@include ('tovar.tovar-reviews.tovar-reviews')
+		@endif
 
 		<h2 class="tovar-section_header">Написать отзыв</h2>
 
-			@include ('tovar.tovar-send-review.tovar-send-review')
+			@include ('tovar.tovar-send-review.tovar-send-review') 
 
-		<h2 class="tovar-section_header">Еще объявления Василия</h2>
+ 		<h2 class="tovar-section_header">Еще объявления {{$mainTour->seller->first_name}}</h2>
 
-			@include('tovar.tovar-gallery.tovar-gallery', ['test'=>'Перейти к объявлениям Василия'])
+			@include('tovar.tovar-gallery.tovar-gallery', ['showTours' => $sellersTours, 'text'=> $gotoSellersTours]) 
 
-		<h2 class="tovar-section_header">Еще в категории "Luxury"</h2>
+		<h2 class="tovar-section_header">Еще в категории "{{$mainTour->type->name}}"</h2>
 
-			@include('tovar.tovar-gallery.tovar-gallery', ['test'=>'Перейти к объявлениям Василия'])
+			@include('tovar.tovar-gallery.tovar-gallery', ['showTours' => $typesTours, 'text'=> $gotoTypesTours]) 
 
 	</div>
 

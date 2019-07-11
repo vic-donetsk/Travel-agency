@@ -1,15 +1,22 @@
 <section class="gallery seller-more-tovars">
-	@php $show_class = ['main-card', 'main-card', 'main-card']; @endphp
 
-	@each('components.trip-card.trip-card', $show_class, 'show')
+	@foreach ($showTours['data'] as $oneTour)
+
+         @include('components.trip-card.trip-card', ['oneTour' => $oneTour])
+
+    @endforeach
+
+    @if ($showTours['count'] > 3)
 
 		<div class="gallery_show-more">
 			<div class="gallery_show-more_link">
-				<img class="plus" src="img/plus.svg" alt="">
+				<img class="plus" src="/img/plus.svg" alt="">
 			</div>
 			<div class="gallery_show-more_text">
-				{{ $test }}
+				{{ $text }} 
 			</div>
 		</div>
+
+	@endif
 
 </section>

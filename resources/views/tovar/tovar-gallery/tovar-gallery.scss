@@ -1,5 +1,5 @@
 .gallery {
-		@include flex(space-between);
+		@include flex(flex-start);
 		margin-top: 15px;
 		margin-bottom: 45px;
 		@include media(">=phone", "<=desktop") { 

@@ -38,6 +38,11 @@
 		}
 		.single-btn {
 			line-height: 36px;
+
+			a {
+				text-decoration: none;
+				color: $main-light;
+			}
 		}
 	}
 }

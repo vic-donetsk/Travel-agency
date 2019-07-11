@@ -8,7 +8,9 @@
 		        		<div class="swiper-slide_describe">
 		        			<p class="swiper-slide_describe_title">{{ $oneTour['name'] }}</p>
 		        			<p class="swiper-slide_describe_slogan">{{ $oneTour['description'] }}</p>
-		        			<div class="single-btn mod_160 mod_transparent">Перейти к туру</div>
+		        			<div class="single-btn mod_160 mod_transparent">
+		        				<a href="{{route('tour_page', ['id'=>$oneTour['id']])}}">Перейти к туру</a>
+		        			</div>
 		        		</div>
 		        </div>
 	        @endforeach

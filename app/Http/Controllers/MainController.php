@@ -9,10 +9,9 @@ class MainController extends Controller
 {
     public function index() {
 
-
     	// данные для вывода в слайдере
 	    $topTours = [];
-	    $inTop = Tour::with('main_img')->where('isTop', 'true')->take(5)->get();
+	    $inTop = Tour::with('main_img')->where('isTop', true)->take(5)->get();
 	    foreach ($inTop as $oneTop) {
 
 	    	// обрезаем описание для вывода в слайдере 
@@ -31,11 +30,12 @@ class MainController extends Controller
 	    	];
 	    }
 	    
-	    // данные для вывода в разделе Горящие туры
-	    $hotTours = $this->getData('isHot');
 
+	    $showClasses = ['main-propositions', 'main-propositions', 'next-propositions', 'next-propositions', 'hidden-on-mobile-propositions', 'hidden-on-mobile-propositions','hidden-on-mobile-propositions','hidden-on-mobile-propositions'];
+	    // данные для вывода в разделе Горящие туры
+	    $hotTours = $this->getData('isHot', true, $showClasses, 8);
 	    // данные для вывода в разделе ColorLife рекомендует
-	    $recommendedTours = $this->getData('isRecommended');
+	    $recommendedTours = $this->getData('isRecommended', true, $showClasses, 8);
 
 	    return view('main.main_page', [
 	    	'inTop' => $topTours,
@@ -46,38 +46,4 @@ class MainController extends Controller
 	    ]);
 	}
 
-	protected function getData ($condition) {
-
-		$showClasses = ['main-propositions', 'main-propositions', 'next-propositions', 'next-propositions', 'hidden-on-mobile-propositions', 'hidden-on-mobile-propositions','hidden-on-mobile-propositions','hidden-on-mobile-propositions'];
-
-		$selectedTours = [];
-	    $inConditionAll = Tour::with('type','main_img', 'hotel', 'start_location', 'start_location.city')->where($condition, 'true')->latest()->get();
-	    $inConditionCount = $inConditionAll->count();
-	    $inCondition = $inConditionAll->take(8);
-	    $i = 0;
-
-	    foreach ($inCondition as $oneCondition) {
-
-			$imgPath = $this->imagePath($oneCondition->main_img->path);
-
-			$startLocation = $this->concatLocation($oneCondition->start_location);
-
-			$duration = $this->tourDuration($oneCondition->started_at,$oneCondition->finished_at);
-
-			$selectedTours[] = [
-	    		'id' => $oneCondition->id,
-	    	    'name' => $oneCondition->name,
-	    	    'img' => $imgPath,
-	    	    'showClass' => $showClasses[$i++],
-	    		'price' => $oneCondition->price,
-	    		'hotel' => $oneCondition->hotel->name,
-	    		'startLocation' => $startLocation,
-	    		'duration' => $duration,
-	    		'typeImage' => $oneCondition->type->icon
-	    	];
-	    }
-
-	    return [ 'data'  => $selectedTours,
-	    		 'count' => $inConditionCount ];
-	}
 }

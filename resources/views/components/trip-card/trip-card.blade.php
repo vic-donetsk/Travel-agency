@@ -5,10 +5,10 @@
       <img class="foto" src="{{$oneTour['img']}}" alt="Beauty">
               <div class="trip-card_seller-modal">
                 <div class="seller-choice">
-                  <img class="seller-choice_image" src="img/pencil-edit-button.svg" alt="П">
+                  <img class="seller-choice_image" src="/img/pencil-edit-button.svg" alt="П">
                 </div>
                 <div class="seller-choice">
-                  <img class="seller-choice_image" src="img/rubbish-bin.svg" alt="П">
+                  <img class="seller-choice_image" src="/img/rubbish-bin.svg" alt="П">
                 </div>
               </div>
     

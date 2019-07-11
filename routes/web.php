@@ -1,5 +1,9 @@
 <?php
 
+// Route::get('/tovar', function () {
+//     return view('tovar.tovar_page');
+// })->name('tovar_page');
+Route::get('/tour/{id}', 'TourController@show')->name('tour_page');
 
 Route::get('/test', function () {
     return view('welcome');
@@ -14,9 +18,6 @@ Route::get('/seller', function () {
     return view('seller.seller_page');
 })->name('seller_page');
 
-Route::get('/tovar', function () {
-    return view('tovar.tovar_page');
-})->name('tovar_page');
 
 Route::get('/search', function () {
     return view('search.search_page');
