@@ -10,7 +10,9 @@
 
 		<div class="gallery_show-more">
 			<div class="gallery_show-more_link">
-				<img class="plus" src="/img/plus.svg" alt="">
+				<a href={{route('seller_page', ['id' => $mainTour->seller_id])}}>
+					<img class="plus" src="/img/plus.svg" alt="">
+				</a>
 			</div>
 			<div class="gallery_show-more_text">
 				{{ $text }} 

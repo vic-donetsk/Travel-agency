@@ -10,7 +10,7 @@
     </div>
 	
 	<div class="main-view_trip-cards_pagination">
-		@include('components.pagination')
+		@include('components.pagination.pagination')
 	</div>	
 	
 

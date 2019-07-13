@@ -62,6 +62,6 @@
 
 	@include('components.footer.footer',['user_name' => 'Василий Пупкин', 'user_foto' => '/img/user.png'])
 
-	{{--@include('components.popup-window')--}}
+	@include('components.popup-window')
 	
 @endsection

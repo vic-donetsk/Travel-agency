@@ -59,7 +59,7 @@
 					</div>
 				</div>
 			@endforeach
-			@include('components.pagination')
+			@include('components.pagination.pagination')
 		</div>
 		
 

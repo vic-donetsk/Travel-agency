@@ -71,7 +71,7 @@
         @include('components.table')
 
 
-        @include('components.pagination')
+        @include('components.pagination.pagination')
 
         <br>
 

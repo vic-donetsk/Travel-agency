@@ -13,7 +13,7 @@ class ToursTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Tour::class, 200)->create()->each( function($tour) {
+        factory(Tour::class, 2000)->create()->each( function($tour) {
         	$randomPicturesQuantity = rand(0, 10);
         	$randomPictures = Media::where('id', '!=', $tour->main_img_id)->get()->random($randomPicturesQuantity);
         	$ids = $randomPictures->pluck('id')->all();

@@ -1,23 +1,21 @@
 .pagination{
 	@include flex(center);
-	.elem {
+	.pagination_elem, .pagination_next, .pagination_prev {
 		@extend           %pagi-element;
 		background-color: $extra-grey-3;
 		color:            $main-dark;
 	}
-	.interval {
+	.pagination_interval {
 		@extend           %pagi-element;
 		background-color: $main-light;
 		color:            $main-dark;
 		cursor:           default;
 	}
-	.active {
-		@extend           %pagi-element;
+	.pagination_active {
+		/*@extend           %pagi-element;*/
 		background-color: $accent-light-green;
 		box-shadow:       0 3px 6px 0 rgba(0, 0, 0, 0.16);
 		color:            $main-light;
 		cursor:           default;
 	}
-
-
 }

@@ -11,7 +11,6 @@ class SellerController extends Controller
 {
     public function index(Request $request, int $sellerId, int $typeId = null) {
 
-    	
     	// формирование данных для блока фильтров
     	$allTypes = ['name'=>'Все', 'id' => 0];
     	if ($typeId) {
@@ -43,13 +42,23 @@ class SellerController extends Controller
     		$allSellerTours = $allSellerTours->where('type_id', $typeId);
     	}
 
-    	$selectedTours = $allSellerTours->take(8);
+    	//данные для построения пагинации
+    	$totalTours = $allSellerTours->count();
+	    	//потом перенести в конфиг
+	    	$perPage = 8;
 
-    	$sellerTours = $this->formatData($selectedTours, $allSellerTours->count(), $showClasses);
+    	$currentPage = ($request->has('page')) ? $request->input('page') : 1;
+    	$pagiPages = ($totalTours > $perPage) ? ceil($totalTours / $perPage) : null;
 
-    	return view('seller.seller_page', [
+    	$selectedTours = $allSellerTours->forPage($currentPage, $perPage);
+
+    	$sellerTours = $this->formatData($selectedTours, $totalTours, $showClasses);
+
+	 	return view('seller.seller_page', [
     		'tripTypes' => $tripTypes,
-    		'sellerTours' => $sellerTours
+    		'sellerTours' => $sellerTours,
+    		'currentPage' => $currentPage,
+    		'pagiPages' => $pagiPages
 
     	]);
 

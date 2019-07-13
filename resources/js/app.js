@@ -36,6 +36,7 @@ require('./index');
 require('../views/basket/basket_page');
 require('../views/search/search_page');
 require('../views/seller/seller_page');
+require('../views/components/pagination/pagination');
 require('../views/orders/orders_page');
 require('../views/user_edit/user_edit');
 require('../views/trip_edit/trip_edit');
