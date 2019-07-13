@@ -1,21 +1,25 @@
-.main-view_trip-cards {
-	@include flex(space-between, row, wrap);
+	.main-view_trip-cards {
+		@include flex(flex-start, column);
 
-	.main-trip,
-	.hidden-on-mobile-trip,
-	.hidden-on-tablet-trip {
-		width: calc( (100% - 60px)/3 );
-		@include media(">tablet", "<=desktop") { 
-			width: calc( (100% - 30px)/2 );
+		.trip-cards_wrapper {
+			@include flex(space-between, row, wrap);
 		}
-		@include media(">=phone", "<=tablet") { 
-			width: 100%;
-		}
-		height: 380px;
-		margin: 0 0 30px;
-		.mod_green {
-			margin: 0 auto;
-		}
+
+		.main-trip,
+		.hidden-on-mobile-trip,
+		.hidden-on-tablet-trip {
+			width: calc( (100% - 60px)/3 );
+			@include media(">tablet", "<=desktop") { 
+				width: calc( (100% - 30px)/2 );
+			}
+			@include media(">=phone", "<=tablet") { 
+				width: 100%;
+			}
+			height: 380px;
+			margin: 0 0 30px;
+			.mod_green {
+				margin: 0 auto;
+			}
 	}
 
 	.hidden-on-tablet-trip {

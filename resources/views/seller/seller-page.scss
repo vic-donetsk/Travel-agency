@@ -60,3 +60,11 @@
 		flex: 1;
 	}
 }
+
+.seller-page_empty {
+	text-align: center;
+	margin: 143px auto 155px;
+	@include media(">=phone", "<=desktop") { 
+		margin: 86px auto 98px;
+	}
+}

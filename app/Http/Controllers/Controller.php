@@ -45,13 +45,21 @@ class Controller extends BaseController
 
     // формирует данные для вывода блока трип-карт
     protected function getData ($condition, $value, $showClasses, $quantity) {
-        $selectedTours = [];
+        
         $inConditionAll = Tour::with('type','main_img', 'hotel', 'start_location', 'start_location.city')->where($condition, $value)->latest()->get();
         $inConditionCount = $inConditionAll->count();
         $inCondition = $inConditionAll->take($quantity);
-        $i = 0;
 
-        foreach ($inCondition as $oneCondition) {
+        return $this->formatData($inCondition, $inConditionCount, $showClasses);
+    }
+
+    // преобразует коллекцию полученных данных в массив
+    protected function formatData($collection, $count, $showClasses) {
+
+        $selectedTours = [];        
+        $i = 0;
+        
+        foreach ($collection as $oneCondition) {
 
             $imgPath = $this->imagePath($oneCondition->main_img->path);
 
@@ -73,7 +81,7 @@ class Controller extends BaseController
         }
 
         return [ 'data'  => $selectedTours,
-                 'count' => $inConditionCount ];
+                 'count' => $count ];
     }
 
 }

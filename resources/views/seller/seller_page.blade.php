@@ -4,11 +4,11 @@
 
 @section('content')
 
-	@include('components.main-menu.main-menu',['user_name' => 'Василий Пупкин', 'user_foto' => 'img/user.png'])
+	@include('components.main-menu.main-menu',['user_name' => 'Василий Пупкин', 'user_foto' => '/img/user.png'])
 
     @include('components.main-menu.mob-head-menu')
 
-	@include('components.main-menu.mob-main-menu',['user_name' => 'Василий Пупкин', 'user_foto' => 'img/user.png'])
+	@include('components.main-menu.mob-main-menu',['user_name' => 'Василий Пупкин', 'user_foto' => '/img/user.png'])
 
 	<div class="seller-page_wrapper">
 		<div class="breadcrumbs">
@@ -21,52 +21,47 @@
 
 		<div class="seller-page">
 
-			<div class="seller-page_categories">
+			@if ($sellerTours['data'])
 
-				<div class="seller-page_categories_title">
-					<h2 class="mod_header-3">категории</h2>
-				</div>
+				<div class="seller-page_categories">
 
-				<div class="seller-page_categories_items">
-					@php
-					    $trip_types = [
-					        ['name' => 'Индустриальный', 'id' => 'industrial', 'checked' => 'checked'],
-					        ['name' => 'Шоппинг', 'id' => 'shopping', 'checked' => ''],
-					        ['name' => 'Экстрим', 'id' => 'extrim', 'checked' => ''],
-					        ['name' => 'Luxury', 'id' => 'luxury', 'checked' => ''],
-					        ['name' => 'Всё включено', 'id' => 'all-inclusive', 'checked' => ''],
-					        ['name' => 'Программы развлечений', 'id' => 'games', 'checked' => ''],
-					        ['name' => 'Пляжный', 'id' => 'beach', 'checked' => ''],
-					        ['name' => 'Гастрономический', 'id' => 'gurman', 'checked' => ''],
-					        ['name' => 'SPA', 'id' => 'spa', 'checked' => ''],
-					        ['name' => 'Семейный', 'id' => 'family', 'checked' => ''],
-					        ['name' => 'Спокойный отдых', 'id' => 'rest', 'checked' => '']]
-					@endphp
-					
-					@foreach ($trip_types as $trip_type)
-						<div class="input-item">
-							<div class="radio-switch">
-				                 <label>
-				                    <input class="radio" type="radio" name="rb" id="{{$trip_type['id']}}" {{$trip_type['checked']}}> 
-				                    <span class="radio-custom"></span>
-				                    <span class="radio-label">{{$trip_type['name']}}</span>
-				                 </label>
+					<div class="seller-page_categories_title">
+						<h2 class="mod_header-3">категории</h2>
+					</div>
+
+					<div class="seller-page_categories_items">
+						
+						@foreach ($tripTypes as $tripType)
+							<div class="seller-page_input input-item">
+								<div class="radio-switch">
+					                 <label>
+					                    <input class="radio" type="radio" name="rb"  {{$tripType['checked']}}> 
+					                    <span class="radio-custom"></span>
+					                    <span class="radio-label" id="{{$tripType['id']}}">{{$tripType['name']}}</span>
+					                 </label>
+				            	</div>
 			            	</div>
-		            	</div>
-		            @endforeach
+			            @endforeach
+						
+					</div>
 					
 				</div>
 
-				
-			</div>
+				@include('components.main-view_trip-cards.main-view_trip-cards')
 
-			@include('components.main-view_trip-cards.main-view_trip-cards')
+			@else
+
+				<div class="seller-page_empty mod_header-3">
+					У данного пользователя еще нет объявлений
+				</div>
+
+			@endif
 
 		</div>
 	</div>
 
-	@include('components.footer.footer',['user_name' => 'Василий Пупкин', 'user_foto' => 'img/user.png'])
+	@include('components.footer.footer',['user_name' => 'Василий Пупкин', 'user_foto' => '/img/user.png'])
 
-	@include('components.popup-window')
+	{{--@include('components.popup-window')--}}
 	
 @endsection

@@ -1,22 +1,11 @@
 <?php
 
-// Route::get('/tovar', function () {
-//     return view('tovar.tovar_page');
-// })->name('tovar_page');
 Route::get('/tour/{id}', 'TourController@show')->name('tour_page');
 
-Route::get('/test', function () {
-    return view('welcome');
-})->name('welcome');
 
-// Route::get('/', function () {
-//     return view('main.main_page');
-// })->name('main_page');
 Route::get('/', 'MainController@index')->name('main_page');
 
-Route::get('/seller', function () {
-    return view('seller.seller_page');
-})->name('seller_page');
+Route::get('/seller/{sellerId}/{typeId?}', 'SellerController@index')->name('seller_page');
 
 
 Route::get('/search', function () {
@@ -84,5 +73,8 @@ Route::get('/password_restore', function () {
     return view('restore.password_restore');
 })->name('password_restore');
 
+Route::get('/test', function () {
+    return view('welcome');
+})->name('welcome');
 
 
