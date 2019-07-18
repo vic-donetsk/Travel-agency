@@ -1,5 +1,5 @@
 // формируем пагинацию, если она нужна
-if (pagiPages) {
+if ((typeof pagiPages !== 'undefined') && (pagiPages)) {
 
 	contentPaginationBlock = (pagiPages > 4) ? 
 			setBigPagination(currentPage, pagiPages) :

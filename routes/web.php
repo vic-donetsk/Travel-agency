@@ -7,10 +7,11 @@ Route::get('/', 'MainController@index')->name('main_page');
 
 Route::get('/seller/{sellerId}/{typeId?}', 'SellerController@index')->name('seller_page');
 
+Route::get('/search', 'SearchController@index')->name('search_page');
 
-Route::get('/search', function () {
-    return view('search.search_page');
-})->name('search_page');
+
+
+
 
 Route::get('/orders', 'OrderController@index')->name('orders_page');
 
@@ -18,7 +19,7 @@ Route::get('/purchases', 'PurchaseController@index')->name('purchases_page');
 
 Route::get('/basket', function () {
     return view('basket.basket_page');
-})->name('search_page');
+})->name('basket_page');
 
 Route::get('/user_edit', function () {
     return view('user_edit.user_edit');

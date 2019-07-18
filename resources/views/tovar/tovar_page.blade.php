@@ -45,11 +45,11 @@
 
  		<h2 class="tovar-section_header">Еще объявления {{$mainTour->seller->first_name}}</h2>
 
-			@include('tovar.tovar-gallery.tovar-gallery', ['showTours' => $sellersTours, 'text'=> $gotoSellersTours]) 
+			@include('tovar.tovar-gallery.tovar-gallery', ['showTours' => $sellersTours, 'text'=> $gotoSellersTours, 'seller' => true]) 
 
 		<h2 class="tovar-section_header">Еще в категории "{{$mainTour->type->name}}"</h2>
 
-			@include('tovar.tovar-gallery.tovar-gallery', ['showTours' => $typesTours, 'text'=> $gotoTypesTours]) 
+			@include('tovar.tovar-gallery.tovar-gallery', ['showTours' => $typesTours, 'text'=> $gotoTypesTours, 'seller' => false] ) 
 
 	</div>
 

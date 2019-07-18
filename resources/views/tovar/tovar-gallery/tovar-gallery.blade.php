@@ -10,7 +10,12 @@
 
 		<div class="gallery_show-more">
 			<div class="gallery_show-more_link">
-				<a href={{route('seller_page', ['id' => $mainTour->seller_id])}}>
+				<a href=
+					@if ($seller)
+						{{route('seller_page', ['id' => $mainTour->seller_id])}}>
+					@else
+						{{route('search_page', ['type' => $mainTour->type_id])}}>
+					@endif
 					<img class="plus" src="/img/plus.svg" alt="">
 				</a>
 			</div>
