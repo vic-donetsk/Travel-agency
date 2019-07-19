@@ -50,13 +50,13 @@ class SellerController extends Controller
     	$currentPage = ($request->has('page')) ? $request->input('page') : 1;
     	$pagiPages = ($totalTours > $perPage) ? ceil($totalTours / $perPage) : null;
 
-    	$selectedTours = $allSellerTours->forPage($currentPage, $perPage);
+    	$sellerTours = $allSellerTours->forPage($currentPage, $perPage);
 
-    	$sellerTours = $this->formatData($selectedTours, $totalTours, $showClasses);
+    	$selectedTours = $this->formatData($sellerTours, $totalTours, $showClasses);
 
 	 	return view('seller.seller_page', [
     		'tripTypes' => $tripTypes,
-    		'sellerTours' => $sellerTours,
+    		'selectedTours' => $selectedTours,
     		'currentPage' => $currentPage,
     		'pagiPages' => $pagiPages
 

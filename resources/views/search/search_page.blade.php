@@ -99,48 +99,23 @@
 			                    <span class="radio-label">Любая</span>
 			                 </label>
 			            </div>
-			            <div class="radio-switch">
-			                 <label>
-			                    <input class="radio" type="radio" name="p_1"> 
-			                    <span class="radio-custom"></span>
-			                    <span class="radio-label">До 10</span>
-			                 </label>
-			            </div>
-			            <div class="radio-switch">
-			                 <label>
-			                    <input class="radio" type="radio" name="p_2"> 
-			                    <span class="radio-custom"></span>
-			                    <span class="radio-label">От 11 до 50</span>
-			                 </label>
-			            </div>
-			            <div class="radio-switch">
-			                 <label>
-			                    <input class="radio" type="radio" name="p_3"> 
-			                    <span class="radio-custom"></span>
-			                    <span class="radio-label">От 51 до 100</span>
-			                 </label>
-			            </div>
-			            <div class="radio-switch">
-			                 <label>
-			                    <input class="radio" type="radio" name="p_4"> 
-			                    <span class="radio-custom"></span>
-			                    <span class="radio-label">От 100 до 500</span>
-			                 </label>
-			            </div>
-			            <div class="radio-switch">
-			                 <label>
-			                    <input class="radio" type="radio" name="p_5"> 
-			                    <span class="radio-custom"></span>
-			                    <span class="radio-label">От 501 до 1000</span>
-			                 </label>
-			            </div>
-			            <div class="radio-switch">
-			                 <label>
-			                    <input class="radio" type="radio" name="p_6"> 
-			                    <span class="radio-custom"></span>
-			                    <span class="radio-label">Более 1000</span>
-			                 </label>
-			            </div>
+			            @foreach ($prices as $price)
+				            <div class="radio-switch">
+				                 <label>
+				                    <input class="radio" type="radio" name="p_{{$loop->iteration}}"> 
+				                    <span class="radio-custom"></span>
+				                    <span class="radio-label">
+				                    	@if ($price->from_price == 0) 
+				                    	    До {{$price->to_price}}
+				                    	@elseif ($price->to_price == 1000000)
+				                    	    Более {{$price->from_price}}
+				                    	@else 
+											От {{$price->from_price}} до {{$price->to_price}}
+										@endif
+				                	</span>
+				                 </label>
+				            </div>
+			            @endforeach
 					</div>
 				</div>
 
@@ -156,26 +131,19 @@
 				<div class="search_filters_one-filter">
 					<div class="one-filter_title mod_header-3">Только рекомендованные</div>
 					<select class="recommended_filter one-filter_select">
-						<option value="0" selected>Отключен</option>
-						<option value="1">Включен</option>
+						<option value="0" selected>Любые</option>
+						<option value="1">Рекомендованные</option>
 					</select>
 				</div>
 
 				<div class="search_filters_one-filter">
-					<div class="one-filter_title mod_header-3">Только горячие</div>
+					<div class="one-filter_title mod_header-3">Только горящие</div>
 					<select class="hot_filter one-filter_select">
-						<option value="0" selected>Отключен</option>
-						<option value="1">Включен</option>
+						<option value="0" selected>Любые</option>
+						<option value="1">Горящие</option>
 					</select>
 				</div>
-
-
-
-
 			</aside>
-
-
-
 
 			<div class="search_results">
 
@@ -184,11 +152,11 @@
 				</div>
 
 				<div class="search_results_sort">
-					<p class="results_quantity">254шт</p>
-					<select class="sort_select">
-						<option value="default">По умолчанию</option>
-						<option value="asc">От дешевых к дорогим</option>
-						<option value="desc">От дорогих к дешевым</option>
+					<p class="results_quantity">{{$totalTours}} шт</p>
+					<select class="sort_filter sort_select">
+						<option value="0">По умолчанию</option>
+						<option value="1">От дешевых к дорогим</option>
+						<option value="2">От дорогих к дешевым</option>
 					</select>
 					
 				</div>
@@ -211,7 +179,17 @@
 					
 				</div>
 
-					{{--@include('components.main-view_trip-cards.main-view_trip-cards')--}}
+					@if ($selectedTours['data'])
+
+						@include('components.main-view_trip-cards.main-view_trip-cards')
+
+					@else
+
+						<div class="seller-page_empty mod_header-3">
+							Объявления с требуемыми характеристиками отсутствуют
+						</div>
+
+					@endif
 
 			</div>
 		</section>
@@ -224,3 +202,5 @@
 	@include('components.popup-window')
 	
 @endsection
+
+

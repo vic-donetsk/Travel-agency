@@ -7,7 +7,8 @@ let filtersArray = [
 	'price',
 	'children',
 	'recommended',
-	'hot'
+	'hot',
+	'sort'
 ], 
 savedFilters = {};
 
@@ -21,8 +22,6 @@ $('.close-search').click( (e) => {
 });
 
 // парсим данные из входящей строки
-// http://tourism/search?type=9&hotel=2&diet=2&country=2
-
 let searchString = window.location.search.substr(1);
 let searchArray = searchString.split('&');
 let searchParameters = new Map();
@@ -71,12 +70,18 @@ function rebuildLocationSearch(filterName, filterValue) {
 	let newFilter = filterName + '=' + filterValue;
 	let urlString = window.location.search;
 
-	if (urlString.indexOf(filterName) != -1) {
-		urlString = urlString.replace(RegExp(filterName + '=[0-9]+'), newFilter);
-	} else {
-		let andSign = (urlString.split('?').length > 1) ? '&' : '';
-		urlString += (andSign + newFilter);
+	//при измененни фильтров - удаляем страницу старой пагинации 
+	urlString = urlString.replace(RegExp('&?page=[0-9]+'), '');
+
+	if (filterValue == 0) {
+		urlString = urlString.replace(RegExp('&?' + filterName + '=[0-9]+'), '');
 	}
+		else if (urlString.indexOf(filterName) != -1) {
+			urlString = urlString.replace(RegExp(filterName + '=[0-9]+'), newFilter);
+		} else {
+			let andSign = ((urlString.split('?').length > 1) && (urlString.split('?')[1] != '')) ? '&' : '';
+			urlString += (andSign + newFilter);
+		}
 	window.location.search = urlString;
 }
 
@@ -89,24 +94,20 @@ $('body').on('click', '.reset-filters', (e) => {
 
 // удаление одного фильтра из топа (изменение адресной строки)
 $('body').on('click', '.active-filter', (e) => {
+	let urlString = '';
 	let filterName = $(e.currentTarget).data('type');
-	// удаляем фрагмент "фильтр="
-	urlArray = window.location.href.split(filterName + '=');
-	if (urlArray[1].indexOf('&') != -1) {
-		urlArray[1] = urlArray[1].substr(urlArray[1].indexOf('&')+1);
-	} else {
-		// удаление остатков расположенного последним элемента
-		urlArray[1] = '';
-		if (urlArray[0][urlArray[0].length-1] == '&') {
-			urlArray[0] = urlArray[0].substr(0, urlArray[0].length-1);
+	savedFilters[filterName] = 0;
+	for (let key in savedFilters) {
+		if (savedFilters[key] != 0) {
+			urlString += (key + '=' + savedFilters[key] + '&');
 		}
 	}
-	urlString = urlArray.join('');
-	// убрать ? если параметров не осталось
-	if (urlString[urlString.length-1] == '?') {
-			urlString = urlString.substr(0, urlString.length-1);
-		}
-	window.location.href = urlString;
+	if (urlString) {
+		console.log(111111);
+		urlString = '?' + urlString.substr(0, urlString.length-1);
+	}
+	window.location.href = window.location.protocol + '//' + window.location.hostname + 
+							window.location.pathname + urlString;
 });
 
 
@@ -118,22 +119,23 @@ function renderTopFilters(filters) {
 	$('.search_results_active-filters').empty();
 	let filtersContent = `<div class="active-filters_wrapper">`;
 	for (let key in filters) {
-
-		if ( filters[key] != 0 ) {
-			issetFilters = true;
-			className = '.' + key + '_filter';
-			$filterLayout = $(className);
-			if ($filterLayout.hasClass('one-filter_select')) {
-				filterText = $(className + ` option[value=${filters[key]}]`).text();
-			} else {
-				name = (key == 'diet') ? 'd_' + filters[key] : 'p_'+ filters[key];
-				filterText = $(className + ` input[name=${name}]`).siblings('.radio-label').text();
+		if (key != 'sort') {
+			if ( filters[key] != 0 ) {
+				issetFilters = true;
+				className = '.' + key + '_filter';
+				$filterLayout = $(className);
+				if ($filterLayout.hasClass('one-filter_select')) {
+					filterText = $(className + ` option[value=${filters[key]}]`).text();
+				} else {
+					name = (key == 'diet') ? 'd_' + filters[key] : 'p_'+ filters[key];
+					filterText = $(className + ` input[name=${name}]`).siblings('.radio-label').text();
+				}
+				filtersContent += 
+				`<div class="active-filter" data-type="${key}">
+								<p class="active-filter_value" ">${filterText}</p>
+								<img src="img/close.svg" alt="" class="close">
+							</div>`
 			}
-			filtersContent += 
-			`<div class="active-filter" data-type="${key}">
-							<p class="active-filter_value" ">${filterText}</p>
-							<img src="img/close.svg" alt="" class="close">
-						</div>`
 		}
 	}
 	if (issetFilters) {

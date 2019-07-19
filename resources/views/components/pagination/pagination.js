@@ -68,7 +68,23 @@ if ((typeof pagiPages !== 'undefined') && (pagiPages)) {
 	    } else {
 	          currentPage = $(e.target).text();
 	    }
-	    window.location.href = window.location.href.split('?')[0] + `?page=${currentPage}`;
+
+	    let newPagiPage = 'page=' + currentPage;
+	    let urlString = window.location.search;
+	    if (urlString.indexOf('page') != -1)
+	    // если переход со страницы на страницу 
+	    {
+	    	urlString = urlString.replace(RegExp('page=[0-9]+'), newPagiPage);
+	    } else if ((urlString.split('?').length > 1) && (urlString.split('?')[1] != ''))
+	    // адресная строка содержит только фильтры и не содержит страницу
+	    {
+	    	urlString += ('&' + newPagiPage);
+	    } else 
+	    // адресная строка не содержит никаких get-параметров
+	    {
+	    	urlString += ('?' + newPagiPage);
+	    }
+	    window.location.search = urlString;
 	});
 }
 

@@ -2,7 +2,7 @@
 
 	<div class="trip-cards_wrapper">
 	
-		@foreach ($sellerTours['data'] as $oneTour)
+		@foreach ($selectedTours['data'] as $oneTour)
 
 	         @include('components.trip-card.trip-card', ['oneTour' => $oneTour])
 

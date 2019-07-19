@@ -21,7 +21,7 @@
 
 		<div class="seller-page">
 
-			@if ($sellerTours['data'])
+			@if ($selectedTours['data'])
 
 				<div class="seller-page_categories">
 
