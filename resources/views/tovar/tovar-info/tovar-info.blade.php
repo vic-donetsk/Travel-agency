@@ -3,7 +3,7 @@
 		<div class="tovar-info_finance">
 			<div class="price"> {{$mainTour->price}} &nbsp; <i class="fab fa-btc"></i></div>
 			<div class="to-cart">
-				<div class="single-btn mod_160 mod_blue">В корзину</div>
+				<a href="{{route('to_basket', ['id' => $mainTour->id])}}" class="single-btn mod_160 mod_blue">В корзину</a>
 			</div>
 		</div>
 	</div>

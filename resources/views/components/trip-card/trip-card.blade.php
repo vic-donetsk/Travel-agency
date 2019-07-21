@@ -31,7 +31,7 @@
               <p class="trip-description_kurort">{{$oneTour['name']}}</p>
               <p class="trip-description_route">{{$oneTour['startLocation']}}</p>
           </div>
-          <div class="single-btn mod_green mod_140">Заказать</div>
+          <a href="{{route('tour_page', ['id' => $oneTour['id']])}}" class="single-btn mod_green mod_140">Заказать</a>
       </div>
     </div>
   </div>  

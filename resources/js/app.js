@@ -33,7 +33,6 @@ require('./bootstrap');
 
 
 require('./index');
-require('../views/basket/basket_page');
 require('../views/search/search_page');
 require('../views/seller/seller_page');
 require('../views/components/pagination/pagination');

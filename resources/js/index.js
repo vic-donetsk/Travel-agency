@@ -57,7 +57,7 @@ $(document).ready( ()=>{
 
 
 	// trip-cards client or seller hover
-	let isSeller = 1;
+	let isSeller = 0;
 	// это тестовое значение, его надо будет убрать в дальнейшем
 	let hoverClass = (isSeller) ? 'trip-card_seller-hover' : 'trip-card_client-hover';
 	$(".trip-card").hover( (e) => {

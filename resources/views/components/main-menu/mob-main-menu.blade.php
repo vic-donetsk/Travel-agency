@@ -2,9 +2,9 @@
     <div class="mobile-menu">
         <div class="mobile-menu_items">
             <div class="mobile-trip-transport">
-                <div class="mod_header-3"><a href="#"> Автобусные туры </a></div>
-                <div class="mod_header-3"><a href="#"> Авиационные туры </a></div>
-                <div class="mod_header-3"><a href="#"> Круизы </a></div>
+                <div class="mod_header-3"><a href="{{route('search_page', ['category' => 1])}}"> Автобусные туры </a></div>
+                <div class="mod_header-3"><a href="{{route('search_page', ['category' => 2])}}"> Авиационные туры </a></div>
+                <div class="mod_header-3"><a href="{{route('search_page', ['category' => 3])}}"> Круизы </a></div>
             </div>
             <div class="user mod_header-3">
                 

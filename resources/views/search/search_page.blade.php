@@ -129,7 +129,7 @@
 				</div>
 
 				<div class="search_filters_one-filter">
-					<div class="one-filter_title mod_header-3">Только рекомендованные</div>
+					<div class="one-filter_title mod_header-3">Только рекомендация</div>
 					<select class="recommended_filter one-filter_select">
 						<option value="0" selected>Любые</option>
 						<option value="1">Рекомендованные</option>

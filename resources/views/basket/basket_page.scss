@@ -137,7 +137,6 @@ body, body * {
 .basket_empty {
 	margin-bottom: 20px;
 	text-align: center;
-	display: none;
 }
 
 .basket_total {
@@ -150,14 +149,10 @@ body, body * {
 	border-radius: 4px;
   	border: solid 4px #f6fafb;
 
-
-
-
 	@include media (">=phone", "<=big_phone") {
 		@include flex(flex-start, column);
 		padding: 15px 20px;
 	}
-	
 
 	.basket_total-result {
 		@include flex;
@@ -167,7 +162,6 @@ body, body * {
 			width: 100%;
 			margin-bottom: 10px;
 		}
-
 	}
 
 	.result_cost {
@@ -190,5 +184,4 @@ body, body * {
 			width: 100%;
 		}
 	}
-
 }

@@ -1,9 +1,9 @@
 <nav class="main-menu">
 		<div class="main-menu_first-block">
 			<div class="trip-transport">
-				<div class="trip-transport_item"> <a href=""> Автобусные туры </a> </div>
-				<div class="trip-transport_item"> <a href=""> Авиационные туры </a></div>
-				<div class="trip-transport_item"> <a href=""> Круизы </a> </div>
+				<div class="trip-transport_item"> <a href="{{route('search_page', ['category' => 1])}}"> Автобусные туры </a> </div>
+				<div class="trip-transport_item"> <a href="{{route('search_page', ['category' => 2])}}"> Авиационные туры </a></div>
+				<div class="trip-transport_item"> <a href="{{route('search_page', ['category' => 3])}}"> Круизы </a> </div>
 			</div>
 			@include('components.logo.logo')
 			<div class="main-menu_right">
@@ -13,8 +13,8 @@
 					
 				</div>
 				<div>	
-					<a href="#">				
-						<i class="fas fa-shopping-cart"></i> &nbsp; Корзина (3555 <i class="fab fa-btc"> )</i>
+					<a href="{{route('basket_page')}}">				
+						<i class="fas fa-shopping-cart"></i> &nbsp; Корзина ({{$basketSum}} <i class="fab fa-btc"> )</i>
 					</a>
 				</div>
 			</div>

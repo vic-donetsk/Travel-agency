@@ -9,7 +9,12 @@ Route::get('/seller/{sellerId}/{typeId?}', 'SellerController@index')->name('sell
 
 Route::get('/search', 'SearchController@index')->name('search_page');
 
-
+//запись в корзину
+Route::get('/basket/{id}', 'BasketController@store')->name('to_basket');
+//переход в корзину
+Route::get('/basket', 'BasketController@index')->name('basket_page');
+//удаление из корзины
+Route::get('/basket_delete/{id}', 'BasketController@delete')->name('basket_delete');
 
 
 
@@ -17,9 +22,6 @@ Route::get('/orders', 'OrderController@index')->name('orders_page');
 
 Route::get('/purchases', 'PurchaseController@index')->name('purchases_page');
 
-Route::get('/basket', function () {
-    return view('basket.basket_page');
-})->name('basket_page');
 
 Route::get('/user_edit', function () {
     return view('user_edit.user_edit');
