@@ -7,8 +7,10 @@ use App\Models\Tour;
 use App\Models\Deal;
 use App\Models\Comment;
 
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Model
+
+class User extends Authenticatable
 {
     public function tours()
     {
