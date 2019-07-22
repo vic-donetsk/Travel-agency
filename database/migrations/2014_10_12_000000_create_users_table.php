@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('avatar')->nullable();                             // адрес аватарки
             //$table->timestamp('email_verified_at')->nullable();
             $table->string('password');                           // хэш пароля
-            //$table->rememberToken();
+            $table->rememberToken(); //Adds a nullable remember_token VARCHAR(100) 
             $table->timestamps();
         });
     }
