@@ -9,7 +9,7 @@
 			<div class="main-menu_right">
 				<div class="user mod_main-menu">
 					
-						@include('components.main-menu.user-or-guest', ['text' => 'Вход/Регистрация'])
+						@include('components.main-menu.user-or-guest', ['text' => 'Вход / Регистрация'])
 					
 				</div>
 				<div>	

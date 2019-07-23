@@ -4,7 +4,7 @@
 
 @section('content')
 
-	@include('components.main-menu.main-menu',['text' => 'Вход/Регистрация'])
+	@include('components.main-menu.main-menu')
 
     @include('components.main-menu.mob-head-menu')
 
@@ -197,7 +197,7 @@
 
 	</div>
 
-	@include('components.footer.footer',['text' => 'Вход/Регистрация'])
+	@include('components.footer.footer')
 
 	@include('components.popup-window')
 	
