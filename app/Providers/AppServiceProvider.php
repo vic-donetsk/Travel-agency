@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -33,9 +34,12 @@ class AppServiceProvider extends ServiceProvider
             'search.search_page',
             'seller.seller_page',
             'tovar.tovar_page',
-            'login.login',
+            'trip_edit.trip_edit',
+            'user_edit.user_edit',
+            'auth.login',
             'restore.password_restore'
         ], function ($view) {
+            // сумма товаров в корзине для отображения в главном меню
             $basketSum = 0;
             if (Session::has('tours')) {
                 $tours = Session::get('tours');
@@ -43,8 +47,17 @@ class AppServiceProvider extends ServiceProvider
                     $basketSum += $tour['price'];
                 }
             }
+            // информация об активном пользователе (если авторизован)
+            if (Auth::check()) {
+                $currUser = Auth::user();
+                $activeUser = [
+                    'id' => $currUser->id,
+                    'name' => ($currUser->first_name or $currUser->last_name) ? $currUser->first_name . ' ' . $currUser->last_name : $currUser->email,
+                    'foto' => ($currUser->avatar) ?: "/img/user.png"
+                ];
+            } else $activeUser = [];
 
-            $view->with(['basketSum' => $basketSum]);
+            $view->with(['basketSum' => $basketSum, 'activeUser' => $activeUser]);
         });
     }
 }

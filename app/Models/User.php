@@ -11,6 +11,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    // для системы Auth
+    protected $fillable = ['email', 'password'];
+
     public function tours()
     {
         return $this->hasMany(Tour::class, 'seller_id');

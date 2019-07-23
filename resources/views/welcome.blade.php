@@ -86,7 +86,7 @@
 
 
 
-        @include('components.main-menu.main-menu',['user_name' => 'Василий Пупкин', 'user_foto' => 'img/user.png'])
+        @include('components.main-menu.main-menu')
         <br>
         @include('components.main-menu.main-menu')
 
@@ -95,7 +95,7 @@
             @include('components.main-menu.mob-head-menu')
         </div>
 
-        @include('components.footer.footer',['user_name' => 'Василий Пупкин', 'user_foto' => 'img/user.png'])
+        @include('components.footer.footer')
         <br>
         @include('components.footer.footer')
         <br>

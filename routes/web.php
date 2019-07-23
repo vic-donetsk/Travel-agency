@@ -16,6 +16,12 @@ Route::get('/basket', 'BasketController@index')->name('basket_page');
 //удаление из корзины
 Route::get('/basket_delete/{id}', 'BasketController@delete')->name('basket_delete');
 
+// просмотр страницы личных данных
+Route::get('/user_edit/{id}', 'UserEditController@show')->name('user_edit');
+// запись личных данных на страницу
+Route::post('/user_edit/{id}', 'UserEditController@store')->name('user_edit');
+
+
 
 
 Route::get('/orders', 'OrderController@index')->name('orders_page');
@@ -23,9 +29,6 @@ Route::get('/orders', 'OrderController@index')->name('orders_page');
 Route::get('/purchases', 'PurchaseController@index')->name('purchases_page');
 
 
-Route::get('/user_edit', function () {
-    return view('user_edit.user_edit');
-})->name('user_edit');
 
 Route::get('/trip_edit', function () {
     return view('trip_edit.trip_edit', 

@@ -1,6 +1,6 @@
 	@auth
-		<a href="#"> <img class="user-foto"src="{{ $user_foto }}" alt=""> </a>
-		<a href="#" class="user-name"> {{ $user_name }} </a>
+		<a href="#"> <img class="user-foto"src="img/user.png" alt=""> </a>
+		<a href="#" class="user-name"> Василий Пупкин </a>
 	@else
 		<a href="#" class="user-name"> {{ $text }} </a>
 	@endauth 

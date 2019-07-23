@@ -73,6 +73,10 @@ body, body * {
 			@include media("t") {
 				@include flex();
 			}
+
+			.login_input-container {
+				@include flex(flex-start, column,nowrap);
+			}
 		}
 
 		.login_block-input {
@@ -105,6 +109,11 @@ body, body * {
 		}
 }
 
+.login_submit {
+	border: none;
+	outline: none;
+}
+
 .mod_enter {
 	@include media("d") {
 		width: 140px;
@@ -115,6 +124,13 @@ body, body * {
 		margin-top: 15px;
 		width: 240px;
 	}
+}
+
+.is-invalid {
+	border: 1px solid red;
+}
+.invalid-feedback {
+	color: red;
 }
 
 
