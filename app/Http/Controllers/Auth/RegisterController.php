@@ -48,11 +48,20 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            //'name' => ['required', 'string', 'max:255'],
-            'email_reg' => ['required', 'string', 'email', 'max:10', 'unique:users,email'],
-            'password_reg' => ['required', 'string', 'min:8'],
-        ]);
+        return Validator::make(
+            // массив данных для валидации
+            $data,
+            // правила валидации для каждого элемента 
+            [
+                'email_reg' => ['required', 'string', 'email', 'max:10', 'unique:users,email'],
+                'password_reg' => ['required', 'string', 'min:8'],
+            ],
+            // кастомизация сообщений об ошибках
+            [
+                'max' => 'Длина адреса не должна превышать :max символов',
+                'min' => 'Длина пароля не менее :min символов',
+                'unique' => 'Пользователь с таким email уже зарегистрирован в базе'
+            ]);
     }
 
     /**
