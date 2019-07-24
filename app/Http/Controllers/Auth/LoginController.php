@@ -7,6 +7,9 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 use Illuminate\Support\Facades\Redirect;
 
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Session;
+
 class LoginController extends Controller
 {
     /*
@@ -27,7 +30,11 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected function redirectTo()
+    {
+
+        return Session::pull('storeUrlBeforeAuth', '/');
+    }
 
     /**
      * Create a new controller instance.
@@ -35,7 +42,8 @@ class LoginController extends Controller
      * @return void
      */
     public function __construct()
-    {
+    {   
+        Session::put('storeUrlBeforeAuth', URL::previous());
         $this->middleware('guest')->except('logout');
     }
 }

@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
@@ -26,9 +27,12 @@ class RegisterController extends Controller
     /**
      * Where to redirect users after registration.
      *
-     * @var string
+     * @return string
      */
-    protected $redirectTo = '/search';
+    protected function redirectTo()
+        {
+            return route('user_edit', ['id' => Auth::id()]);
+        }
 
     /**
      * Create a new controller instance.
@@ -53,7 +57,7 @@ class RegisterController extends Controller
             $data,
             // правила валидации для каждого элемента 
             [
-                'email_reg' => ['required', 'string', 'email', 'max:10', 'unique:users,email'],
+                'email_reg' => ['required', 'string', 'email', 'max:50', 'unique:users,email'],
                 'password_reg' => ['required', 'string', 'min:8'],
             ],
             // кастомизация сообщений об ошибках
