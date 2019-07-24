@@ -37,7 +37,7 @@ class AppServiceProvider extends ServiceProvider
             'trip_edit.trip_edit',
             'user_edit.user_edit',
             'auth.login',
-            'restore.password_restore'
+            'auth.passwords.email'
         ], function ($view) {
             // сумма товаров в корзине для отображения в главном меню
             $basketSum = 0;

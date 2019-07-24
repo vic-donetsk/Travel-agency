@@ -30,18 +30,18 @@
 						<div class="login_input-container">
 							<input id="email" type="email" class="login_block-input mod_text-2 @error('email') is-invalid @enderror" name="email" required  placeholder="Введите логин" value="">
                             @error('email')
-                                <span class="invalid-feedback mod_text-1" role="alert">
+                                <div class="invalid-feedback mod_text-1" role="alert">
                                     <strong>{{ $message }}</strong>
-                                </span>
+                                </div>
                             @enderror
 						</div>
 
 						<div class="login_input-container">
 							<input id="password" type="password" class="login_block-input mod_text-2 @error('password') is-invalid @enderror" name="password" required placeholder="Введите пароль" autocomplete="off">
                             @error('password')
-                                <span class="invalid-feedback mod_text-1" role="alert">
+                                <div class="invalid-feedback mod_text-1" role="alert">
                                     <strong>{{ $message }}</strong>
-                                </span>
+                                </div>
                             @enderror
                         </div>
 						
@@ -78,7 +78,7 @@
 	                    </div>
 					</div>
 
-					<button type="submit"class="login_submit mod_register single-btn mod_green">
+					<button type="submit" class="login_submit mod_register single-btn mod_green">
 						Зарегистрироваться
 					</button>
 				</form>

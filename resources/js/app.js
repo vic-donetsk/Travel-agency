@@ -39,4 +39,4 @@ require('../views/components/pagination/pagination');
 require('../views/orders/orders_page');
 require('../views/user_edit/user_edit');
 require('../views/trip_edit/trip_edit');
-require('../views/restore/password_restore');
+

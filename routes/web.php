@@ -87,4 +87,8 @@ Route::get('/test', function () {
 
 Auth::routes();
 
+Route::get('/reset_done', function () {
+    return view('auth.password.done');
+})->name('reset_done');
+
 Route::get('/home', 'HomeController@index')->name('home');

@@ -57,13 +57,13 @@ class RegisterController extends Controller
             $data,
             // правила валидации для каждого элемента 
             [
-                'email_reg' => ['required', 'string', 'email', 'max:50', 'unique:users,email'],
+                'email_reg' => ['required', 'string', 'email', 'max:25', 'unique:users,email'],
                 'password_reg' => ['required', 'string', 'min:8'],
             ],
             // кастомизация сообщений об ошибках
             [
                 'max' => 'Длина адреса не должна превышать :max символов',
-                'min' => 'Длина пароля не менее :min символов',
+                'min' => 'Длина пароля - не менее :min символов',
                 'unique' => 'Пользователь с таким email уже зарегистрирован в базе'
             ]);
     }

@@ -7,10 +7,13 @@ use App\Models\Tour;
 use App\Models\Deal;
 use App\Models\Comment;
 
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
-{
+{   
+    use Notifiable;
+    
     // для системы Auth
     protected $fillable = ['email', 'password'];
 

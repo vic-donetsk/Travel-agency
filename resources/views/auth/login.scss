@@ -96,6 +96,10 @@ body, body * {
 			@include media("d") {
 				margin-bottom: 5px;
 			}
+
+			&.is-invalid {
+				border: 1px solid red;
+			}
 		}
 
 		.login_forget {
@@ -124,10 +128,6 @@ body, body * {
 		margin-top: 15px;
 		width: 240px;
 	}
-}
-
-.is-invalid {
-	border: 1px solid red;
 }
 .invalid-feedback {
 	color: red;

@@ -49,10 +49,16 @@ body, body * {
 	padding: 0 20px;
 	width: 100%;
 	margin-bottom: 20px;
+
+	&.is-invalid {
+		border: 1px solid red;
+	}
 }
 
 .restore_block-submit {
 	width: 100%;
+	border: none;
+	outline: none;
 }
 
 
