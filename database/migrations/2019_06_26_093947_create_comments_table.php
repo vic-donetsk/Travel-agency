@@ -15,14 +15,11 @@ class CreateCommentsTable extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');        // ИД комментатора
+            $table->string('author_name');                // имя комментатора
+            $table->string('author_email');               // почта комментатора
             $table->unsignedBigInteger('tour_id');        // ИД тура
             $table->text('content');                      // текст комментария
             $table->timestamps();
-
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users');
 
             $table->foreign('tour_id')
                 ->references('id')
@@ -38,8 +35,7 @@ class CreateCommentsTable extends Migration
     public function down()
     {
         Schema::table('comments', function (Blueprint $table) {
-            $table->dropForeign(['user_id']);
-            $table->dropForeign(['tour_id']);
+             $table->dropForeign(['tour_id']);
         });
         Schema::dropIfExists('comments');
     }

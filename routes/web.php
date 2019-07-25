@@ -1,6 +1,9 @@
 <?php
 
+// страница конкретного тура
 Route::get('/tour/{id}', 'TourController@show')->name('tour_page');
+// послать комментарий к туру
+Route::post('/review/{tour_id}', 'TourController@store_review')->name('send_review');
 
 
 Route::get('/', 'MainController@index')->name('main_page');

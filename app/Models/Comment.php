@@ -8,10 +8,8 @@ use App\Models\Tour;
 
 class Comment extends Model
 {
-     public function user()  
-    {
-    	return $this->belongsTo(User::class);
-    }
+
+	protected $fillable = ['tour_id', 'author_name', 'author_email', 'content'];
     public function tour()  
     {
     	return $this->belongsTo(Tour::class);
