@@ -22,7 +22,7 @@ Route::get('/basket_delete/{id}', 'BasketController@delete')->name('basket_delet
 // просмотр страницы личных данных
 Route::get('/user_edit/{id}', 'UserEditController@show')->name('user_edit');
 // запись личных данных на страницу
-Route::post('/user_edit/{id}', 'UserEditController@store')->name('user_edit');
+Route::post('/user_edit/{id}', 'UserEditController@store')->name('user_store');
 
 
 

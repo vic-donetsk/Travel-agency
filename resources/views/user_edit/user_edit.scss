@@ -29,6 +29,7 @@ body, body * {
 	}
 
 	.userEdit_content {
+		position: relative;
 		@include flex;
 		padding: 36px;
 		border-radius: 4px;
@@ -44,12 +45,19 @@ body, body * {
 		@include media (">=phone", "<=tablet") {
 			width: 100%;
 		}
+
+		#userFace {
+			position: absolute;
+			left: -99999px;
+		}
 	}
 }
 
 .userEdit_content-foto img {
 	width: 180px;
 	height: 180px;
+	object-fit: fill;
+	cursor: pointer;
 	@include media (">tablet", "<=small_desktop") {
 		margin-bottom: 44px;
 		width: 360px;
@@ -110,18 +118,28 @@ body, body * {
 			@include media (">=phone", "<=tablet") {
 				max-width: 100%;
 			}
+
+			&.is-invalid {
+				border: 1px solid red;
+			}
 		}
 	}
 
 }
 
 .userEdit_content-submit {
+	border: none;
+	outline: none;
 	margin-top: 40px;
 	width: 250px;
 
 	@include media (">=phone", "<=tablet") {
 		width: 100%;
 	}
+}
+
+.alert-error {
+	color:red;
 }
 
 
