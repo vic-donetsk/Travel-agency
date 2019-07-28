@@ -12,6 +12,6 @@ class DealsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Deal::class, 100)->create();
+        factory(Deal::class, 2000)->create();
     }
 }

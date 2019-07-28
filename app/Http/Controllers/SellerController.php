@@ -44,8 +44,7 @@ class SellerController extends Controller
 
     	//данные для построения пагинации
     	$totalTours = $allSellerTours->count();
-	    	//потом перенести в конфиг
-	    	$perPage = 8;
+	    $perPage = config('pagination.tourPagination');
 
     	$currentPage = ($request->has('page')) ? $request->input('page') : 1;
     	$pagiPages = ($totalTours > $perPage) ? ceil($totalTours / $perPage) : null;

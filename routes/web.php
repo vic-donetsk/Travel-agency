@@ -5,11 +5,11 @@ Route::get('/tour/{id}', 'TourController@show')->name('tour_page');
 // послать комментарий к туру
 Route::post('/review/{tour_id}', 'TourController@store_review')->name('send_review');
 
-
+// главная страница
 Route::get('/', 'MainController@index')->name('main_page');
-
+// страница продавца
 Route::get('/seller/{sellerId}/{typeId?}', 'SellerController@index')->name('seller_page');
-
+// поисковая страница
 Route::get('/search', 'SearchController@index')->name('search_page');
 
 //запись в корзину
@@ -26,9 +26,9 @@ Route::post('/user_edit/{id}', 'UserEditController@store')->name('user_store');
 
 
 
-
+// мои заказы
 Route::get('/orders', 'OrderController@index')->name('orders_page');
-
+// мои 
 Route::get('/purchases', 'PurchaseController@index')->name('purchases_page');
 
 
@@ -74,13 +74,13 @@ Route::get('/trip_create', function () {
     	]);
 })->name('trip_create');
 
-Route::get('/login', function () {
-    return view('login.login');
-})->name('login');
+// Route::get('/login', function () {
+//     return view('login.login');
+// })->name('login');
 
-Route::get('/password_restore', function () {
-    return view('restore.password_restore');
-})->name('password_restore');
+// Route::get('/password_restore', function () {
+//     return view('restore.password_restore');
+// })->name('password_restore');
 
 Route::get('/test', function () {
     return view('welcome');

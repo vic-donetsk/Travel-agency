@@ -68,8 +68,6 @@ class SearchController extends Controller
 			}
         }
 
-	    	//потом перенести в конфиг
-	    	$perPage = 8;
 	    $showClasses = ['main-trip', 'main-trip', 'main-trip', 'main-trip', 'main-trip', 'hidden-on-mobile-trip','hidden-on-mobile-trip', 'hidden-on-mobile-trip','hidden-on-tablet-trip']; 
 
 	    // переводим результат в коллекцию
@@ -78,9 +76,11 @@ class SearchController extends Controller
 	    // количество элементов результирующей коллекции
     	$totalTours = $resultTours->count();
 
-    	$currentPage = ($request->has('page')) ? $request->get('page') : 1;
+    	// рассчитываем пагинацию
+    	$perPage = config('pagination.tourPagination');
+        $currentPage = ($request->has('page')) ? $request->get('page') : 1;
     	$pagiPages = ($totalTours > $perPage) ? ceil($totalTours / $perPage) : null;
-
+        // забираем данные для нужной страницы
     	$forPageTours = $resultTours->forPage($currentPage, $perPage);
 
     	$selectedTours = $this->formatData($forPageTours, $totalTours, $showClasses);

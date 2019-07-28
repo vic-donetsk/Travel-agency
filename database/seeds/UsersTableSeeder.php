@@ -12,15 +12,15 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-    	User::create([
-	        'first_name' => 'Vic',
-	        'last_name' => 'Pavlovsky',
-	        'phone' => '+38095-698-62-73', 
-	        'email' => 'pavlovskyi.tester@gmai.com',
-	        'avatar' => '',
-	        'password' => Hash::make('test'),
-	        //'email_verified_at' => now(),
-	        //'remember_token' => Str::random(10),
+        User::create([
+            'first_name' => '',
+            'last_name' => '',
+            'phone' => '', 
+            'email' => 'a@a.a',
+            'avatar' => '',
+            'password' => Hash::make('aaaaaaaa'),
+            //'email_verified_at' => now(),
+            //'remember_token' => Str::random(10),
         ]);
 
 

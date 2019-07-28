@@ -23,33 +23,26 @@
 		
 		<div class="orders_list">
 
-			@foreach([['number'=>'№ 222', 'date'=>'23.01.2019', 'owner'=>'Нестор Махно'],
-				  ['number'=>'№ 333', 'date'=>'24.01.2019', 'owner'=>'Василий Чапаев'],
-				  ['number'=>'№ 444', 'date'=>'25.01.2019', 'owner'=>'Антон Деникин'],
-				  ['number'=>'№ 555', 'date'=>'26.01.2019', 'owner'=>'Михаил Фрунзе'],
-				  ['number'=>'№ 666', 'date'=>'27.01.2019', 'owner'=>'Григорий Котовский'],
-				  ['number'=>'№ 777', 'date'=>'28.01.2019', 'owner'=>'Лавр Корнилов']] as $oneorder)
+			@foreach($orders as $oneOrder)
 
 				<div class="oneorder">
 					<div class="oneorder_header mod_header-4">
-						<div class="oneorder_number">{{$oneorder['number']}}</div>
-						<div class="oneorder_date">{{$oneorder['date']}}</div>
-						<div class="oneorder_owner">{{$oneorder['owner']}}</div>
+						<div class="oneorder_number">№ {{$oneOrder->id}}</div>
+						<div class="oneorder_date">{{$oneOrder->created_at->format('d.m.Y')}}</div>
+						<div class="oneorder_owner">{{$oneOrder->buyer->first_name . ' ' . $oneOrder->buyer->last_name}}</div>
 						<div class="oneorder_details">Подробности</div>
 						<div class="oneorder_details-sign"><i class="fas fa-angle-down"></i></div>
 					</div>
 
 					<div class="oneorder_content">
 
-						@foreach ([['img'=>'img/test-trip.png', 'name'=>'Мальдивы', 'conditions' => '5* Все включено', 'price'=>'12 000'],
-							   	   ['img'=>'img/test-trip1.png', 'name'=>'Гавайи', 'conditions' => '4* Не все включено', 'price'=>'5 000'],
-								   ['img'=>'img/test-trip1.png', 'name'=>'Египет', 'conditions' => '3* без перелета', 'price'=>'200 000']] as $onetrip)
+						@foreach ($oneOrder->tours as $oneTour)
 							<div class="onetrip">
-								<div class="onetrip_picture"><img src="{{$onetrip['img']}}" alt=""></div>
+								<div class="onetrip_picture"><img src="{{$oneTour['img']}}" alt=""></div>
 								<div class="onetrip_details">
-									<div class="onetrip_details-name mod_text-2">{{$onetrip['name']}}&nbsp;{{$onetrip['conditions']}}</div>
+									<div class="onetrip_details-name mod_text-2">{{$oneTour['conditions']}}</div>
 									<div class="onetrip_details-cost mod_header-4">
-										<div class="sum">{{$onetrip['price']}}&nbsp;</div>
+										<div class="sum">{{$oneTour['price']}}&nbsp;</div>
 										<div class="currency"><i class="fab fa-btc"></i></div>
 									</div>
 								</div>	

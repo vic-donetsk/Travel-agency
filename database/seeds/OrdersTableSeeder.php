@@ -13,7 +13,7 @@ class OrdersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Order::class, 70)->create();
+        factory(Order::class, 2000)->create();
 
         // после того, как мы сформировали при помощи фабрики 
         // все заказы, нам необходимо удалить
