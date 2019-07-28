@@ -4,7 +4,7 @@
 		<div class="review_wrapper">
 			<img class="review_author-foto" src=
 				@if ($oneComment->avatar) "{{$oneComment->avatar}}"
-					@else  "/img/user.jpg"
+					@else  "/img/user.png"
 				@endif " alt="">
 			<div class="review">
 				<div class="review_data">

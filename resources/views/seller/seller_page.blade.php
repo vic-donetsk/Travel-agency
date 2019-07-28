@@ -19,7 +19,7 @@
 
 		<h1 class="seller-page_title mod_header-3">мои предложения</h1>
 
-		<div class="seller-page">
+		<div class="seller-page" data-owner='{{$isOwnerPage}}'>
 
 			@if ($selectedTours['data'])
 

@@ -1,4 +1,4 @@
- <div class="trip-card {{ $oneTour['showClass'] }}"> 
+ <div class="trip-card {{ $oneTour['showClass'] }}" data-id={{$oneTour['id']}}> 
 <!-- hover продавца - докинуть класс seller-hover
      hover клиента - докинуть класс client-hover -->
     <div class="trip-card_picture">
@@ -31,7 +31,7 @@
               <p class="trip-description_kurort">{{$oneTour['name']}}</p>
               <p class="trip-description_route">{{$oneTour['startLocation']}}</p>
           </div>
-          <a href="{{route('tour_page', ['id' => $oneTour['id']])}}" class="single-btn mod_green mod_140">Заказать</a>
+          <a href="{{route('to_basket', ['id' => $oneTour['id']])}}" class="single-btn mod_green mod_140">Заказать</a>
       </div>
     </div>
   </div>  

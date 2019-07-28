@@ -57,12 +57,10 @@ $(document).ready( ()=>{
 
 
 	// trip-cards client or seller hover
-	let isSeller = 0;
-	// это тестовое значение, его надо будет убрать в дальнейшем
-	let hoverClass = (isSeller) ? 'trip-card_seller-hover' : 'trip-card_client-hover';
+	let hoverClass = ($('.seller-page').data('owner')) ? 'trip-card_seller-hover' : 'trip-card_client-hover';
 	$(".trip-card").hover( (e) => {
 		$(e.delegateTarget).toggleClass(hoverClass);
-	})
+	});
 
 	// set tooltips by JQuery UI for trip categories
 	$('.tripCategory').tooltip({
@@ -73,14 +71,9 @@ $(document).ready( ()=>{
 		$(".about_content").removeClass("mod_hidden");
 		$(".about_show-more").css("display", "none");
 	});
-	
-
 
 	// popup-window for registered user
-	let regUser = 1;
-	// это тестовое значение, его надо будет убрать в дальнейшем
 	$('.user').mouseenter( (e) => {
-		if (regUser) {
 			let leftPopup = $(e.delegateTarget).offset().left;
 			// window pop down
 			let topPopup = $(e.delegateTarget).offset().top - 5;
@@ -98,9 +91,12 @@ $(document).ready( ()=>{
 					elem.fadeOut(); 
 				}
 			});
-
-		}
 	});
 
+	// 
+	$('.trip-card').click((e) => {
+		let tourId = $(e.delegateTarget).data('id');
+		window.location.pathname = "/tour/" + tourId;
+	});
 
 });
