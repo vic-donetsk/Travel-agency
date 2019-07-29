@@ -4,17 +4,17 @@
     <div class="trip-card_picture">
       <img class="foto" src="{{$oneTour['img']}}" alt="Beauty">
               <div class="trip-card_seller-modal">
-                <div class="seller-choice">
-                  <img class="seller-choice_image" src="/img/pencil-edit-button.svg" alt="П">
-                </div>
-                <div class="seller-choice">
-                  <img class="seller-choice_image" src="/img/rubbish-bin.svg" alt="П">
-                </div>
+                <a href="{{route('trip_edit', ['id' => $oneTour['id']])}}" class="seller-choice">
+                  <img class="seller-choice_image" src="/img/pencil-edit-button.svg" alt="">
+                </a>
+                <a href="{{route('trip_delete', ['id' => $oneTour['id']])}}" class="seller-choice">
+                  <img class="seller-choice_image" src="/img/rubbish-bin.svg" alt="">
+                </a>
               </div>
     
       <div class="trip-condition_wrapper">
         <div class="trip-condition">
-          <img  class="trip-condition_type" src="{{$oneTour['typeImage']}}" alt="П">
+          <img  class="trip-condition_type" src="{{$oneTour['typeImage']}}" alt="">
           <div class="trip-condition_duration"> {{$oneTour['duration']}}</div>
           <div class="trip-condition_hotel"> {{$oneTour['hotel']}}</div>
         </div>

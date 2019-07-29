@@ -57,7 +57,7 @@ $('.price_filter, .diet_filter').click( (e)=> {
 });
 
 // обработка фильтров select
-$('select').change( (e) => {
+$('.one-filter_select').change( (e) => {
 	let classArray = e.target.className.split('_filter');
 	let filterName = classArray[0];
 	let filterValue = $(e.target).children('option:selected').attr('value');

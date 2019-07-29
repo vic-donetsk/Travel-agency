@@ -23,13 +23,13 @@
 		
 		<div class="tripEdit_container">
 
-			<div class="tripEdit_data">
+			<form method="post" action={{route('trip_store', ['id' => $currTour->id])}} class="tripEdit_data">
 				<div class="dataBlock filtersBlock">
 					<div class="filtersBlock_item">
 						<div class="dataBlock_item-title mod_header-4">Название объявления</div>
 						<input type="text" class="dataBlock_item-input input large-input mod_text-2" name="name"
-						@isset($name) 
-							value="{{ $name }}"
+						@isset($currTour->name) 
+							value="{{ $currTour->name }}"
 						@endisset
 						placeholder="Введите название объявления">
 					</div>
@@ -41,14 +41,14 @@
 									psevdoPH 
 								@endempty
 							" name="country" id="country">
-								<option value="{{$country}}"
+								<option value="{{$currTour->country->name}}"
 									@empty($name)
 										class="deleted" 
 									@endempty
-								>{{$country}}</option>
-								@foreach ($country_list as $country_item)
-									@if ($country_item != $country)
-										<option class="test" value="{{$country_item}}">{{$country_item}}</option>
+								>{{$currTour->country->name}}</option>
+								@foreach ($countryList as $oneCountry)
+									@if ($oneCountry != $currTour->country->name)
+										<option class="test" value="{{$oneCountry->id}}">{{$oneCountry->name}}</option>
 									@endif
 								@endforeach
 							</select>
@@ -67,9 +67,9 @@
 										class="deleted" 
 									@endempty
 								>{{$hotel}}</option>
-								@foreach ($hotel_list as $hotel_item)
-									@if ($hotel_item != $hotel)
-										<option value="{{$hotel_item}}">{{$hotel_item}}</option>
+								@foreach ($hotelList as $oneHotel)
+									@if ($oneHotel != $hotel)
+										<option value="{{$oneHotel->id}}">{{$oneHotel->name}}</option>
 									@endif
 								@endforeach
 							</select>
@@ -88,9 +88,9 @@
 										class="deleted" 
 									@endempty
 								>{{$category}}</option>
-								@foreach ($category_list as $category_item)
-									@if ($category_item != $category)
-										<option value="{{$category_item}}">{{$category_item}}</option>
+								@foreach ($categoryList as $oneCategory)
+									@if ($oneCategory != $category)
+										<option value="{{$oneCategory->id}}">{{$oneCategory->name}}</option>
 									@endif
 								@endforeach
 							</select>
@@ -109,9 +109,9 @@
 										class="deleted" 
 									@endempty
 								>{{$type}}</option>
-								@foreach ($type_list as $type_item)
-									@if ($type_item != $type)
-										<option value="{{$type_item}}">{{$type_item}}</option>
+								@foreach ($typeList as $oneType)
+									@if ($oneType != $type)
+										<option value="{{$oneType->id}}">{{$oneType->name}}</option>
 									@endif
 								@endforeach
 							</select>
@@ -130,18 +130,17 @@
 								@empty($name)
 									psevdoPH 
 								@endempty
-							" name="nutrition" id="nutrition">
-								<option value="{{$nutrition}}"
+							" name="diet" id="diet">
+								<option value="{{$diet}}"
 									@empty($name)
 										class="deleted" 
 									@endempty
-								>{{$nutrition}}</option>
-								@foreach ($nutrition_list as $nutrition_item)
-									@if ($nutrition_item != $nutrition)
-										<option value="{{$nutrition_item}}">{{$nutrition_item}}</option>
+								>{{$diet}}</option>
+								@foreach ($dietList as $oneDiet)
+									@if ($oneDiet != $diet)
+										<option value="{{$oneDiet->id}}">{{$oneDiet->name}}</option>
 									@endif
 								@endforeach
-							</select>
 							</select>
 						</div>
 					</div>
@@ -174,7 +173,7 @@
 						<textarea class="dataBlock_item-input textarea mod_text-1" placeholder="Опишите Ваш товар">{{$description}}</textarea>
 					</div>
 				</div>
-			</div>
+			</form>
 
 			<div class="tripEdit_foto">
 				<div class="dataBlock_item-title mod_foto-title mod_header-4">Фотографии</div>
