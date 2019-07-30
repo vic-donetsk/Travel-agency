@@ -21,7 +21,7 @@ class Controller extends BaseController
     	if (substr($path, 0, 6) == 'public') {
     		return '/' . substr($path, 7);
     	} else {
-    		return '/' . $path;
+    		return $path;
     	}
     }
 

@@ -177,10 +177,10 @@
 
 				<div class="fotos">
 
-					<input id="mediaInput" class="inputImage" type="file" accept="image/*"  name="mediaInput">
-					<label for="mediaInput" class="fotos_item">
+					<input id="mediaInput0" class="inputImage" type="file" accept="image/*"  name="mediaInput0">
+					<label for="mediaInput0" class="fotos_item">
 						@isset($currTour->main_img)
-							<img id="mediaImage0" src="{{$currTour->main_img->path}}" class="img" alt="foto">
+							<img src="{{$currTour->main_img->path}}" class="img" alt="foto">
 						@endisset
 					</label>
 

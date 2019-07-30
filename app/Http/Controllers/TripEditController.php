@@ -26,7 +26,6 @@ class TripEditController extends Controller
 	    	if (Auth::id() != $currentTour->seller_id) {
 	    		return redirect(route('main_page'));
 	    	}
-
     		// подготовка изображений
     		$currentTour->main_img->path = $this->imagePath($currentTour->main_img->path);
     		foreach ($currentTour->media as $oneMedia) {
@@ -65,33 +64,47 @@ class TripEditController extends Controller
 
     	$filePath = public_path() . '/storage';
 
+    	// массив id изображений, которые заменены при редактировании
+    	$replacedMedia = [];
+    	// массив id изображений, которые добавлены при редактировании
+    	$addedMedia = [];
+
     	foreach ($allOptions as $key => $value) {
     		if (substr($key, 0, 5) =='media') {
     			// обработка картинок
     			if ($value) {
     				$file = $request->file($key);// получаем инфу о файле
-    				$file->move($filePath);		// копируем его в public/storage
-    				$fullFileName = '/storage/' . $file->getClientOriginalName();
-
+    				// берем оригинальное имя, иначе будет хрень.tmp 
+    				$fileName = $file->getClientOriginalName();
+    				$file->move($filePath, $fileName); // копируем файл в public/storage
+    				$fullFileName = '/storage/' . $fileName;
+    				// проверяем наличие файла с таким именем в базе,
+    				// если его нет - создаём
     				$newMedia =Media::firstOrCreate(['path' => $fullFileName]);
-    				dd($newMedia);
+
+    				$indexMedia = substr($key, -1);
+    				if ($indexMedia == '0') {
+    					//это главная картинка тура
+    					$currTour->main_img_id = $newMedia->id;
+    				} else {
+    					// привязываем по связи "многие ко многим"
+    					if (isset($currTour->media[$indexMedia - 1])) {
+    						// новая картинка вместо старой - удаляем старую из связей
+    						$replacedMedia[] = $currTour->media[$indexMedia - 1]->id;
+    					}
+    					// добавляем в связи новую картинку
+    					$addedMedia[] = $newMedia->id;
+    				}
     			}
     		} else if ($key != "_token") {
     			// сохранение остальных полей
     			$currTour->$key = $value;
     		}
     	}
-
-  //   	if ($request->hasFile('userFace')) {
-		// 	$file = $request->file('userFace'); // получаем инфу о файле
-		// 	$fileExt = $file->extension();      // выделяем расширение
-		// 	// формируем имя в соответствии с пользователем
-		// 	$fileName = 'user' . $id . '.' . $fileExt; 
-		// 	// копируем сам файл
-		// 	$file->move(public_path() . '/storage' , $fileName);
-		// 	// формируем путь для сохранения в базе
-		// 	$fullFileName = '/storage/' . $fileName;
-		// } 
+    	// открепляем все замененные картинки
+    	$currTour->media()->detach($replacedMedia);
+    	// и прикрепляем новые
+    	$currTour->media()->attach($addedMedia);
 
 		$currTour->save();
 
