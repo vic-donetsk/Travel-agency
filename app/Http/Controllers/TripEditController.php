@@ -41,6 +41,10 @@ class TripEditController extends Controller
 
 	    } else {
 	    	$currentTour = new Tour;
+	    	$currentTour->seller_id = Auth::id();
+	    	$currentTour->save();
+	    	
+	    	dd($currentTour);
 
 	    }
 
@@ -113,8 +117,6 @@ class TripEditController extends Controller
     	$currTour->media()->detach($replacedMedia);
     	// и прикрепляем новые
     	$currTour->media()->attach($addedMedia);
-
-    	$currTour->seller_id = Auth::id();
 
 		$currTour->save();
 

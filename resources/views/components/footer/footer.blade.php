@@ -1,5 +1,5 @@
 <footer class="footer">
-	<div class="single-btn mod_green mod_170"><i class="fas fa-plus"></i>&nbsp; Добавить тур</div>
+	<a href="{{route('trip_create')}}" class="single-btn mod_green mod_170"><i class="fas fa-plus"></i>&nbsp; Добавить тур</a>
 	<div class="user mod_header-3 mod_footer">
 		
 			@include('components.main-menu.user-or-guest_footer', ['text' => 'Вход / Регистрация'])

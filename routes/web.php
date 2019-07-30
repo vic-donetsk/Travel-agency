@@ -37,7 +37,7 @@ Route::post('/trip_store/{id}', 'TripEditController@store')->name('trip_store');
 // удаление тура
 Route::get('/trip_delete/{id}', 'TripEditController@delete')->name('trip_delete');
 
-Route::get('/trip_create', 'TripEditController@edit'
+Route::get('/trip_create', 'TripEditController@create'
     // return view('trip_edit.trip_edit', 
     // 	[ 'page_title' => 'Новое объявление',
     //       'currTour' => null,
