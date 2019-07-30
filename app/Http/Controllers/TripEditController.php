@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Illuminate\support\Facades\Auth;
+use Illuminate\Support\Facades\Auth;
 
 use App\Models\Tour;
 use App\Models\Country;
@@ -16,6 +16,13 @@ use App\Models\Media;
 
 class TripEditController extends Controller
 {
+    public function create() {
+    	if (Auth::check()) {
+    		return redirect(route('trip_edit'));
+    	}
+    	return redirect(route('login'));
+    }
+
     public function edit (Request $request, int $id = null) {
 
     	if ($id) {
@@ -34,6 +41,7 @@ class TripEditController extends Controller
 
 	    } else {
 	    	$currentTour = new Tour;
+
 	    }
 
     	$countryList = Country::all()->sortBy('name');
@@ -105,6 +113,8 @@ class TripEditController extends Controller
     	$currTour->media()->detach($replacedMedia);
     	// и прикрепляем новые
     	$currTour->media()->attach($addedMedia);
+
+    	$currTour->seller_id = Auth::id();
 
 		$currTour->save();
 

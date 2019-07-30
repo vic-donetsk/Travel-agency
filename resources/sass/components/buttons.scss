@@ -1,5 +1,6 @@
 .single-btn {
 	@extend %button;
+    text-decoration: none;
 
     &.mod_blue {
 	    background-color: $accent-light-blue;

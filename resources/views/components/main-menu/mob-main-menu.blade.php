@@ -12,7 +12,7 @@
                 
             </div>
 
-            <div class="single-btn mod_green mod_max-size"><i class="fas fa-plus"></i>&nbsp; Добавить тур</div>
+            <a href="{{route('trip_create')}}" class="single-btn mod_green mod_max-size"><i class="fas fa-plus"></i>&nbsp; Добавить тур</a>
         </div>
     </div>
 </div>

@@ -53,13 +53,11 @@ Route::get('/trip_create', 'TripEditController@edit'
     // 	]);
 )->name('trip_create');
 
-// Route::get('/login', function () {
-//     return view('login.login');
-// })->name('login');
 
-// Route::get('/password_restore', function () {
-//     return view('restore.password_restore');
-// })->name('password_restore');
+
+
+
+
 
 Route::get('/test', function () {
     return view('welcome');
