@@ -19,8 +19,6 @@ class UserEditController extends Controller
 	// сохранение данных пользователя и переход на главную страницу
 	public function store (Request $request, int $id ) {
 
-		$file = $request->file('userFace');
-
 		$validatedData = Validator::make($request->all(), 
 			[
 			 'firstName' => 'required|alpha_dash|max:15',
@@ -41,9 +39,9 @@ class UserEditController extends Controller
 			// формируем имя в соответствии с пользователем
 			$fileName = 'user' . $id . '.' . $fileExt; 
 			// копируем сам файл
-			$file->move(public_path() . '/img' , $fileName);
+			$file->move(public_path() . '/storage' , $fileName);
 			// формируем путь для сохранения в базе
-			$fullFileName = '/img/' . $fileName;
+			$fullFileName = '/storage/' . $fileName;
 		} 
 
 		// сохраняем данные в БД

@@ -8,6 +8,8 @@ use App\Models\Tour;
 
 class Media extends Model
 {
+	protected $fillable = ['path'];
+
     public function main_img_tours()
     {
         return $this->hasMany(Tour::class, 'main_img_id');

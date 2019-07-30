@@ -40,7 +40,7 @@ class SellerController extends Controller
     	// выборка туров для вывода
     	$showClasses = ['main-trip', 'main-trip', 'main-trip', 'main-trip', 'main-trip', 'hidden-on-mobile-trip','hidden-on-mobile-trip', 'hidden-on-mobile-trip','hidden-on-tablet-trip']; 
 
-    	$allSellerTours = Tour::with('type','main_img', 'hotel', 'start_location', 'start_location.city')->where('seller_id', $sellerId)->latest()->get();
+    	$allSellerTours = Tour::with('type','main_img', 'hotel', 'start_location', 'start_location.city')->where('seller_id', $sellerId)->latest('updated_at')->get();
 
     	if ($typeId != 0) {
     		$allSellerTours = $allSellerTours->where('type_id', $typeId);

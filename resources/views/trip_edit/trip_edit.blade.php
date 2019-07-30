@@ -21,7 +21,7 @@
 			<h1 class="tripEdit_title mod_header-3">{{ $page_title }}</h1>
 		</div>
 		
-		<form method="post" action="{{ route( 'trip_store', ['id' => $currTour->id] ) }}" class="tripEdit_container" >
+		<form method="post" action="{{ route( 'trip_store', ['id' => $currTour->id] ) }}" class="tripEdit_container" enctype="multipart/form-data">
 			{{ csrf_field() }} 
 
 			<div class="tripEdit_data">
@@ -37,7 +37,7 @@
 					<div class="filtersBlock_item">
 						<div class="dataBlock_item-title mod_header-4">Страна</div>
 						<div class="select_wrapper small-input">
-							<select class="dataBlock_item-select mod_text-2" name="country">
+							<select class="dataBlock_item-select mod_text-2" name="country_id">
 								@empty($currTour->country->name)
 									<option class="psevdoPH" selected>Укажите страну отдыха</option> 
 								@endempty
@@ -57,7 +57,7 @@
 					<div class="filtersBlock_item">
 						<div class="dataBlock_item-title mod_header-4">Класс отеля</div>
 						<div class="select_wrapper small-input">
-							<select class="dataBlock_item-select mod_text-2" name="hotel">
+							<select class="dataBlock_item-select mod_text-2" name="hotel_id">
 								@empty($currTour->hotel->name)
 									<option class="psevdoPH" selected>Укажите класс отеля</option> 
 								@endempty
@@ -77,7 +77,7 @@
 					<div class="filtersBlock_item">
 						<div class="dataBlock_item-title mod_header-4">Категория тура</div>
 						<div class="select_wrapper large-input">
-							<select class="dataBlock_item-select mod_text-2" name="category">
+							<select class="dataBlock_item-select mod_text-2" name="category_id">
 								@empty($currTour->category->name)
 									<option class="psevdoPH" selected>Укажите категорию</option> 
 								@endempty
@@ -97,7 +97,7 @@
 					<div class="filtersBlock_item">
 						<div class="dataBlock_item-title mod_header-4">Укажите тип тура</div>
 						<div class="select_wrapper small-input">
-							<select class="dataBlock_item-select mod_text-2" name="type">
+							<select class="dataBlock_item-select mod_text-2" name="type_id">
 								@empty($currTour->type->name)
 									<option class="psevdoPH" selected>Укажите категорию</option> 
 								@endempty
@@ -123,7 +123,7 @@
 					<div class="filtersBlock_item">
 						<div class="dataBlock_item-title mod_header-4">Питание</div>
 						<div class="select_wrapper small-input">
-							<select class="dataBlock_item-select mod_text-2" name="diet">
+							<select class="dataBlock_item-select mod_text-2" name="diet_id">
 								@empty($currTour->diet->name)
 									<option class="psevdoPH" selected>Укажите категорию</option> 
 								@endempty
@@ -143,17 +143,17 @@
 					<div class="filtersBlock_item">
 						<div class="dataBlock_item-title mod_header-4">Доступно для детей</div>
 						<div class="select_wrapper small-input">
-							<select class="dataBlock_item-select mod_text-2" name="children">
+							<select class="dataBlock_item-select mod_text-2" name="for_children">
 								@empty($currTour->for_children)
 									<option class="psevdoPH" selected>-</option> 
 								@endempty
-									<option value="true"
+									<option value=1
 										@if ($currTour->for_children)
 										 selected
 										@endif
 									> Да
 									</option>
-									<option value="false"
+									<option value=0
 										@if ((!$currTour->for_children) and (isset($currTour->for_children)))
 										 selected
 										@endif
@@ -185,11 +185,13 @@
 					</label>
 
 					@for ($i = 0; $i < 9; $i++)
-						<input id="{{'mediaInput' . $i}}" class="inputImage" type="file" accept="image/*"  name="{{'mediaIinput' . $i}}">
-						<label for="{{'mediaInput' . $i}}" class="fotos_item">
+						<input id="{{'mediaInput' . ($i+1)}}" class="inputImage" type="file" accept="image/*"  name="{{'mediaIinput' . ($i+1)}}">
+						<label for="{{'mediaInput' . ($i+1)}}" class="fotos_item">
 								<img src="
 									@isset($currTour->media[$i])
 										{{$currTour->media[$i]->path}}
+									@else
+										/img/empty-pic.png
 									@endisset										
 								" class="img" alt="">
 						</label>

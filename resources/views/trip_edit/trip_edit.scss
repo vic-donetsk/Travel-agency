@@ -205,6 +205,7 @@ body, body * {
 		border: none;
 		outline: none;
 		background: #f6fafb;
+		cursor: pointer;
 
 		@include media(">=phone", "<desktop") {
 			margin: 5px;
