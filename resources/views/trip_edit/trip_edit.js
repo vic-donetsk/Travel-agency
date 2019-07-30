@@ -1,3 +1,3 @@
-$(".select").click( (e) => {
-	$(e.delegateTarget).removeClass('psevdoPH').find('.deleted').remove();
+$(".dataBlock_item-select").click( function(e) {
+	$(this).children('.psevdoPH').attr('hidden', true);
 });

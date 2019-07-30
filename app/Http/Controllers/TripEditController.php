@@ -15,20 +15,32 @@ use App\Models\Diet;
 
 class TripEditController extends Controller
 {
-    public function edit (Request $request, int $id) {
+    public function edit (Request $request, int $id = null) {
 
-    	$currentTour = Tour::find($id);
+    	if ($id) {
+    	//редактирование тура
+	    	$currentTour = Tour::find($id);
 
-    	// редактируем только свои туры
-    	if (Auth::id() != $currentTour->seller_id) {
-    		return redirect(route('main_page'));
-    	}
+	    	// редактируем только свои туры
+	    	if (Auth::id() != $currentTour->seller_id) {
+	    		return redirect(route('main_page'));
+	    	}
 
-    	$countryList = Country::where('name', '!=', $currentTour->country->name)->get()->sortBy('name');
-    	$hotelList = Hotel::where('name', '!=', $currentTour->hotel->name)->get()->sortBy('name');
-    	$typeList = Type::where('name', '!=', $currentTour->type->name)->get();
-    	$categoryList = Category::where('name', '!=', $currentTour->category->name)->get()->sortBy('name');
-    	$dietList = Diet::where('name', '!=', $currentTour->diet->name)->get()->sortBy('name');
+    		// подготовка изображений
+    		$currentTour->main_img->path = $this->imagePath($currentTour->main_img->path);
+    		foreach ($currentTour->media as $oneMedia) {
+    			$oneMedia->path = $this->imagePath($oneMedia->path);
+    		}
+
+	    } else {
+	    	$currentTour = new Tour;
+	    }
+
+    	$countryList = Country::all()->sortBy('name');
+    	$hotelList = Hotel::all()->sortBy('name');
+    	$typeList = Type::all();
+    	$categoryList = Category::all()->sortBy('name');
+    	$dietList = Diet::all()->sortBy('name');
 
 
 
@@ -36,23 +48,16 @@ class TripEditController extends Controller
     	[ 'page_title' => 'Редактор объявления',
     	  'currTour' => $currentTour,
     	  'countryList' => $countryList,
-    	  'hotel' => $currentTour->hotel->name,
     	  'hotelList' => $hotelList,
-    	  'category' => $currentTour->category->name,
     	  'categoryList' => $categoryList,
-    	  'type' => $currentTour->type->name,
     	  'typeList' => $typeList,
-    	  'price' => $currentTour->price,
-    	  'diet' => $currentTour->diet->name,
     	  'dietList' => $dietList,
-    	  'children' => 'Да',
-    	  'children_list' => ['Да','Нет'],
-    	  'description' => $currentTour->description,
     	]);
     }
 
     public function store(Request $request, int $id) {
-    	dd($request);
+    	
+    	dd($request->all());
 
     	return redirect(route('seller_page', ['id' => Auth::id()]));
     }

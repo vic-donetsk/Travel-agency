@@ -31,31 +31,27 @@ Route::get('/purchases', 'PurchaseController@index')->name('purchases_page');
 
 
 // редактирование тура
-Route::get('/trip_edit/{id}', 'TripEditController@edit')->name('trip_edit');
+Route::get('/trip_edit/{id?}', 'TripEditController@edit')->name('trip_edit');
 // сохранение тура 
-Route::post('/trip_edit/{id}', 'TripEditController@store')->name('trip_store');
+Route::post('/trip_store/{id}', 'TripEditController@store')->name('trip_store');
 // удаление тура
 Route::get('/trip_delete/{id}', 'TripEditController@delete')->name('trip_delete');
 
-Route::get('/trip_create', function () {
-    return view('trip_edit.trip_edit', 
-    	[ 'page_title' => 'Новое объявление',
-    	  'country' => 'Укажите страну отдыха',
-    	  'countryList' => ['Италия','Испания','Мальдивы','Россия','Куба','Египет','Турция','Индия','Кипр'],
-    	  'hotel' => 'Укажите класс отеля',
-    	  'hotelList' => ['5*','4*','3*','2*','на лавочке'],
-    	  'category' => 'Укажите категорию',
-    	  'categoryList' => ['Автобусные туры','Авиационные туры','Круизы'],
-    	  'type' => 'Укажите тип тура',
-    	  'typeList' => ['Индустриальный', 'Шоппинг', 'Экстрим', 'Luxury', 'Всё включено', 'Программы развлечений', 'Пляжный', 'Гастрономический', 'SPA', 'Семейный', 'Спокойный отдых'],
-    	  'price' => '12345',
-    	  'diet' => 'Укажите питание в туре',
-    	  'dietList' => ['Завтрак','Завтрак и ужин','Без питания'],
-    	  'children' => '',
-    	  'children_list' => ['Да','Нет'],
-    	  'description' => ''
-    	]);
-})->name('trip_create');
+Route::get('/trip_create', 'TripEditController@edit'
+    // return view('trip_edit.trip_edit', 
+    // 	[ 'page_title' => 'Новое объявление',
+    //       'currTour' => null,
+    // 	  'countryList' => ['Италия','Испания','Мальдивы','Россия','Куба','Египет','Турция','Индия','Кипр'],
+    // 	  'hotelList' => ['5*','4*','3*','2*','на лавочке'],
+    // 	  'categoryList' => ['Автобусные туры','Авиационные туры','Круизы'],
+    // 	  'typeList' => ['Индустриальный', 'Шоппинг', 'Экстрим', 'Luxury', 'Всё включено', 'Программы развлечений', 'Пляжный', 'Гастрономический', 'SPA', 'Семейный', 'Спокойный отдых'],
+    // 	  'price' => '12345',
+    // 	  'dietList' => ['Завтрак','Завтрак и ужин','Без питания'],
+    // 	  'children' => '',
+    // 	  'children_list' => ['Да','Нет'],
+    // 	  'description' => ''
+    // 	]);
+)->name('trip_create');
 
 // Route::get('/login', function () {
 //     return view('login.login');
