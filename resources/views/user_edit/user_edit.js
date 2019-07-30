@@ -18,5 +18,4 @@ $('#userFace').change(function () {
   } else {
     preview.src = "user.png";
   }
-  debugger;
 });

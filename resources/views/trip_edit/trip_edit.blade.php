@@ -176,20 +176,23 @@
 				<div class="dataBlock_item-title mod_foto-title mod_header-4">Фотографии</div>
 
 				<div class="fotos">
-						<div class="fotos_item">
-							@isset($currTour->main_img)
-								<img src="{{$currTour->main_img->path}}" class="img" alt="foto">
-							@endisset
-						</div>
 
+					<input id="mediaInput" class="inputImage" type="file" accept="image/*"  name="mediaInput">
+					<label for="mediaInput" class="fotos_item">
+						@isset($currTour->main_img)
+							<img id="mediaImage0" src="{{$currTour->main_img->path}}" class="img" alt="foto">
+						@endisset
+					</label>
 
 					@for ($i = 0; $i < 9; $i++)
-						<div class="fotos_item">
-							@isset($currTour->media[$i])
-								<img src="{{$currTour->media[$i]->path}}" class="img" alt="foto">
-							@endisset
-						</div>
-
+						<input id="{{'mediaInput' . $i}}" class="inputImage" type="file" accept="image/*"  name="{{'mediaIinput' . $i}}">
+						<label for="{{'mediaInput' . $i}}" class="fotos_item">
+								<img src="
+									@isset($currTour->media[$i])
+										{{$currTour->media[$i]->path}}
+									@endisset										
+								" class="img" alt="">
+						</label>
 					@endfor
 				</div>
 				
