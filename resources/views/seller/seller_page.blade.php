@@ -58,6 +58,9 @@
 			@endif
 
 		</div>
+
+		@include('seller.modal_delete')
+
 	</div>
 
 	@include('components.footer.footer')

@@ -46,14 +46,12 @@ class TripEditController extends Controller
 	    	$currentTour = new Tour;
 	    	$currentTour->id = null;
 	    }
-    		
 
     	$countryList = Country::all()->sortBy('name');
     	$hotelList = Hotel::all()->sortBy('name');
     	$typeList = Type::all();
     	$categoryList = Category::all()->sortBy('name');
     	$dietList = Diet::all()->sortBy('name');
-
 
     	return view('trip_edit.trip_edit', 
     	[ 'page_title' => 'Редактор объявления',
@@ -157,10 +155,20 @@ class TripEditController extends Controller
 
 		$currTour->save();
 
-    	return redirect(route('seller_page', ['id' => Auth::id()]));
+    	return redirect(route('seller_page', ['sellerId' => Auth::id()]));
     }
 
     public function delete (Request $request, int $id) {
+
+    	$deletedTour = Tour::find($id);
+
+    	if (Auth::id() == $deletedTour->seller_id) {
+
+    		$deletedTour->delete();
+
+    	}
+
+    	return redirect(route('seller_page', ['sellerId' => Auth::id()]));
     }
 
 }

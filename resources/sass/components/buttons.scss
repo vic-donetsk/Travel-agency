@@ -18,6 +18,10 @@
         box-shadow:       none;
     }
 
+    &.mod_grey {
+        background-color: #c1c1c1;
+    }
+
  	&.mod_white {
         background-color: $main-light;
         color:            $accent-light-blue;
@@ -41,6 +45,9 @@
     }
     &.mod_180 {
 		width: 180px;
+    }    
+    &.mod_200 {
+        width: 200px;
     }
     &.mod_240 {
 		width: 240px;

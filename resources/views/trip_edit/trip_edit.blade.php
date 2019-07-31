@@ -242,13 +242,9 @@
 						</label>
 					@endfor
 				</div>
-				
 			</div>
-
 			<button type="submit" class="tripEdit_submit single-btn mod_blue">Сохранить изменения</button>
-
 		</form>
-
 
 	</section>
 

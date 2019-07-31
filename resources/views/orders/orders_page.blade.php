@@ -29,7 +29,13 @@
 					<div class="oneorder_header mod_header-4">
 						<div class="oneorder_number">№ {{$oneOrder->id}}</div>
 						<div class="oneorder_date">{{$oneOrder->created_at->format('d.m.Y')}}</div>
-						<div class="oneorder_owner">{{$oneOrder->buyer->first_name . ' ' . $oneOrder->buyer->last_name}}</div>
+						<div class="oneorder_owner">
+						  @if (Route::currentRouteName() == 'orders_page')
+							{{$oneOrder->buyer->first_name . ' ' . $oneOrder->buyer->last_name}}
+						  @else 
+							{{$oneOrder->seller->first_name . ' ' . $oneOrder->seller->last_name}}
+						  @endif
+						</div>
 						<div class="oneorder_details">Подробности</div>
 						<div class="oneorder_details-sign"><i class="fas fa-angle-down"></i></div>
 					</div>

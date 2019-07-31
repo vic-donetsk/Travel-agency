@@ -93,10 +93,14 @@ $(document).ready( ()=>{
 			});
 	});
 
-	// 
-	$('.trip-card').click((e) => {
-		let tourId = $(e.delegateTarget).data('id');
-		window.location.pathname = "/tour/" + tourId;
+	// обработка нажатия на карту тура
+	$('.trip-card').click((e) => { 
+		// отсекаем нажатие на удаление в режиме продавца
+		if(!$(e.target).hasClass('seller-choice_delete') && 
+		   !$(e.target).parent().hasClass('seller-choice_delete')) {
+			let tourId = $(e.delegateTarget).data('id');
+			window.location.pathname = "/tour/" + tourId;
+		}
 	});
 
 });

@@ -5,6 +5,7 @@ $('.dataBlock_item-input, .dataBlock_item-textarea').focus( (e)=>{
 
 
 // убирает плейсхолдер с незаполненных полей типа select
+// при активации поля
 $(".dataBlock_item-select").click( function(e) {
 	$(this).children('.psevdoPH').attr('hidden', true);
 });
@@ -26,4 +27,6 @@ $('.inputImage').change(function () {
     preview.attr('src', "/img/user.png");
   }
 });
+
+
 

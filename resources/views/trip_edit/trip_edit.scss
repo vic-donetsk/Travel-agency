@@ -22,7 +22,6 @@ body, body * {
 	}
 }
 
-
 .tripEdit_data {
 	@include flex;
 
@@ -282,6 +281,5 @@ body, body * {
 	@include font-text(12px);
 	color: $extra-grey-5;
 }
-
 
 

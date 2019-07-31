@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 use App\Models\Hotel;
 use App\Models\Category;
@@ -18,6 +19,8 @@ use App\Models\Comment;
 
 class Tour extends Model
 {
+    use SoftDeletes;
+    
     // чтобы все остальные поля были доступными для заполнения
     protected $guarded = ['created_at', 'updated_at'];
 

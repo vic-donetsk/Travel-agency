@@ -30,3 +30,17 @@ $('.seller-page_input').click( (e)=> {
 		window.location.href = pathString;
 	}
 });
+
+$('.seller-choice_delete').click( function(e) {
+	let deletedTour = $(e.delegateTarget).data('id');
+	$('.modal-layout, .modal-close, .modal-window').fadeIn();
+	$('#modal-deleted').click( function() {
+		window.location.pathname = `/trip_delete/${deletedTour}`;
+	});
+	$('.modal-layout, .modal-close, .modal-window').click( function(e) {
+		$('.modal-layout, .modal-close, .modal-window').fadeOut();
+
+
+	});
+
+});

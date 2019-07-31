@@ -36,22 +36,8 @@ Route::get('/trip_edit/{id?}', 'TripEditController@edit')->name('trip_edit');
 Route::post('/trip_store/{id?}', 'TripEditController@store')->name('trip_store');
 // удаление тура
 Route::get('/trip_delete/{id}', 'TripEditController@delete')->name('trip_delete');
-
-Route::get('/trip_create', 'TripEditController@create'
-    // return view('trip_edit.trip_edit', 
-    // 	[ 'page_title' => 'Новое объявление',
-    //       'currTour' => null,
-    // 	  'countryList' => ['Италия','Испания','Мальдивы','Россия','Куба','Египет','Турция','Индия','Кипр'],
-    // 	  'hotelList' => ['5*','4*','3*','2*','на лавочке'],
-    // 	  'categoryList' => ['Автобусные туры','Авиационные туры','Круизы'],
-    // 	  'typeList' => ['Индустриальный', 'Шоппинг', 'Экстрим', 'Luxury', 'Всё включено', 'Программы развлечений', 'Пляжный', 'Гастрономический', 'SPA', 'Семейный', 'Спокойный отдых'],
-    // 	  'price' => '12345',
-    // 	  'dietList' => ['Завтрак','Завтрак и ужин','Без питания'],
-    // 	  'children' => '',
-    // 	  'children_list' => ['Да','Нет'],
-    // 	  'description' => ''
-    // 	]);
-)->name('trip_create');
+// создание тура
+Route::get('/trip_create', 'TripEditController@create')->name('trip_create');
 
 
 

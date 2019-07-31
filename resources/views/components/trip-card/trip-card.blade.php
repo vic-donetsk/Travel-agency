@@ -1,4 +1,4 @@
- <div class="trip-card {{ $oneTour['showClass'] }}" data-id={{$oneTour['id']}}> 
+ <div class="trip-card {{ $oneTour['showClass'] }}" data-id="{{$oneTour['id']}}"> 
 <!-- hover продавца - докинуть класс seller-hover
      hover клиента - докинуть класс client-hover -->
     <div class="trip-card_picture">
@@ -7,9 +7,9 @@
                 <a href="{{route('trip_edit', ['id' => $oneTour['id']])}}" class="seller-choice">
                   <img class="seller-choice_image" src="/img/pencil-edit-button.svg" alt="">
                 </a>
-                <a href="{{route('trip_delete', ['id' => $oneTour['id']])}}" class="seller-choice">
+                <div class="seller-choice seller-choice_delete" data-id="{{$oneTour['id']}}">
                   <img class="seller-choice_image" src="/img/rubbish-bin.svg" alt="">
-                </a>
+                </div>
               </div>
     
       <div class="trip-condition_wrapper">

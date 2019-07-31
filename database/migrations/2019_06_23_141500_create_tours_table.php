@@ -36,6 +36,7 @@ class CreateToursTable extends Migration
             $table->boolean('isRecommended')->default(false);  // включать в рекомендуемые
             $table->boolean('isHot')->default(false);  // включать в горящие
 
+            $table->softDeletes();
             $table->timestamps();
 
             // внешние ключи
