@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 use App\Models\Tour;
 use App\Models\Country;
@@ -13,6 +14,8 @@ use App\Models\Type;
 use App\Models\Category;
 use App\Models\Diet;
 use App\Models\Media;
+
+use Carbon\Carbon;
 
 class TripEditController extends Controller
 {
@@ -41,19 +44,15 @@ class TripEditController extends Controller
 
 	    } else {
 	    	$currentTour = new Tour;
-	    	$currentTour->seller_id = Auth::id();
-	    	$currentTour->save();
-	    	
-	    	dd($currentTour);
-
+	    	$currentTour->id = null;
 	    }
+    		
 
     	$countryList = Country::all()->sortBy('name');
     	$hotelList = Hotel::all()->sortBy('name');
     	$typeList = Type::all();
     	$categoryList = Category::all()->sortBy('name');
     	$dietList = Diet::all()->sortBy('name');
-
 
 
     	return view('trip_edit.trip_edit', 
@@ -67,12 +66,42 @@ class TripEditController extends Controller
     	]);
     }
 
-    public function store(Request $request, int $id) {
-    	
-    	//dd($request->all());
-    	$currTour = Tour::find($id);
+    public function store(Request $request, int $id = null) {
 
     	$allOptions = $request->all();
+
+   //  	$validatedData = Validator::make($allOptions, 
+			// [
+			//  'name' => 'required|max:30',
+   //      	 'country_id' => 'required',
+   //      	 'hotel_id' => 'required',
+   //      	 'category_id' => 'required',
+   //      	 'type_id' => 'required',
+   //      	 'price' => 'required|integer|min:1',
+   //      	 'diet' => 'required',
+   //      	 'for_children' => 'required',
+   //      	 'description' => 'required'
+   //       	],
+   //       	[ 
+   //       	 'required' => 'Это поле должно быть заполнено',
+   //      	 'integer' => 'Укажите числовое значение стоимости',
+   //      	 'price.min' => 'Стоимость не может быть меньше :min',
+   //       	 'name.max' => 'Название тура - не более :max символов',
+   //      	])->validate();
+
+    	//dd($request->all());
+    	
+    	if ($id) {
+    		// редактируемый тур
+    		$currTour = Tour::find($id);
+    	} else {
+    		$currTour = new Tour;
+    		// далее идут тестовые значения, поскольку форма ввода недоработана,
+    		// их надо будет потом убрать, когда в форме будут эти поля
+    		$currTour->start_location_id = 15;
+    		$currTour->started_at = Carbon::now()->addDays(3); 
+    		$currTour->finished_at = Carbon::now()->addDays(6);  
+    	}
 
     	$filePath = public_path() . '/storage';
 
@@ -113,6 +142,14 @@ class TripEditController extends Controller
     			$currTour->$key = $value;
     		}
     	}
+
+    	$currTour->seller_id = Auth::id();
+		// если запись новая, предварительно получаем id
+		// для формирования связей tour-media
+		if (!$id) {
+			$currTour->save();
+		}
+
     	// открепляем все замененные картинки
     	$currTour->media()->detach($replacedMedia);
     	// и прикрепляем новые

@@ -67,6 +67,9 @@ body, body * {
   			line-height: 30px;
   			padding: 0 20px;
   			width: 100%;
+  			&.is-invalid {
+			  	border: 1px solid red;
+			}
 		}
 
 		.dataBlock_item-select {
@@ -85,6 +88,10 @@ body, body * {
 			outline: none;
 			@include media(">=phone", "<=tablet") {
 				height: 260px;
+			}
+
+			&.is-invalid {
+			  	border: 1px solid red;
 			}
 		}
 
@@ -275,4 +282,6 @@ body, body * {
 	@include font-text(12px);
 	color: $extra-grey-5;
 }
+
+
 

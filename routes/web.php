@@ -33,7 +33,7 @@ Route::get('/purchases', 'PurchaseController@index')->name('purchases_page');
 // редактирование тура
 Route::get('/trip_edit/{id?}', 'TripEditController@edit')->name('trip_edit');
 // сохранение тура 
-Route::post('/trip_store/{id}', 'TripEditController@store')->name('trip_store');
+Route::post('/trip_store/{id?}', 'TripEditController@store')->name('trip_store');
 // удаление тура
 Route::get('/trip_delete/{id}', 'TripEditController@delete')->name('trip_delete');
 

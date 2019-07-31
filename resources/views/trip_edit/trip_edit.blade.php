@@ -28,138 +28,176 @@
 				<div class="dataBlock filtersBlock">
 					<div class="filtersBlock_item">
 						<div class="dataBlock_item-title mod_header-4">Название объявления</div>
-						<input type="text" class="dataBlock_item-input large-input mod_text-2" name="name"
+						<input type="text" class="dataBlock_item-input large-input mod_text-2 @error('name') is-invalid @enderror" name="name"
 						@isset($currTour->name) 
 							value="{{ $currTour->name }}"
 						@endisset
 						placeholder="Введите название объявления">
+						@error('name')
+						    <div class="alert-error mod_text-1">{{ $message }}</div>
+						@enderror
 					</div>
 					<div class="filtersBlock_item">
 						<div class="dataBlock_item-title mod_header-4">Страна</div>
 						<div class="select_wrapper small-input">
-							<select class="dataBlock_item-select mod_text-2" name="country_id">
+							<select class="dataBlock_item-select mod_text-2 @error('country_id') is-invalid @enderror" name="country_id">
 								@empty($currTour->country->name)
-									<option class="psevdoPH" selected>Укажите страну отдыха</option> 
+									<option class="psevdoPH" selected value=''>Укажите страну отдыха</option> 
 								@endempty
 								@foreach ($countryList as $oneCountry)
 									<option 
 										value="{{$oneCountry->id}}"
-										@if ($oneCountry->id == $currTour->country->id)
-										 selected
-										@endif
+										@isset($currTour->hotel)
+											@if ($oneCountry->id == $currTour->country->id)
+											 selected
+											@endif
+										@endisset
 									>
 										{{$oneCountry->name}}
 									</option>
 								@endforeach
 							</select>
+							@error('country_id')
+							    <div class="alert-error mod_text-1">{{ $message }}</div>
+							@enderror
 						</div>
 					</div>
 					<div class="filtersBlock_item">
 						<div class="dataBlock_item-title mod_header-4">Класс отеля</div>
 						<div class="select_wrapper small-input">
-							<select class="dataBlock_item-select mod_text-2" name="hotel_id">
+							<select class="dataBlock_item-select mod_text-2 @error('hotel_id') is-invalid @enderror" name="hotel_id">
 								@empty($currTour->hotel->name)
-									<option class="psevdoPH" selected>Укажите класс отеля</option> 
+									<option class="psevdoPH" selected value=''>Укажите класс отеля</option> 
 								@endempty
 								@foreach ($hotelList as $oneHotel)
 									<option 
 										value="{{$oneHotel->id}}"
-										@if ($oneHotel->id == $currTour->hotel->id)
-										 selected
-										@endif
+										@isset($currTour->hotel)
+											@if ($oneHotel->id == $currTour->hotel->id)
+											 selected
+											@endif
+										@endisset
 									>
 										{{$oneHotel->name}}
 									</option>
 								@endforeach
 							</select>
+							@error('hotel_id')
+							    <div class="alert-error mod_text-1">{{ $message }}</div>
+							@enderror
 						</div>
 					</div>
 					<div class="filtersBlock_item">
 						<div class="dataBlock_item-title mod_header-4">Категория тура</div>
 						<div class="select_wrapper large-input">
-							<select class="dataBlock_item-select mod_text-2" name="category_id">
+							<select class="dataBlock_item-select mod_text-2 @error('category_id') is-invalid @enderror" name="category_id">
 								@empty($currTour->category->name)
-									<option class="psevdoPH" selected>Укажите категорию</option> 
+									<option class="psevdoPH" selected value=''>Укажите категорию</option> 
 								@endempty
 								@foreach ($categoryList as $oneCategory)
 									<option 
 										value="{{$oneCategory->id}}"
-										@if ($oneCategory->id == $currTour->category->id)
-										 selected
-										@endif
+										@isset($currTour->category)
+											@if ($oneCategory->id == $currTour->category->id)
+											 selected
+											@endif
+										@endisset
 									>
 										{{$oneCategory->name}}
 									</option>
 								@endforeach
 							</select>
+							@error('category_id')
+							    <div class="alert-error mod_text-1">{{ $message }}</div>
+							@enderror
 						</div>
 					</div>
 					<div class="filtersBlock_item">
 						<div class="dataBlock_item-title mod_header-4">Укажите тип тура</div>
 						<div class="select_wrapper small-input">
-							<select class="dataBlock_item-select mod_text-2" name="type_id">
+							<select class="dataBlock_item-select mod_text-2 @error('type_id') is-invalid @enderror" name="type_id">
 								@empty($currTour->type->name)
-									<option class="psevdoPH" selected>Укажите категорию</option> 
+									<option class="psevdoPH" selected value=''>Укажите тип тура</option> 
 								@endempty
 								@foreach ($typeList as $oneType)
 									<option 
 										value="{{$oneType->id}}"
-										@if ($oneType->id == $currTour->type->id)
-										 selected
-										@endif
+										@isset($currTour->type)
+											@if ($oneType->id == $currTour->type->id)
+											 selected
+											@endif
+										@endisset
 									>
 										{{$oneType->name}}
 									</option>
 								@endforeach
 							</select>
+							@error('type_id')
+							    <div class="alert-error mod_text-1">{{ $message }}</div>
+							@enderror
 						</div>
 					</div>
 					<div class="filtersBlock_item">
 						<div class="dataBlock_item-title mod_header-4">Цена за человека</div>
 						<div class="price">
-							<input type="text" class="dataBlock_item-input small-input mod_text-2" name="price" id="price" value="{{ $currTour->price }}" placeholder="Укажите цену">
+							<input type="text" class="dataBlock_item-input small-input mod_text-2  @error('price') is-invalid @enderror" name="price" id="price" value="{{ $currTour->price }}" placeholder="Укажите цену">
+							@error('price')
+							    <div class="alert-error mod_text-1">{{ $message }}</div>
+							@enderror
 						</div>
 					</div>
 					<div class="filtersBlock_item">
 						<div class="dataBlock_item-title mod_header-4">Питание</div>
 						<div class="select_wrapper small-input">
-							<select class="dataBlock_item-select mod_text-2" name="diet_id">
+							<select class="dataBlock_item-select mod_text-2 @error('diet_id') is-invalid @enderror" name="diet_id">
 								@empty($currTour->diet->name)
-									<option class="psevdoPH" selected>Укажите категорию</option> 
+									<option class="psevdoPH" selected value=''>Укажите питание в туре</option> 
 								@endempty
 								@foreach ($dietList as $oneDiet)
 									<option 
 										value="{{$oneDiet->id}}"
-										@if ($oneDiet->id == $currTour->diet->id)
-										 selected
-										@endif
+										@isset($currTour->diet)
+											@if ($oneDiet->id == $currTour->diet->id)
+											 selected
+											@endif
+										@endisset
 									>
 										{{$oneDiet->name}}
 									</option>
 								@endforeach
 							</select>
+							@error('diet_id')
+							    <div class="alert-error mod_text-1">{{ $message }}</div>
+							@enderror
 						</div>
 					</div>
 					<div class="filtersBlock_item">
 						<div class="dataBlock_item-title mod_header-4">Доступно для детей</div>
 						<div class="select_wrapper small-input">
-							<select class="dataBlock_item-select mod_text-2" name="for_children">
+							<select class="dataBlock_item-select mod_text-2 @error('for_children') is-invalid @enderror" name="for_children">
 								@empty($currTour->for_children)
-									<option class="psevdoPH" selected>-</option> 
+									<option class="psevdoPH" selected value=''>-</option> 
 								@endempty
 									<option value=1
-										@if ($currTour->for_children)
-										 selected
-										@endif
+										@isset($currTour->for_children)
+											@if ($currTour->for_children)
+											 selected
+											@endif
+										@endisset
 									> Да
 									</option>
 									<option value=0
-										@if ((!$currTour->for_children) and (isset($currTour->for_children)))
-										 selected
-										@endif
+										@isset($currTour->for_children)
+											@if (!$currTour->for_children)
+											 selected
+											@endif
+										@endisset
 									> Нет
 									</option>
 							</select>
+							@error('for_children')
+							    <div class="alert-error mod_text-1">{{ $message }}</div>
+							@enderror
 						</div>
 					</div>
 				</div>
@@ -167,7 +205,10 @@
 				<div class="dataBlock describeBlock">
 					<div class="dataBlock_item">
 						<div class="dataBlock_item-title mod_header-4">Описание</div>
-						<textarea class="dataBlock_item-textarea mod_text-1" placeholder="Опишите Ваш товар" name="description">{{$currTour->description}}</textarea>
+						<textarea class="dataBlock_item-textarea mod_text-1 @error('description') is-invalid @enderror" placeholder="Опишите Ваш товар" name="description">{{$currTour->description}}</textarea>
+						@error('description')
+						    <div class="alert-error mod_text-1">{{ $message }}</div>
+						@enderror
 					</div>
 				</div>
 			</div>
@@ -179,9 +220,13 @@
 
 					<input id="mediaInput0" class="inputImage" type="file" accept="image/*"  name="mediaInput0">
 					<label for="mediaInput0" class="fotos_item">
+						<img src="
 						@isset($currTour->main_img)
-							<img src="{{$currTour->main_img->path}}" class="img" alt="foto">
+							{{$currTour->main_img->path}}
+						@else
+							/img/empty-pic.png
 						@endisset
+						" class="img" alt="foto">
 					</label>
 
 					@for ($i = 0; $i < 9; $i++)

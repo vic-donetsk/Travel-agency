@@ -1,3 +1,9 @@
+// убирает красную рамку вокруг поля с ошибкой
+$('.dataBlock_item-input, .dataBlock_item-textarea').focus( (e)=>{
+  $(e.target).removeClass('is-invalid');
+});
+
+
 // убирает плейсхолдер с незаполненных полей типа select
 $(".dataBlock_item-select").click( function(e) {
 	$(this).children('.psevdoPH').attr('hidden', true);
