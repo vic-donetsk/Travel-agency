@@ -162,7 +162,12 @@ class TripEditController extends Controller
 
     	$deletedTour = Tour::find($id);
 
+
+
     	if (Auth::id() == $deletedTour->seller_id) {
+
+            $deletedTour->orders()->delete();
+            $deletedTour->comments()->delete();
 
     		$deletedTour->delete();
 
