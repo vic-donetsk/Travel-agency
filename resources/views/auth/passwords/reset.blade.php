@@ -8,6 +8,12 @@
 
     @include('components.main-menu.mob-main-menu')--}}
 
+
+@php
+    $segments = \Request::segments();
+    $token = end($segments);
+@endphp
+
     <section class="restore">
 
         <div class="restore_header">
@@ -24,6 +30,7 @@
 
             <form method="POST" action="{{ route('password.update') }}">
                         @csrf
+                <input type="hidden" name="token" value="{!! $token !!}">
                 <div class="login_input-container">
                     <div class="input_header mod_text-2"> E-Mail:</div>
                     <input id="email" type="email" class="restore_block-input mod_text-2 @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>

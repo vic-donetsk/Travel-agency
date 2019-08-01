@@ -103,7 +103,6 @@ $('body').on('click', '.active-filter', (e) => {
 		}
 	}
 	if (urlString) {
-		console.log(111111);
 		urlString = '?' + urlString.substr(0, urlString.length-1);
 	}
 	window.location.href = window.location.protocol + '//' + window.location.hostname + 

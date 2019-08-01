@@ -60,7 +60,8 @@ class LoginController extends Controller
 
         $request->session()->invalidate();
 
-        $comeBack = (URL::previous()) ?: '/';
+        //$comeBack = (URL::previous()) ?: '/';
+        $comeBack ='/';
 
         return $this->loggedOut($request) ?: redirect($comeBack);
     }

@@ -39,7 +39,6 @@ class ResetPasswordController extends Controller
     {
         $this->middleware('guest');
     }
-
     
     // переопределенная функция из Illuminate\Foundation\Auth\ResetsPasswords,
     // там confirmed и min:8 идут в обратном порядке, что некрасиво при валидации
@@ -58,10 +57,6 @@ class ResetPasswordController extends Controller
         ];
     }
 
-
-
-
-
     // переопределенная функция из Illuminate\Foundation\Auth\ResetsPasswords,
     // там она пустая
 
@@ -74,6 +69,8 @@ class ResetPasswordController extends Controller
     {
         return [
             'min' => 'длина пароля - не менее :min символов',
-            'confirmed' => 'пароль и подтверждение не совпадают'];
+            'required' => 'это поле обязательно к заполнению',
+            'confirmed' => 'пароль и подтверждение не совпадают',
+        ];
     }
 }

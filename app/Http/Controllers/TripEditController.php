@@ -68,26 +68,24 @@ class TripEditController extends Controller
 
     	$allOptions = $request->all();
 
-   //  	$validatedData = Validator::make($allOptions, 
-			// [
-			//  'name' => 'required|max:30',
-   //      	 'country_id' => 'required',
-   //      	 'hotel_id' => 'required',
-   //      	 'category_id' => 'required',
-   //      	 'type_id' => 'required',
-   //      	 'price' => 'required|integer|min:1',
-   //      	 'diet' => 'required',
-   //      	 'for_children' => 'required',
-   //      	 'description' => 'required'
-   //       	],
-   //       	[ 
-   //       	 'required' => 'Это поле должно быть заполнено',
-   //      	 'integer' => 'Укажите числовое значение стоимости',
-   //      	 'price.min' => 'Стоимость не может быть меньше :min',
-   //       	 'name.max' => 'Название тура - не более :max символов',
-   //      	])->validate();
-
-    	//dd($request->all());
+    	$validatedData = Validator::make($allOptions, 
+			[
+			 'name' => 'required|max:30',
+        	 'country_id' => 'required',
+        	 'hotel_id' => 'required',
+        	 'category_id' => 'required',
+        	 'type_id' => 'required',
+        	 'price' => 'required|integer|min:1',
+        	 'diet_id' => 'required',
+        	 'for_children' => 'required',
+        	 'description' => 'required'
+         	],
+         	[ 
+         	 'required' => 'Это поле должно быть заполнено',
+        	 'integer' => 'Укажите числовое значение стоимости',
+        	 'price.min' => 'Стоимость не может быть меньше :min',
+         	 'name.max' => 'Название тура - не более :max символов',
+        	])->validate();
     	
     	if ($id) {
     		// редактируемый тур

@@ -40,21 +40,11 @@ Route::get('/trip_delete/{id}', 'TripEditController@delete')->name('trip_delete'
 Route::get('/trip_create', 'TripEditController@create')->name('trip_create');
 
 
-
-
-
-
-
-Route::get('/test', function () {
-    return view('welcome');
-})->name('welcome');
-
-
-
+// блок аутентификации
 Auth::routes();
-
+// страница сообщения об успешном восстановлении пароля
 Route::get('/reset_done', function () {
-    return view('auth.password.done');
+    return view('auth.passwords.done');
 })->name('reset_done');
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
