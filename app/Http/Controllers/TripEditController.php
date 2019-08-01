@@ -66,6 +66,8 @@ class TripEditController extends Controller
 
     public function store(Request $request, int $id = null) {
 
+        //dd($request->all());
+
     	$allOptions = $request->all();
 
     	$validatedData = Validator::make($allOptions, 
@@ -78,14 +80,19 @@ class TripEditController extends Controller
         	 'price' => 'required|integer|min:1',
         	 'diet_id' => 'required',
         	 'for_children' => 'required',
-        	 'description' => 'required'
+        	 'description' => 'required',
+             'mediaInput0' => 'required'
          	],
          	[ 
          	 'required' => 'Это поле должно быть заполнено',
         	 'integer' => 'Укажите числовое значение стоимости',
         	 'price.min' => 'Стоимость не может быть меньше :min',
          	 'name.max' => 'Название тура - не более :max символов',
-        	])->validate();
+             'mediaInput0.required' => 'Наличие основного изображения обязательно!'
+        	]);
+        if ($validatedData->fails()) {
+            return back()->withErrors($validatedData)->withInput();
+        }
     	
     	if ($id) {
     		// редактируемый тур

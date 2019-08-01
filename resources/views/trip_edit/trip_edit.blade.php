@@ -28,10 +28,14 @@
 				<div class="dataBlock filtersBlock">
 					<div class="filtersBlock_item">
 						<div class="dataBlock_item-title mod_header-4">Название объявления</div>
-						<input type="text" class="dataBlock_item-input large-input mod_text-2 @error('name') is-invalid @enderror" name="name"
-						@isset($currTour->name) 
-							value="{{ $currTour->name }}"
-						@endisset
+						<input type="text" class="dataBlock_item-input large-input mod_text-2 @error('name') is-invalid @enderror" name="name" 
+						@if(old('name'))
+							value="{{old('name')}}"
+						@else 
+							@isset($currTour->name) 
+								value="{{$currTour->name}}"
+							@endisset
+						@endif
 						placeholder="Введите название объявления">
 						@error('name')
 						    <div class="alert-error mod_text-1">{{ $message }}</div>
@@ -140,7 +144,16 @@
 					<div class="filtersBlock_item">
 						<div class="dataBlock_item-title mod_header-4">Цена за человека</div>
 						<div class="price">
-							<input type="text" class="dataBlock_item-input small-input mod_text-2  @error('price') is-invalid @enderror" name="price" id="price" value="{{ $currTour->price }}" placeholder="Укажите цену">
+							<input type="text" class="dataBlock_item-input small-input mod_text-2  @error('price') is-invalid @enderror" name="price" id="price" 
+							@if(old('price'))
+								value="{{old('price')}}"
+							@else 
+								@isset($currTour->price) 
+									value="{{$currTour->price}}"
+								@endisset
+							@endif
+							placeholder="Укажите цену"
+							value="{{ $currTour->price }}" >
 							@error('price')
 							    <div class="alert-error mod_text-1">{{ $message }}</div>
 							@enderror
@@ -219,7 +232,7 @@
 				<div class="fotos">
 
 					<input id="mediaInput0" class="inputImage" type="file" accept="image/*"  name="mediaInput0">
-					<label for="mediaInput0" class="fotos_item">
+					<label for="mediaInput0" class="fotos_item @error('mediaInput0') is-invalid @enderror">
 						<img src="
 						@isset($currTour->main_img)
 							{{$currTour->main_img->path}}
@@ -228,7 +241,7 @@
 						@endisset
 						" class="img" alt="foto">
 					</label>
-
+					
 					@for ($i = 0; $i < 9; $i++)
 						<input id="{{'mediaInput' . ($i+1)}}" class="inputImage" type="file" accept="image/*"  name="{{'mediaIinput' . ($i+1)}}">
 						<label for="{{'mediaInput' . ($i+1)}}" class="fotos_item">
@@ -242,6 +255,9 @@
 						</label>
 					@endfor
 				</div>
+				@error('mediaInput0')
+					    <div class="alert-error mod_text-1">{{ $message }}</div>
+				@enderror
 			</div>
 			<button type="submit" class="tripEdit_submit single-btn mod_blue">Сохранить изменения</button>
 		</form>

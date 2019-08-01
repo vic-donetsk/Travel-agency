@@ -1,6 +1,6 @@
-// убирает красную рамку вокруг поля с ошибкой
-$('.dataBlock_item-input, .dataBlock_item-textarea').focus( (e)=>{
-  $(e.target).removeClass('is-invalid');
+// убирает красную рамку вокруг поля с ошибкой и сообщение под ним
+$('.dataBlock_item-input, .dataBlock_item-textarea, .dataBlock_item-select').focus( (e)=>{
+  $(e.target).removeClass('is-invalid').next('.alert-error').remove();
 });
 
 

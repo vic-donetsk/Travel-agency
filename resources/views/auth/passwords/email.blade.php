@@ -28,8 +28,8 @@
                         @csrf
 				<div class="login_input-container">
 					<input id="email" type="email" class="restore_block-input mod_text-2 @error('email') is-invalid @enderror" name="email" placeholder="Введите email" required autofocus>
-                    @error('password_reg')
-                        <div class="invalid-feedback mod_text-1" role="alert">
+                    @error('email')
+                        <div class="isset-email invalid-feedback mod_text-1" role="alert">
                             <strong>{{ $message }}</strong>
                         </div>
                     @enderror

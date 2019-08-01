@@ -27,7 +27,7 @@ class ResetPasswordController extends Controller
      */
      protected function redirectTo() {
         {
-            return route('reset_done');
+            return route('main_page');
         }
      }
     /**
