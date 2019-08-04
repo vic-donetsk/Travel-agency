@@ -20,24 +20,24 @@ Route::get('/basket', 'BasketController@index')->name('basket_page');
 Route::get('/basket_delete/{id}', 'BasketController@delete')->name('basket_delete');
 
 // просмотр страницы личных данных
-Route::get('/user_edit/{id}', 'UserEditController@show')->name('user_edit');
+Route::get('/user_edit/{id}', 'UserEditController@show')->name('user_edit')->middleware('auth');
 // запись личных данных на страницу
-Route::post('/user_edit/{id}', 'UserEditController@store')->name('user_store');
+Route::post('/user_edit/{id}', 'UserEditController@store')->name('user_store')->middleware('auth');
 
 // мои заказы (в смысле заказывали у меня)
-Route::get('/orders', 'OrderController@index')->name('orders_page');
+Route::get('/orders', 'OrderController@index')->name('orders_page')->middleware('auth');
 // мои покупки (в смысле покупал я)
-Route::get('/purchases', 'PurchaseController@index')->name('purchases_page');
+Route::get('/purchases', 'PurchaseController@index')->name('purchases_page')->middleware('auth');
 
 
 // редактирование тура
-Route::get('/trip_edit/{id?}', 'TripEditController@edit')->name('trip_edit');
+Route::get('/trip_edit/{id?}', 'TripEditController@edit')->name('trip_edit')->middleware('auth');
 // сохранение тура 
-Route::post('/trip_store/{id?}', 'TripEditController@store')->name('trip_store');
+Route::post('/trip_store/{id?}', 'TripEditController@store')->name('trip_store')->middleware('auth');
 // удаление тура
-Route::get('/trip_delete/{id}', 'TripEditController@delete')->name('trip_delete');
+Route::get('/trip_delete/{id}', 'TripEditController@delete')->name('trip_delete')->middleware('auth');
 // создание тура
-Route::get('/trip_create', 'TripEditController@create')->name('trip_create');
+Route::get('/trip_create', 'TripEditController@create')->name('trip_create')->middleware('auth');
 
 
 // блок аутентификации
@@ -47,4 +47,3 @@ Route::get('/reset_done', function () {
     return view('auth.passwords.done');
 })->name('reset_done');
 
-//Route::get('/home', 'HomeController@index')->name('home');

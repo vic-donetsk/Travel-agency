@@ -28,7 +28,7 @@
     <div class="trip-card_proposition">
       <div class="trip-description">
           <div class="trip-description_where">
-              <p class="trip-description_kurort">{{$oneTour['name']}}</p>
+              <a href="{{route('tour_page', ['id' => $oneTour['id']] )}}"class="trip-description_kurort">{{$oneTour['name']}}</a>
               <p class="trip-description_route">{{$oneTour['startLocation']}}</p>
           </div>
           <a href="{{route('to_basket', ['id' => $oneTour['id']])}}" class="single-btn mod_green mod_140">Заказать</a>

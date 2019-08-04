@@ -20,18 +20,12 @@ use Carbon\Carbon;
 class TripEditController extends Controller
 {
     public function create() {
-    	if (Auth::check()) {
-    		return redirect(route('trip_edit'));
-    	}
-    	return redirect(route('login'));
+
+        return redirect(route('trip_edit'));
+
     }
 
     public function edit (Request $request, int $id = null) {
-
-    	// редактируем только свои туры
-    	if (!Auth::check()) {
-    		return redirect(route('main_page'));
-    	}
 
     	if ($id) {
     	//редактирование тура
@@ -73,7 +67,7 @@ class TripEditController extends Controller
 
     public function store(Request $request, int $id = null) {
 
-        //dd($request->all());
+        dd($request->all());
 
     	$allOptions = $request->all();
 

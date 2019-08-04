@@ -79,7 +79,7 @@ class SearchController extends Controller
     	// рассчитываем пагинацию
     	$perPage = config('pagination.tourPagination');
         $currentPage = ($request->has('page')) ? $request->get('page') : 1;
-    	$pagiPages = ($totalTours > $perPage) ? ceil($totalTours / $perPage) : null;
+    	$paginationPages = ($totalTours > $perPage) ? ceil($totalTours / $perPage) : null;
         // забираем данные для нужной страницы
     	$forPageTours = $resultTours->forPage($currentPage, $perPage);
 
@@ -97,7 +97,7 @@ class SearchController extends Controller
 	    	'totalTours' => $totalTours,
 	    	'selectedTours' => $selectedTours,
 	    	'currentPage' => $currentPage,
-    		'pagiPages' => $pagiPages
+    		'paginationPages' => $paginationPages
 	    	
 	    ]);
 	}

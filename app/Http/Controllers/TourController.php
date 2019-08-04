@@ -8,6 +8,7 @@ use App\Models\Tour;
 use App\Models\User;
 use App\Models\Comment;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 use Carbon\Carbon;
 
@@ -37,6 +38,15 @@ class TourController extends Controller
 			   $oneComment->avatar = $user->avatar;
 			}
 		}
+		// получаем данные пользователя для автозаполнения полей нового комментария
+        if (Auth::check()) {
+            $currentUser = Auth::user();
+            $user['name'] = $currentUser->first_name . ' ' . $currentUser->last_name;
+            $user['email'] = $currentUser->email;
+        } else {
+            $user['name']="";
+            $user['email']="";
+        }
 
 		$showClasses = ['main-card', 'main-card', 'main-card'];
 		// выборка объявлений этого продавца
@@ -52,7 +62,8 @@ class TourController extends Controller
 	    	'sellersTours' => $sellersTours,
 	    	'gotoSellersTours' => $sellersText,
 	    	'typesTours' => $typesTours,
-	    	'gotoTypesTours' => $typesText
+	    	'gotoTypesTours' => $typesText,
+            'user' => $user
 	    ]);
 	}
 

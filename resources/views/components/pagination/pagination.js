@@ -1,9 +1,9 @@
 // формируем пагинацию, если она нужна
-if ((typeof pagiPages !== 'undefined') && (pagiPages)) {
+if ((typeof paginationPages !== 'undefined') && (paginationPages)) {
 
-	contentPaginationBlock = (pagiPages > 4) ? 
-			setBigPagination(currentPage, pagiPages) :
-			setSmallPagination(pagiPages) ;
+	contentPaginationBlock = (paginationPages > 4) ? 
+			setBigPagination(currentPage, paginationPages) :
+			setSmallPagination(paginationPages) ;
 	renderPagination(contentPaginationBlock, currentPage);
 
 	// формирование массива для вывода блока пагинации

@@ -20,7 +20,7 @@ class PurchaseController extends Controller
         // рассчитываем пагинацию
         $perPage = config('pagination.orderPagination');
         $currentPage = ($request->has('page')) ? $request->get('page') : 1;
-        $pagiPages = ($totalDeals > $perPage) ? ceil($totalDeals / $perPage) : null;
+        $paginationPages = ($totalDeals > $perPage) ? ceil($totalDeals / $perPage) : null;
         
         // забираем данные для нужной страницы
         $forPageDeals = $resultDeals->forPage($currentPage, $perPage);
@@ -45,7 +45,7 @@ class PurchaseController extends Controller
     		'title' => $page_title,
             'orders' => $forPageDeals,
     		'currentPage' => $currentPage,
-    		'pagiPages' => $pagiPages
+    		'paginationPages' => $paginationPages
     	]);
     }
 }

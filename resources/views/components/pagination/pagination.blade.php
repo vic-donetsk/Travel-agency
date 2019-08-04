@@ -1,4 +1,4 @@
-@if ($pagiPages)
+@if ($paginationPages)
 	<div class="pagination">
 		{{--<div class="pagination_elem mod_prev"> <i class="fas fa-angle-left"> </i></div>
 		<div class="pagination_elem pagination_active"> 1 </div>
@@ -9,7 +9,7 @@
 		<div class="pagination_elem mod_next"> <i class="fas fa-angle-right"> </i></div>--}}
 
 		<script>
-			let pagiPages = {{$pagiPages}}
+			let paginationPages = {{$paginationPages}}
 			let currentPage = {{$currentPage}}
 		</script>
 	</div>

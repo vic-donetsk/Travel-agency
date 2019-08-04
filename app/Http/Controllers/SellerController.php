@@ -51,7 +51,7 @@ class SellerController extends Controller
 	    $perPage = config('pagination.tourPagination');
 
     	$currentPage = ($request->has('page')) ? $request->input('page') : 1;
-    	$pagiPages = ($totalTours > $perPage) ? ceil($totalTours / $perPage) : null;
+    	$paginationPages = ($totalTours > $perPage) ? ceil($totalTours / $perPage) : null;
 
     	$sellerTours = $allSellerTours->forPage($currentPage, $perPage);
 
@@ -62,7 +62,7 @@ class SellerController extends Controller
     		'tripTypes' => $tripTypes,
     		'selectedTours' => $selectedTours,
     		'currentPage' => $currentPage,
-    		'pagiPages' => $pagiPages
+    		'paginationPages' => $paginationPages
 
     	]);
 

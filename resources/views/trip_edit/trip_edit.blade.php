@@ -269,27 +269,34 @@
 
 				<div class="fotos">
 
-					<input id="mediaInput0" class="inputImage" type="file" accept="image/*"  name="mediaInput0">
+					<input id="mediaInput0" class="inputImage" type="file" accept="image/*"  name="mediaInput0"
+                           @isset($currTour->main_img)
+                             value="{{$currTour->main_img->path}}"
+                           @endisset">
 					<label for="mediaInput0" class="fotos_item @error('mediaInput0') is-invalid @enderror">
-						<img src="
+						<img
 						@isset($currTour->main_img)
-							{{$currTour->main_img->path}}
+                            src="{{$currTour->main_img->path}}"
 						@else
-							/img/empty-pic.png
+                            src="/img/empty-pic.png"
 						@endisset
-						" class="img" alt="foto">
+						class="img" alt="foto">
 					</label>
 					
 					@for ($i = 0; $i < 9; $i++)
-						<input id="{{'mediaInput' . ($i+1)}}" class="inputImage" type="file" accept="image/*"  name="{{'mediaIinput' . ($i+1)}}">
+						<input id="{{'mediaInput' . ($i+1)}}" class="inputImage" type="file" accept="image/*"
+                               name="{{'mediaInput' . ($i+1)}}"
+                               @isset($currTour->media[$i])
+                                  value="{{$currTour->media[$i]->path}}"
+                               @endisset>
 						<label for="{{'mediaInput' . ($i+1)}}" class="fotos_item">
-								<img src="
+								<img
 									@isset($currTour->media[$i])
-										{{$currTour->media[$i]->path}}
+                                        src="{{$currTour->media[$i]->path}}"
 									@else
-										/img/empty-pic.png
+                                        src="/img/empty-pic.png"
 									@endisset										
-								" class="img" alt="">
+								class="img" alt="">
 						</label>
 					@endfor
 				</div>

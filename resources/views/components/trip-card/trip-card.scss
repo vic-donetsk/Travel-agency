@@ -100,6 +100,7 @@
 			color:       $accent-light-blue;
 			margin:      0;
 			line-height: 1;
+            text-decoration: none;
 		}
 		.trip-description_route {
 			@include       font-text($text-size-1);

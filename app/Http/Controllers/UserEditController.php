@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 use App\Models\User;
 
@@ -11,10 +12,14 @@ class UserEditController extends Controller
 {
 	// просмотр и редактирование данных пользователя
     public function show (Request $request, int $id ) {
-    	
-    	return view('user_edit.user_edit', ['currUser' => User::find($id)]);
 
-	}
+        // редактируем только своего пользователя
+        if ($id == Auth::id()) {
+            return view('user_edit.user_edit', ['currUser' => User::find($id)]);
+        }  else {
+            return redirect(route('main_page'));
+        }
+    }
 
 	// сохранение данных пользователя и переход на главную страницу
 	public function store (Request $request, int $id ) {
