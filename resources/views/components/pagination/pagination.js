@@ -60,6 +60,10 @@ if ((typeof pagiPages !== 'undefined') && (pagiPages)) {
 	// обработка нажатия на блок пагинации и переход на нужную страницу
 	$('.pagination').click( (e)=> { 
 	    e.preventDefault();
+	    // не обрабатываем нажатия на троеточия и активную страницу
+	    if ($(e.target).hasClass('pagination_interval') ||
+            $(e.target).hasClass('pagination_active'))
+	            return;
 	    currentPage = +currentPage;
 	    if ($(e.target).hasClass('mod_prev') || $(e.target).parent().hasClass('mod_prev')) { 
 	      currentPage--; 

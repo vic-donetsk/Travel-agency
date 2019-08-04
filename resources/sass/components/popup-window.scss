@@ -9,7 +9,8 @@
 	background-color: $main-light;
 	padding-top:      29px;
 		a {
-			color: $extra-grey-5;
+            text-decoration: none;
+            color: $extra-grey-5;
 		}
 		a:hover {
 			color:           $accent-light-blue;
