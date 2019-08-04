@@ -47,6 +47,7 @@
 		& .foto {
 		    width:  100%;// calc(100% - 4px);
 		    height: 216px;
+            object-fit: cover;
 		}
 		.trip-condition_wrapper {
 		    @include       flex;

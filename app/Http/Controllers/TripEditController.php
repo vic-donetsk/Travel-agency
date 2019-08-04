@@ -28,14 +28,20 @@ class TripEditController extends Controller
 
     public function edit (Request $request, int $id = null) {
 
+    	// редактируем только свои туры
+    	if (!Auth::check()) {
+    		return redirect(route('main_page'));
+    	}
+
     	if ($id) {
     	//редактирование тура
 	    	$currentTour = Tour::find($id);
 
-	    	// редактируем только свои туры
-	    	if (Auth::id() != $currentTour->seller_id) {
-	    		return redirect(route('main_page'));
-	    	}
+            // редактируем только свои туры
+            if (Auth::id() != $currentTour->seller_id) {
+                return redirect(route('main_page'));
+            }
+
     		// подготовка изображений
     		$currentTour->main_img->path = $this->imagePath($currentTour->main_img->path);
     		foreach ($currentTour->media as $oneMedia) {
@@ -43,6 +49,7 @@ class TripEditController extends Controller
     		}
 
 	    } else {
+        // создание нового тура
 	    	$currentTour = new Tour;
 	    	$currentTour->id = null;
 	    }

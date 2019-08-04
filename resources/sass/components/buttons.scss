@@ -1,6 +1,7 @@
 .single-btn {
 	@extend %button;
     text-decoration: none;
+    transition: 0.3s ease;
 
     &.mod_blue {
 	    background-color: $accent-light-blue;

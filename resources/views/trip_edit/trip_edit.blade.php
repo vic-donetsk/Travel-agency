@@ -45,17 +45,23 @@
 						<div class="dataBlock_item-title mod_header-4">Страна</div>
 						<div class="select_wrapper small-input">
 							<select class="dataBlock_item-select mod_text-2 @error('country_id') is-invalid @enderror" name="country_id">
-								@empty($currTour->country->name)
+								@if (empty($currTour->country->name) and empty(old('country_id')))
 									<option class="psevdoPH" selected value=''>Укажите страну отдыха</option> 
-								@endempty
+								@endif
 								@foreach ($countryList as $oneCountry)
 									<option 
 										value="{{$oneCountry->id}}"
-										@isset($currTour->hotel)
-											@if ($oneCountry->id == $currTour->country->id)
-											 selected
+										@if (old('country_id'))
+											@if ($oneCountry->id == old('country_id'))
+												selected
 											@endif
-										@endisset
+										@else
+											@isset($currTour->country)
+												@if ($oneCountry->id == $currTour->country->id)
+												 selected
+												@endif
+											@endisset
+										@endif
 									>
 										{{$oneCountry->name}}
 									</option>
@@ -76,11 +82,17 @@
 								@foreach ($hotelList as $oneHotel)
 									<option 
 										value="{{$oneHotel->id}}"
-										@isset($currTour->hotel)
-											@if ($oneHotel->id == $currTour->hotel->id)
-											 selected
+										@if (old('hotel_id'))
+											@if ($oneHotel->id == old('hotel_id'))
+												selected
 											@endif
-										@endisset
+										@else
+											@isset($currTour->hotel)
+												@if ($oneHotel->id == $currTour->hotel->id)
+												 selected
+												@endif
+											@endisset
+										@endif
 									>
 										{{$oneHotel->name}}
 									</option>
@@ -101,11 +113,17 @@
 								@foreach ($categoryList as $oneCategory)
 									<option 
 										value="{{$oneCategory->id}}"
-										@isset($currTour->category)
-											@if ($oneCategory->id == $currTour->category->id)
-											 selected
+										@if (old('category_id'))
+											@if ($oneCategory->id == old('category_id'))
+												selected
 											@endif
-										@endisset
+										@else
+											@isset($currTour->category)
+												@if ($oneCategory->id == $currTour->category->id)
+												 selected
+												@endif
+											@endisset
+										@endif
 									>
 										{{$oneCategory->name}}
 									</option>
@@ -126,11 +144,17 @@
 								@foreach ($typeList as $oneType)
 									<option 
 										value="{{$oneType->id}}"
-										@isset($currTour->type)
-											@if ($oneType->id == $currTour->type->id)
-											 selected
+										@if (old('type_id'))
+											@if ($oneType->id == old('type_id'))
+												selected
 											@endif
-										@endisset
+										@else
+											@isset($currTour->type)
+												@if ($oneType->id == $currTour->type->id)
+												 selected
+												@endif
+											@endisset
+										@endif
 									>
 										{{$oneType->name}}
 									</option>
@@ -169,11 +193,17 @@
 								@foreach ($dietList as $oneDiet)
 									<option 
 										value="{{$oneDiet->id}}"
-										@isset($currTour->diet)
-											@if ($oneDiet->id == $currTour->diet->id)
-											 selected
+										@if (old('diet_id'))
+											@if ($oneDiet->id == old('diet_id'))
+												selected
 											@endif
-										@endisset
+										@else
+											@isset($currTour->diet)
+												@if ($oneDiet->id == $currTour->diet->id)
+												 selected
+												@endif
+											@endisset
+										@endif
 									>
 										{{$oneDiet->name}}
 									</option>

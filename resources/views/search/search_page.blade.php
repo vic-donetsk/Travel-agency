@@ -153,7 +153,7 @@
 
 				<div class="search_results_sort">
 					<p class="results_quantity">{{$totalTours}} шт</p>
-					<select class="sort_filter sort_select">
+					<select class="sort_filter one-filter_select">
 						<option value="0">По умолчанию</option>
 						<option value="1">От дешевых к дорогим</option>
 						<option value="2">От дорогих к дешевым</option>
