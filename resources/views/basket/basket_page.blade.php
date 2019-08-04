@@ -34,7 +34,7 @@
 					@foreach ($basketTours as $oneTour)
 						<div class="basket_onetrip">
 							<div class="basket_onetrip-picture"><img src="{{$oneTour['img']}}" alt=""></div>
-							<div class="basket_onetrip-details mod_text-2">{{$oneTour['conditions']}}</div>
+							<a href="{{route('tour_page', ['id' => $oneTour['id']])}}" class="basket_onetrip-details mod_text-2">{{$oneTour['conditions']}}</a>
 							<div class="basket_onetrip-cost mod_header-4">
 								<div class="sum">{{$oneTour['price']}}&nbsp;</div>
 								<div class="currency"><i class="fab fa-btc"></i></div>

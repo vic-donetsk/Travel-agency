@@ -88,6 +88,7 @@ body, body * {
 		@include flex;
 		flex-grow: 1;
 		margin-right: 35px;
+        text-decoration: none;
 	}
 	.basket_onetrip-cost {
 		@include flex(flex-start);

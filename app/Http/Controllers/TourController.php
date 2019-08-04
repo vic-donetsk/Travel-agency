@@ -47,8 +47,6 @@ class TourController extends Controller
 		$typesTours = $this->getData('type_id', $mainTour->type_id, $showClasses, 3);
 		$typesText = 'Перейти в категорию ' . $mainTour->type->name; 
 
-
-
 	    return view('tovar.tovar_page', [
 	    	'mainTour' => $mainTour,
 	    	'sellersTours' => $sellersTours,

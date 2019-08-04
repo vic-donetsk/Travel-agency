@@ -222,19 +222,27 @@
 									<option class="psevdoPH" selected value=''>-</option> 
 								@endempty
 									<option value=1
-										@isset($currTour->for_children)
-											@if ($currTour->for_children)
-											 selected
-											@endif
-										@endisset
+                                    @if (old('for_children'))
+                                            selected
+                                    @else
+                                        @isset($currTour->for_children)
+                                            @if ($currTour->for_children)
+                                               selected
+                                            @endif
+                                        @endisset
+                                    @endif
 									> Да
 									</option>
 									<option value=0
-										@isset($currTour->for_children)
-											@if (!$currTour->for_children)
-											 selected
-											@endif
-										@endisset
+									@if (old('for_children')==0)
+                                            selected
+                                    @else
+                                        @isset($currTour->for_children)
+                                            @if ($currTour->for_children==0)
+                                               selected
+                                            @endif
+                                        @endisset
+                                    @endif
 									> Нет
 									</option>
 							</select>
