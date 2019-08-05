@@ -14,6 +14,8 @@
 
 <body data-page="{{ Route::currentRouteName() }}" class="page_{{ Route::currentRouteName() }}">
 
+	<div class="body_wrapper">
+
 
 	@yield('content')
 

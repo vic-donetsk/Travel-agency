@@ -1,0 +1,13 @@
+body {
+	@include flex(space-between, column);
+	min-height: 100vh;
+
+
+}
+.body_wrapper {
+	height: 100%;
+	flex: 1;
+}
+.footer {
+	flex: 0;
+}
