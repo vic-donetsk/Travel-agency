@@ -68,7 +68,7 @@ class SearchController extends Controller
 			}
         }
 
-	    $showClasses = ['main-trip', 'main-trip', 'main-trip', 'main-trip', 'main-trip', 'hidden-on-mobile-trip','hidden-on-mobile-trip', 'hidden-on-mobile-trip','hidden-on-tablet-trip']; 
+	    $showClasses = ['main-trip', 'main-trip', 'main-trip', 'main-trip', 'main-trip', 'main-trip', 'hidden-on-mobile-trip','hidden-on-mobile-trip', 'hidden-on-mobile-trip','hidden-on-tablet-trip']; 
 
 	    // переводим результат в коллекцию
 	    $resultTours = $tours->get();
