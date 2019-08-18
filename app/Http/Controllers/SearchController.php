@@ -59,19 +59,27 @@ class SearchController extends Controller
     		$tours = $tours->where('isHot', true);
     	}
 
+	    // переводим результат в коллекцию
+	    $resultTours = $tours->get();
+
+    	if ($request->has('text')) {
+    	    $searchString = $request->get('text');
+    	    $resultTours = $resultTours->filter( function($oneTour) use ($searchString) {
+    	        return (stripos($oneTour->name, $searchString) or stripos($oneTour->description, $searchString));
+            });
+        }
+
     	// сортируем, если требуется
 		if ($request->has('sort')) {
 			if ($request->get('sort') == 1) {
-				$tours = $tours->orderBy('price', 'asc');
+				$resultTours = $resultTours->sortBy('price');
 			} else {
-				$tours = $tours->orderBy('price', 'desc');
+				$resultTours = $resultTours->sortByDesc('price');
 			}
         }
 
-	    $showClasses = ['main-trip', 'main-trip', 'main-trip', 'main-trip', 'main-trip', 'main-trip', 'hidden-on-mobile-trip','hidden-on-mobile-trip', 'hidden-on-mobile-trip','hidden-on-tablet-trip']; 
+	    $showClasses = ['main-trip', 'main-trip', 'main-trip', 'main-trip', 'main-trip', 'main-trip', 'hidden-on-mobile-trip','hidden-on-mobile-trip', 'hidden-on-mobile-trip','hidden-on-tablet-trip'];
 
-	    // переводим результат в коллекцию
-	    $resultTours = $tours->get();
 
 	    // количество элементов результирующей коллекции
     	$totalTours = $resultTours->count();

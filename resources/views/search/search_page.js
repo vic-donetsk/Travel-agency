@@ -8,7 +8,8 @@ let filtersArray = [
 	'children',
 	'recommended',
 	'hot',
-	'sort'
+	'sort',
+    'text'
 ], 
 savedFilters = {};
 
@@ -25,7 +26,7 @@ $('.close-search').click( (e) => {
 let searchString = window.location.search.substr(1);
 let searchArray = searchString.split('&');
 let searchParameters = new Map();
-
+console.log()
 for (let i = 0; i < searchArray.length; i++) {
 	let oneFilter = searchArray[i].split('=');
 	searchParameters.set(oneFilter[0], oneFilter[1]);
@@ -47,7 +48,6 @@ $('.price_filter, .diet_filter').click( (e)=> {
 
 	e.preventDefault();
 	if ($(e.target).hasClass('radio-custom') || $(e.target).hasClass('radio-label')) {
-		console.log('Наш клиент');
 		let classArray = e.delegateTarget.className.split('_filter');
 		let filterName = classArray[0];
 		let filterValue = $(e.target).siblings('input').attr('name').split('_')[1];
@@ -63,6 +63,13 @@ $('.one-filter_select').change( (e) => {
 	let filterValue = $(e.target).children('option:selected').attr('value');
 
 	rebuildLocationSearch(filterName, filterValue);
+});
+
+// обработка кнопки поиска (при вводе иескта для поиска)
+$('.search-sign').click( (e) => {
+        window.location.href = $('.search-tour').val() ?
+            'search?text=' + $('.search-tour').val().replace(/ /g, '+') :
+            'search';
 });
 
 // изменение строки параметров и переход на новую страницу	
@@ -98,7 +105,7 @@ $('body').on('click', '.active-filter', (e) => {
 	let filterName = $(e.currentTarget).data('type');
 	savedFilters[filterName] = 0;
 	for (let key in savedFilters) {
-		if (savedFilters[key] != 0) {
+		if (savedFilters[key] !== 0) {
 			urlString += (key + '=' + savedFilters[key] + '&');
 		}
 	}
@@ -118,15 +125,15 @@ function renderTopFilters(filters) {
 	$('.search_results_active-filters').empty();
 	let filtersContent = `<div class="active-filters_wrapper">`;
 	for (let key in filters) {
-		if (key != 'sort') {
-			if ( filters[key] != 0 ) {
+		if (key !== 'sort') {
+			if ( filters[key] !== 0 ) {
 				issetFilters = true;
 				className = '.' + key + '_filter';
 				$filterLayout = $(className);
 				if ($filterLayout.hasClass('one-filter_select')) {
 					filterText = $(className + ` option[value=${filters[key]}]`).text();
 				} else {
-					name = (key == 'diet') ? 'd_' + filters[key] : 'p_'+ filters[key];
+					name = (key === 'diet') ? 'd_' + filters[key] : 'p_'+ filters[key];
 					filterText = $(className + ` input[name=${name}]`).siblings('.radio-label').text();
 				}
 				filtersContent += 
@@ -159,12 +166,17 @@ function renderAsideFilters(filters) {
 function renderOneAsideFilter(currentFilter, currentValue) {
 	let radio = ['diet', 'price'];
 	let usedClass = '.' + currentFilter + '_filter';
-
-	if ( radio.indexOf(currentFilter) != -1 ) {
+	// обрабатываем текстовый фильтр поиска
+	if (currentFilter === 'text' && currentValue) {
+        $('.search-tour').val(currentValue);
+        return;
+    }
+    // остальные фильтры, кроме текстового поиска
+	if ( radio.indexOf(currentFilter) !== -1 ) {
 		// если это input-radio
 		$(usedClass + ' > div').each( (index, elem) => {
-			$curInput = $(elem).find('input');
-			if ( $curInput.attr('name').split('_')[1] == currentValue ) {
+			let $curInput = $(elem).find('input');
+			if ( $curInput.attr('name').split('_')[1] === currentValue ) {
 				$curInput.prop('checked', true);
 			} else {
 				$curInput.prop('checked', false);
@@ -173,7 +185,7 @@ function renderOneAsideFilter(currentFilter, currentValue) {
 	} else {
 		// если это select
 		$(usedClass + ' > option').each( (index, elem) => {
-			if ( $(elem).attr('value') == currentValue ) {
+			if ( $(elem).attr('value') === currentValue ) {
 				$(elem).prop('selected', true);
 			} else {
 				$(elem).prop('selected', false);
