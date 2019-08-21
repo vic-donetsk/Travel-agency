@@ -11,7 +11,7 @@
 		<div class="tovar-info_seller-info">
 			<img class="seller-foto"src= 
 				@if ($mainTour->seller->avatar) "{{$mainTour->seller->avatar}}"
-					@else  "/img/review.jpg"
+					@else  "/img/users.jpg"
 				@endif " alt="">
 			<div class="tovar-info_conditions_item">
 				<div class="conditions_item_title"> Продавец </div>

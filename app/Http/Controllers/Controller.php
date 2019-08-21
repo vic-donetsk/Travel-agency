@@ -7,6 +7,8 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
+use Illuminate\Support\Facades\Storage;
+
 use App\Models\Tour;
 
 use Carbon\Carbon;
@@ -15,14 +17,9 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    // убирает из пути public (для сгенерированных сидами)
+    // указываем правильный путь к хранилищу с изображениями
     protected function imagePath($path) {
-        $path = str_replace("\\", "/", $path);
-    	if (substr($path, 0, 6) == 'public') {
-    		return '/' . substr($path, 7);
-    	} else {
-    		return $path;
-    	}
+        return Storage::url(basename($path));
     }
 
     // формируем строку места отправления тура

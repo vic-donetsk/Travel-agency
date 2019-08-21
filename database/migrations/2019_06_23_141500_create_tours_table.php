@@ -22,7 +22,7 @@ class CreateToursTable extends Migration
             $table->timestamp('finished_at')->nullable();               // конец тура
 
             $table->boolean('for_children')->default(true); // доступна для детей?
-            $table->unsignedBigInteger('main_img_id');      // ИД главной картиники тура
+            $table->unsignedBigInteger('main_img_id')->default(1);      // ИД главной картиники тура
             $table->unsignedBigInteger('country_id');       // ИД страны путешествия
             $table->unsignedBigInteger('start_location_id')->default(1);// ИД места старта и способа отбытия
             $table->unsignedBigInteger('hotel_id')->nullable();         // ИД уровня размешения
@@ -36,7 +36,6 @@ class CreateToursTable extends Migration
             $table->boolean('isRecommended')->default(false);  // включать в рекомендуемые
             $table->boolean('isHot')->default(false);  // включать в горящие
 
-            $table->softDeletes();
             $table->timestamps();
 
             // внешние ключи

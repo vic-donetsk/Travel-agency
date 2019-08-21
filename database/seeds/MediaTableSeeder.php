@@ -13,6 +13,12 @@ class MediaTableSeeder extends Seeder
      */
     public function run()
     {
+
+        // эта запись должна остаться и в продакшене
+        Media::create([
+            'path' => 'storage/app/public/empty-pic.png'
+        ]);
+        // а это уже чисто тестовые значения
         factory(Media::class, 100)->create();
     }
 }

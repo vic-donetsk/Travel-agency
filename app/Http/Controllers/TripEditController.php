@@ -67,7 +67,7 @@ class TripEditController extends Controller
 
     public function store(Request $request, int $id = null) {
 
-        dd($request->all());
+        //dd($request->all());
 
     	$allOptions = $request->all();
 
@@ -82,14 +82,12 @@ class TripEditController extends Controller
         	 'diet_id' => 'required',
         	 'for_children' => 'required',
         	 'description' => 'required',
-             'mediaInput0' => 'required'
          	],
          	[ 
          	 'required' => 'Это поле должно быть заполнено',
         	 'integer' => 'Укажите числовое значение стоимости',
         	 'price.min' => 'Стоимость не может быть меньше :min',
          	 'name.max' => 'Название тура - не более :max символов',
-             'mediaInput0.required' => 'Наличие основного изображения обязательно!'
         	]);
         if ($validatedData->fails()) {
             return back()->withErrors($validatedData)->withInput();
@@ -98,47 +96,63 @@ class TripEditController extends Controller
     	if ($id) {
     		// редактируемый тур
     		$currTour = Tour::find($id);
+    		$filePrefix = $id;
     	} else {
     		$currTour = new Tour;
-    		// далее идут тестовые значения, поскольку форма ввода недоработана,
+    		$filePrefix = Tour::max('id') + 1;
+     		// далее идут тестовые значения, поскольку форма ввода недоработана,
     		// их надо будет потом убрать, когда в форме будут эти поля
     		$currTour->start_location_id = 15;
     		$currTour->started_at = Carbon::now()->addDays(3); 
     		$currTour->finished_at = Carbon::now()->addDays(6);  
     	}
 
-    	$filePath = public_path() . '/storage';
-
-    	// массив id изображений, которые заменены при редактировании
-    	$replacedMedia = [];
     	// массив id изображений, которые добавлены при редактировании
     	$addedMedia = [];
+    	// счетчик существующих изображений
+    	$fotoCounter = $currTour->media->count();
 
     	foreach ($allOptions as $key => $value) {
     		if (substr($key, 0, 5) =='media') {
     			// обработка картинок
     			if ($value) {
-    				$file = $request->file($key);// получаем инфу о файле
-    				// берем оригинальное имя, иначе будет хрень.tmp 
-    				$fileName = $file->getClientOriginalName();
-    				$file->move($filePath, $fileName); // копируем файл в public/storage
-    				$fullFileName = '/storage/' . $fileName;
-    				// проверяем наличие файла с таким именем в базе,
-    				// если его нет - создаём
-    				$newMedia =Media::firstOrCreate(['path' => $fullFileName]);
+                    $indexMedia = substr($key, -1);
 
-    				$indexMedia = substr($key, -1);
     				if ($indexMedia == '0') {
-    					//это главная картинка тура
-    					$currTour->main_img_id = $newMedia->id;
+                        //это главная картинка тура
+                        $fullFileName = $this->saveNewImage($request->file($key), $filePrefix, $indexMedia);
+                        if ($currTour->main_img_id) {
+                            // и она до этого существовала - перезаписываем
+                            Media::find($currTour->main_img_id)->update(['path' => $fullFileName]);
+                        } else {
+                            // или не существовала - создаем
+                            $newMedia = new Media;
+                            $newMedia->path = $fullFileName;
+                            $newMedia->save();
+                            $currTour->main_img_id = $newMedia->id;
+                        }
     				} else {
-    					// привязываем по связи "многие ко многим"
-    					if (isset($currTour->media[$indexMedia - 1])) {
-    						// новая картинка вместо старой - удаляем старую из связей
-    						$replacedMedia[] = $currTour->media[$indexMedia - 1]->id;
-    					}
-    					// добавляем в связи новую картинку
-    					$addedMedia[] = $newMedia->id;
+                        // обработка остальных изображений из галереи
+                        if ($indexMedia <= $fotoCounter) {
+                            // новая картинка вместо старой
+                            $fullFileName = $this->saveNewImage($request->file($key), $filePrefix, $indexMedia);
+                            // отдельно сохраняем путь к новой картинке в базе Media,
+                            // поскольку сохранение по связям не работает
+                            $newMedia = Media:: find($currTour->media[$indexMedia - 1]->id);
+                            $newMedia->path = $fullFileName;
+                            $newMedia->save();
+
+                            $currTour->media[$indexMedia - 1]->path = $fullFileName;
+                        } else {
+                            // добавляем в связи новую картинку,  причем она будет следующей по нумерации за
+                            // существующими, даже если добавлена с пропуском позиций
+                            $fullFileName = $this->saveNewImage($request->file($key), $filePrefix, ++$fotoCounter);
+                            //$currTour->media[$indexMedia - 1]->path = $fullFileName;
+                            $newMedia = new Media;
+                            $newMedia->path = $fullFileName;
+                            $newMedia->save();
+                            $addedMedia[] = $newMedia->id;
+                        }
     				}
     			}
     		} else if ($key != "_token") {
@@ -153,13 +167,13 @@ class TripEditController extends Controller
 		if (!$id) {
 			$currTour->save();
 		}
-
-    	// открепляем все замененные картинки
-    	$currTour->media()->detach($replacedMedia);
     	// и прикрепляем новые
     	$currTour->media()->attach($addedMedia);
 
+
 		$currTour->save();
+
+        //dd($currTour, $currTour->media->pluck('path'), $currTour->media->pluck('id'));
 
     	return redirect(route('seller_page', ['sellerId' => Auth::id()]));
     }
@@ -168,18 +182,29 @@ class TripEditController extends Controller
 
     	$deletedTour = Tour::find($id);
 
-
-
     	if (Auth::id() == $deletedTour->seller_id) {
 
             $deletedTour->orders()->delete();
             $deletedTour->comments()->delete();
+            $deletedTour->media()->detach();
 
     		$deletedTour->delete();
-
     	}
 
     	return redirect(route('seller_page', ['sellerId' => Auth::id()]));
+    }
+
+    // формирует имя файла и сохраняет его в базе
+    // возвращает путь к сохраненному файлу
+    function saveNewImage ($file, $tourId, $imageIndex) {
+        $filePath = public_path() . '/storage';
+        $fileExtension = $file->guessClientExtension();
+        // копируем файл в public/storage
+        $fileName = 'tour_' . $tourId . '_' . $imageIndex . '.' . $fileExtension;
+        $file->move($filePath, $fileName);
+
+        return 'storage/' . $fileName;
+
     }
 
 }
