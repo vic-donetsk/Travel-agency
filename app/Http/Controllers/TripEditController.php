@@ -67,8 +67,6 @@ class TripEditController extends Controller
 
     public function store(Request $request, int $id = null) {
 
-        //dd($request->all());
-
     	$allOptions = $request->all();
 
     	$validatedData = Validator::make($allOptions, 
@@ -144,10 +142,9 @@ class TripEditController extends Controller
 
                             $currTour->media[$indexMedia - 1]->path = $fullFileName;
                         } else {
+                            $fullFileName = $this->saveNewImage($request->file($key), $filePrefix, ++$fotoCounter);
                             // добавляем в связи новую картинку,  причем она будет следующей по нумерации за
                             // существующими, даже если добавлена с пропуском позиций
-                            $fullFileName = $this->saveNewImage($request->file($key), $filePrefix, ++$fotoCounter);
-                            //$currTour->media[$indexMedia - 1]->path = $fullFileName;
                             $newMedia = new Media;
                             $newMedia->path = $fullFileName;
                             $newMedia->save();
@@ -167,13 +164,10 @@ class TripEditController extends Controller
 		if (!$id) {
 			$currTour->save();
 		}
-    	// и прикрепляем новые
+    	// прикрепляем новые фотки
     	$currTour->media()->attach($addedMedia);
 
-
 		$currTour->save();
-
-        //dd($currTour, $currTour->media->pluck('path'), $currTour->media->pluck('id'));
 
     	return redirect(route('seller_page', ['sellerId' => Auth::id()]));
     }
@@ -204,7 +198,5 @@ class TripEditController extends Controller
         $file->move($filePath, $fileName);
 
         return 'storage/' . $fileName;
-
     }
-
 }

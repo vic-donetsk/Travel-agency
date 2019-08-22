@@ -4,16 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-use App\Models\Hotel;
-use App\Models\Category;
-use App\Models\Type;
-use App\Models\Diet;
-use App\Models\Country;
-use App\Models\Media;
-use App\Models\Location;
-use App\Models\User;
-use App\Models\Order;
-use App\Models\Comment;
+//use App\Models\Hotel;
+//use App\Models\Category;
+//use App\Models\Type;
+//use App\Models\Diet;
+//use App\Models\Country;
+//use App\Models\Media;
+//use App\Models\Location;
+//use App\Models\User;
+//use App\Models\Order;
+//use App\Models\Comment;
 
 
 class Tour extends Model
