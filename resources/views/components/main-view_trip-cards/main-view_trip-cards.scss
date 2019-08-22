@@ -2,21 +2,24 @@
 		@include flex(flex-start, column);
 
 		.trip-cards_wrapper {
-			@include flex(space-between, row, wrap);
+			@include flex(flex-start, row, wrap);
 		}
 
 		.main-trip,
 		.hidden-on-mobile-trip,
 		.hidden-on-tablet-trip {
 			width: calc( (100% - 60px)/3 );
+            margin: 0 10px 30px;
 			@include media(">tablet", "<=desktop") { 
 				width: calc( (100% - 30px)/2 );
+                margin: 0 7px 30px;
+
 			}
 			@include media(">=phone", "<=tablet") { 
 				width: 100%;
+                margin: 0 0 30px;
 			}
 			height: 380px;
-			margin: 0 0 30px;
 			.mod_green {
 				margin: 0 auto;
 			}
