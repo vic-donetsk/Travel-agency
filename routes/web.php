@@ -15,9 +15,11 @@ Route::get('/search', 'SearchController@index')->name('search_page');
 //запись в корзину
 Route::get('/basket/{id}', 'BasketController@store')->name('to_basket');
 //переход в корзину
-Route::get('/basket', 'BasketController@index')->name('basket_page');
+Route::get('/basket', 'BasketController@index')->name('basket_page')->middleware('auth');
 //удаление из корзины
 Route::get('/basket_delete/{id}', 'BasketController@delete')->name('basket_delete');
+// формирование заказов из корзины
+Route::get('/form_orders', 'BasketController@makeOrders')->name('form_orders');
 
 // просмотр страницы личных данных
 Route::get('/user_edit/{id}', 'UserEditController@show')->name('user_edit')->middleware('auth');

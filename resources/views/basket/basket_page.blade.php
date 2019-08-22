@@ -65,7 +65,8 @@
 				<div class="basket_total-button single-btn mod_blue">Заказать</div>
 			</div>
 		@endif
-		
+
+        @include('basket.modal_thanks')
 
 	</section>
 

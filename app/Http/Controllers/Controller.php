@@ -41,9 +41,13 @@ class Controller extends BaseController
     }
 
     // формирует данные для вывода блока трип-карт
-    protected function getData ($condition, $value, $showClasses, $quantity) {
+    protected function getData ($condition, $value, $showClasses, $quantity, $current = null) {
         
-        $inConditionAll = Tour::with('type','main_img', 'hotel', 'start_location', 'start_location.city')->where($condition, $value)->latest()->get();
+        $inConditionAll = Tour::with('type','main_img', 'hotel', 'start_location', 'start_location.city')
+            ->where($condition, $value)
+            ->where('id', '<>', $current)
+            ->latest()
+            ->get();
         $inConditionCount = $inConditionAll->count();
         $inCondition = $inConditionAll->take($quantity);
 

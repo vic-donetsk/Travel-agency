@@ -1,0 +1,44 @@
+.basket .modal-order {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: 0.9;
+    z-index: 15;
+}
+
+.basket .modal-window {
+    @include flex(flex-start, column);
+    display: none;
+    position: fixed;
+    left: calc(50vw - 250px);
+    top: calc(50vh - 80px);
+    width: 500px;
+    z-index: 20;
+    @include media(">=phone", "<=tablet") {
+        left: calc(50vw - 160px);
+        top: calc(50vh - 95px);
+        width: 320px;
+    }
+
+    .modal-window_text {
+        color: $main-light;
+        text-align: center;
+    }
+
+    .modal-window_buttons {
+        @include flex(center);
+        @include media(">=phone", "<=tablet") {
+            @include flex(flex-start, column);
+            align-items: center;
+        }
+
+        .single-btn {
+            margin-top: 20px;
+        }
+    }
+}
+

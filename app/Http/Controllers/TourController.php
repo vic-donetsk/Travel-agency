@@ -50,11 +50,11 @@ class TourController extends Controller
 
 		$showClasses = ['main-card', 'main-card', 'main-card'];
 		// выборка объявлений этого продавца
-		$sellersTours = $this->getData('seller_id', $mainTour->seller_id, $showClasses, 3);
+		$sellersTours = $this->getData('seller_id', $mainTour->seller_id, $showClasses, 3, $mainTour->id);
 		$sellersText = 'Перейти к объявлениям ' . $mainTour->seller->first_name; 
 
 		// выборка объявлений этого типа
-		$typesTours = $this->getData('type_id', $mainTour->type_id, $showClasses, 3);
+		$typesTours = $this->getData('type_id', $mainTour->type_id, $showClasses, 3, $mainTour->id);
 		$typesText = 'Перейти в категорию ' . $mainTour->type->name; 
 
 	    return view('tovar.tovar_page', [
