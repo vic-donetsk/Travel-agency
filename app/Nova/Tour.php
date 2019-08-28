@@ -51,16 +51,22 @@ class Tour extends Resource
             Text::make('Название тура', 'name')->withMeta(['textAlign' => 'center']),
             Textarea::make('Описание тура', 'description')->hideFromIndex()->alwaysShow(),
             Number::make('Стоимость тура', 'price'),
+            BelongsTo::make('Продавец', 'seller', 'App\Nova\User')->rules('required')->hideFromIndex(),
+
             Heading::make('Подробности тура:'),
+
+            BelongsTo::make('Откуда отправляется', 'start_location', 'App\Nova\Location')->rules('required')->hideFromIndex(),
             DateTime::make('Отправление','started_at')->format('DD.MM.YYYY  hh:mm')->hideFromIndex()->nullable(),
-            DateTime::make('Прибытие', 'finished_at')->format('DD.MM.YYYY hh:mm')->hideFromIndex()->nullable(),
+            DateTime::make('Возвращение', 'finished_at')->format('DD.MM.YYYY hh:mm')->hideFromIndex()->nullable(),
             Boolean::make('Подходит для детей', 'for_children')->hideFromIndex(),
             BelongsTo::make('Категория', 'category', 'App\Nova\Category')->rules('required')->hideFromIndex(),
             BelongsTo::make('Тип тура', 'type', 'App\Nova\Type')->rules('required')->hideFromIndex(),
             BelongsTo::make('Класс отеля', 'hotel', 'App\Nova\Hotel')->rules('required')->hideFromIndex(),
             BelongsTo::make('Питание', 'diet', 'App\Nova\Diet')->rules('required')->hideFromIndex(),
             BelongsTo::make('Страна пребывания', 'country', 'App\Nova\Country')->rules('required')->hideFromIndex(),
-            Heading::make('Включение в приоритетные'),
+
+            Heading::make('Включение в приоритетные:'),
+
             Boolean::make('Включен в главный слайдер', 'isTop')->hideFromIndex(),
             Boolean::make('Включен в Рекомендуемые', 'isRecommended')->hideFromIndex(),
             Boolean::make('Включен в Горячие туры', 'isHot')->hideFromIndex(),

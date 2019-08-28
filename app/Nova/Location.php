@@ -2,8 +2,10 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Location extends Resource
@@ -20,7 +22,9 @@ class Location extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public function title () {
+        return $this->variant . ' ' . $this->name . ' г. ' . $this->city->name;
+    }
 
     /**
      * The columns that should be searched.
@@ -41,6 +45,10 @@ class Location extends Resource
     {
         return [
             ID::make()->sortable(),
+            Text::make('Способ отправления', 'variant'),
+            Text::make('С какой площадки', 'name'),
+            BelongsTo::make('Город отправления', 'city', 'App\Nova\City'),
+
         ];
     }
 
