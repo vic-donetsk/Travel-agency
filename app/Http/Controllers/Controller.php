@@ -46,7 +46,7 @@ class Controller extends BaseController
         $inConditionAll = Tour::with('type','main_img', 'hotel', 'start_location', 'start_location.city')
             ->where($condition, $value)
             ->where('id', '<>', $current)
-            ->latest()
+            ->latest('updated_at')
             ->get();
         $inConditionCount = $inConditionAll->count();
         $inCondition = $inConditionAll->take($quantity);

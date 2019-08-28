@@ -22,6 +22,11 @@ class Tour extends Model
     // чтобы все остальные поля были доступными для заполнения
     protected $guarded = ['created_at', 'updated_at'];
 
+    protected $casts = [
+        'started_at' => 'datetime',
+        'finished_at' => 'datetime',
+    ];
+
     public function hotel()  
     {
     	return $this->belongsTo(Hotel::class);

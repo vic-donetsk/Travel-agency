@@ -11,7 +11,7 @@ class MainController extends Controller
 
     	// данные для вывода в слайдере
 	    $topTours = [];
-	    $inTop = Tour::with('main_img')->where('isTop', true)->take(5)->get();
+	    $inTop = Tour::with('main_img')->where('isTop', true)->latest('updated_at')->take(5)->get();
 	    foreach ($inTop as $oneTop) {
 
 	    	// обрезаем описание для вывода в слайдере 
