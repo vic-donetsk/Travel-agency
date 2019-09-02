@@ -26,7 +26,7 @@ $factory->define(User::class, function () {
         'last_name' => $faker->lastName,
         'phone' => $faker->regexify('\+380\d{2}-\d{3}-\d{2}-\d{2}'), 
         'email' => $faker->unique()->safeEmail,
-        'avatar' => $faker->imageUrl(),
+        'avatar' => $faker->image('storage/app/public', 200, 200),
         'password' => Hash::make($faker->word),
         //'email_verified_at' => now(),
         //'remember_token' => Str::random(10),

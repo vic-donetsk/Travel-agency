@@ -5,6 +5,7 @@ namespace App\Nova;
 use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\Password;
@@ -60,7 +61,9 @@ class User extends Resource
 
             //Gravatar::make(),
 
-            Avatar::make('Аватарка', 'avatar'),//->disk('public'),
+            Image::make('Аватарка', function() {
+                return basename($this->avatar);
+            })->disk('public'),
 
             Text::make('Имя', 'first_name')
                 ->sortable()
