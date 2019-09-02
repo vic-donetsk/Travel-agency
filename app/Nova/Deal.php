@@ -14,6 +14,18 @@ class Deal extends Resource
      * @var string
      */
     public static $model = 'App\Models\Deal';
+    public static $group = 'Сделки и заказы';
+
+
+    public static function label()
+    {
+        return 'Сделки';
+    }
+
+    public static function singularLabel()
+    {
+        return 'Сделка';
+    }
 
     /**
      * The single value that should be used to represent the resource when being displayed.

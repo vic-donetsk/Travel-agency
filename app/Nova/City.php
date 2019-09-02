@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
@@ -22,6 +23,16 @@ class City extends Resource
      * @var string
      */
     public static $title = 'name';
+    public static $group = 'Справочники';
+    public static function label()
+    {
+        return 'Города';
+    }
+
+    public static function singularLabel()
+    {
+        return 'Город';
+    }
 
     /**
      * The columns that should be searched.
@@ -42,7 +53,8 @@ class City extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('Название города', 'name')
+            Text::make('Название города', 'name')->sortable(),
+            DateTime::make('Изменено', 'updated_at')->format('DD.MM.YYYY HH-mm')->hideFromIndex()
         ];
     }
 

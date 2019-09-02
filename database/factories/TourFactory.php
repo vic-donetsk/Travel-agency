@@ -20,7 +20,7 @@ $factory->define(Tour::class, function (Faker $faker) {
     return [
         'name' => str_replace('.', '', substr($faker->sentence($nbWords = 3, $variableNbWords = true), 0, 27)),
         'description' => $faker->paragraph($nbSentences = 4, $variableNbSentences = true),
-        'price' => rand(100, 2000),
+        'price' => rand(1, 2000),
         'started_at' => $startDay,
         'finished_at' => $finishDay,
         'for_children' => $faker->boolean($chanceOfGettingTrue = 70),

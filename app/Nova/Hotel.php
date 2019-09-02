@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
@@ -22,6 +23,17 @@ class Hotel extends Resource
      * @var string
      */
     public static $title = 'name';
+    public static $group = 'Справочники';
+
+    public static function label()
+    {
+        return 'Варианты проживания';
+    }
+
+    public static function singularLabel()
+    {
+        return 'Вариант проживания';
+    }
 
     /**
      * The columns that should be searched.
@@ -29,7 +41,7 @@ class Hotel extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'id', 'name',
     ];
 
     /**
@@ -42,7 +54,8 @@ class Hotel extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('Проживание', 'name')->sortable()
+            Text::make('Проживание', 'name')->sortable(),
+            DateTime::make('Изменено', 'updated_at')->format('DD.MM.YYYY HH-mm')->hideFromIndex()
         ];
     }
 

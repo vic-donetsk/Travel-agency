@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
@@ -15,6 +16,16 @@ class Country extends Resource
      * @var string
      */
     public static $model = 'App\Models\Country';
+    public static $group = 'Справочники';
+    public static function label()
+    {
+        return 'Страны';
+    }
+
+    public static function singularLabel()
+    {
+        return 'Страна';
+    }
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -29,7 +40,7 @@ class Country extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'id', 'name',
     ];
 
     /**
@@ -42,7 +53,8 @@ class Country extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('Страна', 'name')->sortable()
+            Text::make('Страна', 'name')->sortable(),
+            DateTime::make('Изменено', 'updated_at')->format('DD.MM.YYYY HH-mm')->hideFromIndex()
         ];
     }
 

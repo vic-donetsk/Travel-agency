@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Illuminate\Http\Request;
@@ -22,6 +23,16 @@ class Diet extends Resource
      * @var string
      */
     public static $title = 'name';
+    public static $group = 'Справочники';
+    public static function label()
+    {
+        return 'Схемы питания';
+    }
+
+    public static function singularLabel()
+    {
+        return 'Схема питания';
+    }
 
     /**
      * The columns that should be searched.
@@ -29,7 +40,7 @@ class Diet extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'id', 'name',
     ];
 
     /**
@@ -42,7 +53,8 @@ class Diet extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('Питание', 'name')->sortable()
+            Text::make('Питание', 'name')->sortable(),
+            DateTime::make('Изменено', 'updated_at')->format('DD.MM.YYYY HH-mm')->hideFromIndex()
         ];
     }
 

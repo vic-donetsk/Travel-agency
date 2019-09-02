@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
@@ -15,6 +16,16 @@ class Type extends Resource
      * @var string
      */
     public static $model = 'App\Models\Type';
+    public static $group = 'Справочники';
+    public static function label()
+    {
+        return 'Типы туров';
+    }
+
+    public static function singularLabel()
+    {
+        return 'Тип тура';
+    }
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -23,13 +34,14 @@ class Type extends Resource
      */
     public static $title = 'name';
 
+
     /**
      * The columns that should be searched.
      *
      * @var array
      */
     public static $search = [
-        'id',
+        'id', 'name',
     ];
 
     /**
@@ -42,7 +54,8 @@ class Type extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('Тип тура', 'name')->sortable()
+            Text::make('Тип тура', 'name')->sortable(),
+            DateTime::make('Изменено', 'updated_at')->format('DD.MM.YYYY HH-mm')->hideFromIndex()
         ];
     }
 

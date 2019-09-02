@@ -16,11 +16,22 @@ class Category extends Resource
      * @var string
      */
     public static $model = 'App\Models\Category';
+    public static $group = 'Справочники';
+
+    public static function label()
+    {
+        return 'Категории туров';
+    }
+
+    public static function singularLabel()
+    {
+        return 'Категория тура';
+    }
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
-     * @var string
+     * @return string
      */
     public function title() {
         return $this->name;
@@ -32,7 +43,7 @@ class Category extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'id', 'name',
     ];
 
     /**
@@ -46,7 +57,7 @@ class Category extends Resource
         return [
             ID::make()->sortable(),
             Text:: make('Name')->sortable(),
-            DateTime::make('Created At')->format('DD.MM.YYYY')
+            DateTime::make('Изменено', 'updated_at')->format('DD.MM.YYYY HH-mm')->hideFromIndex()
         ];
     }
 

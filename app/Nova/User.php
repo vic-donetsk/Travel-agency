@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
@@ -16,13 +17,26 @@ class User extends Resource
      * @var string
      */
     public static $model = 'App\\Models\\User';
+    public static $group = 'Пользователи';
+
+    public static function label()
+    {
+        return 'Пользователи';
+    }
+
+    public static function singularLabel()
+    {
+        return 'Пользователь';
+    }
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
-     * @var string
+     * @return string
      */
-    public static $title = 'name';
+    public function title () {
+        return ($this->first_name or $this->last_name) ? $this->first_name . ' ' . $this->last_name : $this->email;
+    }
 
     /**
      * The columns that should be searched.
@@ -30,7 +44,7 @@ class User extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'name', 'email',
+        'id', 'first_name', 'last_name', 'email',
     ];
 
     /**
@@ -44,9 +58,15 @@ class User extends Resource
         return [
             ID::make()->sortable(),
 
-            Gravatar::make(),
+            //Gravatar::make(),
 
-            Text::make('Name')
+            Avatar::make('Аватарка', 'avatar'),//->disk('public'),
+
+            Text::make('Имя', 'first_name')
+                ->sortable()
+                ->rules('required', 'max:255'),
+
+            Text::make('Фамилия', 'last_name')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
@@ -55,6 +75,11 @@ class User extends Resource
                 ->rules('required', 'email', 'max:254')
                 ->creationRules('unique:users,email')
                 ->updateRules('unique:users,email,{{resourceId}}'),
+
+            Text::make('Телефон', 'phone')
+                ->sortable()
+                ->nullable()
+                ->hideFromIndex(),
 
             Password::make('Password')
                 ->onlyOnForms()

@@ -14,6 +14,18 @@ class Order extends Resource
      * @var string
      */
     public static $model = 'App\Models\Order';
+    public static $group = 'Сделки и заказы';
+
+
+    public static function label()
+    {
+        return 'Заказы';
+    }
+
+    public static function singularLabel()
+    {
+        return 'Заказ';
+    }
 
     /**
      * The single value that should be used to represent the resource when being displayed.

@@ -2,8 +2,11 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Price extends Resource
@@ -14,13 +17,32 @@ class Price extends Resource
      * @var string
      */
     public static $model = 'App\Models\Price';
+    public static $group = 'Справочники';
+
+    public static function label()
+    {
+        return 'Ценовые диапазоны';
+    }
+
+    public static function singularLabel()
+    {
+        return 'Ценовой диапазон';
+    }
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'id';
+    public function title()
+    {
+        if ($this->from_price === 0)
+            return 'До ' . $this->to_price;
+        elseif ($this->to_price === 1000000)
+            return 'Более ' . $this->from_price;
+        else
+            return 'От ' . $this->from_price . ' до ' . $this->to_price;
+    }
 
     /**
      * The columns that should be searched.
@@ -40,7 +62,13 @@ class Price extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make('№ п/п', 'id')->sortable(),
+            Text::make('Ценовой диапазон', function() {
+                return $this->title();
+            })->onlyOnIndex(),
+            Number::make('От стоимости', 'from_price')->hideFromIndex(),
+            Number::make('До стоимости', 'to_price')->hideFromIndex(),
+            DateTime::make('Изменено', 'updated_at')->format('DD.MM.YYYY HH-mm')->hideFromIndex()
         ];
     }
 

@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Media extends Resource
@@ -14,13 +15,28 @@ class Media extends Resource
      * @var string
      */
     public static $model = 'App\Models\Media';
+    public static $group = 'Фотографии';
+
+
+    public static function label()
+    {
+        return 'Изображения туров';
+    }
+
+    public static function singularLabel()
+    {
+        return 'Фото тура';
+    }
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'id';
+    public function title ()
+    {
+        return Image::make($this->path)->disk('public');
+    }
 
     /**
      * The columns that should be searched.
