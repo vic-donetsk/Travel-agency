@@ -2,8 +2,11 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Comment extends Resource
@@ -14,13 +17,25 @@ class Comment extends Resource
      * @var string
      */
     public static $model = 'App\Models\Comment';
+    public static $group = 'Отзывы';
+
+    public static function label()
+    {
+        return 'Отзывы клиентов';
+    }
+
+    public static function singularLabel()
+    {
+        return 'Отзыв клиента';
+    }
+
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'text';
 
     /**
      * The columns that should be searched.
@@ -41,6 +56,10 @@ class Comment extends Resource
     {
         return [
             ID::make()->sortable(),
+            BelongsTo::make('Отзыв о туре','tour', Tour::class)->readonly(),
+            Textarea::make('Содержание отзыва', 'content')->hideFromIndex()->alwaysShow(),
+            Text::make('Автор отзыва', 'author_name')->readonly()
+
         ];
     }
 

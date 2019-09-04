@@ -36,7 +36,7 @@ class Media extends Resource
      */
     public function title()
     {
-        return Image::make($this->path)->disk('public');
+        return basename($this->path);
     }
 
     /**

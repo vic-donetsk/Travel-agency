@@ -2,8 +2,10 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
@@ -41,7 +43,7 @@ class Tour extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -65,6 +67,7 @@ class Tour extends Resource
             new Panel('Подробности тура', $this->tourDetails()),
             new Panel('Приоритетность', $this->tourPriority()),
             new Panel('Картинки тура', $this->tourImages()),
+            new Panel('Комментарии', $this->tourComments()),
         ];
     }
 
@@ -103,13 +106,25 @@ class Tour extends Resource
         ];
     }
 
+
+    //  ВОТ ЗДЕСЬ НАДО ВСТАВИТЬ КАРТИНКИ!!!
+    // =============================================================================
     protected function tourImages()
     {
         return [
             BelongsTo::make('Основное фото', 'main_img', 'App\Nova\Media')->hideFromIndex(),
+            BelongsToMany::make('Галерея изображений', 'media', 'App\Nova\Media')
+
         ];
     }
 
+    protected function tourComments()
+    {
+        return [
+            HasMany::make('Комментарии к туру', 'comments', 'App\Nova\Comment')
+
+        ];
+    }
 
     /**
      * Get the cards available for the request.

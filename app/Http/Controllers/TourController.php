@@ -85,7 +85,7 @@ class TourController extends Controller
 		
 		Comment::create([
             'tour_id' => $tour_id,
-            'author_name' => $request->input('author_name'),
+            'author_name' => $request->has('author_name') ? $request->input('author_name') : 'Mr Noname',
             'author_email' => $request->input('author_email'),
             'content' => $request->input('review'),
             
